@@ -25,9 +25,6 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 # ---------------------------- TIMER RESET ------------------------------- #
 # playsound(AUDIO_SPEED)
 end_call_api = False
-def test_call_api():
-    value = radio_button_value.get()
-    print(value)
 def get_api_data():
     global end_call_api
     error = ""
@@ -49,8 +46,20 @@ def get_api_data():
             # Giá mở cửa: _op_
             gia_mo_cua.config(text=f"{GIA_MO_CUA} {dict_data['_op_']}")
             # Giá mới nhất: _cp_
-            gia_moi_nhat.config(text=f"{GIA_MOI_NHAT} {dict_data['_cp_']}")
+            get_gia_moi_nhat = dict_data['_cp_']
+            gia_moi_nhat.config(text=f"{GIA_MOI_NHAT} {get_gia_moi_nhat}")
             print(random.randint(0, 100))
+            convert_gia_moi_nhat = float(get_gia_moi_nhat)
+            convert_gia_tri_mong_muon = float(gia_tri_mong_muon_input.get())
+            value = int(radio_button_value.get())
+            if value == 1:
+                # Bán
+                if convert_gia_moi_nhat >= convert_gia_tri_mong_muon:
+                    playsound(AUDIO_SPEED)
+            else:
+                # Mua
+                if convert_gia_moi_nhat <= convert_gia_tri_mong_muon:
+                    playsound(AUDIO_SPEED)
             window.after(1000, get_api_data)
         else:
             error = "Lỗi dữ liệu có nhiều hơn 1 dòng"
@@ -88,7 +97,7 @@ code_ck = Entry()
 code_ck.insert(END, "VCB")
 code_ck.grid(column=1, row=3)
 
-start_button = Button(text="Start", highlightthickness=0,  command=test_call_api)
+start_button = Button(text="Start", highlightthickness=0,  command=get_api_data)
 start_button.grid(column=0, row=3)
 
 end_button = Button(text="End", highlightthickness=0, state=DISABLED, command=stop_call)
@@ -102,6 +111,8 @@ gia_tri_mong_muon_input.insert(END, "83000")
 gia_tri_mong_muon_input.grid(column=1, row=4)
 
 radio_button_value = StringVar()
+# initialize
+radio_button_value.set(1)
 R1 = Radiobutton(variable=radio_button_value, value=1, text=">=(Greater than or equal to)", bg=YELLOW)
 R1.grid(column=1, row=5)
 
