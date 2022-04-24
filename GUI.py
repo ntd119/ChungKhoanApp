@@ -1,7 +1,6 @@
 import random
 from tkinter import *
 import requests
-from playsound import playsound
 import winsound
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
