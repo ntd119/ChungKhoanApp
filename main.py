@@ -16,4 +16,4 @@ if len(filter_list) == 1:
 else:
     error = "Lỗi dữ liệu có nhiều hơn 1 dòng"
 
-print(dict_data.get("_clp_"))
+print(dict_data)
