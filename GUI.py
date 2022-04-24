@@ -2,6 +2,7 @@ import random
 from tkinter import *
 import requests
 from playsound import playsound
+import winsound
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -16,6 +17,7 @@ GIA_TRAN = "Giá trần: "
 GIA_SAN = "Giá sàn: "
 GIA_MO_CUA = "Giá mở cửa: "
 GIA_MOI_NHAT = "Giá mới nhất: "
+DELAY_TIME = 1000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
@@ -25,6 +27,11 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 # ---------------------------- TIMER RESET ------------------------------- #
 # playsound(AUDIO_SPEED)
 end_call_api = False
+def play_sound():
+    duration = 1000  # milliseconds
+    freq = 440  # Hz
+    winsound.Beep(freq, duration)
+
 def get_api_data():
     global end_call_api
     error = ""
@@ -55,12 +62,12 @@ def get_api_data():
             if value == 1:
                 # Bán
                 if convert_gia_moi_nhat >= convert_gia_tri_mong_muon:
-                    playsound(AUDIO_SPEED)
+                    play_sound()
             else:
                 # Mua
                 if convert_gia_moi_nhat <= convert_gia_tri_mong_muon:
-                    playsound(AUDIO_SPEED)
-            window.after(1000, get_api_data)
+                    play_sound()
+            window.after(DELAY_TIME, get_api_data)
         else:
             error = "Lỗi dữ liệu có nhiều hơn 1 dòng"
 
