@@ -46,14 +46,14 @@ def get_api_data():
         if len(filter_list) == 1:
             dict_data = filter_list[0]
             # Giá trần: _clp_
-            gia_tran.config(text=f"{GIA_TRAN} {dict_data['_clp_']}")
+            gia_tran.config(text=f"{GIA_TRAN}" + "{:,.0f}".format(dict_data['_clp_']))
             # Giá sàn: _fp_
-            gia_san.config(text=f"{GIA_SAN} {dict_data['_fp_']}")
+            gia_san.config(text=f"{GIA_SAN}" + "{:,.0f}".format(dict_data['_fp_']))
             # Giá mở cửa: _op_
-            gia_mo_cua.config(text=f"{GIA_MO_CUA} {dict_data['_op_']}")
+            gia_mo_cua.config(text=f"{GIA_MO_CUA}" + "{:,.0f}".format(dict_data['_op_']))
             # Giá mới nhất: _cp_
             get_gia_moi_nhat = dict_data['_cp_']
-            gia_moi_nhat.config(text=f"{GIA_MOI_NHAT} {get_gia_moi_nhat}")
+            gia_moi_nhat.config(text=f"{GIA_MOI_NHAT}" + "{:,.0f}".format(get_gia_moi_nhat))
             print(random.randint(0, 100))
             convert_gia_moi_nhat = float(get_gia_moi_nhat)
             convert_gia_tri_mong_muon = float(gia_tri_mong_muon_input.get())
