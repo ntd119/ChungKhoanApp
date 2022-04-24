@@ -1,5 +1,7 @@
+import random
 from tkinter import *
 import requests
+from playsound import playsound
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -9,6 +11,7 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+AUDIO_SPEED = "speech.mp3"
 GIA_TRAN = "Giá trần: "
 GIA_SAN = "Giá sàn: "
 GIA_MO_CUA = "Giá mở cửa: "
@@ -20,14 +23,23 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 # ---------------------------- TIMER RESET ------------------------------- #
+# playsound(AUDIO_SPEED)
+end_call_api = False
+def test_call_api():
+    value = radio_button_value.get()
+    print(value)
 def get_api_data():
+    global end_call_api
     error = ""
     response = requests.get(url=END_POINT, headers=HEADERS)
     if response.status_code != 200:
         error = "Error"
+    elif end_call_api:
+        error = "STOP"
+        end_call_api = False
     else:
         json_data = response.json()
-        filter_list = [row for row in json_data if row["_sc_"] == "VCB"]
+        filter_list = [row for row in json_data if row["_sc_"] == code_ck.get().upper()]
         if len(filter_list) == 1:
             dict_data = filter_list[0]
             # Giá trần: _clp_
@@ -35,12 +47,26 @@ def get_api_data():
             # Giá sàn: _fp_
             gia_san.config(text=f"{GIA_SAN} {dict_data['_fp_']}")
             # Giá mở cửa: _op_
-            gia_mo_cua.config(text=f"{GIA_MO_CUA} {dict_data['_fp_']}")
+            gia_mo_cua.config(text=f"{GIA_MO_CUA} {dict_data['_op_']}")
             # Giá mới nhất: _cp_
             gia_moi_nhat.config(text=f"{GIA_MOI_NHAT} {dict_data['_cp_']}")
-            window.after(10000, get_api_data)
+            print(random.randint(0, 100))
+            window.after(1000, get_api_data)
         else:
             error = "Lỗi dữ liệu có nhiều hơn 1 dòng"
+
+        if not end_call_api:
+            start_button.config(state=DISABLED)
+            end_button.config(state=NORMAL)
+        else:
+            start_button.config(state=NORMAL)
+            end_button.config(state=DISABLED)
+
+def stop_call():
+    global end_call_api
+    end_call_api = True
+    start_button.config(state=NORMAL)
+    end_button.config(state=DISABLED)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -55,28 +81,48 @@ tomato_img = PhotoImage(file="chung-khoan.png")
 canvas.create_image(100, 66, image=tomato_img)
 canvas.grid(column=1, row=1)
 
+input_ck_label = Label(text="Vui lòng nhập mã ck", fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
+input_ck_label.grid(column=1, row=2)
 
 code_ck = Entry()
 code_ck.insert(END, "VCB")
-code_ck.grid(column=1, row=2)
+code_ck.grid(column=1, row=3)
 
-start_button = Button(text="Start", highlightthickness=0, command=get_api_data)
-start_button.grid(column=0, row=2)
+start_button = Button(text="Start", highlightthickness=0,  command=test_call_api)
+start_button.grid(column=0, row=3)
 
-end_button = Button(text="End", highlightthickness=0)
-end_button.grid(column=2, row=2)
+end_button = Button(text="End", highlightthickness=0, state=DISABLED, command=stop_call)
+end_button.grid(column=2, row=3)
+
+gia_tri_mong_muon = Label(text="Giá trị mong muốn", fg="black", bg=YELLOW, font=(FONT_NAME, 10, "normal"))
+gia_tri_mong_muon.grid(column=0, row=4)
+
+gia_tri_mong_muon_input = Entry()
+gia_tri_mong_muon_input.insert(END, "83000")
+gia_tri_mong_muon_input.grid(column=1, row=4)
+
+radio_button_value = StringVar()
+R1 = Radiobutton(variable=radio_button_value, value=1, text=">=(Greater than or equal to)", bg=YELLOW)
+R1.grid(column=1, row=5)
+
+R2 = Radiobutton(variable=radio_button_value, value=2, text="<=(Less than or equal to)", bg=YELLOW)
+R2.grid(column=1, row=6)
+
+# checkbox = Checkbutton(window, text='Hiển thị thông báo',variable=100, onvalue=1, offvalue=0, bg=YELLOW)
+# checkbox.grid(column=1, row=7)
+
 
 gia_tran = Label(text=GIA_TRAN, fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
-gia_tran.grid(column=1, row=3)
+gia_tran.grid(column=1, row=8)
 
 gia_san = Label(text=GIA_SAN, fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
-gia_san.grid(column=1, row=4)
+gia_san.grid(column=1, row=9)
 
 gia_mo_cua = Label(text=GIA_MO_CUA, fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
-gia_mo_cua.grid(column=1, row=5)
+gia_mo_cua.grid(column=1, row=10)
 
 gia_moi_nhat = Label(text="Giá mới nhất: ", fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
-gia_moi_nhat.grid(column=1, row=6)
+gia_moi_nhat.grid(column=1, row=11)
 
 
 window.mainloop()
