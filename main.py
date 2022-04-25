@@ -18,7 +18,7 @@ GIA_TRAN = "Giá trần: "
 GIA_SAN = "Giá sàn: "
 GIA_MO_CUA = "Giá mở cửa: "
 GIA_MOI_NHAT = "Giá mới nhất: "
-DELAY_TIME = 1000
+DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
@@ -29,7 +29,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 # playsound(AUDIO_SPEED)
 end_call_api = False
 def play_sound():
-    duration = DELAY_TIME  # milliseconds
+    duration = 1000  # milliseconds
     freq = 440  # Hz
     winsound.Beep(freq, duration)
 
