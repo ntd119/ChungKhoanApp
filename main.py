@@ -119,7 +119,7 @@ gia_tri_mong_muon = Label(text="Giá trị mong muốn", fg="black", bg=YELLOW, 
 gia_tri_mong_muon.grid(column=1, row=4)
 
 gia_tri_mong_muon_input = Entry()
-gia_tri_mong_muon_input.insert(END, "83000")
+gia_tri_mong_muon_input.insert(END, "78000")
 gia_tri_mong_muon_input.grid(column=1, row=5)
 
 radio_button_value = StringVar()
