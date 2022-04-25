@@ -1,7 +1,9 @@
 import random
+import time
 from tkinter import *
 import requests
 import winsound
+from datetime import datetime
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -27,7 +29,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 # playsound(AUDIO_SPEED)
 end_call_api = False
 def play_sound():
-    duration = 1000  # milliseconds
+    duration = DELAY_TIME  # milliseconds
     freq = 440  # Hz
     winsound.Beep(freq, duration)
 
@@ -53,7 +55,6 @@ def get_api_data():
             # Giá mới nhất: _cp_
             get_gia_moi_nhat = dict_data['_cp_']
             gia_moi_nhat.config(text=f"{GIA_MOI_NHAT}" + "{:,.0f}".format(get_gia_moi_nhat))
-            print(random.randint(0, 100))
             convert_gia_moi_nhat = float(get_gia_moi_nhat)
             convert_gia_tri_mong_muon = float(gia_tri_mong_muon_input.get())
             value = int(radio_button_value.get())
@@ -65,6 +66,9 @@ def get_api_data():
                 # Mua
                 if convert_gia_moi_nhat <= convert_gia_tri_mong_muon:
                     play_sound()
+            now = datetime.now().time()
+            # format = time.strftime("%H:%M:%S", now)
+            time_lable.config(text=now)
             window.after(DELAY_TIME, get_api_data)
         else:
             error = "Mã chứng khoán không đúng"
@@ -143,8 +147,11 @@ gia_mo_cua.grid(column=1, row=10)
 gia_moi_nhat = Label(text="Giá mới nhất: ", fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
 gia_moi_nhat.grid(column=1, row=11)
 
+time_lable = Label(fg="black", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
+time_lable.grid(column=1, row=12)
+
 loi_call_api = Label(text=f"{error}", fg="red", bg=YELLOW, font=(FONT_NAME, 15, "bold"))
-loi_call_api.grid(column=1, row=12)
+loi_call_api.grid(column=1, row=13)
 
 
 window.mainloop()
