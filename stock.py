@@ -52,9 +52,6 @@ class Stock:
             max_value.insert(END, item_dict.get("max"))
             max_value.grid(column=4, row=row)
 
-            # radio_choose = Label(text="Selected")
-            # radio_choose.grid(column=5, row=row)
-
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set(1)
