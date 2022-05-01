@@ -4,7 +4,7 @@ import requests
 import winsound
 from datetime import datetime
 
-FILE_NAME ="stock-code.csv"
+FILE_NAME = "stock-code.csv"
 DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
@@ -13,6 +13,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 FONT_HEADER = ("Arial", 10, "bold")
+
 
 class Stock:
 
@@ -39,41 +40,43 @@ class Stock:
             self.error = "Lỗi call API"
         else:
             self.stock_data_api = response.json()
+            for item_dict in self.stock_code_csv:
+                stock_code = item_dict.get("code")
+                stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
+                if len(stock_single) == 1:
+                    stock_single = stock_single[0]
+                    current_value = float(stock_single['_cp_'])
+                    self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                        text="{:,.0f}".format(current_value))
+                    radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                    status_label = self.item_list[f'status_label_{stock_code.lower()}']
+                    if radio_button_value == 1:
+                        # <=
+                        min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
+                        if current_value <= min_value:
+                            self.play_sound()
+                            status_label.config(text="✔", foreground="green")
+                        else:
+                            status_label.config(text="No", foreground="black")
+                    else:
+                        # >=
+                        max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
+                        if float(current_value) >= float(max_value):
+                            self.play_sound()
+                            status_label.config(text="✔", foreground="green")
+                        else:
+                            status_label.config(text="No", foreground="black")
+                else:
+                    self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
+                                                                                           foreground="red")
+            self.disable_button()
+            self.show_time()
+            if self.is_running:
+                self.root.after(DELAY_TIME, self.call_api)
 
     def start_progress(self):
+        self.is_running = True
         self.call_api()
-        for item_dict in self.stock_code_csv:
-            stock_code = item_dict.get("code")
-            stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
-            if len(stock_single) == 1:
-                stock_single = stock_single[0]
-                current_value = float(stock_single['_cp_'])
-                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                    text="{:,.0f}".format(current_value))
-                radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
-                status_label = self.item_list[f'status_label_{stock_code.lower()}']
-                if radio_button_value == 1:
-                    # <=
-                    min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                    if current_value <= min_value:
-                        self.play_sound()
-                        status_label.config(text="✔", foreground="green")
-                    else:
-                        status_label.config(text="No", foreground="black")
-                else:
-                    # >=
-                    max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
-                    if float(current_value) >= float(max_value):
-                        self.play_sound()
-                        status_label.config(text="✔", foreground="green")
-                    else:
-                        status_label.config(text="No", foreground="black")
-            else:
-                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
-        self.disable_button()
-        self.show_time()
-        if self.is_running:
-            self.root.after(DELAY_TIME, self.start_progress)
 
     def stop_progress(self):
         self.is_running = False
@@ -168,5 +171,3 @@ class Stock:
         if self.is_running:
             now = datetime.now().time()
             self.status_label.config(text=f"RUNNING... {now}", foreground="green")
-
-
