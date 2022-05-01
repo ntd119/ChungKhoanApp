@@ -3,6 +3,7 @@ from tkinter import *
 import requests
 import winsound
 from datetime import datetime
+import time
 
 FILE_NAME = "stock-code.csv"
 DELAY_TIME = 5000
@@ -170,5 +171,6 @@ class Stock:
     def show_time(self):
         if self.is_running:
             now = datetime.now().time()
-            self.status_label.config(text=f"RUNNING... {now}", foreground="green")
+            format_time = now.strftime("%H:%M:%S")
+            self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
             self.root.after(1000, self.show_time)
