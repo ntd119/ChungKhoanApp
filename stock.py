@@ -20,6 +20,7 @@ class Stock:
         self.read_file()
         self.error = ""
         self.stock_data_api = []
+        self.is_running= False
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
