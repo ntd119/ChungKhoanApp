@@ -67,6 +67,7 @@ class Stock:
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
         self.disable_button()
+        self.root.after(DELAY_TIME, self.start_progress)
 
     def stop_progress(self):
         self.is_running = False
