@@ -62,6 +62,7 @@ class Stock:
         start_button.grid(column=0, row=0)
         stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
         stop_button.grid(column=1, row=0)
+        stop_button.config(state=DISABLED)
 
         self.start_button = start_button
         self.stop_button = stop_button
