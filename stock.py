@@ -3,6 +3,7 @@ from tkinter import *
 import requests
 import winsound
 
+FILE_NAME ="stock-code.csv"
 DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
@@ -11,7 +12,6 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 FONT_HEADER = ("Arial", 10, "bold")
-
 
 class Stock:
 
@@ -28,7 +28,7 @@ class Stock:
         self.status_label = ()
 
     def read_file(self):
-        data = pandas.read_csv("./file/stock-code.csv")
+        data = pandas.read_csv(f"./file/{FILE_NAME}")
         for (index, row) in data.iterrows():
             self.stock_code_csv.append({"index": index, "code": row["code"], "min": row["min"], "max": row["max"]})
 
