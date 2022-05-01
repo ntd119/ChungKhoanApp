@@ -14,6 +14,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
            }
 FONT_HEADER = ("Arial", 10, "bold")
 
+STATUS_CHECK = "No"
 
 class Stock:
 
@@ -59,7 +60,7 @@ class Stock:
                                 self.play_sound()
                                 status_label.config(text="✔", foreground="green")
                             else:
-                                status_label.config(text="No", foreground="black")
+                                status_label.config(text=STATUS_CHECK, foreground="black")
                         else:
                             # min
                             min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
@@ -67,9 +68,9 @@ class Stock:
                                 self.play_sound()
                                 status_label.config(text="✔", foreground="green")
                             else:
-                                status_label.config(text="No", foreground="black")
+                                status_label.config(text=STATUS_CHECK, foreground="black")
                     else:
-                        status_label.config(text="No", foreground="black")
+                        status_label.config(text=STATUS_CHECK, foreground="black")
                 else:
                     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                            foreground="red")
@@ -159,7 +160,7 @@ class Stock:
             radio_2.grid(column=6, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
-            status_label = Label(text="No")
+            status_label = Label(text=STATUS_CHECK)
             status_label.grid(column=7, row=row)
             self.item_list[f'status_label_{stock_code.lower()}'] = status_label
 
