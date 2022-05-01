@@ -44,28 +44,30 @@ class Stock:
                 stock_code = item_dict.get("code")
                 stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
                 if len(stock_single) == 1:
-                    stock_single = stock_single[0]
-                    current_value = float(stock_single['_cp_'])
-                    self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                        text="{:,.0f}".format(current_value))
-                    radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
-                    status_label = self.item_list[f'status_label_{stock_code.lower()}']
-                    if radio_button_value == 1:
-                        # max
-                        max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
-                        if current_value >= max_value:
-                            self.play_sound()
-                            status_label.config(text="✔", foreground="green")
+                    stock_checkbox = self.item_list.get(f"stock_checkbox_{stock_code.lower()}").get()
+                    if stock_checkbox:
+                        stock_single = stock_single[0]
+                        current_value = float(stock_single['_cp_'])
+                        self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                            text="{:,.0f}".format(current_value))
+                        radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                        status_label = self.item_list[f'status_label_{stock_code.lower()}']
+                        if radio_button_value == 1:
+                            # max
+                            max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
+                            if current_value >= max_value:
+                                self.play_sound()
+                                status_label.config(text="✔", foreground="green")
+                            else:
+                                status_label.config(text="No", foreground="black")
                         else:
-                            status_label.config(text="No", foreground="black")
-                    else:
-                        # min
-                        min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                        if float(current_value) <+ float(min_value):
-                            self.play_sound()
-                            status_label.config(text="✔", foreground="green")
-                        else:
-                            status_label.config(text="No", foreground="black")
+                            # min
+                            min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
+                            if float(current_value) <+ float(min_value):
+                                self.play_sound()
+                                status_label.config(text="✔", foreground="green")
+                            else:
+                                status_label.config(text="No", foreground="black")
                 else:
                     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                            foreground="red")
@@ -120,12 +122,14 @@ class Stock:
     def draw_body(self):
         for item_dict in self.stock_code_csv:
             row = int(item_dict.get("index")) + 2
-            checkbox_selected = IntVar()
-            checkbox_selected.set(1)
-            checkbox = Checkbutton(self.root, variable=checkbox_selected, textvariable=1, onvalue=1, offvalue=0)
-            checkbox.grid(column=0, row=row)
-
             stock_code = item_dict.get("code")
+
+            check_value = IntVar()
+            stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
+            stock_checkbox.grid(column=0, row=row)
+            self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
+
+
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
 
