@@ -2,6 +2,7 @@ import pandas
 from tkinter import *
 import requests
 import winsound
+from datetime import datetime
 
 FILE_NAME ="stock-code.csv"
 DELAY_TIME = 5000
@@ -71,7 +72,9 @@ class Stock:
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
         self.disable_button()
-        self.root.after(DELAY_TIME, self.start_progress)
+        self.show_time()
+        if self.is_running:
+            self.root.after(DELAY_TIME, self.start_progress)
 
     def stop_progress(self):
         self.is_running = False
@@ -157,10 +160,15 @@ class Stock:
         if self.is_running:
             self.start_button.config(state=DISABLED)
             self.stop_button.config(state=NORMAL)
-            self.status_label.config(text="RUNNING...", foreground="green")
         else:
             self.start_button.config(state=NORMAL)
             self.stop_button.config(state=DISABLED)
             self.status_label.config(text="STOPPED", foreground="red")
+
+    def show_time(self):
+        if self.is_running:
+            now = datetime.now().time()
+            self.status_label.config(text=f"RUNNING... {now}", foreground="green")
+            self.root.after(1000, self.show_time)
 
 
