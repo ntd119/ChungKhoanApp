@@ -58,12 +58,16 @@ class Stock:
                     if current_value <= min_value:
                         self.play_sound()
                         status_label.config(text="✔", foreground="red")
+                    else:
+                        status_label.config(text="No", foreground="black")
                 else:
                     # >=
                     max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
                     if float(current_value) >= float(max_value):
                         self.play_sound()
                         status_label.config(text="✔", foreground="red")
+                    else:
+                        status_label.config(text="No", foreground="black")
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
         self.disable_button()
