@@ -41,7 +41,6 @@ class Stock:
             self.stock_data_api = response.json()
 
     def start_progress(self):
-        self.is_running = True
         self.call_api()
         for item_dict in self.stock_code_csv:
             stock_code = item_dict.get("code")
@@ -169,6 +168,5 @@ class Stock:
         if self.is_running:
             now = datetime.now().time()
             self.status_label.config(text=f"RUNNING... {now}", foreground="green")
-            self.root.after(1000, self.show_time)
 
 
