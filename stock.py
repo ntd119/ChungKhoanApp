@@ -13,6 +13,8 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 FONT_HEADER = ("Arial", 10, "bold")
+
+
 class Stock:
 
     def __init__(self):
@@ -20,7 +22,7 @@ class Stock:
         self.read_file()
         self.error = ""
         self.stock_data_api = []
-        self.is_running= False
+        self.is_running = False
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
@@ -34,11 +36,21 @@ class Stock:
         else:
             self.stock_data_api = response.json()
 
+    def start_progress(self):
+        self.is_running = True
+        # self.call_api()
+        # stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
+        # if len(stock_single) != 1:
+        #     self.error = "Mã cổ phiếu không đúng"
+        #     current_value = 0
+
+    def stop_progress(self):
+        self.is_running = False
 
     def draw_header(self):
-        start_button = Button(text="Start", foreground="green", font=FONT_HEADER)
+        start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=0)
-        stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER)
+        stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
         stop_button.grid(column=1, row=0)
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
@@ -60,17 +72,7 @@ class Stock:
         radio_choose.grid(column=7, row=1)
 
     def draw_body(self):
-        # self.call_api()
         for item_dict in self.stock_code_csv:
-            stock_code = item_dict.get("code");
-            stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
-            if len(stock_single) != 1:
-                self.error = "Mã cổ phiếu không đúng"
-                current_value = 0
-            else:
-                stock_single = stock_single[0]
-                current_value = stock_single.get('_clp_')
-
             row = int(item_dict.get("index")) + 2
             checkbox = Checkbutton()
             checkbox.grid(column=0, row=row)
@@ -78,7 +80,7 @@ class Stock:
             stock_code = Label(text=item_dict.get("code"))
             stock_code.grid(column=1, row=row)
 
-            current_value_label = Label(text="{:,.0f}".format(current_value))
+            current_value_label = Label(text="{:,.0f}".format(0.00))
             current_value_label.grid(column=2, row=row)
 
             min_value_entry = Entry()
@@ -99,18 +101,17 @@ class Stock:
 
             status_label = Label(text="No")
             status_label.grid(column=7, row=row)
-
-            value = int(radio_button_value.get())
-            if value == 1:
-                # <=
-                if float(current_value) <= float(min_value_entry.get()):
-                    # self.play_sound()
-                    status_label.config(text="✔", foreground="red")
-            else:
-                # >=
-                if float(current_value) >= float(max_value_entry.get()):
-                    # self.play_sound()
-                    status_label.config(text="✔", foreground="red")
+            # value = int(radio_button_value.get())
+            # if value == 1:
+            #     # <=
+            #     if float(current_value) <= float(min_value_entry.get()):
+            #         # self.play_sound()
+            #         status_label.config(text="✔", foreground="red")
+            # else:
+            #     # >=
+            #     if float(current_value) >= float(max_value_entry.get()):
+            #         # self.play_sound()
+            #         status_label.config(text="✔", foreground="red")
 
     def play_sound(self):
         duration = 1000  # milliseconds
