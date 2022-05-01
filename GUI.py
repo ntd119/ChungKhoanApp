@@ -1,26 +1,15 @@
 from tkinter import *
-
-import pandas
+from stock import Stock
 
 root = Tk()
 root.title("MTD Team")
 root.config(width=800, height=400)
+stock = Stock()
 
-data = pandas.read_csv("./file/stock-code.csv")
-# stock_code_dict = data.to_dict()
-# print(stock_code_dict)
+print (stock.stock_code_list)
+stock.draw_header()
 
-for (index, row) in data.iterrows():
-    print(row["min"])
 
-# print(data)
-# stock_code_list = data.to_dict()
-#
-# print(type(stock_code_list))
-
-# for i in stock_code_list:
-#     stock_code = stock_code_list[i]
-#     print(stock_code)
 
 
 
