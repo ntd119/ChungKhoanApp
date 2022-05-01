@@ -45,13 +45,13 @@ class Stock:
                 stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
                 if len(stock_single) == 1:
                     stock_checkbox = self.item_list.get(f"stock_checkbox_{stock_code.lower()}").get()
+                    status_label = self.item_list[f'status_label_{stock_code.lower()}']
                     if stock_checkbox:
                         stock_single = stock_single[0]
                         current_value = float(stock_single['_cp_'])
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
                             text="{:,.0f}".format(current_value))
                         radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
-                        status_label = self.item_list[f'status_label_{stock_code.lower()}']
                         if radio_button_value == 1:
                             # max
                             max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
@@ -68,6 +68,8 @@ class Stock:
                                 status_label.config(text="✔", foreground="green")
                             else:
                                 status_label.config(text="No", foreground="black")
+                    else:
+                        status_label.config(text="No", foreground="black")
                 else:
                     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                            foreground="red")
@@ -125,6 +127,7 @@ class Stock:
             stock_code = item_dict.get("code")
 
             check_value = IntVar()
+            check_value.set(1)
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
