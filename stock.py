@@ -51,7 +51,6 @@ class Stock:
                     text="{:,.0f}".format(current_value))
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
-                self.is_running = False
         self.disable_button()
 
     def stop_progress(self):
@@ -138,9 +137,10 @@ class Stock:
 
     def disable_button(self):
         if self.is_running:
-            self.start_button.config(state=NORMAL)
-            self.stop_button.config(state=DISABLED)
-        else:
             self.start_button.config(state=DISABLED)
             self.stop_button.config(state=NORMAL)
+        else:
+            self.start_button.config(state=NORMAL)
+            self.stop_button.config(state=DISABLED)
+
 
