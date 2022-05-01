@@ -17,12 +17,14 @@ FONT_HEADER = ("Arial", 10, "bold")
 
 class Stock:
 
-    def __init__(self):
+    def __init__(self, root):
         self.stock_code_csv = []
         self.read_file()
         self.error = ""
         self.stock_data_api = []
         self.is_running = False
+        self.root = root
+        self.item_list = {}
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
@@ -38,11 +40,17 @@ class Stock:
 
     def start_progress(self):
         self.is_running = True
-        # self.call_api()
-        # stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
-        # if len(stock_single) != 1:
-        #     self.error = "Mã cổ phiếu không đúng"
-        #     current_value = 0
+        self.call_api()
+        for item_dict in self.stock_code_csv:
+            stock_code = item_dict.get("code")
+            stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
+            if len(stock_single) == 1:
+                stock_single = stock_single[0]
+                current_value = stock_single['_cp_']
+                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                    text="{:,.0f}".format(current_value))
+            else:
+                self.item_list.get(f"stock_code_label__{stock_code.lower()}").config(text="Wrong code")
 
     def stop_progress(self):
         self.is_running = False
@@ -76,14 +84,17 @@ class Stock:
             row = int(item_dict.get("index")) + 2
             checkbox_selected = IntVar()
             checkbox_selected.set(1)
-            checkbox = Checkbutton(variable=checkbox_selected, onvalue=1, offvalue=0)
+            checkbox = Checkbutton(self.root, variable=checkbox_selected, textvariable=1, onvalue=1, offvalue=0)
             checkbox.grid(column=0, row=row)
 
-            stock_code = Label(text=item_dict.get("code"))
-            stock_code.grid(column=1, row=row)
+            stock_code = item_dict.get("code")
+            stock_code_label = Label(text=stock_code)
+            stock_code_label.grid(column=1, row=row)
+            self.item_list[f'stock_code_label_{stock_code.lower()}'] = stock_code_label
 
             current_value_label = Label(text="{:,.0f}".format(0.00))
             current_value_label.grid(column=2, row=row)
+            self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
