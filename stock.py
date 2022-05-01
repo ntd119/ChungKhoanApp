@@ -35,23 +35,28 @@ class Stock:
 
 
     def draw_header(self):
+        start_button = Button(text="Start", foreground="green", font=FONT_HEADER)
+        start_button.grid(column=0, row=0)
+        stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER)
+        stop_button.grid(column=1, row=0)
+
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
-        stock_code.grid(column=1, row=0)
+        stock_code.grid(column=1, row=1)
 
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=2, row=0)
+        current_value_label.grid(column=2, row=1)
 
         min_value = Label(text="Ngưỡng min", font=FONT_HEADER)
-        min_value.grid(column=3, row=0)
+        min_value.grid(column=3, row=1)
 
         max_value = Label(text="Ngưỡng max", font=FONT_HEADER)
-        max_value.grid(column=4, row=0)
+        max_value.grid(column=4, row=1)
 
         radio_choose = Label(text="Selected", font=FONT_HEADER)
-        radio_choose.grid(column=5, row=0)
+        radio_choose.grid(column=5, row=1)
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
-        radio_choose.grid(column=7, row=0)
+        radio_choose.grid(column=7, row=1)
 
     def draw_body(self):
         # self.call_api()
@@ -65,7 +70,7 @@ class Stock:
                 stock_single = stock_single[0]
                 current_value = stock_single.get('_clp_')
 
-            row = int(item_dict.get("index")) + 1
+            row = int(item_dict.get("index")) + 2
             checkbox = Checkbutton()
             checkbox.grid(column=0, row=row)
 
