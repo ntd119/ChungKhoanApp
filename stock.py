@@ -74,7 +74,9 @@ class Stock:
     def draw_body(self):
         for item_dict in self.stock_code_csv:
             row = int(item_dict.get("index")) + 2
-            checkbox = Checkbutton()
+            checkbox_selected = IntVar()
+            checkbox_selected.set(1)
+            checkbox = Checkbutton(variable=checkbox_selected, onvalue=1, offvalue=0)
             checkbox.grid(column=0, row=row)
 
             stock_code = Label(text=item_dict.get("code"))
