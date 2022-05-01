@@ -73,6 +73,9 @@ class Stock:
             self.disable_button()
             if self.is_running:
                 self.root.after(DELAY_TIME, self.call_api)
+        now = datetime.now().time()
+        format_time = now.strftime("%H:%M:%S")
+        print(f"RUNNING... {format_time}")
 
     def start_progress(self):
         self.is_running = True
