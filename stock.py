@@ -57,7 +57,7 @@ class Stock:
                     min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
                     if current_value <= min_value:
                         self.play_sound()
-                        status_label.config(text="✔", foreground="red")
+                        status_label.config(text="✔", foreground="green")
                     else:
                         status_label.config(text="No", foreground="black")
                 else:
@@ -65,7 +65,7 @@ class Stock:
                     max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
                     if float(current_value) >= float(max_value):
                         self.play_sound()
-                        status_label.config(text="✔", foreground="red")
+                        status_label.config(text="✔", foreground="green")
                     else:
                         status_label.config(text="No", foreground="black")
             else:
