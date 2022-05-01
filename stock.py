@@ -1,5 +1,3 @@
-from tkinter import Entry
-
 import pandas
 from tkinter import *
 import requests
