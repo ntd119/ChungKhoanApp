@@ -3,7 +3,6 @@ from tkinter import *
 import requests
 import winsound
 from datetime import datetime
-import time
 
 FILE_NAME = "stock-code.csv"
 DELAY_TIME = 5000
@@ -146,7 +145,7 @@ class Stock:
 
             radio_button_value = StringVar()
             # initialize
-            radio_button_value.set(1)
+            radio_button_value.set("1")
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
             radio_1.grid(column=5, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
