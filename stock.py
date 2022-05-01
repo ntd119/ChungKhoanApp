@@ -48,7 +48,8 @@ class Stock:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
                     text="{:,.0f}".format(current_value))
             else:
-                self.item_list.get(f"stock_code_label__{stock_code.lower()}").config(text="Wrong code")
+                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
+                self.is_running = False
 
     def stop_progress(self):
         self.is_running = False
@@ -88,7 +89,6 @@ class Stock:
             stock_code = item_dict.get("code")
             stock_code_label = Label(text=stock_code)
             stock_code_label.grid(column=1, row=row)
-            self.item_list[f'stock_code_label_{stock_code.lower()}'] = stock_code_label
 
             current_value_label = Label(text="{:,.0f}".format(0.00))
             current_value_label.grid(column=2, row=row)
