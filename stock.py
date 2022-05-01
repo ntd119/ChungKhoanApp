@@ -19,6 +19,7 @@ class Stock:
         self.stock_code_list = []
         self.read_file()
         self.error = ""
+        self.stock_data = []
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
@@ -29,6 +30,8 @@ class Stock:
         response = requests.get(url=END_POINT, headers=HEADERS)
         if response.status_code != 200:
             self.error = "Lỗi call API"
+        else:
+            self.stock_data = response.json()
 
 
     def draw_header(self):
@@ -51,6 +54,7 @@ class Stock:
         radio_choose.grid(column=7, row=0)
 
     def draw_body(self):
+        self.call_api()
         for item_dict in self.stock_code_list:
             row = int(item_dict.get("index")) + 1
             checkbox = Checkbutton()

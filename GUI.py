@@ -3,7 +3,7 @@ from stock import Stock
 
 root = Tk()
 root.title("MTD Team")
-root.config(width=800, height=400)
+root.config(padx=50, pady=50, width=800, height=400)
 stock = Stock()
 
 stock.draw_header()
