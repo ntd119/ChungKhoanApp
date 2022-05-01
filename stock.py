@@ -99,13 +99,13 @@ class Stock:
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=1)
 
-        max_value = Label(text="Ngưỡng max", font=FONT_HEADER)
+        max_value = Label(text="Max", font=FONT_HEADER)
         max_value.grid(column=2, row=1)
 
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
         current_value_label.grid(column=3, row=1)
 
-        min_value = Label(text="Ngưỡng min", font=FONT_HEADER)
+        min_value = Label(text="Min", font=FONT_HEADER)
         min_value.grid(column=4, row=1)
 
         radio_choose = Label(text="Selected", font=FONT_HEADER)
