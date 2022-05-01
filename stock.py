@@ -70,13 +70,13 @@ class Stock:
                     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                            foreground="red")
             self.disable_button()
-            self.show_time()
             if self.is_running:
                 self.root.after(DELAY_TIME, self.call_api)
 
     def start_progress(self):
         self.is_running = True
         self.call_api()
+        self.show_time()
 
     def stop_progress(self):
         self.is_running = False
@@ -171,3 +171,4 @@ class Stock:
         if self.is_running:
             now = datetime.now().time()
             self.status_label.config(text=f"RUNNING... {now}", foreground="green")
+            self.root.after(1000, self.show_time)
