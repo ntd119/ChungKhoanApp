@@ -23,6 +23,8 @@ class Stock:
         self.is_running = False
         self.root = root
         self.item_list = {}
+        self.start_button = ()
+        self.stop_button = ()
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
@@ -50,15 +52,20 @@ class Stock:
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
                 self.is_running = False
+        self.disable_button()
 
     def stop_progress(self):
         self.is_running = False
+        self.disable_button()
 
     def draw_header(self):
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=0)
         stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
         stop_button.grid(column=1, row=0)
+
+        self.start_button = start_button
+        self.stop_button = stop_button
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=1)
@@ -87,7 +94,7 @@ class Stock:
             checkbox.grid(column=0, row=row)
 
             stock_code = item_dict.get("code")
-            stock_code_label = Label(text=stock_code)
+            stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
 
             current_value_label = Label(text="{:,.0f}".format(0.00))
@@ -128,3 +135,12 @@ class Stock:
         duration = 1000  # milliseconds
         freq = 440  # Hz
         winsound.Beep(freq, duration)
+
+    def disable_button(self):
+        if self.is_running:
+            self.start_button.config(state=NORMAL)
+            self.stop_button.config(state=DISABLED)
+        else:
+            self.start_button.config(state=DISABLED)
+            self.stop_button.config(state=NORMAL)
+
