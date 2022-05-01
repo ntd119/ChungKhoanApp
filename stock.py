@@ -25,6 +25,7 @@ class Stock:
         self.item_list = {}
         self.start_button = ()
         self.stop_button = ()
+        self.status_label = ()
 
     def read_file(self):
         data = pandas.read_csv("./file/stock-code.csv")
@@ -60,12 +61,16 @@ class Stock:
     def draw_header(self):
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=0)
+        self.start_button = start_button
+
         stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
         stop_button.grid(column=1, row=0)
         stop_button.config(state=DISABLED)
-
-        self.start_button = start_button
         self.stop_button = stop_button
+
+        status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
+        status_label.grid(column=2, row=0)
+        self.status_label = status_label
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=1)
@@ -140,8 +145,10 @@ class Stock:
         if self.is_running:
             self.start_button.config(state=DISABLED)
             self.stop_button.config(state=NORMAL)
+            self.status_label.config(text="RUNNING...", foreground="green")
         else:
             self.start_button.config(state=NORMAL)
             self.stop_button.config(state=DISABLED)
+            self.status_label.config(text="STOPPED", foreground="red")
 
 
