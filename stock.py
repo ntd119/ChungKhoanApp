@@ -47,9 +47,23 @@ class Stock:
             stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
             if len(stock_single) == 1:
                 stock_single = stock_single[0]
-                current_value = stock_single['_cp_']
+                current_value = float(stock_single['_cp_'])
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
                     text="{:,.0f}".format(current_value))
+                radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                status_label = self.item_list[f'status_label_{stock_code.lower()}']
+                if radio_button_value == 1:
+                    # <=
+                    min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
+                    if current_value <= min_value:
+                        # self.play_sound()
+                        status_label.config(text="✔", foreground="red")
+                else:
+                    # >=
+                    max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
+                    if float(current_value) >= float(max_value.get()):
+                        # self.play_sound()
+                        status_label.config(text="✔", foreground="red")
             else:
                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code", foreground="red")
         self.disable_button()
@@ -109,10 +123,12 @@ class Stock:
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
             min_value_entry.grid(column=3, row=row)
+            self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             max_value_entry = Entry()
             max_value_entry.insert(END, item_dict.get("max"))
             max_value_entry.grid(column=4, row=row)
+            self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
 
             radio_button_value = StringVar()
             # initialize
@@ -121,20 +137,11 @@ class Stock:
             radio_1.grid(column=5, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text=">=")
             radio_2.grid(column=6, row=row)
+            self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
             status_label = Label(text="No")
             status_label.grid(column=7, row=row)
-            # value = int(radio_button_value.get())
-            # if value == 1:
-            #     # <=
-            #     if float(current_value) <= float(min_value_entry.get()):
-            #         # self.play_sound()
-            #         status_label.config(text="✔", foreground="red")
-            # else:
-            #     # >=
-            #     if float(current_value) >= float(max_value_entry.get()):
-            #         # self.play_sound()
-            #         status_label.config(text="✔", foreground="red")
+            self.item_list[f'status_label_{stock_code.lower()}'] = status_label
 
     def play_sound(self):
         duration = 1000  # milliseconds
