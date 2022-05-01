@@ -32,7 +32,7 @@ class Stock:
     def read_file(self):
         data = pandas.read_csv(f"./file/{FILE_NAME}")
         for (index, row) in data.iterrows():
-            self.stock_code_csv.append({"index": index, "code": row["code"], "min": row["min"], "max": row["max"]})
+            self.stock_code_csv.append({"index": index, "code": row["code"], "max": row["max"], "min": row["min"]})
 
     def call_api(self):
         response = requests.get(url=END_POINT, headers=HEADERS)
@@ -51,17 +51,17 @@ class Stock:
                     radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
                     status_label = self.item_list[f'status_label_{stock_code.lower()}']
                     if radio_button_value == 1:
-                        # <=
-                        min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                        if current_value <= min_value:
+                        # max
+                        max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
+                        if current_value >= max_value:
                             self.play_sound()
                             status_label.config(text="✔", foreground="green")
                         else:
                             status_label.config(text="No", foreground="black")
                     else:
-                        # >=
-                        max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
-                        if float(current_value) >= float(max_value):
+                        # min
+                        min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
+                        if float(current_value) <+ float(min_value):
                             self.play_sound()
                             status_label.config(text="✔", foreground="green")
                         else:
@@ -99,14 +99,14 @@ class Stock:
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=1)
 
+        max_value = Label(text="Ngưỡng max", font=FONT_HEADER)
+        max_value.grid(column=2, row=1)
+
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=2, row=1)
+        current_value_label.grid(column=3, row=1)
 
         min_value = Label(text="Ngưỡng min", font=FONT_HEADER)
-        min_value.grid(column=3, row=1)
-
-        max_value = Label(text="Ngưỡng max", font=FONT_HEADER)
-        max_value.grid(column=4, row=1)
+        min_value.grid(column=4, row=1)
 
         radio_choose = Label(text="Selected", font=FONT_HEADER)
         radio_choose.grid(column=5, row=1)
@@ -126,26 +126,26 @@ class Stock:
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
 
+            max_value_entry = Entry()
+            max_value_entry.insert(END, item_dict.get("max"))
+            max_value_entry.grid(column=2, row=row)
+            self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
+
             current_value_label = Label(text="{:,.0f}".format(0.00))
-            current_value_label.grid(column=2, row=row)
+            current_value_label.grid(column=3, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
-            min_value_entry.grid(column=3, row=row)
+            min_value_entry.grid(column=4, row=row)
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
-
-            max_value_entry = Entry()
-            max_value_entry.insert(END, item_dict.get("max"))
-            max_value_entry.grid(column=4, row=row)
-            self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
 
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set(1)
-            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="<=")
+            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
             radio_1.grid(column=5, row=row)
-            radio_2 = Radiobutton(variable=radio_button_value, value=2, text=">=")
+            radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
             radio_2.grid(column=6, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
