@@ -54,55 +54,57 @@ class Stock:
         radio_choose.grid(column=7, row=0)
 
     def draw_body(self):
-        self.call_api()
+        # self.call_api()
         for item_dict in self.stock_code_csv:
             stock_code = item_dict.get("code");
             stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
             if len(stock_single) != 1:
                 self.error = "Mã cổ phiếu không đúng"
+                current_value = 0
             else:
                 stock_single = stock_single[0]
-                row = int(item_dict.get("index")) + 1
-                current_value = stock_single['_clp_']
-                checkbox = Checkbutton()
-                checkbox.grid(column=0, row=row)
+                current_value = stock_single.get('_clp_')
 
-                stock_code = Label(text=item_dict.get("code"))
-                stock_code.grid(column=1, row=row)
+            row = int(item_dict.get("index")) + 1
+            checkbox = Checkbutton()
+            checkbox.grid(column=0, row=row)
 
-                current_value_label = Label(text="{:,.0f}".format(current_value))
-                current_value_label.grid(column=2, row=row)
+            stock_code = Label(text=item_dict.get("code"))
+            stock_code.grid(column=1, row=row)
 
-                min_value_entry = Entry()
-                min_value_entry.insert(END, item_dict.get("min"))
-                min_value_entry.grid(column=3, row=row)
+            current_value_label = Label(text="{:,.0f}".format(current_value))
+            current_value_label.grid(column=2, row=row)
 
-                max_value_entry = Entry()
-                max_value_entry.insert(END, item_dict.get("max"))
-                max_value_entry.grid(column=4, row=row)
+            min_value_entry = Entry()
+            min_value_entry.insert(END, item_dict.get("min"))
+            min_value_entry.grid(column=3, row=row)
 
-                radio_button_value = StringVar()
-                # initialize
-                radio_button_value.set(1)
-                radio_1 = Radiobutton(variable=radio_button_value, value=1, text="<=")
-                radio_1.grid(column=5, row=row)
-                radio_2 = Radiobutton(variable=radio_button_value, value=2, text=">=")
-                radio_2.grid(column=6, row=row)
+            max_value_entry = Entry()
+            max_value_entry.insert(END, item_dict.get("max"))
+            max_value_entry.grid(column=4, row=row)
 
-                status_label = Label(text="No")
-                status_label.grid(column=7, row=row)
+            radio_button_value = StringVar()
+            # initialize
+            radio_button_value.set(1)
+            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="<=")
+            radio_1.grid(column=5, row=row)
+            radio_2 = Radiobutton(variable=radio_button_value, value=2, text=">=")
+            radio_2.grid(column=6, row=row)
 
-                value = int(radio_button_value.get())
-                if value == 1:
-                    # <=
-                    if float(current_value) <= float(min_value_entry.get()):
-                        # self.play_sound()
-                        status_label.config(text="✔", foreground="red")
-                else:
-                    # >=
-                    if float(current_value) >= float(max_value_entry.get()):
-                        # self.play_sound()
-                        status_label.config(text="✔", foreground="red")
+            status_label = Label(text="No")
+            status_label.grid(column=7, row=row)
+
+            value = int(radio_button_value.get())
+            if value == 1:
+                # <=
+                if float(current_value) <= float(min_value_entry.get()):
+                    # self.play_sound()
+                    status_label.config(text="✔", foreground="red")
+            else:
+                # >=
+                if float(current_value) >= float(max_value_entry.get()):
+                    # self.play_sound()
+                    status_label.config(text="✔", foreground="red")
 
     def play_sound(self):
         duration = 1000  # milliseconds
