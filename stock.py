@@ -33,7 +33,6 @@ class Stock:
         self.status_label = None
         self.start_change_input = None
         self.end_change_input = None
-        self.result_change_input = None
         self.percent_symbol_label = None
 
     def read_file(self):
@@ -117,12 +116,8 @@ class Stock:
         equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
         equal_button.grid(column=5, row=0)
 
-        result_change_input = Entry()
-        result_change_input.grid(column=6, row=0, columnspan=2)
-        self.result_change_input = result_change_input
-
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=8, row=0)
+        percent_symbol_label.grid(column=6, row=0)
         self.percent_symbol_label = percent_symbol_label
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -226,12 +221,12 @@ class Stock:
             end_value = float(end_value)
             final_value = ((end_value - start_value) / start_value) * 100
             if final_value >= 0:
-                self.percent_symbol_label.config(text="% ⬆")
+                final_value = "{:.2f}".format(final_value)
+                self.percent_symbol_label.config(text=f"⬆ {final_value}%", foreground="green")
             else:
-                self.percent_symbol_label.config(text="% ⬇")
-            final_value = "{:.2f}".format(final_value)
+                final_value = "{:.2f}".format(final_value)
+                self.percent_symbol_label.config(text=f"⬇ {final_value}%", foreground="red")
         else:
             final_value = "Invalid input"
-        self.result_change_input.delete(0, END)
-        self.result_change_input.insert(END, final_value)
+            self.percent_symbol_label.config(text=final_value)
 
