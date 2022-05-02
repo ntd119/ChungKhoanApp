@@ -170,8 +170,14 @@ class Stock:
         min_value = Label(text="Min", font=FONT_HEADER)
         min_value.grid(column=5, row=2)
 
-        radio_choose = Label(text="Selected", font=FONT_HEADER)
-        radio_choose.grid(column=6, row=2, columnspan=2)
+        all_max_min_value = StringVar()
+        # initialize
+        all_max_min_value.set("1")
+        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER)
+        all_max_radio.grid(column=6, row=2)
+
+        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER)
+        all_min_radio.grid(column=7, row=2)
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
         radio_choose.grid(column=8, row=2)
