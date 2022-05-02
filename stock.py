@@ -221,10 +221,10 @@ class Stock:
             end_value = float(end_value)
             final_value = ((end_value - start_value) / start_value) * 100
             if final_value >= 0:
-                final_value = "{:.2f}".format(final_value)
+                final_value = "{:.2f}".format(abs(final_value))
                 self.percent_symbol_label.config(text=f"⬆ {final_value}%", foreground="green")
             else:
-                final_value = "{:.2f}".format(final_value)
+                final_value = "{:.2f}".format(abs(final_value))
                 self.percent_symbol_label.config(text=f"⬇ {final_value}%", foreground="red")
         else:
             final_value = "Invalid input"
