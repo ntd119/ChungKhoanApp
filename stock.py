@@ -28,12 +28,13 @@ class Stock:
         self.is_running = False
         self.root = root
         self.item_list = {}
-        self.start_button = ()
-        self.stop_button = ()
-        self.status_label = ()
+        self.start_button = None
+        self.stop_button = None
+        self.status_label = None
         self.start_change_input = None
         self.end_change_input = None
         self.result_change_input = None
+        self.percent_symbol_label = None
 
     def read_file(self):
         data = pandas.read_csv(f"./file/{FILE_NAME}")
@@ -122,6 +123,7 @@ class Stock:
 
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
         percent_symbol_label.grid(column=8, row=0)
+        self.percent_symbol_label = percent_symbol_label
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=1)
@@ -219,14 +221,17 @@ class Stock:
     def calculate_percent(self):
         start_value = self.start_change_input.get()
         end_value = self.end_change_input.get()
-        text = None
         if start_value.isnumeric() and end_value.isnumeric():
             start_value = float(start_value)
             end_value = float(end_value)
-            text = ((end_value - start_value) / start_value) * 100
-            text = "{:.2f}".format(text)
+            final_value = ((end_value - start_value) / start_value) * 100
+            if final_value >= 0:
+                self.percent_symbol_label.config(text="% ⬆")
+            else:
+                self.percent_symbol_label.config(text="% ⬇")
+            final_value = "{:.2f}".format(final_value)
         else:
-            text = "Invalid input"
+            final_value = "Invalid input"
         self.result_change_input.delete(0, END)
-        self.result_change_input.insert(END, text)
+        self.result_change_input.insert(END, final_value)
 
