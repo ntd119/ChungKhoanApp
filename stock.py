@@ -268,7 +268,7 @@ class Stock:
             if not is_exist:
                 with open(FILE_NAME, 'a') as file:
                     file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
-                    self.stock_code_csv.append({"code": stock_code, "max": end_value, "min":start_value})
+                    self.stock_code_csv.append({"code": stock_code.upper(), "max": end_value, "min":start_value})
                     self.draw_body()
                 tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
