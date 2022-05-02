@@ -5,7 +5,7 @@ import winsound
 from datetime import datetime
 import tkinter.messagebox
 
-FILE_NAME = "stock-code.csv"
+FILE_NAME = "./file/stock-code.csv"
 DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
@@ -38,7 +38,7 @@ class Stock:
         self.stock_code_input_header = None
 
     def read_file(self):
-        data = pandas.read_csv(f"./file/{FILE_NAME}")
+        data = pandas.read_csv(f"{FILE_NAME}")
         for (index, row) in data.iterrows():
             self.stock_code_csv.append({"index": index, "code": row["code"], "max": row["max"], "min": row["min"]})
 
@@ -266,8 +266,7 @@ class Stock:
                     break
             if not is_exist:
                 with open(FILE_NAME, 'a') as file:
-                    file.write(f"{stock_code},{end_value},{end_value}")
-                    # file.write("code":stock_code, "max":end_value, "min":end_value)
+                    file.write(f"\n{stock_code.upper()},{end_value},{end_value}")
                 tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
