@@ -305,7 +305,7 @@ class Stock:
                 check_value.set(1)
 
     def all_max_min_function(self):
-        value = self.all_max_min_value.get()
+        value = int(self.all_max_min_value.get())
         for item_dict in self.stock_code_csv:
             stock_code = item_dict.get("code")
             radio_button = self.item_list[f'radio_button_value_{stock_code.lower()}']
