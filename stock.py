@@ -289,10 +289,8 @@ class Stock:
         value = int(self.check_all_checkbox.get())
         for item_dict in self.stock_code_csv:
             stock_code = item_dict.get("code")
-            check_value = IntVar()
+            check_value = self.item_list[f'stock_checkbox_{stock_code.lower()}']
             if value == 0:
                 check_value.set(0)
             else:
                 check_value.set(1)
-            check_box = self.item_list[f'object_checkbox_{stock_code.lower()}']
-            check_box.config(variable=check_value)
