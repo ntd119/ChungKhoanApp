@@ -38,6 +38,7 @@ class Stock:
         self.percent_symbol_label = None
         self.stock_code_input_header = None
         self.check_all_checkbox = None
+        self.all_max_min_value = None
 
     def read_file(self):
         data = pandas.read_csv(f"{FILE_NAME}")
@@ -118,22 +119,22 @@ class Stock:
         self.end_change_input = end_change_input
 
         equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
-        equal_button.grid(column=6, row=0, columnspan=2)
+        equal_button.grid(column=6, row=0, columnspan=1)
 
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=8, row=0)
+        percent_symbol_label.grid(column=7, row=0)
         self.percent_symbol_label = percent_symbol_label
 
         stock_code_label_header = Label(text="Mã CK:", font=FONT_HEADER)
-        stock_code_label_header.grid(column=9, row=0)
+        stock_code_label_header.grid(column=8, row=0)
 
         stock_code_input_header = Entry(width=7)
-        stock_code_input_header.grid(column=10, row=0)
+        stock_code_input_header.grid(column=9, row=0)
         self.stock_code_input_header = stock_code_input_header
 
         add_to_file_button_header = Button(text="Add", foreground="green", font=FONT_HEADER,
                                            command=self.add_stock_to_file)
-        add_to_file_button_header.grid(column=11, row=0)
+        add_to_file_button_header.grid(column=10, row=0)
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=1)
@@ -173,11 +174,14 @@ class Stock:
         all_max_min_value = StringVar()
         # initialize
         all_max_min_value.set("1")
-        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER)
+        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
+                                    command=self.all_max_min_function)
         all_max_radio.grid(column=6, row=2)
 
-        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER)
+        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER,
+                                    command=self.all_max_min_function)
         all_min_radio.grid(column=7, row=2)
+        self.all_max_min_value = all_max_min_value
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
         radio_choose.grid(column=8, row=2)
@@ -299,3 +303,13 @@ class Stock:
                 check_value.set(0)
             else:
                 check_value.set(1)
+
+    def all_max_min_function(self):
+        value = self.all_max_min_value.get()
+        for item_dict in self.stock_code_csv:
+            stock_code = item_dict.get("code")
+            radio_button = self.item_list[f'radio_button_value_{stock_code.lower()}']
+            if value == 1:
+                radio_button.set(1)
+            else:
+                radio_button.set(2)
