@@ -250,8 +250,8 @@ class Stock:
                 final_value = "{:.2f}".format(abs(final_value))
                 self.percent_symbol_label.config(text=f"⬇ {final_value} %", foreground="red")
         else:
-            final_value = "Invalid input"
-            self.percent_symbol_label.config(text=final_value)
+            tkinter.messagebox.showerror("Error", "Invalid input")
+            self.percent_symbol_label.config(text="%")
 
     def add_stock_to_file(self):
         start_value = self.start_change_input.get()
