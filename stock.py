@@ -40,7 +40,7 @@ class Stock:
     def read_file(self):
         data = pandas.read_csv(f"{FILE_NAME}")
         for (index, row) in data.iterrows():
-            self.stock_code_csv.append({"index": index, "code": row["code"], "max": row["max"], "min": row["min"]})
+            self.stock_code_csv.append({"code": row["code"], "max": row["max"], "min": row["min"]})
 
     def call_api(self):
         response = requests.get(url=END_POINT, headers=HEADERS)
@@ -167,8 +167,8 @@ class Stock:
         radio_choose.grid(column=8, row=2)
 
     def draw_body(self):
+        row = 3
         for item_dict in self.stock_code_csv:
-            row = int(item_dict.get("index")) + 3
             stock_code = item_dict.get("code")
 
             check_value = IntVar()
@@ -213,6 +213,7 @@ class Stock:
             status_label = Label(text=STATUS_CHECK)
             status_label.grid(column=8, row=row)
             self.item_list[f'status_label_{stock_code.lower()}'] = status_label
+            row += 1
 
     def play_sound(self):
         duration = 1000  # milliseconds
@@ -266,7 +267,9 @@ class Stock:
                     break
             if not is_exist:
                 with open(FILE_NAME, 'a') as file:
-                    file.write(f"\n{stock_code.upper()},{end_value},{end_value}")
+                    file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
+                    self.stock_code_csv.append({"code": stock_code, "max": end_value, "min":start_value})
+                    self.draw_body()
                 tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
