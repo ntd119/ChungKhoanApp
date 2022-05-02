@@ -3,6 +3,7 @@ from tkinter import *
 import requests
 import winsound
 from datetime import datetime
+import tkinter.messagebox
 
 FILE_NAME = "stock-code.csv"
 DELAY_TIME = 5000
@@ -34,6 +35,7 @@ class Stock:
         self.start_change_input = None
         self.end_change_input = None
         self.percent_symbol_label = None
+        self.stock_code_input_header = None
 
     def read_file(self):
         data = pandas.read_csv(f"./file/{FILE_NAME}")
@@ -119,6 +121,16 @@ class Stock:
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
         percent_symbol_label.grid(column=8, row=0)
         self.percent_symbol_label = percent_symbol_label
+
+        stock_code_label_header = Label(text="Mã CK:", font=FONT_HEADER)
+        stock_code_label_header.grid(column=9, row=0)
+
+        stock_code_input_header = Entry(width=7)
+        stock_code_input_header.grid(column=10, row=0)
+        self.stock_code_input_header = stock_code_input_header
+
+        add_to_file_button_header = Button(text="Add", foreground="green", font=FONT_HEADER, command=self.add_stock_to_file)
+        add_to_file_button_header.grid(column=11, row=0)
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
         start_button.grid(column=0, row=1)
@@ -232,10 +244,30 @@ class Stock:
             final_value = ((end_value - start_value) / start_value) * 100
             if final_value >= 0:
                 final_value = "{:.2f}".format(abs(final_value))
-                self.percent_symbol_label.config(text=f"⬆ {final_value}%", foreground="green")
+                self.percent_symbol_label.config(text=f"⬆ {final_value} %", foreground="green")
             else:
                 final_value = "{:.2f}".format(abs(final_value))
-                self.percent_symbol_label.config(text=f"⬇ {final_value}%", foreground="red")
+                self.percent_symbol_label.config(text=f"⬇ {final_value} %", foreground="red")
         else:
             final_value = "Invalid input"
             self.percent_symbol_label.config(text=final_value)
+
+    def add_stock_to_file(self):
+        start_value = self.start_change_input.get()
+        end_value = self.end_change_input.get()
+        stock_code = self.stock_code_input_header.get()
+        if start_value.isnumeric() and end_value.isnumeric() and len(stock_code.strip()) != 0:
+            # check stock code exist
+            is_exist = False
+            for item_dict in self.stock_code_csv:
+                if item_dict.get("code") == stock_code.upper():
+                    is_exist = True
+                    tkinter.messagebox.showerror("Error", "Stock code exist")
+                    break
+            if not is_exist:
+                with open(FILE_NAME, 'a') as file:
+                    file.write(f"{stock_code},{end_value},{end_value}")
+                    # file.write("code":stock_code, "max":end_value, "min":end_value)
+                tkinter.messagebox.showinfo("Success", "Add stock successful")
+        else:
+            tkinter.messagebox.showerror("Error", "Invalid input")
