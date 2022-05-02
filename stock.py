@@ -160,7 +160,7 @@ class Stock:
             stock_code = item_dict.get("code")
 
             check_value = IntVar()
-            check_value.set(1)
+            check_value.set(0)
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
