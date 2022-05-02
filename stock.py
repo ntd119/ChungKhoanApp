@@ -103,21 +103,21 @@ class Stock:
         percent_change_label.grid(column=0, row=0, columnspan=2)
 
         start_change_input = Entry()
-        start_change_input.grid(column=2, row=0)
+        start_change_input.grid(column=2, row=0, columnspan=2)
         self.start_change_input = start_change_input
 
         to_change_label = Label(text="-",font=FONT_HEADER)
-        to_change_label.grid(column=3, row=0)
+        to_change_label.grid(column=4, row=0)
 
         end_change_input = Entry()
-        end_change_input.grid(column=4, row=0)
+        end_change_input.grid(column=5, row=0)
         self.end_change_input = end_change_input
 
         equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
-        equal_button.grid(column=5, row=0)
+        equal_button.grid(column=6, row=0)
 
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=6, row=0)
+        percent_symbol_label.grid(column=7, row=0)
         self.percent_symbol_label = percent_symbol_label
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -130,26 +130,29 @@ class Stock:
         self.stop_button = stop_button
 
         status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
-        status_label.grid(column=2, row=1)
+        status_label.grid(column=2, row=1, columnspan=2)
         self.status_label = status_label
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=2)
 
-        max_value = Label(text="Max", font=FONT_HEADER)
+        max_value = Label(text="%", font=FONT_HEADER)
         max_value.grid(column=2, row=2)
 
+        max_value = Label(text="Max", font=FONT_HEADER)
+        max_value.grid(column=3, row=2)
+
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=3, row=2)
+        current_value_label.grid(column=4, row=2)
 
         min_value = Label(text="Min", font=FONT_HEADER)
-        min_value.grid(column=4, row=2)
+        min_value.grid(column=5, row=2)
 
         radio_choose = Label(text="Selected", font=FONT_HEADER)
-        radio_choose.grid(column=5, row=2)
+        radio_choose.grid(column=6, row=2, columnspan=2)
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
-        radio_choose.grid(column=7, row=2)
+        radio_choose.grid(column=8, row=2)
 
     def draw_body(self):
         for item_dict in self.stock_code_csv:
@@ -165,31 +168,34 @@ class Stock:
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
 
+            percent_label = Label(text=stock_code, anchor='w')
+            percent_label.grid(column=2, row=row)
+
             max_value_entry = Entry()
             max_value_entry.insert(END, item_dict.get("max"))
-            max_value_entry.grid(column=2, row=row)
+            max_value_entry.grid(column=3, row=row)
             self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
 
             current_value_label = Label(text="{:,.0f}".format(0.00))
-            current_value_label.grid(column=3, row=row)
+            current_value_label.grid(column=4, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
-            min_value_entry.grid(column=4, row=row)
+            min_value_entry.grid(column=5, row=row)
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set("1")
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
-            radio_1.grid(column=5, row=row)
+            radio_1.grid(column=6, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
-            radio_2.grid(column=6, row=row)
+            radio_2.grid(column=7, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
             status_label = Label(text=STATUS_CHECK)
-            status_label.grid(column=7, row=row)
+            status_label.grid(column=8, row=row)
             self.item_list[f'status_label_{stock_code.lower()}'] = status_label
 
     def play_sound(self):
