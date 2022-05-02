@@ -239,4 +239,3 @@ class Stock:
         else:
             final_value = "Invalid input"
             self.percent_symbol_label.config(text=final_value)
-
