@@ -19,6 +19,7 @@ STATUS_CHECK = "No"
 timer_api = None
 timer_time = None
 
+
 class Stock:
 
     def __init__(self, root):
@@ -36,6 +37,7 @@ class Stock:
         self.end_change_input = None
         self.percent_symbol_label = None
         self.stock_code_input_header = None
+        self.check_all_checkbox = None
 
     def read_file(self):
         data = pandas.read_csv(f"{FILE_NAME}")
@@ -71,7 +73,7 @@ class Stock:
                         else:
                             # min
                             min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                            if float(current_value) <+ float(min_value):
+                            if float(current_value) < + float(min_value):
                                 self.play_sound()
                                 status_label.config(text="✔", foreground="green")
                             else:
@@ -101,14 +103,14 @@ class Stock:
         self.disable_button()
 
     def draw_header(self):
-        percent_change_label = Label(text="Tính % thay đổi",font=FONT_HEADER)
+        percent_change_label = Label(text="Tính % thay đổi", font=FONT_HEADER)
         percent_change_label.grid(column=0, row=0, columnspan=2)
 
         start_change_input = Entry()
         start_change_input.grid(column=2, row=0, columnspan=2)
         self.start_change_input = start_change_input
 
-        to_change_label = Label(text="-",font=FONT_HEADER)
+        to_change_label = Label(text="-", font=FONT_HEADER)
         to_change_label.grid(column=4, row=0)
 
         end_change_input = Entry()
@@ -129,7 +131,8 @@ class Stock:
         stock_code_input_header.grid(column=10, row=0)
         self.stock_code_input_header = stock_code_input_header
 
-        add_to_file_button_header = Button(text="Add", foreground="green", font=FONT_HEADER, command=self.add_stock_to_file)
+        add_to_file_button_header = Button(text="Add", foreground="green", font=FONT_HEADER,
+                                           command=self.add_stock_to_file)
         add_to_file_button_header.grid(column=11, row=0)
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -144,6 +147,13 @@ class Stock:
         status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
         status_label.grid(column=2, row=1, columnspan=2)
         self.status_label = status_label
+
+        check_value = IntVar()
+        check_value.set(0)
+        check_all_checkbox = Checkbutton(self.root, text="All", variable=check_value, onvalue=1, offvalue=0,
+                                         font=FONT_HEADER, command=self.check_all_function)
+        check_all_checkbox.grid(column=0, row=2)
+        self.check_all_checkbox = check_value
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         stock_code.grid(column=1, row=2)
@@ -176,6 +186,7 @@ class Stock:
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
+            self.item_list[f'object_checkbox_{stock_code.lower()}'] = stock_checkbox
 
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
@@ -268,8 +279,20 @@ class Stock:
             if not is_exist:
                 with open(FILE_NAME, 'a') as file:
                     file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
-                    self.stock_code_csv.append({"code": stock_code.upper(), "max": end_value, "min":start_value})
+                    self.stock_code_csv.append({"code": stock_code.upper(), "max": end_value, "min": start_value})
                     self.draw_body()
                 tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
+
+    def check_all_function(self):
+        value = self.check_all_checkbox.get()
+        for item_dict in self.stock_code_csv:
+            stock_code = item_dict.get("code")
+            check_value = IntVar()
+            if value == 1:
+                check_value.set(1)
+            else:
+                check_value.set(0)
+            check_box = self.item_list[f'object_checkbox_{stock_code.lower()}']
+            check_box.config(variable=check_value)
