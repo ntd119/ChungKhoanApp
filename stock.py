@@ -114,10 +114,10 @@ class Stock:
         self.end_change_input = end_change_input
 
         equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
-        equal_button.grid(column=6, row=0)
+        equal_button.grid(column=6, row=0, columnspan=2)
 
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=7, row=0)
+        percent_symbol_label.grid(column=8, row=0)
         self.percent_symbol_label = percent_symbol_label
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -168,7 +168,11 @@ class Stock:
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
 
-            percent_label = Label(text=stock_code, anchor='w')
+            start_value = float(item_dict.get("min"))
+            end_value = float(item_dict.get("max"))
+            final_value = ((end_value - start_value) / start_value) * 100
+            final_value = "{:.2f}".format(final_value)
+            percent_label = Label(text=f"{final_value} %", anchor='w')
             percent_label.grid(column=2, row=row)
 
             max_value_entry = Entry()
