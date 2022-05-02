@@ -186,7 +186,6 @@ class Stock:
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
-            self.item_list[f'object_checkbox_{stock_code.lower()}'] = stock_checkbox
 
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
