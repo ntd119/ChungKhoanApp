@@ -15,6 +15,8 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 FONT_HEADER = ("Arial", 10, "bold")
 
 STATUS_CHECK = "No"
+timer_api = None
+timer_time = None
 
 class Stock:
 
@@ -76,7 +78,8 @@ class Stock:
                                                                                            foreground="red")
             self.disable_button()
             if self.is_running:
-                self.root.after(DELAY_TIME, self.call_api)
+                global timer_api
+                timer_api = self.root.after(DELAY_TIME, self.call_api)
         now = datetime.now().time()
         format_time = now.strftime("%H:%M:%S")
         print(f"RUNNING... {format_time}")
@@ -88,6 +91,8 @@ class Stock:
 
     def stop_progress(self):
         self.is_running = False
+        self.root.after_cancel(timer_api)
+        self.root.after_cancel(timer_time)
         self.disable_button()
 
     def draw_header(self):
@@ -179,8 +184,8 @@ class Stock:
             self.status_label.config(text="STOPPED", foreground="red")
 
     def show_time(self):
-        if self.is_running:
-            now = datetime.now().time()
-            format_time = now.strftime("%H:%M:%S")
-            self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
-            self.root.after(1000, self.show_time)
+        global timer_time
+        now = datetime.now().time()
+        format_time = now.strftime("%H:%M:%S")
+        self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
+        timer_time = self.root.after(1000, self.show_time)
