@@ -31,6 +31,9 @@ class Stock:
         self.start_button = ()
         self.stop_button = ()
         self.status_label = ()
+        self.start_change_input = None
+        self.end_change_input = None
+        self.result_change_input = None
 
     def read_file(self):
         data = pandas.read_csv(f"./file/{FILE_NAME}")
@@ -96,40 +99,64 @@ class Stock:
         self.disable_button()
 
     def draw_header(self):
+        percent_change_label = Label(text="Tính % thay đổi",font=FONT_HEADER)
+        percent_change_label.grid(column=0, row=0, columnspan=2)
+
+        start_change_input = Entry()
+        start_change_input.grid(column=2, row=0)
+        self.start_change_input = start_change_input
+
+        to_change_label = Label(text="-",font=FONT_HEADER)
+        to_change_label.grid(column=3, row=0)
+
+        end_change_input = Entry()
+        end_change_input.grid(column=4, row=0)
+        self.end_change_input = end_change_input
+
+        equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
+        equal_button.grid(column=5, row=0)
+
+        result_change_input = Entry()
+        result_change_input.grid(column=6, row=0, columnspan=2)
+        self.result_change_input = result_change_input
+
+        percent_symbol_label = Label(text="%", font=FONT_HEADER)
+        percent_symbol_label.grid(column=8, row=0)
+
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
-        start_button.grid(column=0, row=0)
+        start_button.grid(column=0, row=1)
         self.start_button = start_button
 
         stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
-        stop_button.grid(column=1, row=0)
+        stop_button.grid(column=1, row=1)
         stop_button.config(state=DISABLED)
         self.stop_button = stop_button
 
         status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
-        status_label.grid(column=2, row=0)
+        status_label.grid(column=2, row=1)
         self.status_label = status_label
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
-        stock_code.grid(column=1, row=1)
+        stock_code.grid(column=1, row=2)
 
         max_value = Label(text="Max", font=FONT_HEADER)
-        max_value.grid(column=2, row=1)
+        max_value.grid(column=2, row=2)
 
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=3, row=1)
+        current_value_label.grid(column=3, row=2)
 
         min_value = Label(text="Min", font=FONT_HEADER)
-        min_value.grid(column=4, row=1)
+        min_value.grid(column=4, row=2)
 
         radio_choose = Label(text="Selected", font=FONT_HEADER)
-        radio_choose.grid(column=5, row=1)
+        radio_choose.grid(column=5, row=2)
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
-        radio_choose.grid(column=7, row=1)
+        radio_choose.grid(column=7, row=2)
 
     def draw_body(self):
         for item_dict in self.stock_code_csv:
-            row = int(item_dict.get("index")) + 2
+            row = int(item_dict.get("index")) + 3
             stock_code = item_dict.get("code")
 
             check_value = IntVar()
@@ -137,7 +164,6 @@ class Stock:
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
-
 
             stock_code_label = Label(text=stock_code, anchor='w')
             stock_code_label.grid(column=1, row=row)
@@ -189,3 +215,18 @@ class Stock:
         format_time = now.strftime("%H:%M:%S")
         self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
         timer_time = self.root.after(1000, self.show_time)
+
+    def calculate_percent(self):
+        start_value = self.start_change_input.get()
+        end_value = self.end_change_input.get()
+        text = None
+        if start_value.isnumeric() and end_value.isnumeric():
+            start_value = float(start_value)
+            end_value = float(end_value)
+            text = ((end_value - start_value) / start_value) * 100
+            text = "{:.2f}".format(text)
+        else:
+            text = "Invalid input"
+        self.result_change_input.delete(0, END)
+        self.result_change_input.insert(END, text)
+
