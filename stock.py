@@ -286,13 +286,13 @@ class Stock:
             tkinter.messagebox.showerror("Error", "Invalid input")
 
     def check_all_function(self):
-        value = self.check_all_checkbox.get()
+        value = int(self.check_all_checkbox.get())
         for item_dict in self.stock_code_csv:
             stock_code = item_dict.get("code")
             check_value = IntVar()
-            if value == 1:
-                check_value.set(1)
-            else:
+            if value == 0:
                 check_value.set(0)
+            else:
+                check_value.set(1)
             check_box = self.item_list[f'object_checkbox_{stock_code.lower()}']
             check_box.config(variable=check_value)
