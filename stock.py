@@ -173,7 +173,7 @@ class Stock:
 
         all_max_min_value = StringVar()
         # initialize
-        all_max_min_value.set("1")
+        all_max_min_value.set("2")
         all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
                                     command=self.all_max_min_function)
         all_max_radio.grid(column=6, row=2)
@@ -223,7 +223,7 @@ class Stock:
 
             radio_button_value = StringVar()
             # initialize
-            radio_button_value.set("1")
+            radio_button_value.set("2")
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
             radio_1.grid(column=6, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
