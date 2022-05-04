@@ -59,9 +59,30 @@ class Stock:
                     status_label = self.item_list[f'status_label_{stock_code.lower()}']
                     if stock_checkbox:
                         stock_single = stock_single[0]
+                        # giá trần _clp_
+                        gia_tran = float(stock_single['_clp_'])
+                        self.item_list.get(f"gia_tran_label_{stock_code.lower()}").config(
+                            text="{:,.0f}".format(gia_tran))
+                        # giá sàn _fp_
+                        gia_san = float(stock_single['_fp_'])
+                        self.item_list.get(f"gia_san_label_{stock_code.lower()}").config(
+                            text="{:,.0f}".format(gia_san))
+                        # giá mở cửa _op_
+                        gia_mo_cua = float(stock_single['_op_'])
+                        self.item_list.get(f"gia_mo_cua_label_{stock_code.lower()}").config(
+                            text="{:,.0f}".format(gia_mo_cua))
+                        # giá hiện tại
                         current_value = float(stock_single['_cp_'])
-                        self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                            text="{:,.0f}".format(current_value))
+                        percent = 0
+                        if gia_mo_cua != 0:
+                            percent = ((current_value - gia_mo_cua) / gia_mo_cua) * 100
+                        final_value = "{:.2f}".format(percent)
+                        if percent < 0:
+                            self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="red")
+                        else:
+                            self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="green")
                         radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
                         if radio_button_value == 1:
                             # max
@@ -165,26 +186,35 @@ class Stock:
         max_value = Label(text="Max", font=FONT_HEADER)
         max_value.grid(column=3, row=2)
 
+        gia_tran_label = Label(text="Giá trần", font=FONT_HEADER)
+        gia_tran_label.grid(column=4, row=2)
+
+        gia_san_label = Label(text="Giá sàn", font=FONT_HEADER)
+        gia_san_label.grid(column=5, row=2)
+
+        gia_mo_cua_label = Label(text="Giá mở cửa", font=FONT_HEADER)
+        gia_mo_cua_label.grid(column=6, row=2)
+
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=4, row=2)
+        current_value_label.grid(column=7, row=2)
 
         min_value = Label(text="Min", font=FONT_HEADER)
-        min_value.grid(column=5, row=2)
+        min_value.grid(column=8, row=2)
 
         all_max_min_value = StringVar()
         # initialize
         all_max_min_value.set("2")
         all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
                                     command=self.all_max_min_function)
-        all_max_radio.grid(column=6, row=2)
+        all_max_radio.grid(column=9, row=2)
 
         all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER,
                                     command=self.all_max_min_function)
-        all_min_radio.grid(column=7, row=2)
+        all_min_radio.grid(column=10, row=2)
         self.all_max_min_value = all_max_min_value
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
-        radio_choose.grid(column=8, row=2)
+        radio_choose.grid(column=11, row=2)
 
     def draw_body(self):
         row = 3
@@ -212,26 +242,38 @@ class Stock:
             max_value_entry.grid(column=3, row=row)
             self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
 
+            gia_tran_label = Label(text="{:,.0f}".format(0.00))
+            gia_tran_label.grid(column=4, row=row)
+            self.item_list[f'gia_tran_label_{stock_code.lower()}'] = gia_tran_label
+
+            gia_san_label = Label(text="{:,.0f}".format(0.00))
+            gia_san_label.grid(column=5, row=row)
+            self.item_list[f'gia_san_label_{stock_code.lower()}'] = gia_san_label
+
+            gia_mo_cua_label = Label(text="{:,.0f}".format(0.00))
+            gia_mo_cua_label.grid(column=6, row=row)
+            self.item_list[f'gia_mo_cua_label_{stock_code.lower()}'] = gia_mo_cua_label
+
             current_value_label = Label(text="{:,.0f}".format(0.00))
-            current_value_label.grid(column=4, row=row)
+            current_value_label.grid(column=7, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
-            min_value_entry.grid(column=5, row=row)
+            min_value_entry.grid(column=8, row=row)
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set("2")
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
-            radio_1.grid(column=6, row=row)
+            radio_1.grid(column=9, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
-            radio_2.grid(column=7, row=row)
+            radio_2.grid(column=10, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
             status_label = Label(text=STATUS_CHECK)
-            status_label.grid(column=8, row=row)
+            status_label.grid(column=11, row=row)
             self.item_list[f'status_label_{stock_code.lower()}'] = status_label
             row += 1
 
