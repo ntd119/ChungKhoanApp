@@ -1,66 +1,98 @@
 {
     "DLG": {
         "max": 5380,
-        "min": 4380
+        "min": 4380,
+        "check_enable": 1,
+        "max_min_radio": 2
     },
     "FTM": {
         "max": 3600,
-        "min": 3000
+        "min": 3000,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "HAG": {
         "max": 10100,
-        "min": 9100
+        "min": 9100,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "HAI": {
         "max": 4450,
-        "min": 3620
+        "min": 3620,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "HQC": {
         "max": 5880,
-        "min": 4690
+        "min": 4690,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "HVX": {
         "max": 5900,
-        "min": 4990
+        "min": 4990,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "JVC": {
         "max": 7810,
-        "min": 6500
+        "min": 6500,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "LCM": {
         "max": 5150,
-        "min": 4220
+        "min": 4220,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "MCG": {
         "max": 5990,
-        "min": 5050
+        "min": 5050,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "OGC": {
         "max": 15750,
-        "min": 13000
+        "min": 13000,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "PXI": {
         "max": 4230,
-        "min": 3380
+        "min": 3380,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "QBS": {
         "max": 6200,
-        "min": 5250
+        "min": 5250,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "SHA": {
         "max": 7450,
-        "min": 6680
+        "min": 6680,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "TCR": {
         "max": 6300,
-        "min": 5380
+        "min": 5380,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "TNI": {
         "max": 5900,
-        "min": 4840
+        "min": 4840,
+        "check_enable": 0,
+        "max_min_radio": 2
     },
     "VCB": {
         "max": 82500,
-        "min": 78500
+        "min": 78500,
+        "check_enable": 0,
+        "max_min_radio": 2
     }
 }

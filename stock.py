@@ -225,7 +225,7 @@ class Stock:
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             check_value = IntVar()
-            check_value.set(0)
+            check_value.set(int(item_dict.get("check_enable")))
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             stock_checkbox.grid(column=0, row=row)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
@@ -268,7 +268,7 @@ class Stock:
 
             radio_button_value = StringVar()
             # initialize
-            radio_button_value.set("2")
+            radio_button_value.set(int(item_dict.get("max_min_radio")))
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
             radio_1.grid(column=9, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
@@ -325,7 +325,7 @@ class Stock:
         if start_value.isnumeric() and end_value.isnumeric() and len(stock_code.strip()) != 0:
             with open(FILE_NAME, 'w') as data_file:
                 new_data = {
-                    stock_code: {
+                    stock_code.upper(): {
                         "max": end_value,
                         "min": start_value,
                         "check_enable": 0,
@@ -334,8 +334,6 @@ class Stock:
                 }
                 self.stock_code_from_file.update(new_data)
                 json.dump(self.stock_code_from_file, data_file, indent=4)
-                # file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
-                # self.stock_code_from_file.append({"code": stock_code.upper(), "max": end_value, "min": start_value})
                 self.draw_body()
             tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
@@ -360,4 +358,6 @@ class Stock:
                 radio_button.set(2)
 
     def save_all(self):
-        pass
+        with open(FILE_NAME, 'w') as data_file:
+            json.dump(self.stock_code_from_file, data_file, indent=4)
+            tkinter.messagebox.showinfo("Success", "Save successful!")
