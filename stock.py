@@ -4,8 +4,9 @@ import requests
 import winsound
 from datetime import datetime
 import tkinter.messagebox
+import json
 
-FILE_NAME = "./file/stock-code.csv"
+FILE_NAME = "./file/stock-code.json"
 DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
@@ -23,7 +24,7 @@ timer_time = None
 class Stock:
 
     def __init__(self, root):
-        self.stock_code_csv = []
+        self.stock_code_from_file = []
         self.read_file()
         self.error = ""
         self.stock_data_api = []
@@ -41,9 +42,9 @@ class Stock:
         self.all_max_min_value = None
 
     def read_file(self):
-        data = pandas.read_csv(f"{FILE_NAME}")
-        for (index, row) in data.iterrows():
-            self.stock_code_csv.append({"code": row["code"], "max": row["max"], "min": row["min"]})
+        with open(FILE_NAME) as data_file:
+            data = json.load(data_file)
+            self.stock_code_from_file = data
 
     def call_api(self):
         response = requests.get(url=END_POINT, headers=HEADERS)
@@ -51,8 +52,8 @@ class Stock:
             self.error = "Lỗi call API"
         else:
             self.stock_data_api = response.json()
-            for item_dict in self.stock_code_csv:
-                stock_code = item_dict.get("code")
+            for stock_code in self.stock_code_from_file:
+                item_dict = self.stock_code_from_file[stock_code]
                 stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
                 if len(stock_single) == 1:
                     stock_checkbox = self.item_list.get(f"stock_checkbox_{stock_code.lower()}").get()
@@ -166,8 +167,11 @@ class Stock:
         stop_button.config(state=DISABLED)
         self.stop_button = stop_button
 
+        save_all_button = Button(text="Save", foreground="green", font=FONT_HEADER, command=self.save_all)
+        save_all_button.grid(column=2, row=1)
+
         status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
-        status_label.grid(column=2, row=1, columnspan=2)
+        status_label.grid(column=3, row=1, columnspan=2)
         self.status_label = status_label
 
         check_value = IntVar()
@@ -218,9 +222,8 @@ class Stock:
 
     def draw_body(self):
         row = 3
-        for item_dict in self.stock_code_csv:
-            stock_code = item_dict.get("code")
-
+        for stock_code in self.stock_code_from_file:
+            item_dict = self.stock_code_from_file[stock_code]
             check_value = IntVar()
             check_value.set(0)
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
@@ -320,26 +323,27 @@ class Stock:
         end_value = self.end_change_input.get()
         stock_code = self.stock_code_input_header.get()
         if start_value.isnumeric() and end_value.isnumeric() and len(stock_code.strip()) != 0:
-            # check stock code exist
-            is_exist = False
-            for item_dict in self.stock_code_csv:
-                if item_dict.get("code") == stock_code.upper():
-                    is_exist = True
-                    tkinter.messagebox.showerror("Error", "Stock code exist")
-                    break
-            if not is_exist:
-                with open(FILE_NAME, 'a') as file:
-                    file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
-                    self.stock_code_csv.append({"code": stock_code.upper(), "max": end_value, "min": start_value})
-                    self.draw_body()
-                tkinter.messagebox.showinfo("Success", "Add stock successful")
+            with open(FILE_NAME, 'w') as data_file:
+                new_data = {
+                    stock_code: {
+                        "max": end_value,
+                        "min": start_value,
+                        "check_enable": 0,
+                        "check_max": 1
+                    }
+                }
+                self.stock_code_from_file.update(new_data)
+                json.dump(self.stock_code_from_file, data_file, indent=4)
+                # file.write(f"\n{stock_code.upper()},{end_value},{start_value}")
+                # self.stock_code_from_file.append({"code": stock_code.upper(), "max": end_value, "min": start_value})
+                self.draw_body()
+            tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
 
     def check_all_function(self):
         value = int(self.check_all_checkbox.get())
-        for item_dict in self.stock_code_csv:
-            stock_code = item_dict.get("code")
+        for stock_code in self.stock_code_from_file:
             check_value = self.item_list[f'stock_checkbox_{stock_code.lower()}']
             if value == 0:
                 check_value.set(0)
@@ -348,10 +352,12 @@ class Stock:
 
     def all_max_min_function(self):
         value = int(self.all_max_min_value.get())
-        for item_dict in self.stock_code_csv:
-            stock_code = item_dict.get("code")
+        for stock_code in self.stock_code_from_file:
             radio_button = self.item_list[f'radio_button_value_{stock_code.lower()}']
             if value == 1:
                 radio_button.set(1)
             else:
                 radio_button.set(2)
+
+    def save_all(self):
+        pass
