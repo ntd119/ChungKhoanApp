@@ -329,7 +329,7 @@ class Stock:
                         "max": end_value,
                         "min": start_value,
                         "check_enable": 0,
-                        "check_max": 1
+                        "check_max": "1"
                     }
                 }
                 self.stock_code_from_file.update(new_data)
@@ -359,5 +359,15 @@ class Stock:
 
     def save_all(self):
         with open(FILE_NAME, 'w') as data_file:
+            for stock_code in self.stock_code_from_file:
+                update_data = {
+                    stock_code: {
+                        "max": self.item_list[f'max_value_entry_{stock_code.lower()}'].get(),
+                        "min": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
+                        "check_enable": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
+                        "max_min_radio": self.item_list[f'radio_button_value_{stock_code.lower()}'].get()
+                    }
+                }
+                self.stock_code_from_file.update(update_data)
             json.dump(self.stock_code_from_file, data_file, indent=4)
             tkinter.messagebox.showinfo("Success", "Save successful!")
