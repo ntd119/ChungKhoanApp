@@ -79,10 +79,10 @@ class Stock:
                         final_value = "{:.2f}".format(percent)
                         if percent < 0:
                             self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="red")
+                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#F33232")
                         else:
                             self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="green")
+                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
                         radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
                         if radio_button_value == 1:
                             # max
