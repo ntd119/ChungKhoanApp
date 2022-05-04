@@ -329,7 +329,7 @@ class Stock:
                         "max": end_value,
                         "min": start_value,
                         "check_enable": 0,
-                        "check_max": "1"
+                        "max_min_radio": "2"
                     }
                 }
                 self.stock_code_from_file.update(new_data)
