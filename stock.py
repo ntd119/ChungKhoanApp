@@ -47,72 +47,78 @@ class Stock:
             self.stock_code_from_file = data
 
     def call_api(self):
-        response = requests.get(url=END_POINT, headers=HEADERS)
-        if response.status_code != 200:
-            self.error = "Lỗi call API"
+        try:
+            response = requests.get(url=END_POINT, headers=HEADERS)
+        except ConnectionError as error:
+            self.error = error
+            print(self.error)
+            self.call_api()
         else:
-            self.stock_data_api = response.json()
-            for stock_code in self.stock_code_from_file:
-                item_dict = self.stock_code_from_file[stock_code]
-                stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
-                if len(stock_single) == 1:
-                    stock_checkbox = self.item_list.get(f"stock_checkbox_{stock_code.lower()}").get()
-                    status_label = self.item_list[f'status_label_{stock_code.lower()}']
-                    if stock_checkbox:
-                        stock_single = stock_single[0]
-                        # giá trần _clp_
-                        gia_tran = float(stock_single['_clp_'])
-                        self.item_list.get(f"gia_tran_label_{stock_code.lower()}").config(
-                            text="{:,.0f}".format(gia_tran))
-                        # giá sàn _fp_
-                        gia_san = float(stock_single['_fp_'])
-                        self.item_list.get(f"gia_san_label_{stock_code.lower()}").config(
-                            text="{:,.0f}".format(gia_san))
-                        # giá mở cửa _op_
-                        gia_mo_cua = float(stock_single['_op_'])
-                        self.item_list.get(f"gia_mo_cua_label_{stock_code.lower()}").config(
-                            text="{:,.0f}".format(gia_mo_cua))
-                        # giá hiện tại
-                        current_value = float(stock_single['_cp_'])
-                        percent = 0
-                        if gia_mo_cua != 0:
-                            percent = ((current_value - gia_mo_cua) / gia_mo_cua) * 100
-                        final_value = "{:.2f}".format(percent)
-                        if percent < 0:
-                            self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#F33232")
-                        else:
-                            self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-                                text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
-                        radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
-                        if radio_button_value == 1:
-                            # max
-                            max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
-                            if current_value >= max_value:
-                                self.play_sound()
-                                status_label.config(text="✔", foreground="green")
+             if response.status_code != 200:
+                self.error = "Lỗi call API"
+                print(self.error)
+                self.call_api()
+             else:
+                self.stock_data_api = response.json()
+                for stock_code in self.stock_code_from_file:
+                    item_dict = self.stock_code_from_file[stock_code]
+                    stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
+                    if len(stock_single) == 1:
+                        stock_checkbox = self.item_list.get(f"stock_checkbox_{stock_code.lower()}").get()
+                        status_label = self.item_list[f'status_label_{stock_code.lower()}']
+                        if stock_checkbox:
+                            stock_single = stock_single[0]
+                            # giá trần _clp_
+                            gia_tran = float(stock_single['_clp_'])
+                            self.item_list.get(f"gia_tran_label_{stock_code.lower()}").config(
+                                text="{:,.0f}".format(gia_tran))
+                            # giá sàn _fp_
+                            gia_san = float(stock_single['_fp_'])
+                            self.item_list.get(f"gia_san_label_{stock_code.lower()}").config(
+                                text="{:,.0f}".format(gia_san))
+                            # giá mở cửa _op_
+                            gia_mo_cua = float(stock_single['_op_'])
+                            self.item_list.get(f"gia_mo_cua_label_{stock_code.lower()}").config(
+                                text="{:,.0f}".format(gia_mo_cua))
+                            # giá hiện tại
+                            current_value = float(stock_single['_cp_'])
+                            percent = stock_single['_pc_']
+                            final_value = "{:.2f}".format(percent)
+                            if percent < 0:
+                                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                                    text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#F33232")
                             else:
-                                status_label.config(text=STATUS_CHECK, foreground="black")
-                        else:
-                            # min
-                            min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                            if float(current_value) < + float(min_value):
-                                self.play_sound()
-                                status_label.config(text="✔", foreground="green")
+                                self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+                                    text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
+                            radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                            if radio_button_value == 1:
+                                # max
+                                max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
+                                if current_value >= max_value:
+                                    self.play_sound()
+                                    status_label.config(text="✔", foreground="green")
+                                else:
+                                    status_label.config(text=STATUS_CHECK, foreground="black")
                             else:
-                                status_label.config(text=STATUS_CHECK, foreground="black")
+                                # min
+                                min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
+                                if float(current_value) < + float(min_value):
+                                    self.play_sound()
+                                    status_label.config(text="✔", foreground="green")
+                                else:
+                                    status_label.config(text=STATUS_CHECK, foreground="black")
+                        else:
+                            status_label.config(text=STATUS_CHECK, foreground="black")
                     else:
-                        status_label.config(text=STATUS_CHECK, foreground="black")
-                else:
-                    self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
-                                                                                           foreground="red")
-            self.disable_button()
-            if self.is_running:
-                global timer_api
-                timer_api = self.root.after(DELAY_TIME, self.call_api)
-        now = datetime.now().time()
-        format_time = now.strftime("%H:%M:%S")
-        print(f"RUNNING... {format_time}")
+                        self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
+                                                                                               foreground="red")
+                self.disable_button()
+                if self.is_running:
+                    global timer_api
+                    timer_api = self.root.after(DELAY_TIME, self.call_api)
+             now = datetime.now().time()
+             format_time = now.strftime("%H:%M:%S")
+             print(f"RUNNING... {format_time}")
 
     def start_progress(self):
         self.is_running = True
