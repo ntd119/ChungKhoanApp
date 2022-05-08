@@ -435,4 +435,22 @@ class Stock:
                 check_value.set(1)
 
     def delete_record(self):
-        pass
+        check_exist = False
+        for stock_code in self.stock_code_from_file:
+            check_value = self.item_list[f'delete_checkbox_{stock_code.lower()}']
+            value = int(check_value.get())
+            if value:
+                check_exist = True
+        if not check_exist:
+            tkinter.messagebox.showinfo("Info", "No Records Selected")
+        else:
+            if tkinter.messagebox.askokcancel(title="Confirm Delete", message="Are you sure you want to delete selected items?"):
+                delete_list = []
+                for stock_code in self.stock_code_from_file:
+                    check_value = self.item_list[f'delete_checkbox_{stock_code.lower()}']
+                    value = int(check_value.get())
+                    if value:
+                        delete_list.append(stock_code)
+                for item in delete_list:
+                    del self.stock_code_from_file[item]
+                self.draw_body()
