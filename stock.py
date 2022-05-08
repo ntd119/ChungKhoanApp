@@ -453,4 +453,6 @@ class Stock:
                         delete_list.append(stock_code)
                 for item in delete_list:
                     del self.stock_code_from_file[item]
+                with open(FILE_NAME, 'w') as data_file:
+                    json.dump(self.stock_code_from_file, data_file, indent=4)
                 self.draw_body()
