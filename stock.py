@@ -2,7 +2,7 @@ import pandas
 from tkinter import *
 import requests
 import winsound
-from datetime import datetime
+from datetime import datetime, time
 import tkinter.messagebox
 import json
 
@@ -40,6 +40,7 @@ class Stock:
         self.stock_code_input_header = None
         self.check_all_checkbox = None
         self.all_max_min_value = None
+        self.check_delete_checkbox = None
 
     def read_file(self):
         with open(FILE_NAME) as data_file:
@@ -180,109 +181,154 @@ class Stock:
         status_label.grid(column=3, row=1, columnspan=2)
         self.status_label = status_label
 
+        column_body = 0
+
+        delete_button = Button(text="Delete")
+        delete_button.grid(column=column_body, row=2)
+
+        check_delete = IntVar()
+        check_delete.set(0)
+        delete_all_checkbox = Checkbutton(self.root, text="Del", variable=check_delete, onvalue=1, offvalue=0,
+                                         font=FONT_HEADER, command=self.check_delete_record)
+        column_body += 1
+        delete_all_checkbox.grid(column=column_body, row=2)
+        self.check_delete_checkbox = check_delete
+
         check_value = IntVar()
         check_value.set(0)
-        check_all_checkbox = Checkbutton(self.root, text="All", variable=check_value, onvalue=1, offvalue=0,
+        check_all_checkbox = Checkbutton(self.root, text="Check", variable=check_value, onvalue=1, offvalue=0,
                                          font=FONT_HEADER, command=self.check_all_function)
-        check_all_checkbox.grid(column=0, row=2)
+        column_body += 1
+        check_all_checkbox.grid(column=column_body, row=2)
         self.check_all_checkbox = check_value
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
-        stock_code.grid(column=1, row=2)
+        column_body += 1
+        stock_code.grid(column=column_body, row=2)
 
         max_value = Label(text="%", font=FONT_HEADER)
-        max_value.grid(column=2, row=2)
+        column_body += 1
+        max_value.grid(column=column_body, row=2)
 
         max_value = Label(text="Max", font=FONT_HEADER)
-        max_value.grid(column=3, row=2)
+        column_body += 1
+        max_value.grid(column=column_body, row=2)
 
         gia_tran_label = Label(text="Giá trần", font=FONT_HEADER)
-        gia_tran_label.grid(column=4, row=2)
+        column_body += 1
+        gia_tran_label.grid(column=column_body, row=2)
 
         gia_san_label = Label(text="Giá sàn", font=FONT_HEADER)
-        gia_san_label.grid(column=5, row=2)
+        column_body += 1
+        gia_san_label.grid(column=column_body, row=2)
 
         gia_mo_cua_label = Label(text="Giá mở cửa", font=FONT_HEADER)
-        gia_mo_cua_label.grid(column=6, row=2)
+        column_body += 1
+        gia_mo_cua_label.grid(column=column_body, row=2)
 
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
-        current_value_label.grid(column=7, row=2)
+        column_body += 1
+        current_value_label.grid(column=column_body, row=2)
 
         min_value = Label(text="Min", font=FONT_HEADER)
-        min_value.grid(column=8, row=2)
+        column_body += 1
+        min_value.grid(column=column_body, row=2)
 
         all_max_min_value = StringVar()
         # initialize
         all_max_min_value.set("2")
         all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
                                     command=self.all_max_min_function)
-        all_max_radio.grid(column=9, row=2)
+        column_body += 1
+        all_max_radio.grid(column=column_body, row=2)
 
         all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER,
                                     command=self.all_max_min_function)
-        all_min_radio.grid(column=10, row=2)
+        column_body += 1
+        all_min_radio.grid(column=column_body, row=2)
         self.all_max_min_value = all_max_min_value
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
-        radio_choose.grid(column=11, row=2)
+        column_body += 1
+        radio_choose.grid(column=column_body, row=2)
 
     def draw_body(self):
         row = 3
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
+            column_index = 1
+            #delete
+            check_delete = IntVar()
+            check_delete.set(0)
+            delete_checkbox = Checkbutton(self.root, variable=check_delete, onvalue=1, offvalue=0)
+            delete_checkbox.grid(column=column_index, row=row)
+            self.item_list[f'delete_checkbox_{stock_code.lower()}'] = check_delete
+
             check_value = IntVar()
             check_value.set(int(item_dict.get("check_enable")))
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
-            stock_checkbox.grid(column=0, row=row)
+            column_index += 1
+            stock_checkbox.grid(column=column_index, row=row, columnspan=2)
             self.item_list[f'stock_checkbox_{stock_code.lower()}'] = check_value
 
             stock_code_label = Label(text=stock_code, anchor='w')
-            stock_code_label.grid(column=1, row=row)
+            column_index += 1
+            stock_code_label.grid(column=column_index, row=row)
 
             start_value = float(item_dict.get("min"))
             end_value = float(item_dict.get("max"))
             final_value = ((end_value - start_value) / start_value) * 100
             final_value = "{:.2f}".format(final_value)
             percent_label = Label(text=f"{final_value} %", anchor='w')
-            percent_label.grid(column=2, row=row)
+            column_index += 1
+            percent_label.grid(column=column_index, row=row)
 
             max_value_entry = Entry()
             max_value_entry.insert(END, item_dict.get("max"))
-            max_value_entry.grid(column=3, row=row)
+            column_index += 1
+            max_value_entry.grid(column=column_index, row=row)
             self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
 
             gia_tran_label = Label(text="{:,.0f}".format(0.00))
-            gia_tran_label.grid(column=4, row=row)
+            column_index += 1
+            gia_tran_label.grid(column=column_index, row=row)
             self.item_list[f'gia_tran_label_{stock_code.lower()}'] = gia_tran_label
 
             gia_san_label = Label(text="{:,.0f}".format(0.00))
-            gia_san_label.grid(column=5, row=row)
+            column_index += 1
+            gia_san_label.grid(column=column_index, row=row)
             self.item_list[f'gia_san_label_{stock_code.lower()}'] = gia_san_label
 
             gia_mo_cua_label = Label(text="{:,.0f}".format(0.00))
-            gia_mo_cua_label.grid(column=6, row=row)
+            column_index += 1
+            gia_mo_cua_label.grid(column=column_index, row=row)
             self.item_list[f'gia_mo_cua_label_{stock_code.lower()}'] = gia_mo_cua_label
 
             current_value_label = Label(text="{:,.0f}".format(0.00))
-            current_value_label.grid(column=7, row=row)
+            column_index += 1
+            current_value_label.grid(column=column_index, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
             min_value_entry = Entry()
             min_value_entry.insert(END, item_dict.get("min"))
-            min_value_entry.grid(column=8, row=row)
+            column_index += 1
+            min_value_entry.grid(column=column_index, row=row)
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set(int(item_dict.get("max_min_radio")))
             radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
-            radio_1.grid(column=9, row=row)
+            column_index += 1
+            radio_1.grid(column=column_index, row=row)
             radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
-            radio_2.grid(column=10, row=row)
+            column_index += 1
+            radio_2.grid(column=column_index, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
             status_label = Label(text=STATUS_CHECK)
-            status_label.grid(column=11, row=row)
+            column_index += 1
+            status_label.grid(column=column_index, row=row)
             self.item_list[f'status_label_{stock_code.lower()}'] = status_label
             row += 1
 
@@ -377,3 +423,12 @@ class Stock:
                 self.stock_code_from_file.update(update_data)
             json.dump(self.stock_code_from_file, data_file, indent=4)
             tkinter.messagebox.showinfo("Success", "Save successful!")
+
+    def check_delete_record(self):
+        value = int(self.check_delete_checkbox.get())
+        for stock_code in self.stock_code_from_file:
+            check_value = self.item_list[f'delete_checkbox_{stock_code.lower()}']
+            if value == 0:
+                check_value.set(0)
+            else:
+                check_value.set(1)
