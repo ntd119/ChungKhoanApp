@@ -55,11 +55,11 @@ class Stock:
             print(self.error)
             self.call_api()
         else:
-             if response.status_code != 200:
+            if response.status_code != 200:
                 self.error = "Lỗi call API"
                 print(self.error)
                 self.call_api()
-             else:
+            else:
                 self.stock_data_api = response.json()
                 for stock_code in self.stock_code_from_file:
                     item_dict = self.stock_code_from_file[stock_code]
@@ -91,7 +91,8 @@ class Stock:
                             else:
                                 self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
                                     text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
-                            radio_button_value = int(self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                            radio_button_value = int(
+                                self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
                             if radio_button_value == 1:
                                 # max
                                 max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
@@ -117,9 +118,9 @@ class Stock:
                 if self.is_running:
                     global timer_api
                     timer_api = self.root.after(DELAY_TIME, self.call_api)
-             now = datetime.now().time()
-             format_time = now.strftime("%H:%M:%S")
-             print(f"RUNNING... {format_time}")
+            now = datetime.now().time()
+            format_time = now.strftime("%H:%M:%S")
+            print(f"RUNNING... {format_time}")
 
     def start_progress(self):
         self.is_running = True
@@ -183,20 +184,20 @@ class Stock:
 
         column_body = 0
 
-        delete_button = Button(text="Delete")
+        delete_button = Button(text="Delete", command=self.delete_record, foreground="red", font=FONT_HEADER)
         delete_button.grid(column=column_body, row=2)
 
         check_delete = IntVar()
         check_delete.set(0)
         delete_all_checkbox = Checkbutton(self.root, text="Del", variable=check_delete, onvalue=1, offvalue=0,
-                                         font=FONT_HEADER, command=self.check_delete_record)
+                                          font=FONT_HEADER, command=self.check_delete_record)
         column_body += 1
         delete_all_checkbox.grid(column=column_body, row=2)
         self.check_delete_checkbox = check_delete
 
         check_value = IntVar()
         check_value.set(0)
-        check_all_checkbox = Checkbutton(self.root, text="Check", variable=check_value, onvalue=1, offvalue=0,
+        check_all_checkbox = Checkbutton(self.root, text="Enable", variable=check_value, onvalue=1, offvalue=0,
                                          font=FONT_HEADER, command=self.check_all_function)
         column_body += 1
         check_all_checkbox.grid(column=column_body, row=2)
@@ -257,7 +258,7 @@ class Stock:
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             column_index = 1
-            #delete
+            # delete
             check_delete = IntVar()
             check_delete.set(0)
             delete_checkbox = Checkbutton(self.root, variable=check_delete, onvalue=1, offvalue=0)
@@ -432,3 +433,6 @@ class Stock:
                 check_value.set(0)
             else:
                 check_value.set(1)
+
+    def delete_record(self):
+        pass
