@@ -104,7 +104,7 @@ class Stock:
                             else:
                                 # min
                                 min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                                if float(current_value) < + float(min_value):
+                                if float(current_value) <= float(min_value):
                                     self.play_sound()
                                     status_label.config(text="✔", foreground="green")
                                 else:
@@ -452,7 +452,8 @@ class Stock:
                     if value:
                         delete_list.append(stock_code)
                 for item in delete_list:
-                    del self.stock_code_from_file[item]
+                    self.stock_code_from_file.pop(item)
                 with open(FILE_NAME, 'w') as data_file:
                     json.dump(self.stock_code_from_file, data_file, indent=4)
+                self.read_file()
                 self.draw_body()

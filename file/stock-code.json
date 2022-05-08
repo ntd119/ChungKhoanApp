@@ -1,98 +1,98 @@
 {
-    "DLG": {
-        "max": "5380",
-        "min": "4380",
+    "MBB": {
+        "max": "29600",
+        "min": "28000",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "FTM": {
-        "max": "3600",
-        "min": "3000",
+    "FPT": {
+        "max": "104700",
+        "min": "100200",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "HAG": {
-        "max": "10100",
-        "min": "9100",
+    "MWG": {
+        "max": "150800",
+        "min": "145500",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "HAI": {
-        "max": "4450",
-        "min": "3620",
+    "KDH": {
+        "max": "47300",
+        "min": "44600",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "HQC": {
-        "max": "5880",
-        "min": "4690",
+    "VPB": {
+        "max": "36350",
+        "min": "34150",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "HVX": {
-        "max": "5900",
-        "min": "4990",
+    "PNJ": {
+        "max": "110000",
+        "min": "106600",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "JVC": {
-        "max": "7810",
-        "min": "6500",
+    "TCB": {
+        "max": "43100",
+        "min": "41450",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "LCM": {
-        "max": "5150",
-        "min": "4220",
+    "REE": {
+        "max": "87000",
+        "min": "81000",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "MCG": {
-        "max": "5990",
-        "min": "5050",
+    "HPG": {
+        "max": "42950",
+        "min": "41550",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
-    "OGC": {
-        "max": "15750",
-        "min": "13000",
+    "VIC": {
+        "max": "80000",
+        "min": "78300",
         "check_enable": 1,
-        "max_min_radio": "2"
-    },
-    "PXI": {
-        "max": "4230",
-        "min": "3380",
-        "check_enable": 1,
-        "max_min_radio": "2"
-    },
-    "QBS": {
-        "max": "6200",
-        "min": "5250",
-        "check_enable": 1,
-        "max_min_radio": "2"
-    },
-    "SHA": {
-        "max": "7450",
-        "min": "6680",
-        "check_enable": 1,
-        "max_min_radio": "2"
-    },
-    "TCR": {
-        "max": "6300",
-        "min": "5380",
-        "check_enable": 1,
-        "max_min_radio": "2"
-    },
-    "TNI": {
-        "max": "5900",
-        "min": "4840",
-        "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
     },
     "VCB": {
-        "max": "82500",
+        "max": "82000",
         "min": "78500",
         "check_enable": 1,
-        "max_min_radio": "2"
+        "max_min_radio": "1"
+    },
+    "TPB": {
+        "max": "34200",
+        "min": "32000",
+        "check_enable": 1,
+        "max_min_radio": "1"
+    },
+    "VHM": {
+        "max": "68800",
+        "min": "63900",
+        "check_enable": 1,
+        "max_min_radio": "1"
+    },
+    "STB": {
+        "max": "27600",
+        "min": "25500",
+        "check_enable": 1,
+        "max_min_radio": "1"
+    },
+    "VNM": {
+        "max": "73800",
+        "min": "70200",
+        "check_enable": 1,
+        "max_min_radio": "1"
+    },
+    "DGC": {
+        "max": "243600",
+        "min": "228600",
+        "check_enable": 1,
+        "max_min_radio": "1"
     }
 }
