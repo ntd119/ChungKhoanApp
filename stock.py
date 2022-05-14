@@ -123,9 +123,7 @@ class Stock:
                             else:
                                 status_label.config(text=STATUS_CHECK, foreground="black")
                     else:
-                        status_label.config(text=STATUS_CHECK, foreground="black")
-                else:
-                    self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
+                        self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
                 self.disable_button()
                 if self.is_running:

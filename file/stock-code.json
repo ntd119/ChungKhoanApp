@@ -94,11 +94,5 @@
         "min": "105000",
         "check_enable": 1,
         "max_min_radio": "1"
-    },
-    "AAA": {
-        "max": "100000",
-        "min": "10000",
-        "check_enable": 0,
-        "max_min_radio": "1"
     }
 }
