@@ -90,8 +90,8 @@
         "max_min_radio": "1"
     },
     "GAS": {
-        "max": "109096",
-        "min": "105000",
+        "max": "105224",
+        "min": "101176",
         "check_enable": 1,
         "max_min_radio": "1"
     }
