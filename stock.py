@@ -19,6 +19,8 @@ FONT_HEADER = ("Arial", 10, "bold")
 STATUS_CHECK = "No"
 timer_api = None
 timer_time = None
+COLOR_ERROR = "#F7DC6F"
+COLOR_OK = "white"
 
 
 class Stock:
@@ -41,6 +43,11 @@ class Stock:
         self.check_all_checkbox = None
         self.all_max_min_value = None
         self.check_delete_checkbox = None
+        self.khoang_cach_an_toan_min_input = None
+        self.khoang_cach_an_toan_max_input = None
+        self.khoang_cach_an_toan_cal_button = None
+        self.khoang_cach_an_toan_result_min_input = None
+        self.khoang_cach_an_toan_result_max_input = None
 
     def read_file(self):
         with open(FILE_NAME) as data_file:
@@ -172,33 +179,61 @@ class Stock:
                                            command=self.add_stock_to_file)
         add_to_file_button_header.grid(column=10, row=0)
 
+        # Khoang cach an toàn
+        khoang_cach_an_toan_row = 1
+        khoang_cach_an_toan_label = Label(text="Khoảng cách an toàn:", font=FONT_HEADER)
+        khoang_cach_an_toan_label.grid(column=0, row=khoang_cach_an_toan_row, columnspan=2)
+
+        khoang_cach_an_toan_min_input = Entry()
+        khoang_cach_an_toan_min_input.grid(column=2, row=khoang_cach_an_toan_row, columnspan=2)
+        self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
+
+        khoang_cach_an_toan_to_label = Label(text="-", font=FONT_HEADER)
+        khoang_cach_an_toan_to_label.grid(column=4, row=khoang_cach_an_toan_row)
+
+        khoang_cach_an_toan_max_input = Entry()
+        khoang_cach_an_toan_max_input.grid(column=5, row=khoang_cach_an_toan_row)
+        self.khoang_cach_an_toan_max_input = khoang_cach_an_toan_max_input
+
+        khoang_cach_an_toan_cal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.distance_value)
+        khoang_cach_an_toan_cal_button.grid(column=6, row=khoang_cach_an_toan_row, columnspan=1)
+        self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
+
+        khoang_cach_an_toan_result_min_input = Entry()
+        khoang_cach_an_toan_result_min_input.grid(column=7, row=khoang_cach_an_toan_row, columnspan=2)
+        self.khoang_cach_an_toan_result_min_input = khoang_cach_an_toan_result_min_input
+
+        khoang_cach_an_toan_result_max_input = Entry()
+        khoang_cach_an_toan_result_max_input.grid(column=9, row=khoang_cach_an_toan_row, columnspan=2)
+        self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
+
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
-        start_button.grid(column=0, row=1)
+        start_button.grid(column=0, row=2)
         self.start_button = start_button
 
         stop_button = Button(text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
-        stop_button.grid(column=1, row=1)
+        stop_button.grid(column=1, row=2)
         stop_button.config(state=DISABLED)
         self.stop_button = stop_button
 
         save_all_button = Button(text="Save", foreground="green", font=FONT_HEADER, command=self.save_all)
-        save_all_button.grid(column=2, row=1)
+        save_all_button.grid(column=2, row=2)
 
         status_label = Label(text="STOPPED", foreground="red", font=FONT_HEADER)
-        status_label.grid(column=3, row=1, columnspan=2)
+        status_label.grid(column=3, row=2, columnspan=2)
         self.status_label = status_label
 
         column_body = 0
 
         delete_button = Button(text="Delete", command=self.delete_record, foreground="red", font=FONT_HEADER)
-        delete_button.grid(column=column_body, row=2)
+        delete_button.grid(column=column_body, row=3)
 
         check_delete = IntVar()
         check_delete.set(0)
         delete_all_checkbox = Checkbutton(self.root, text="Del", variable=check_delete, onvalue=1, offvalue=0,
                                           font=FONT_HEADER, command=self.check_delete_record)
         column_body += 1
-        delete_all_checkbox.grid(column=column_body, row=2)
+        delete_all_checkbox.grid(column=column_body, row=3)
         self.check_delete_checkbox = check_delete
 
         check_value = IntVar()
@@ -206,40 +241,40 @@ class Stock:
         check_all_checkbox = Checkbutton(self.root, text="Enable", variable=check_value, onvalue=1, offvalue=0,
                                          font=FONT_HEADER, command=self.check_all_function)
         column_body += 1
-        check_all_checkbox.grid(column=column_body, row=2)
+        check_all_checkbox.grid(column=column_body, row=3)
         self.check_all_checkbox = check_value
 
         stock_code = Label(text="Mã ck", font=FONT_HEADER)
         column_body += 1
-        stock_code.grid(column=column_body, row=2)
+        stock_code.grid(column=column_body, row=3)
 
         max_value = Label(text="%", font=FONT_HEADER)
         column_body += 1
-        max_value.grid(column=column_body, row=2)
+        max_value.grid(column=column_body, row=3)
 
         max_value = Label(text="Max", font=FONT_HEADER)
         column_body += 1
-        max_value.grid(column=column_body, row=2)
+        max_value.grid(column=column_body, row=3)
 
         gia_tran_label = Label(text="Giá trần", font=FONT_HEADER)
         column_body += 1
-        gia_tran_label.grid(column=column_body, row=2)
+        gia_tran_label.grid(column=column_body, row=3)
 
         gia_san_label = Label(text="Giá sàn", font=FONT_HEADER)
         column_body += 1
-        gia_san_label.grid(column=column_body, row=2)
+        gia_san_label.grid(column=column_body, row=3)
 
         gia_mo_cua_label = Label(text="Giá mở cửa", font=FONT_HEADER)
         column_body += 1
-        gia_mo_cua_label.grid(column=column_body, row=2)
+        gia_mo_cua_label.grid(column=column_body, row=3)
 
         current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
         column_body += 1
-        current_value_label.grid(column=column_body, row=2)
+        current_value_label.grid(column=column_body, row=3)
 
         min_value = Label(text="Min", font=FONT_HEADER)
         column_body += 1
-        min_value.grid(column=column_body, row=2)
+        min_value.grid(column=column_body, row=3)
 
         all_max_min_value = StringVar()
         # initialize
@@ -247,20 +282,20 @@ class Stock:
         all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
                                     command=self.all_max_min_function)
         column_body += 1
-        all_max_radio.grid(column=column_body, row=2)
+        all_max_radio.grid(column=column_body, row=3)
 
         all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER,
                                     command=self.all_max_min_function)
         column_body += 1
-        all_min_radio.grid(column=column_body, row=2)
+        all_min_radio.grid(column=column_body, row=3)
         self.all_max_min_value = all_max_min_value
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
         column_body += 1
-        radio_choose.grid(column=column_body, row=2)
+        radio_choose.grid(column=column_body, row=3)
 
     def draw_body(self):
-        row = 3
+        row = 4
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             column_index = 1
@@ -463,3 +498,35 @@ class Stock:
                     json.dump(self.stock_code_from_file, data_file, indent=4)
                 self.read_file()
                 self.draw_body()
+
+    def distance_value(self):
+        start_value = self.khoang_cach_an_toan_min_input.get()
+        end_value = self.khoang_cach_an_toan_max_input.get()
+        if not start_value.isnumeric():
+            tkinter.messagebox.showerror("Error", "Invalid min input")
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_ERROR)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_min_input.focus()
+        elif not end_value.isnumeric():
+            tkinter.messagebox.showerror("Error", "Invalid max input")
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_ERROR)
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.focus()
+        else:
+            min = float(start_value)
+            max = float(end_value)
+            percent = ((max - min) / min) * 100
+            while percent > 4:
+                max -= 1
+                min += 1
+                percent = ((max - min) / min) * 100
+            while percent < 4:
+                max += 1
+                min -= 1
+                percent = ((max - min) / min) * 100
+            self.khoang_cach_an_toan_result_min_input.delete(0, END)
+            self.khoang_cach_an_toan_result_min_input.insert(END, int(min))
+            self.khoang_cach_an_toan_result_max_input.delete(0, END)
+            self.khoang_cach_an_toan_result_max_input.insert(END, int(max))
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
