@@ -186,7 +186,7 @@ class Stock:
         khoang_cach_an_toan_min_input.grid(column=2, row=khoang_cach_an_toan_row, columnspan=2)
         self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
 
-        khoang_cach_an_toan_to_label = Label(text="-", font=FONT_HEADER)
+        khoang_cach_an_toan_to_label = Label(text="4%", font=FONT_HEADER)
         khoang_cach_an_toan_to_label.grid(column=4, row=khoang_cach_an_toan_row)
 
         khoang_cach_an_toan_max_input = Entry()
@@ -250,7 +250,7 @@ class Stock:
         column_body += 1
         max_value.grid(column=column_body, row=3)
 
-        max_value = Label(text="Max", font=FONT_HEADER)
+        max_value = Label(text="Bán", font=FONT_HEADER)
         column_body += 1
         max_value.grid(column=column_body, row=3)
 
@@ -270,19 +270,19 @@ class Stock:
         column_body += 1
         current_value_label.grid(column=column_body, row=3)
 
-        min_value = Label(text="Min", font=FONT_HEADER)
+        min_value = Label(text="Mua", font=FONT_HEADER)
         column_body += 1
         min_value.grid(column=column_body, row=3)
 
         all_max_min_value = StringVar()
         # initialize
         all_max_min_value.set("2")
-        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All Max", font=FONT_HEADER,
+        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All bán", font=FONT_HEADER,
                                     command=self.all_max_min_function)
         column_body += 1
         all_max_radio.grid(column=column_body, row=3)
 
-        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All Min", font=FONT_HEADER,
+        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All mua", font=FONT_HEADER,
                                     command=self.all_max_min_function)
         column_body += 1
         all_min_radio.grid(column=column_body, row=3)
@@ -358,10 +358,10 @@ class Stock:
             radio_button_value = StringVar()
             # initialize
             radio_button_value.set(int(item_dict.get("max_min_radio")))
-            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Max")
+            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Bán")
             column_index += 1
             radio_1.grid(column=column_index, row=row)
-            radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Min")
+            radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Mua")
             column_index += 1
             radio_2.grid(column=column_index, row=row)
             self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
