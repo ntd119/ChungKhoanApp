@@ -504,20 +504,20 @@ class Stock:
         start_value = self.khoang_cach_an_toan_min_input.get()
         end_value = self.khoang_cach_an_toan_max_input.get()
         percent_input = self.khoang_cach_an_toan_to_input.get()
-        if not start_value.isnumeric():
+        if not self.isfloat(start_value):
             tkinter.messagebox.showerror("Error", "Invalid min input")
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_min_input.focus()
-        elif not end_value.isnumeric():
+        elif not self.isfloat(end_value):
             tkinter.messagebox.showerror("Error", "Invalid max input")
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.focus()
-        elif not percent_input.isnumeric():
-            tkinter.messagebox.showerror("Error", "Invalid max input")
+        elif not self.isfloat(percent_input):
+            tkinter.messagebox.showerror("Error", "Invalid percent input")
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
@@ -542,3 +542,10 @@ class Stock:
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
+
+    def isfloat(self, num):
+        try:
+            float(num)
+            return True
+        except ValueError:
+            return False
