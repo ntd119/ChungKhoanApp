@@ -492,7 +492,8 @@ class Stock:
                         "max": self.item_list[f'max_value_entry_{stock_code.lower()}'].get(),
                         "min": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
                         "check_enable": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
-                        "max_min_radio": self.item_list[f'radio_button_value_{stock_code.lower()}'].get()
+                        "max_min_radio": self.item_list[f'radio_button_value_{stock_code.lower()}'].get(),
+                        "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get()
                     }
                 }
                 self.stock_code_from_file.update(update_data)
