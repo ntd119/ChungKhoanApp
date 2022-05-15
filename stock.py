@@ -130,9 +130,11 @@ class Stock:
                         else:
                             # Nên mua
                             should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
-                            min_value_last_week = float(self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
+                            min_value_last_week = float(
+                                self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
                             if min_value_last_week > 0:
-                                percent_min_last_week = ((current_value - min_value_last_week)/min_value_last_week) * 100
+                                percent_min_last_week = ((
+                                                                     current_value - min_value_last_week) / min_value_last_week) * 100
                                 if current_value <= should_buy and percent_min_last_week > 1.5:
                                     status_label.config(text="Nên mua", foreground="green")
                                     if stock_checkbox:
