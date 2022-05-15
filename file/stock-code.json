@@ -80,12 +80,12 @@
         "min_last_week": "0"
     },
     "VCB": {
-        "should_buy": "74019",
+        "should_buy": "75000",
         "enable_sound": 0,
         "bought": "0",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "73000"
     },
     "TPB": {
         "should_buy": "32000",
