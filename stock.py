@@ -121,6 +121,17 @@ class Stock:
                                     self.play_sound()
                             else:
                                 status_label.config(text=STATUS_CHECK, foreground="black")
+                        # Lãi/lỗ
+                        gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
+                        if gia_da_mua > 0:
+                            tinh_lai = ((current_value - gia_da_mua)/gia_da_mua) * 100
+                            final_tinh_lai = "{:.2f}".format(tinh_lai)
+                            if tinh_lai < 0:
+                                self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
+                                    text=final_tinh_lai + "%", bg="#F33232")
+                            else:
+                                self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
+                                    text=final_tinh_lai + "%", bg="#00E11A")
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -365,7 +376,11 @@ class Stock:
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             gia_da_mua_entry = Entry(width=ENTRY_WIDTH)
-            gia_da_mua_entry.insert(END, 0)
+            try:
+                gia_da_mua = int(item_dict.get("bought"))
+            except TypeError:
+                gia_da_mua = 0
+            gia_da_mua_entry.insert(END, gia_da_mua)
             column_index += 1
             gia_da_mua_entry.grid(column=column_index, row=row)
             self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
@@ -373,6 +388,7 @@ class Stock:
             lai_lo_label = Label(text="0")
             column_index += 1
             lai_lo_label.grid(column=column_index, row=row)
+            self.item_list[f'lai_lo_label_{stock_code.lower()}'] = lai_lo_label
 
             radio_button_value = StringVar()
             # initialize

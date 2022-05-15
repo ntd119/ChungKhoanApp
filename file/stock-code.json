@@ -3,7 +3,8 @@
         "max": "29600",
         "min": "28000",
         "check_enable": 0,
-        "max_min_radio": "1"
+        "max_min_radio": "1",
+        "bought": "28000"
     },
     "FPT": {
         "max": "99840",
