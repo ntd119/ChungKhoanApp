@@ -22,6 +22,8 @@ timer_time = None
 COLOR_ERROR = "#F7DC6F"
 COLOR_OK = "white"
 
+ENTRY_WIDTH = 10
+
 
 class Stock:
 
@@ -253,25 +255,33 @@ class Stock:
         column_body += 1
         max_value.grid(column=column_body, row=3)
 
-        gia_tran_label = Label(text="Giá trần", font=FONT_HEADER)
+        gia_tran_label = Label(text="Trần", font=FONT_HEADER)
         column_body += 1
         gia_tran_label.grid(column=column_body, row=3)
 
-        gia_san_label = Label(text="Giá sàn", font=FONT_HEADER)
+        gia_san_label = Label(text="Sàn", font=FONT_HEADER)
         column_body += 1
         gia_san_label.grid(column=column_body, row=3)
 
-        gia_mo_cua_label = Label(text="Giá mở cửa", font=FONT_HEADER)
+        gia_mo_cua_label = Label(text="Mở cửa", font=FONT_HEADER)
         column_body += 1
         gia_mo_cua_label.grid(column=column_body, row=3)
 
-        current_value_label = Label(text="Giá trị hiện tại", font=FONT_HEADER)
+        current_value_label = Label(text="Hiện tại", font=FONT_HEADER)
         column_body += 1
         current_value_label.grid(column=column_body, row=3)
 
         min_value = Label(text="Mua", font=FONT_HEADER)
         column_body += 1
         min_value.grid(column=column_body, row=3)
+
+        gia_da_mua_label = Label(text="Đã mua", font=FONT_HEADER)
+        column_body += 1
+        gia_da_mua_label.grid(column=column_body, row=3)
+
+        lai_lo_label = Label(text="Lãi/lỗ", font=FONT_HEADER)
+        column_body += 1
+        lai_lo_label.grid(column=column_body, row=3)
 
         all_max_min_value = StringVar()
         # initialize
@@ -322,7 +332,7 @@ class Stock:
             column_index += 1
             percent_label.grid(column=column_index, row=row)
 
-            max_value_entry = Entry()
+            max_value_entry = Entry(width=ENTRY_WIDTH)
             max_value_entry.insert(END, item_dict.get("max"))
             column_index += 1
             max_value_entry.grid(column=column_index, row=row)
@@ -348,11 +358,21 @@ class Stock:
             current_value_label.grid(column=column_index, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
-            min_value_entry = Entry()
+            min_value_entry = Entry(width=ENTRY_WIDTH)
             min_value_entry.insert(END, item_dict.get("min"))
             column_index += 1
             min_value_entry.grid(column=column_index, row=row)
             self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
+
+            gia_da_mua_entry = Entry(width=ENTRY_WIDTH)
+            gia_da_mua_entry.insert(END, 0)
+            column_index += 1
+            gia_da_mua_entry.grid(column=column_index, row=row)
+            self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
+
+            lai_lo_label = Label(text="0")
+            column_index += 1
+            lai_lo_label.grid(column=column_index, row=row)
 
             radio_button_value = StringVar()
             # initialize
