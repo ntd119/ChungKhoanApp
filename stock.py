@@ -105,22 +105,18 @@ class Stock:
                             # max
                             max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
                             if current_value >= max_value:
+                                status_label.config(text="Bán", foreground="green")
                                 if stock_checkbox:
                                     self.play_sound()
-                                    status_label.config(text="✔", foreground="green")
-                                else:
-                                    status_label.config(text=STATUS_CHECK, foreground="black")
                             else:
                                 status_label.config(text=STATUS_CHECK, foreground="black")
                         else:
                             # min
                             min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
                             if float(current_value) <= float(min_value):
+                                status_label.config(text="Mua", foreground="green")
                                 if stock_checkbox:
                                     self.play_sound()
-                                    status_label.config(text="✔", foreground="green")
-                                else:
-                                    status_label.config(text=STATUS_CHECK, foreground="black")
                             else:
                                 status_label.config(text=STATUS_CHECK, foreground="black")
                     else:
@@ -239,7 +235,7 @@ class Stock:
 
         check_value = IntVar()
         check_value.set(0)
-        check_all_checkbox = Checkbutton(self.root, text="Enable", variable=check_value, onvalue=1, offvalue=0,
+        check_all_checkbox = Checkbutton(self.root, text="Sound", variable=check_value, onvalue=1, offvalue=0,
                                          font=FONT_HEADER, command=self.check_all_function)
         column_body += 1
         check_all_checkbox.grid(column=column_body, row=3)
