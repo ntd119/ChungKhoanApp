@@ -267,6 +267,10 @@ class Stock:
         column_body += 1
         stock_code.grid(column=column_body, row=3)
 
+        min_value_last_week_label = Label(text="Giá min t/trước", font=FONT_HEADER)
+        column_body += 1
+        min_value_last_week_label.grid(column=column_body, row=3)
+
         max_value = Label(text="% Cắt lỗ", font=FONT_HEADER)
         column_body += 1
         max_value.grid(column=column_body, row=3)
@@ -329,6 +333,16 @@ class Stock:
             stock_code_label = Label(text=stock_code, anchor='w')
             column_index += 1
             stock_code_label.grid(column=column_index, row=row)
+
+            try:
+                min_value_last_week_value = int(item_dict.get("min_last_week"))
+            except TypeError:
+                min_value_last_week_value = 0
+            min_value_last_week_entry = Entry(width=ENTRY_WIDTH)
+            min_value_last_week_entry.insert(END, min_value_last_week_value)
+            column_index += 1
+            min_value_last_week_entry.grid(column=column_index, row=row)
+            self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'] = min_value_last_week_entry
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
@@ -476,6 +490,7 @@ class Stock:
                         "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
                         "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
+                        "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get()
                     }
                 }
                 self.stock_code_from_file.update(update_data)
