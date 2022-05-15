@@ -4,13 +4,14 @@
         "min": "28000",
         "check_enable": 0,
         "max_min_radio": "1",
-        "bought": "28000"
+        "bought": "0"
     },
     "FPT": {
         "max": "99840",
         "min": "96200",
         "check_enable": 1,
-        "max_min_radio": "1"
+        "max_min_radio": "1",
+        "bought": "96000"
     },
     "MWG": {
         "max": "150800",
@@ -94,6 +95,7 @@
         "max": "105224",
         "min": "101176",
         "check_enable": 1,
-        "max_min_radio": "1"
+        "max_min_radio": "1",
+        "bought": "104900"
     }
 }
