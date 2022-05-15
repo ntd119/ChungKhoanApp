@@ -48,6 +48,7 @@ class Stock:
         self.khoang_cach_an_toan_cal_button = None
         self.khoang_cach_an_toan_result_min_input = None
         self.khoang_cach_an_toan_result_max_input = None
+        self.khoang_cach_an_toan_to_input = None
 
     def read_file(self):
         with open(FILE_NAME) as data_file:
@@ -186,8 +187,10 @@ class Stock:
         khoang_cach_an_toan_min_input.grid(column=2, row=khoang_cach_an_toan_row, columnspan=2)
         self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
 
-        khoang_cach_an_toan_to_label = Label(text="4%", font=FONT_HEADER)
-        khoang_cach_an_toan_to_label.grid(column=4, row=khoang_cach_an_toan_row)
+        khoang_cach_an_toan_to_input = Entry(width=4)
+        khoang_cach_an_toan_to_input.insert(END, 4)
+        khoang_cach_an_toan_to_input.grid(column=4, row=khoang_cach_an_toan_row)
+        self.khoang_cach_an_toan_to_input = khoang_cach_an_toan_to_input
 
         khoang_cach_an_toan_max_input = Entry()
         khoang_cach_an_toan_max_input.grid(column=5, row=khoang_cach_an_toan_row)
@@ -500,31 +503,41 @@ class Stock:
     def distance_value(self):
         start_value = self.khoang_cach_an_toan_min_input.get()
         end_value = self.khoang_cach_an_toan_max_input.get()
+        percent = self.khoang_cach_an_toan_to_input.get()
         if not start_value.isnumeric():
             tkinter.messagebox.showerror("Error", "Invalid min input")
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_min_input.focus()
         elif not end_value.isnumeric():
             tkinter.messagebox.showerror("Error", "Invalid max input")
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.focus()
-        else:
-            min = float(start_value)
-            max = float(end_value)
-            percent = ((max - min) / min) * 100
-            while percent > 4:
-                max -= 1
-                min += 1
-                percent = ((max - min) / min) * 100
-            while percent < 4:
-                max += 1
-                min -= 1
-                percent = ((max - min) / min) * 100
-            self.khoang_cach_an_toan_result_min_input.delete(0, END)
-            self.khoang_cach_an_toan_result_min_input.insert(END, int(min))
-            self.khoang_cach_an_toan_result_max_input.delete(0, END)
-            self.khoang_cach_an_toan_result_max_input.insert(END, int(max))
+        elif not percent.isnumeric():
+            tkinter.messagebox.showerror("Error", "Invalid max input")
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.focus()
+        else:
+            min_input = float(start_value)
+            max_input = float(end_value)
+            percent = ((max_input - min_input) / min_input) * 100
+            while percent > 4:
+                max_input -= 1
+                min_input += 1
+                percent = ((max_input - min_input) / min_input) * 100
+            while percent < 4:
+                max_input += 1
+                min_input -= 1
+                percent = ((max_input - min_input) / min_input) * 100
+            self.khoang_cach_an_toan_result_min_input.delete(0, END)
+            self.khoang_cach_an_toan_result_min_input.insert(END, int(min_input))
+            self.khoang_cach_an_toan_result_max_input.delete(0, END)
+            self.khoang_cach_an_toan_result_max_input.insert(END, int(max_input))
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
