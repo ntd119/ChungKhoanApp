@@ -133,9 +133,9 @@ class Stock:
                             min_value_last_week = float(
                                 self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
                             if min_value_last_week > 0:
-                                percent_min_last_week = ((
-                                                                     current_value - min_value_last_week) / min_value_last_week) * 100
-                                if current_value <= should_buy and percent_min_last_week > 1.5:
+                                gia_dao_dong = float((
+                                                        current_value - should_buy) / should_buy) * 100
+                                if -1.5 <= gia_dao_dong <= 1.5 and should_buy > min_value_last_week:
                                     status_label.config(text="Nên mua", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
