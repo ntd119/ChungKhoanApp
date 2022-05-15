@@ -118,7 +118,6 @@ class Stock:
                                     status_label.config(text="Cắt lỗ", foreground="red")
                                     if stock_checkbox:
                                         flag_sound = True
-                                        # self.play_sound()
                             else:
                                 percent_sell = float(
                                     self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get())
@@ -128,15 +127,16 @@ class Stock:
                                     status_label.config(text="Bán", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
-                                        # self.play_sound()
                         else:
                             # Nên mua
                             should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
-                            if current_value <= should_buy:
-                                status_label.config(text="Nên mua", foreground="green")
-                                if stock_checkbox:
-                                    flag_sound = True
-                                    # self.play_sound()
+                            min_value_last_week = float(self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
+                            if min_value_last_week > 0:
+                                percent_min_last_week = ((current_value - min_value_last_week)/min_value_last_week) * 100
+                                if current_value <= should_buy and percent_min_last_week > 1.5:
+                                    status_label.config(text="Nên mua", foreground="green")
+                                    if stock_checkbox:
+                                        flag_sound = True
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -461,7 +461,8 @@ class Stock:
                         "enable_sound": 0,
                         "bought": "0",
                         "percent_cut_loss": "4.0",
-                        "percent_sell": "4.0"
+                        "percent_sell": "4.0",
+                        "min_last_week": "0"
                     }
                 }
                 self.stock_code_from_file.update(new_data)
