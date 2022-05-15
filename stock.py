@@ -503,7 +503,7 @@ class Stock:
     def distance_value(self):
         start_value = self.khoang_cach_an_toan_min_input.get()
         end_value = self.khoang_cach_an_toan_max_input.get()
-        percent = self.khoang_cach_an_toan_to_input.get()
+        percent_input = self.khoang_cach_an_toan_to_input.get()
         if not start_value.isnumeric():
             tkinter.messagebox.showerror("Error", "Invalid min input")
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_ERROR)
@@ -516,7 +516,7 @@ class Stock:
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
             self.khoang_cach_an_toan_max_input.focus()
-        elif not percent.isnumeric():
+        elif not percent_input.isnumeric():
             tkinter.messagebox.showerror("Error", "Invalid max input")
             self.khoang_cach_an_toan_to_input.config(bg=COLOR_ERROR)
             self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
@@ -526,11 +526,12 @@ class Stock:
             min_input = float(start_value)
             max_input = float(end_value)
             percent = ((max_input - min_input) / min_input) * 100
-            while percent > 4:
+            percent_input_float = float(percent_input)
+            while percent > percent_input_float:
                 max_input -= 1
                 min_input += 1
                 percent = ((max_input - min_input) / min_input) * 100
-            while percent < 4:
+            while percent < percent_input_float:
                 max_input += 1
                 min_input -= 1
                 percent = ((max_input - min_input) / min_input) * 100
