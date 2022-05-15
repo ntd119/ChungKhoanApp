@@ -24,6 +24,7 @@ COLOR_OK = "white"
 
 ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
+BACKGROUND_COLOR = "#F0F0F0"
 
 
 class Stock:
@@ -52,6 +53,7 @@ class Stock:
         self.khoang_cach_an_toan_result_min_input = None
         self.khoang_cach_an_toan_result_max_input = None
         self.khoang_cach_an_toan_to_input = None
+        self.background_color = BACKGROUND_COLOR
 
     def read_file(self):
         with open(FILE_NAME) as data_file:
@@ -105,6 +107,8 @@ class Stock:
                                 text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
                         status_label.config(text=STATUS_CHECK, foreground="black")
                         # Lãi/lỗ
+                        self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
+                            text="0", bg=BACKGROUND_COLOR)
                         try:
                             gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
                         except ValueError:
