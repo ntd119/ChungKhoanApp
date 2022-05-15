@@ -23,6 +23,7 @@ COLOR_ERROR = "#F7DC6F"
 COLOR_OK = "white"
 
 ENTRY_WIDTH = 10
+PERCENT_DESIRE = 4
 
 
 class Stock:
