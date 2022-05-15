@@ -72,6 +72,7 @@ class Stock:
                 self.call_api()
             else:
                 self.stock_data_api = response.json()
+                flag_sound = False
                 for stock_code in self.stock_code_from_file:
                     item_dict = self.stock_code_from_file[stock_code]
                     stock_single = [row for row in self.stock_data_api if row["_sc_"] == stock_code.upper()]
@@ -102,41 +103,46 @@ class Stock:
                         else:
                             self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
                                 text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
-                        radio_button_value = int(
-                            self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
                         status_label.config(text=STATUS_CHECK, foreground="black")
-                        if radio_button_value == 1:
-                            # max
-                            max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
-                            if current_value >= max_value:
-                                status_label.config(text="Bán", foreground="green")
-                                if stock_checkbox:
-                                    self.play_sound()
-                        else:
-                            # min
-                            min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
-                            if float(current_value) <= float(min_value):
-                                status_label.config(text="Mua", foreground="green")
-                                if stock_checkbox:
-                                    self.play_sound()
                         # Lãi/lỗ
                         gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
                         if gia_da_mua > 0:
-                            tinh_lai = ((current_value - gia_da_mua)/gia_da_mua) * 100
+                            tinh_lai = ((current_value - gia_da_mua) / gia_da_mua) * 100
                             final_tinh_lai = "{:.2f}".format(tinh_lai)
                             if tinh_lai < 0:
                                 self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
                                     text=final_tinh_lai + "%", bg="#F33232")
+                                percent_cut_loss = float(
+                                    self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get())
+                                if abs(tinh_lai) > percent_cut_loss:
+                                    status_label.config(text="Cắt lỗ", foreground="red")
+                                    if stock_checkbox:
+                                        flag_sound = True
+                                        # self.play_sound()
                             else:
+                                percent_sell = float(
+                                    self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get())
                                 self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
                                     text=final_tinh_lai + "%", bg="#00E11A")
-                            if tinh_lai < 0 and abs(tinh_lai) > 4:
-                                status_label.config(text="Cắt lỗ", foreground="red")
+                                if abs(tinh_lai) > percent_sell:
+                                    status_label.config(text="Bán", foreground="green")
+                                    if stock_checkbox:
+                                        flag_sound = True
+                                        # self.play_sound()
+                        else:
+                            # Nên mua
+                            should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
+                            if current_value <= should_buy:
+                                status_label.config(text="Nên mua", foreground="green")
                                 if stock_checkbox:
-                                    self.play_sound()
+                                    flag_sound = True
+                                    # self.play_sound()
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
+                if flag_sound:
+                    self.play_sound()
+
                 self.disable_button()
                 if self.is_running:
                     global timer_api
@@ -168,26 +174,26 @@ class Stock:
         to_change_label.grid(column=4, row=0)
 
         end_change_input = Entry()
-        end_change_input.grid(column=5, row=0)
+        end_change_input.grid(column=5, row=0, columnspan=2)
         self.end_change_input = end_change_input
 
         equal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
-        equal_button.grid(column=6, row=0, columnspan=1)
+        equal_button.grid(column=7, row=0, columnspan=1)
 
         percent_symbol_label = Label(text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=7, row=0)
+        percent_symbol_label.grid(column=8, row=0)
         self.percent_symbol_label = percent_symbol_label
 
         stock_code_label_header = Label(text="Mã CK:", font=FONT_HEADER)
-        stock_code_label_header.grid(column=8, row=0)
+        stock_code_label_header.grid(column=9, row=0)
 
         stock_code_input_header = Entry(width=7)
-        stock_code_input_header.grid(column=9, row=0)
+        stock_code_input_header.grid(column=10, row=0)
         self.stock_code_input_header = stock_code_input_header
 
         add_to_file_button_header = Button(text="Add", foreground="green", font=FONT_HEADER,
                                            command=self.add_stock_to_file)
-        add_to_file_button_header.grid(column=10, row=0)
+        add_to_file_button_header.grid(column=11, row=0)
 
         # Khoang cach an toàn
         khoang_cach_an_toan_row = 1
@@ -204,19 +210,20 @@ class Stock:
         self.khoang_cach_an_toan_to_input = khoang_cach_an_toan_to_input
 
         khoang_cach_an_toan_max_input = Entry()
-        khoang_cach_an_toan_max_input.grid(column=5, row=khoang_cach_an_toan_row)
+        khoang_cach_an_toan_max_input.grid(column=5, row=khoang_cach_an_toan_row, columnspan=2)
         self.khoang_cach_an_toan_max_input = khoang_cach_an_toan_max_input
 
-        khoang_cach_an_toan_cal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER, command=self.distance_value)
-        khoang_cach_an_toan_cal_button.grid(column=6, row=khoang_cach_an_toan_row, columnspan=1)
+        khoang_cach_an_toan_cal_button = Button(text="  =  ", foreground="green", font=FONT_HEADER,
+                                                command=self.distance_value)
+        khoang_cach_an_toan_cal_button.grid(column=7, row=khoang_cach_an_toan_row, columnspan=1)
         self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
 
         khoang_cach_an_toan_result_min_input = Entry()
-        khoang_cach_an_toan_result_min_input.grid(column=7, row=khoang_cach_an_toan_row, columnspan=2)
+        khoang_cach_an_toan_result_min_input.grid(column=8, row=khoang_cach_an_toan_row, columnspan=2)
         self.khoang_cach_an_toan_result_min_input = khoang_cach_an_toan_result_min_input
 
         khoang_cach_an_toan_result_max_input = Entry()
-        khoang_cach_an_toan_result_max_input.grid(column=9, row=khoang_cach_an_toan_row, columnspan=2)
+        khoang_cach_an_toan_result_max_input.grid(column=10, row=khoang_cach_an_toan_row, columnspan=2)
         self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
 
         start_button = Button(text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -260,11 +267,15 @@ class Stock:
         column_body += 1
         stock_code.grid(column=column_body, row=3)
 
-        max_value = Label(text="%", font=FONT_HEADER)
+        max_value = Label(text="% Cắt lỗ", font=FONT_HEADER)
         column_body += 1
         max_value.grid(column=column_body, row=3)
 
-        max_value = Label(text="Bán", font=FONT_HEADER)
+        min_value = Label(text="% Bán", font=FONT_HEADER)
+        column_body += 1
+        min_value.grid(column=column_body, row=3)
+
+        max_value = Label(text="Giá nên mua", font=FONT_HEADER)
         column_body += 1
         max_value.grid(column=column_body, row=3)
 
@@ -284,31 +295,13 @@ class Stock:
         column_body += 1
         current_value_label.grid(column=column_body, row=3)
 
-        min_value = Label(text="Mua", font=FONT_HEADER)
-        column_body += 1
-        min_value.grid(column=column_body, row=3)
-
-        gia_da_mua_label = Label(text="Đã mua", font=FONT_HEADER)
+        gia_da_mua_label = Label(text="Giá đã mua", font=FONT_HEADER)
         column_body += 1
         gia_da_mua_label.grid(column=column_body, row=3)
 
         lai_lo_label = Label(text="Lãi/lỗ", font=FONT_HEADER)
         column_body += 1
         lai_lo_label.grid(column=column_body, row=3)
-
-        all_max_min_value = StringVar()
-        # initialize
-        all_max_min_value.set("2")
-        all_max_radio = Radiobutton(variable=all_max_min_value, value=1, text="All bán", font=FONT_HEADER,
-                                    command=self.all_max_min_function)
-        column_body += 1
-        all_max_radio.grid(column=column_body, row=3)
-
-        all_min_radio = Radiobutton(variable=all_max_min_value, value=2, text="All mua", font=FONT_HEADER,
-                                    command=self.all_max_min_function)
-        column_body += 1
-        all_min_radio.grid(column=column_body, row=3)
-        self.all_max_min_value = all_max_min_value
 
         radio_choose = Label(text="Status", font=FONT_HEADER)
         column_body += 1
@@ -327,7 +320,7 @@ class Stock:
             self.item_list[f'delete_checkbox_{stock_code.lower()}'] = check_delete
 
             check_value = IntVar()
-            check_value.set(int(item_dict.get("check_enable")))
+            check_value.set(int(item_dict.get("enable_sound")))
             stock_checkbox = Checkbutton(self.root, variable=check_value, onvalue=1, offvalue=0)
             column_index += 1
             stock_checkbox.grid(column=column_index, row=row, columnspan=2)
@@ -337,19 +330,31 @@ class Stock:
             column_index += 1
             stock_code_label.grid(column=column_index, row=row)
 
-            start_value = float(item_dict.get("min"))
-            end_value = float(item_dict.get("max"))
-            final_value = ((end_value - start_value) / start_value) * 100
-            final_value = "{:.2f}".format(final_value)
-            percent_label = Label(text=f"{final_value} %", anchor='w')
+            try:
+                percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
+            except TypeError:
+                percent_cut_loss_value = float(4)
+            percent_cut_loss_entry = Entry(width=4)
+            percent_cut_loss_entry.insert(0, percent_cut_loss_value)
             column_index += 1
-            percent_label.grid(column=column_index, row=row)
+            percent_cut_loss_entry.grid(column=column_index, row=row)
+            self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'] = percent_cut_loss_entry
 
-            max_value_entry = Entry(width=ENTRY_WIDTH)
-            max_value_entry.insert(END, item_dict.get("max"))
+            try:
+                percent_sell_value = float(item_dict.get("percent_sell"))
+            except TypeError:
+                percent_sell_value = float(4)
+            percent_sell_entry = Entry(width=4)
+            percent_sell_entry.insert(0, percent_sell_value)
             column_index += 1
-            max_value_entry.grid(column=column_index, row=row)
-            self.item_list[f'max_value_entry_{stock_code.lower()}'] = max_value_entry
+            percent_sell_entry.grid(column=column_index, row=row)
+            self.item_list[f'percent_sell_entry_{stock_code.lower()}'] = percent_sell_entry
+
+            min_value_entry = Entry(width=ENTRY_WIDTH)
+            min_value_entry.insert(END, item_dict.get("should_buy"))
+            column_index += 1
+            min_value_entry.grid(column=column_index, row=row)
+            self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             gia_tran_label = Label(text="{:,.0f}".format(0.00))
             column_index += 1
@@ -371,12 +376,6 @@ class Stock:
             current_value_label.grid(column=column_index, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
 
-            min_value_entry = Entry(width=ENTRY_WIDTH)
-            min_value_entry.insert(END, item_dict.get("min"))
-            column_index += 1
-            min_value_entry.grid(column=column_index, row=row)
-            self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
-
             gia_da_mua_entry = Entry(width=ENTRY_WIDTH)
             try:
                 gia_da_mua = int(item_dict.get("bought"))
@@ -391,17 +390,6 @@ class Stock:
             column_index += 1
             lai_lo_label.grid(column=column_index, row=row)
             self.item_list[f'lai_lo_label_{stock_code.lower()}'] = lai_lo_label
-
-            radio_button_value = StringVar()
-            # initialize
-            radio_button_value.set(int(item_dict.get("max_min_radio")))
-            radio_1 = Radiobutton(variable=radio_button_value, value=1, text="Bán")
-            column_index += 1
-            radio_1.grid(column=column_index, row=row)
-            radio_2 = Radiobutton(variable=radio_button_value, value=2, text="Mua")
-            column_index += 1
-            radio_2.grid(column=column_index, row=row)
-            self.item_list[f'radio_button_value_{stock_code.lower()}'] = radio_button_value
 
             status_label = Label(text=STATUS_CHECK)
             column_index += 1
@@ -455,11 +443,11 @@ class Stock:
             with open(FILE_NAME, 'w') as data_file:
                 new_data = {
                     stock_code.upper(): {
-                        "max": end_value,
-                        "min": start_value,
-                        "check_enable": 0,
-                        "max_min_radio": "2",
-                        "bought": "0"
+                        "should_buy": start_value,
+                        "enable_sound": 0,
+                        "bought": "0",
+                        "percent_cut_loss": "4.0",
+                        "percent_sell": "4.0"
                     }
                 }
                 self.stock_code_from_file.update(new_data)
@@ -478,25 +466,16 @@ class Stock:
             else:
                 check_value.set(1)
 
-    def all_max_min_function(self):
-        value = int(self.all_max_min_value.get())
-        for stock_code in self.stock_code_from_file:
-            radio_button = self.item_list[f'radio_button_value_{stock_code.lower()}']
-            if value == 1:
-                radio_button.set(1)
-            else:
-                radio_button.set(2)
-
     def save_all(self):
         with open(FILE_NAME, 'w') as data_file:
             for stock_code in self.stock_code_from_file:
                 update_data = {
                     stock_code: {
-                        "max": self.item_list[f'max_value_entry_{stock_code.lower()}'].get(),
-                        "min": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
-                        "check_enable": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
-                        "max_min_radio": self.item_list[f'radio_button_value_{stock_code.lower()}'].get(),
-                        "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get()
+                        "should_buy": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
+                        "enable_sound": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
+                        "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
+                        "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
+                        "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
                     }
                 }
                 self.stock_code_from_file.update(update_data)
@@ -522,7 +501,8 @@ class Stock:
         if not check_exist:
             tkinter.messagebox.showinfo("Info", "No Records Selected")
         else:
-            if tkinter.messagebox.askokcancel(title="Confirm Delete", message="Are you sure you want to delete selected items?"):
+            if tkinter.messagebox.askokcancel(title="Confirm Delete",
+                                              message="Are you sure you want to delete selected items?"):
                 delete_list = []
                 for stock_code in self.stock_code_from_file:
                     check_value = self.item_list[f'delete_checkbox_{stock_code.lower()}']

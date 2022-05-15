@@ -1,114 +1,114 @@
 {
     "MBB": {
-        "max": "29600",
-        "min": "28000",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "28000",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "FPT": {
-        "max": "99840",
-        "min": "96200",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "96000"
+        "should_buy": "96200",
+        "enable_sound": 0,
+        "bought": "96000",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "MWG": {
-        "max": "150800",
-        "min": "145500",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "145500",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "KDH": {
-        "max": "47300",
-        "min": "44600",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "44600",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "VPB": {
-        "max": "36350",
-        "min": "34150",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "34150",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "PNJ": {
-        "max": "110000",
-        "min": "106600",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "106600",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "TCB": {
-        "max": "43100",
-        "min": "41450",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "41450",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "REE": {
-        "max": "87000",
-        "min": "81000",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "81000",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "HPG": {
-        "max": "42950",
-        "min": "41550",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "41550",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "VIC": {
-        "max": "80000",
-        "min": "78300",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "78300",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "VCB": {
-        "max": "82000",
-        "min": "78500",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "78500",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "TPB": {
-        "max": "34200",
-        "min": "32000",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "32000",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "VHM": {
-        "max": "68800",
-        "min": "63900",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "63900",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "STB": {
-        "max": "27600",
-        "min": "23750",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "23750",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "VNM": {
-        "max": "73800",
-        "min": "70200",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "0"
+        "should_buy": "70200",
+        "enable_sound": 0,
+        "bought": "0",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     },
     "GAS": {
-        "max": "105224",
-        "min": "101176",
-        "check_enable": 0,
-        "max_min_radio": "1",
-        "bought": "104900"
+        "should_buy": "101176",
+        "enable_sound": 0,
+        "bought": "104900",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0"
     }
 }
