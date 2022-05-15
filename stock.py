@@ -105,7 +105,10 @@ class Stock:
                                 text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
                         status_label.config(text=STATUS_CHECK, foreground="black")
                         # Lãi/lỗ
-                        gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
+                        try:
+                            gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
+                        except ValueError:
+                            gia_da_mua = 0
                         if gia_da_mua > 0:
                             tinh_lai = ((current_value - gia_da_mua) / gia_da_mua) * 100
                             final_tinh_lai = "{:.2f}".format(tinh_lai)
