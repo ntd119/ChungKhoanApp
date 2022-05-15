@@ -103,6 +103,7 @@ class Stock:
                                 text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
                         radio_button_value = int(
                             self.item_list.get(f"radio_button_value_{stock_code.lower()}").get())
+                        status_label.config(text=STATUS_CHECK, foreground="black")
                         if radio_button_value == 1:
                             # max
                             max_value = float(self.item_list.get(f"max_value_entry_{stock_code.lower()}").get())
@@ -110,8 +111,6 @@ class Stock:
                                 status_label.config(text="Bán", foreground="green")
                                 if stock_checkbox:
                                     self.play_sound()
-                            else:
-                                status_label.config(text=STATUS_CHECK, foreground="black")
                         else:
                             # min
                             min_value = float(self.item_list.get(f"min_value_entry_{stock_code.lower()}").get())
@@ -119,8 +118,6 @@ class Stock:
                                 status_label.config(text="Mua", foreground="green")
                                 if stock_checkbox:
                                     self.play_sound()
-                            else:
-                                status_label.config(text=STATUS_CHECK, foreground="black")
                         # Lãi/lỗ
                         gia_da_mua = int(self.item_list.get(f"gia_da_mua_entry_{stock_code.lower()}").get())
                         if gia_da_mua > 0:
@@ -132,6 +129,10 @@ class Stock:
                             else:
                                 self.item_list.get(f"lai_lo_label_{stock_code.lower()}").config(
                                     text=final_tinh_lai + "%", bg="#00E11A")
+                            if tinh_lai < 0 and abs(tinh_lai) > 4:
+                                status_label.config(text="Cắt lỗ", foreground="red")
+                                if stock_checkbox:
+                                    self.play_sound()
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
