@@ -44,13 +44,16 @@ with open(FILE_NAME, 'w') as stock_file:
             if current_price < min_price:
                 min_price_time = current_time
             line_price = data_from_file[stock_code]["line_price"]
-            line_price.append({"price":current_price, "time": current_time})
+            last_item = line_price[-1]
+            last_item_price = last_item["price"]
+            if last_item_price != current_price:
+                line_price.append({"price":current_price, "time": current_time})
         except KeyError:
             max_price = current_price
             min_price = current_price
             max_price_time = current_time
             min_price_time = current_time
-            line_price = []
+            line_price = [{"price":current_price, "time": current_time}]
         stock = {
             data["_sc_"]: {
                 "max_price": max_price,
