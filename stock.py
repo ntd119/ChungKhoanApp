@@ -139,7 +139,7 @@ class Stock:
                             should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
                             min_value_last_week = float(
                                 self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
-                            if min_value_last_week > 0:
+                            if min_value_last_week > 0 and should_buy >0:
                                 gia_dao_dong = float((
                                                         current_value - should_buy) / should_buy) * 100
                                 if -1.5 <= gia_dao_dong <= 1.5 and should_buy > min_value_last_week:
