@@ -33,6 +33,7 @@ with open(FILE_NAME, 'w') as stock_file:
         stock_code = data["_sc_"]
         current_price = data["_cp_"]
         current_time = round(time.time() * 1000)
+        line_price: list
         try:
             max_price = max(data_from_file[stock_code]["max_price"], current_price)
             min_price = min(data_from_file[stock_code]["min_price"], current_price)
@@ -42,17 +43,21 @@ with open(FILE_NAME, 'w') as stock_file:
             min_price_time = data_from_file[stock_code]["min_price_time"]
             if current_price < min_price:
                 min_price_time = current_time
+            line_price = data_from_file[stock_code]["line_price"]
+            line_price.append({"price":current_price, "time": current_time})
         except KeyError:
             max_price = current_price
             min_price = current_price
             max_price_time = current_time
             min_price_time = current_time
+            line_price = []
         stock = {
             data["_sc_"]: {
                 "max_price": max_price,
                 "max_price_time": max_price_time,
                 "min_price": min_price,
                 "min_price_time": min_price_time,
+                "line_price": line_price,
             }
         }
         data_from_file.update(stock)
