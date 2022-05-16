@@ -1,6 +1,7 @@
 import requests
-import datetime
+import datetime as dt
 import json
+import time
 
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -9,12 +10,11 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2"
 FILE_NAME = "data/stock.json"
 paramters = {
-    "sectorID" : 0,
-    "catID" : 0,
+    "sectorID": 0,
+    "catID": 0,
     "capitalID": 0,
     "languageID": 1
 }
-
 
 response = requests.get(END_POINT, params=paramters, headers=HEADERS)
 response.raise_for_status()
@@ -32,16 +32,27 @@ with open(FILE_NAME, 'w') as stock_file:
     for data in data_list:
         stock_code = data["_sc_"]
         current_price = data["_cp_"]
+        current_time = round(time.time() * 1000)
         try:
             max_price = max(data_from_file[stock_code]["max_price"], current_price)
             min_price = min(data_from_file[stock_code]["min_price"], current_price)
+            max_price_time = data_from_file[stock_code]["max_price_time"]
+            if current_price > max_price:
+                max_price_time = current_time
+            min_price_time = data_from_file[stock_code]["min_price_time"]
+            if current_price < min_price:
+                min_price_time = current_time
         except KeyError:
             max_price = current_price
             min_price = current_price
+            max_price_time = current_time
+            min_price_time = current_time
         stock = {
             data["_sc_"]: {
                 "max_price": max_price,
-                "min_price": min_price
+                "max_price_time": max_price_time,
+                "min_price": min_price,
+                "min_price_time": min_price_time,
             }
         }
         data_from_file.update(stock)
