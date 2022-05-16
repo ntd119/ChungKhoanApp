@@ -57,7 +57,7 @@
     },
     "REE": {
         "should_buy": "85784",
-        "enable_sound": 1,
+        "enable_sound": 0,
         "bought": "0",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
@@ -81,7 +81,7 @@
     },
     "VCB": {
         "should_buy": "75000",
-        "enable_sound": 1,
+        "enable_sound": 0,
         "bought": "0",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
@@ -121,7 +121,7 @@
     },
     "GAS": {
         "should_buy": "101176",
-        "enable_sound": 0,
+        "enable_sound": 1,
         "bought": "104900",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",

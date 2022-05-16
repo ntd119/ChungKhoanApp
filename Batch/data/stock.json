@@ -1,0 +1,6502 @@
+{
+    "A32": {
+        "max_price": 28300.0,
+        "min_price": 28300.0
+    },
+    "AAA": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "AAM": {
+        "max_price": 12350.0,
+        "min_price": 12350.0
+    },
+    "AAS": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "AAT": {
+        "max_price": 15150.0,
+        "min_price": 15150.0
+    },
+    "AAV": {
+        "max_price": 11100.0,
+        "min_price": 11100.0
+    },
+    "ABB": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "ABC": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "ABI": {
+        "max_price": 49400.0,
+        "min_price": 49400.0
+    },
+    "ABR": {
+        "max_price": 20400.0,
+        "min_price": 20400.0
+    },
+    "ABS": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "ABT": {
+        "max_price": 42900.0,
+        "min_price": 42900.0
+    },
+    "ACB": {
+        "max_price": 27600.0,
+        "min_price": 27600.0
+    },
+    "ACC": {
+        "max_price": 14800.0,
+        "min_price": 14800.0
+    },
+    "ACE": {
+        "max_price": 37000.0,
+        "min_price": 37000.0
+    },
+    "ACG": {
+        "max_price": 64300.0,
+        "min_price": 64300.0
+    },
+    "ACL": {
+        "max_price": 22350.0,
+        "min_price": 22350.0
+    },
+    "ACM": {
+        "max_price": 1900.0,
+        "min_price": 1900.0
+    },
+    "ACS": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "ACV": {
+        "max_price": 83000.0,
+        "min_price": 83000.0
+    },
+    "ADC": {
+        "max_price": 21000.0,
+        "min_price": 21000.0
+    },
+    "ADG": {
+        "max_price": 45550.0,
+        "min_price": 45550.0
+    },
+    "ADP": {
+        "max_price": 22000.0,
+        "min_price": 22000.0
+    },
+    "ADS": {
+        "max_price": 27450.0,
+        "min_price": 27450.0
+    },
+    "AFX": {
+        "max_price": 15200.0,
+        "min_price": 15200.0
+    },
+    "AG1": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "AGF": {
+        "max_price": 4100.0,
+        "min_price": 4100.0
+    },
+    "AGG": {
+        "max_price": 37800.0,
+        "min_price": 37800.0
+    },
+    "AGM": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "AGP": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "AGR": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "AGX": {
+        "max_price": 38500.0,
+        "min_price": 38500.0
+    },
+    "AIC": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "ALT": {
+        "max_price": 16200.0,
+        "min_price": 16200.0
+    },
+    "ALV": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "AMC": {
+        "max_price": 21600.0,
+        "min_price": 21600.0
+    },
+    "AMD": {
+        "max_price": 3810.0,
+        "min_price": 3810.0
+    },
+    "AME": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "AMP": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "AMS": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "AMV": {
+        "max_price": 7600.0,
+        "min_price": 7600.0
+    },
+    "ANT": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "ANV": {
+        "max_price": 38650.0,
+        "min_price": 38650.0
+    },
+    "APC": {
+        "max_price": 20850.0,
+        "min_price": 20850.0
+    },
+    "APF": {
+        "max_price": 61600.0,
+        "min_price": 61600.0
+    },
+    "APG": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "APH": {
+        "max_price": 13050.0,
+        "min_price": 13050.0
+    },
+    "API": {
+        "max_price": 44400.0,
+        "min_price": 44400.0
+    },
+    "APL": {
+        "max_price": 24800.0,
+        "min_price": 24800.0
+    },
+    "APP": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "APS": {
+        "max_price": 19200.0,
+        "min_price": 19200.0
+    },
+    "APT": {
+        "max_price": 3000.0,
+        "min_price": 3000.0
+    },
+    "ARM": {
+        "max_price": 50000.0,
+        "min_price": 50000.0
+    },
+    "ART": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "ASA": {
+        "max_price": 12600.0,
+        "min_price": 12600.0
+    },
+    "ASG": {
+        "max_price": 28800.0,
+        "min_price": 28800.0
+    },
+    "ASM": {
+        "max_price": 14850.0,
+        "min_price": 14850.0
+    },
+    "ASP": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "AST": {
+        "max_price": 53000.0,
+        "min_price": 53000.0
+    },
+    "ATA": {
+        "max_price": 3300.0,
+        "min_price": 3300.0
+    },
+    "ATB": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "ATG": {
+        "max_price": 4300.0,
+        "min_price": 4300.0
+    },
+    "ATS": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "AUM": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "AVC": {
+        "max_price": 36000.0,
+        "min_price": 36000.0
+    },
+    "AVF": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "B82": {
+        "max_price": 1400.0,
+        "min_price": 1400.0
+    },
+    "BAB": {
+        "max_price": 18800.0,
+        "min_price": 18800.0
+    },
+    "BAF": {
+        "max_price": 33200.0,
+        "min_price": 33200.0
+    },
+    "BAL": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "BAX": {
+        "max_price": 78000.0,
+        "min_price": 78000.0
+    },
+    "BBC": {
+        "max_price": 69100.0,
+        "min_price": 69100.0
+    },
+    "BBH": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "BBM": {
+        "max_price": 10600.0,
+        "min_price": 10600.0
+    },
+    "BBS": {
+        "max_price": 13300.0,
+        "min_price": 13300.0
+    },
+    "BBT": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "BCA": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "BCB": {
+        "max_price": 400.0,
+        "min_price": 400.0
+    },
+    "BCC": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "BCE": {
+        "max_price": 10050.0,
+        "min_price": 10050.0
+    },
+    "BCF": {
+        "max_price": 38000.0,
+        "min_price": 38000.0
+    },
+    "BCG": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "BCM": {
+        "max_price": 68200.0,
+        "min_price": 68200.0
+    },
+    "BCP": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "BCV": {
+        "max_price": 21500.0,
+        "min_price": 21500.0
+    },
+    "BDB": {
+        "max_price": 12600.0,
+        "min_price": 12600.0
+    },
+    "BDG": {
+        "max_price": 55800.0,
+        "min_price": 55800.0
+    },
+    "BDT": {
+        "max_price": 43900.0,
+        "min_price": 43900.0
+    },
+    "BDW": {
+        "max_price": 22700.0,
+        "min_price": 22700.0
+    },
+    "BED": {
+        "max_price": 41500.0,
+        "min_price": 41500.0
+    },
+    "BEL": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "BFC": {
+        "max_price": 23950.0,
+        "min_price": 23950.0
+    },
+    "BGW": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "BHA": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "BHC": {
+        "max_price": 2800.0,
+        "min_price": 2800.0
+    },
+    "BHG": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "BHK": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "BHN": {
+        "max_price": 54900.0,
+        "min_price": 54900.0
+    },
+    "BHP": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "BHT": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "BIC": {
+        "max_price": 26050.0,
+        "min_price": 26050.0
+    },
+    "BID": {
+        "max_price": 32200.0,
+        "min_price": 32200.0
+    },
+    "BIG": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "BII": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "BIO": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "BKC": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "BKG": {
+        "max_price": 6410.0,
+        "min_price": 6410.0
+    },
+    "BKH": {
+        "max_price": 30300.0,
+        "min_price": 30300.0
+    },
+    "BLF": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "BLI": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "BLN": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "BLT": {
+        "max_price": 37000.0,
+        "min_price": 37000.0
+    },
+    "BLW": {
+        "max_price": 17100.0,
+        "min_price": 17100.0
+    },
+    "BMC": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "BMD": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "BMF": {
+        "max_price": 29900.0,
+        "min_price": 29900.0
+    },
+    "BMG": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "BMI": {
+        "max_price": 27750.0,
+        "min_price": 27750.0
+    },
+    "BMJ": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "BMN": {
+        "max_price": 20300.0,
+        "min_price": 20300.0
+    },
+    "BMP": {
+        "max_price": 53000.0,
+        "min_price": 53000.0
+    },
+    "BMS": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "BMV": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "BNA": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "BNW": {
+        "max_price": 8700.0,
+        "min_price": 8700.0
+    },
+    "BOT": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "BPC": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "BQB": {
+        "max_price": 4700.0,
+        "min_price": 4700.0
+    },
+    "BRC": {
+        "max_price": 14100.0,
+        "min_price": 14100.0
+    },
+    "BRR": {
+        "max_price": 21700.0,
+        "min_price": 21700.0
+    },
+    "BRS": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "BSA": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "BSC": {
+        "max_price": 26800.0,
+        "min_price": 26800.0
+    },
+    "BSD": {
+        "max_price": 35000.0,
+        "min_price": 35000.0
+    },
+    "BSG": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "BSH": {
+        "max_price": 26000.0,
+        "min_price": 26000.0
+    },
+    "BSI": {
+        "max_price": 21500.0,
+        "min_price": 21500.0
+    },
+    "BSL": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "BSP": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "BSQ": {
+        "max_price": 32100.0,
+        "min_price": 32100.0
+    },
+    "BSR": {
+        "max_price": 19300.0,
+        "min_price": 19300.0
+    },
+    "BST": {
+        "max_price": 15800.0,
+        "min_price": 15800.0
+    },
+    "BT1": {
+        "max_price": 16300.0,
+        "min_price": 16300.0
+    },
+    "BT6": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "BTB": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "BTD": {
+        "max_price": 35200.0,
+        "min_price": 35200.0
+    },
+    "BTG": {
+        "max_price": 5000.0,
+        "min_price": 5000.0
+    },
+    "BTH": {
+        "max_price": 12600.0,
+        "min_price": 12600.0
+    },
+    "BTN": {
+        "max_price": 4700.0,
+        "min_price": 4700.0
+    },
+    "BTP": {
+        "max_price": 16050.0,
+        "min_price": 16050.0
+    },
+    "BTS": {
+        "max_price": 8300.0,
+        "min_price": 8300.0
+    },
+    "BTT": {
+        "max_price": 48000.0,
+        "min_price": 48000.0
+    },
+    "BTU": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "BTV": {
+        "max_price": 16800.0,
+        "min_price": 16800.0
+    },
+    "BTW": {
+        "max_price": 34000.0,
+        "min_price": 34000.0
+    },
+    "BVB": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "BVG": {
+        "max_price": 4400.0,
+        "min_price": 4400.0
+    },
+    "BVH": {
+        "max_price": 47900.0,
+        "min_price": 47900.0
+    },
+    "BVL": {
+        "max_price": 30100.0,
+        "min_price": 30100.0
+    },
+    "BVN": {
+        "max_price": 14400.0,
+        "min_price": 14400.0
+    },
+    "BVS": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "BWA": {
+        "max_price": 12400.0,
+        "min_price": 12400.0
+    },
+    "BWE": {
+        "max_price": 47600.0,
+        "min_price": 47600.0
+    },
+    "BWS": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "BXH": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "C12": {
+        "max_price": 4200.0,
+        "min_price": 4200.0
+    },
+    "C21": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "C22": {
+        "max_price": 17900.0,
+        "min_price": 17900.0
+    },
+    "C32": {
+        "max_price": 24900.0,
+        "min_price": 24900.0
+    },
+    "C47": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "C4G": {
+        "max_price": 12400.0,
+        "min_price": 12400.0
+    },
+    "C69": {
+        "max_price": 11500.0,
+        "min_price": 11500.0
+    },
+    "C92": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "CAB": {
+        "max_price": 74400.0,
+        "min_price": 74400.0
+    },
+    "CAD": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "CAG": {
+        "max_price": 15300.0,
+        "min_price": 15300.0
+    },
+    "CAN": {
+        "max_price": 62900.0,
+        "min_price": 62900.0
+    },
+    "CAP": {
+        "max_price": 96500.0,
+        "min_price": 96500.0
+    },
+    "CAT": {
+        "max_price": 22500.0,
+        "min_price": 22500.0
+    },
+    "CAV": {
+        "max_price": 54000.0,
+        "min_price": 54000.0
+    },
+    "CBI": {
+        "max_price": 14800.0,
+        "min_price": 14800.0
+    },
+    "CBS": {
+        "max_price": 59500.0,
+        "min_price": 59500.0
+    },
+    "CC1": {
+        "max_price": 29200.0,
+        "min_price": 29200.0
+    },
+    "CC4": {
+        "max_price": 23600.0,
+        "min_price": 23600.0
+    },
+    "CCA": {
+        "max_price": 17800.0,
+        "min_price": 17800.0
+    },
+    "CCI": {
+        "max_price": 31450.0,
+        "min_price": 31450.0
+    },
+    "CCL": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "CCM": {
+        "max_price": 56500.0,
+        "min_price": 56500.0
+    },
+    "CCP": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "CCR": {
+        "max_price": 21400.0,
+        "min_price": 21400.0
+    },
+    "CCT": {
+        "max_price": 18600.0,
+        "min_price": 18600.0
+    },
+    "CCV": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "CDC": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "CDG": {
+        "max_price": 3200.0,
+        "min_price": 3200.0
+    },
+    "CDH": {
+        "max_price": 3100.0,
+        "min_price": 3100.0
+    },
+    "CDN": {
+        "max_price": 27800.0,
+        "min_price": 27800.0
+    },
+    "CDO": {
+        "max_price": 4500.0,
+        "min_price": 4500.0
+    },
+    "CDP": {
+        "max_price": 11900.0,
+        "min_price": 11900.0
+    },
+    "CDR": {
+        "max_price": 6800.0,
+        "min_price": 6800.0
+    },
+    "CE1": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "CEE": {
+        "max_price": 12950.0,
+        "min_price": 12950.0
+    },
+    "CEG": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "CEN": {
+        "max_price": 10200.0,
+        "min_price": 10200.0
+    },
+    "CEO": {
+        "max_price": 33800.0,
+        "min_price": 33800.0
+    },
+    "CET": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "CFM": {
+        "max_price": 9800.0,
+        "min_price": 9800.0
+    },
+    "CFV": {
+        "max_price": 21300.0,
+        "min_price": 21300.0
+    },
+    "CGL": {
+        "max_price": 34000.0,
+        "min_price": 34000.0
+    },
+    "CGV": {
+        "max_price": 4700.0,
+        "min_price": 4700.0
+    },
+    "CH5": {
+        "max_price": 18400.0,
+        "min_price": 18400.0
+    },
+    "CHC": {
+        "max_price": 2100.0,
+        "min_price": 2100.0
+    },
+    "CHP": {
+        "max_price": 24000.0,
+        "min_price": 24000.0
+    },
+    "CHS": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "CI5": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "CIA": {
+        "max_price": 12100.0,
+        "min_price": 12100.0
+    },
+    "CID": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "CIG": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "CII": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "CIP": {
+        "max_price": 4900.0,
+        "min_price": 4900.0
+    },
+    "CJC": {
+        "max_price": 19200.0,
+        "min_price": 19200.0
+    },
+    "CKA": {
+        "max_price": 38000.0,
+        "min_price": 38000.0
+    },
+    "CKD": {
+        "max_price": 29000.0,
+        "min_price": 29000.0
+    },
+    "CKG": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "CKV": {
+        "max_price": 21100.0,
+        "min_price": 21100.0
+    },
+    "CLC": {
+        "max_price": 36500.0,
+        "min_price": 36500.0
+    },
+    "CLG": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "CLH": {
+        "max_price": 31900.0,
+        "min_price": 31900.0
+    },
+    "CLL": {
+        "max_price": 29200.0,
+        "min_price": 29200.0
+    },
+    "CLM": {
+        "max_price": 34700.0,
+        "min_price": 34700.0
+    },
+    "CLW": {
+        "max_price": 35500.0,
+        "min_price": 35500.0
+    },
+    "CLX": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "CMC": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "CMD": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "CMF": {
+        "max_price": 180000.0,
+        "min_price": 180000.0
+    },
+    "CMG": {
+        "max_price": 54000.0,
+        "min_price": 54000.0
+    },
+    "CMI": {
+        "max_price": 2500.0,
+        "min_price": 2500.0
+    },
+    "CMK": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "CMN": {
+        "max_price": 52000.0,
+        "min_price": 52000.0
+    },
+    "CMP": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "CMS": {
+        "max_price": 17600.0,
+        "min_price": 17600.0
+    },
+    "CMT": {
+        "max_price": 21900.0,
+        "min_price": 21900.0
+    },
+    "CMV": {
+        "max_price": 14350.0,
+        "min_price": 14350.0
+    },
+    "CMW": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "CMX": {
+        "max_price": 16100.0,
+        "min_price": 16100.0
+    },
+    "CNA": {
+        "max_price": 43900.0,
+        "min_price": 43900.0
+    },
+    "CNC": {
+        "max_price": 28100.0,
+        "min_price": 28100.0
+    },
+    "CNG": {
+        "max_price": 31000.0,
+        "min_price": 31000.0
+    },
+    "CNN": {
+        "max_price": 21900.0,
+        "min_price": 21900.0
+    },
+    "CNT": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "COM": {
+        "max_price": 56700.0,
+        "min_price": 56700.0
+    },
+    "CPA": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "CPC": {
+        "max_price": 22000.0,
+        "min_price": 22000.0
+    },
+    "CPH": {
+        "max_price": 1900.0,
+        "min_price": 1900.0
+    },
+    "CPI": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "CQN": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "CQT": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "CRC": {
+        "max_price": 7390.0,
+        "min_price": 7390.0
+    },
+    "CRE": {
+        "max_price": 30400.0,
+        "min_price": 30400.0
+    },
+    "CSC": {
+        "max_price": 65900.0,
+        "min_price": 65900.0
+    },
+    "CSI": {
+        "max_price": 70600.0,
+        "min_price": 70600.0
+    },
+    "CSM": {
+        "max_price": 15900.0,
+        "min_price": 15900.0
+    },
+    "CST": {
+        "max_price": 16900.0,
+        "min_price": 16900.0
+    },
+    "CSV": {
+        "max_price": 37450.0,
+        "min_price": 37450.0
+    },
+    "CT3": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "CT6": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "CTA": {
+        "max_price": 2300.0,
+        "min_price": 2300.0
+    },
+    "CTB": {
+        "max_price": 24300.0,
+        "min_price": 24300.0
+    },
+    "CTC": {
+        "max_price": 5500.0,
+        "min_price": 5500.0
+    },
+    "CTD": {
+        "max_price": 43150.0,
+        "min_price": 43150.0
+    },
+    "CTF": {
+        "max_price": 25100.0,
+        "min_price": 25100.0
+    },
+    "CTG": {
+        "max_price": 24550.0,
+        "min_price": 24550.0
+    },
+    "CTI": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "CTN": {
+        "max_price": 2500.0,
+        "min_price": 2500.0
+    },
+    "CTP": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "CTR": {
+        "max_price": 69200.0,
+        "min_price": 69200.0
+    },
+    "CTS": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "CTT": {
+        "max_price": 22400.0,
+        "min_price": 22400.0
+    },
+    "CTW": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "CTX": {
+        "max_price": 8800.0,
+        "min_price": 8800.0
+    },
+    "CVN": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "CVP": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "CVT": {
+        "max_price": 44700.0,
+        "min_price": 44700.0
+    },
+    "CX8": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "CYC": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "D11": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "D2D": {
+        "max_price": 49200.0,
+        "min_price": 49200.0
+    },
+    "DAC": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "DAD": {
+        "max_price": 23400.0,
+        "min_price": 23400.0
+    },
+    "DAE": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "DAG": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "DAH": {
+        "max_price": 8220.0,
+        "min_price": 8220.0
+    },
+    "DAN": {
+        "max_price": 29100.0,
+        "min_price": 29100.0
+    },
+    "DAR": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "DAS": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "DAT": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "DBC": {
+        "max_price": 21000.0,
+        "min_price": 21000.0
+    },
+    "DBD": {
+        "max_price": 55000.0,
+        "min_price": 55000.0
+    },
+    "DBH": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "DBM": {
+        "max_price": 46900.0,
+        "min_price": 46900.0
+    },
+    "DBT": {
+        "max_price": 12600.0,
+        "min_price": 12600.0
+    },
+    "DBW": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "DC1": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "DC2": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "DC4": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "DCF": {
+        "max_price": 54900.0,
+        "min_price": 54900.0
+    },
+    "DCG": {
+        "max_price": 13400.0,
+        "min_price": 13400.0
+    },
+    "DCH": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "DCL": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "DCM": {
+        "max_price": 26100.0,
+        "min_price": 26100.0
+    },
+    "DCR": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "DCS": {
+        "max_price": 1900.0,
+        "min_price": 1900.0
+    },
+    "DCT": {
+        "max_price": 1900.0,
+        "min_price": 1900.0
+    },
+    "DDG": {
+        "max_price": 39000.0,
+        "min_price": 39000.0
+    },
+    "DDH": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "DDM": {
+        "max_price": 4400.0,
+        "min_price": 4400.0
+    },
+    "DDN": {
+        "max_price": 15100.0,
+        "min_price": 15100.0
+    },
+    "DDV": {
+        "max_price": 19600.0,
+        "min_price": 19600.0
+    },
+    "DFC": {
+        "max_price": 33100.0,
+        "min_price": 33100.0
+    },
+    "DFF": {
+        "max_price": 25300.0,
+        "min_price": 25300.0
+    },
+    "DGC": {
+        "max_price": 180100.0,
+        "min_price": 180100.0
+    },
+    "DGT": {
+        "max_price": 19400.0,
+        "min_price": 19400.0
+    },
+    "DGW": {
+        "max_price": 93200.0,
+        "min_price": 93200.0
+    },
+    "DHA": {
+        "max_price": 41500.0,
+        "min_price": 41500.0
+    },
+    "DHB": {
+        "max_price": 11300.0,
+        "min_price": 11300.0
+    },
+    "DHC": {
+        "max_price": 73000.0,
+        "min_price": 73000.0
+    },
+    "DHD": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "DHG": {
+        "max_price": 90500.0,
+        "min_price": 90500.0
+    },
+    "DHM": {
+        "max_price": 10550.0,
+        "min_price": 10550.0
+    },
+    "DHN": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "DHP": {
+        "max_price": 12300.0,
+        "min_price": 12300.0
+    },
+    "DHT": {
+        "max_price": 39900.0,
+        "min_price": 39900.0
+    },
+    "DIC": {
+        "max_price": 2900.0,
+        "min_price": 2900.0
+    },
+    "DID": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "DIG": {
+        "max_price": 48500.0,
+        "min_price": 48500.0
+    },
+    "DIH": {
+        "max_price": 37800.0,
+        "min_price": 37800.0
+    },
+    "DKC": {
+        "max_price": 2100.0,
+        "min_price": 2100.0
+    },
+    "DL1": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "DLD": {
+        "max_price": 16200.0,
+        "min_price": 16200.0
+    },
+    "DLG": {
+        "max_price": 4490.0,
+        "min_price": 4490.0
+    },
+    "DLR": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "DLT": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "DM7": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "DMC": {
+        "max_price": 49400.0,
+        "min_price": 49400.0
+    },
+    "DMN": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "DNA": {
+        "max_price": 26900.0,
+        "min_price": 26900.0
+    },
+    "DNC": {
+        "max_price": 74700.0,
+        "min_price": 74700.0
+    },
+    "DND": {
+        "max_price": 26000.0,
+        "min_price": 26000.0
+    },
+    "DNE": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "DNH": {
+        "max_price": 40500.0,
+        "min_price": 40500.0
+    },
+    "DNL": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "DNM": {
+        "max_price": 42300.0,
+        "min_price": 42300.0
+    },
+    "DNN": {
+        "max_price": 200.0,
+        "min_price": 200.0
+    },
+    "DNP": {
+        "max_price": 22000.0,
+        "min_price": 22000.0
+    },
+    "DNT": {
+        "max_price": 21300.0,
+        "min_price": 21300.0
+    },
+    "DNW": {
+        "max_price": 24900.0,
+        "min_price": 24900.0
+    },
+    "DOC": {
+        "max_price": 11500.0,
+        "min_price": 11500.0
+    },
+    "DOP": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "DP1": {
+        "max_price": 28300.0,
+        "min_price": 28300.0
+    },
+    "DP2": {
+        "max_price": 5800.0,
+        "min_price": 5800.0
+    },
+    "DP3": {
+        "max_price": 90000.0,
+        "min_price": 90000.0
+    },
+    "DPC": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "DPD": {
+        "max_price": 24000.0,
+        "min_price": 24000.0
+    },
+    "DPG": {
+        "max_price": 46400.0,
+        "min_price": 46400.0
+    },
+    "DPH": {
+        "max_price": 47800.0,
+        "min_price": 47800.0
+    },
+    "DPM": {
+        "max_price": 46050.0,
+        "min_price": 46050.0
+    },
+    "DPP": {
+        "max_price": 18500.0,
+        "min_price": 18500.0
+    },
+    "DPR": {
+        "max_price": 68500.0,
+        "min_price": 68500.0
+    },
+    "DPS": {
+        "max_price": 1300.0,
+        "min_price": 1300.0
+    },
+    "DQC": {
+        "max_price": 22850.0,
+        "min_price": 22850.0
+    },
+    "DRC": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "DRG": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "DRH": {
+        "max_price": 13350.0,
+        "min_price": 13350.0
+    },
+    "DRI": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "DRL": {
+        "max_price": 64000.0,
+        "min_price": 64000.0
+    },
+    "DS3": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "DSC": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "DSG": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "DSN": {
+        "max_price": 45500.0,
+        "min_price": 45500.0
+    },
+    "DSP": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "DST": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "DSV": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "DT4": {
+        "max_price": 8600.0,
+        "min_price": 8600.0
+    },
+    "DTA": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "DTB": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "DTC": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "DTD": {
+        "max_price": 22500.0,
+        "min_price": 22500.0
+    },
+    "DTE": {
+        "max_price": 20800.0,
+        "min_price": 20800.0
+    },
+    "DTG": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "DTH": {
+        "max_price": 15600.0,
+        "min_price": 15600.0
+    },
+    "DTI": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "DTK": {
+        "max_price": 12700.0,
+        "min_price": 12700.0
+    },
+    "DTL": {
+        "max_price": 38000.0,
+        "min_price": 38000.0
+    },
+    "DTP": {
+        "max_price": 70000.0,
+        "min_price": 70000.0
+    },
+    "DTT": {
+        "max_price": 13400.0,
+        "min_price": 13400.0
+    },
+    "DTV": {
+        "max_price": 35100.0,
+        "min_price": 35100.0
+    },
+    "DUS": {
+        "max_price": 21000.0,
+        "min_price": 21000.0
+    },
+    "DVC": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "DVG": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "DVN": {
+        "max_price": 18900.0,
+        "min_price": 18900.0
+    },
+    "DVP": {
+        "max_price": 54000.0,
+        "min_price": 54000.0
+    },
+    "DVW": {
+        "max_price": 14200.0,
+        "min_price": 14200.0
+    },
+    "DWC": {
+        "max_price": 12200.0,
+        "min_price": 12200.0
+    },
+    "DWS": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "DXG": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "DXL": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "DXP": {
+        "max_price": 15400.0,
+        "min_price": 15400.0
+    },
+    "DXS": {
+        "max_price": 19850.0,
+        "min_price": 19850.0
+    },
+    "DXV": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "DZM": {
+        "max_price": 9900.0,
+        "min_price": 9900.0
+    },
+    "E12": {
+        "max_price": 10700.0,
+        "min_price": 10700.0
+    },
+    "E1VFVN30": {
+        "max_price": 20700.0,
+        "min_price": 20700.0
+    },
+    "E29": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "EAD": {
+        "max_price": 26000.0,
+        "min_price": 26000.0
+    },
+    "EBS": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "ECI": {
+        "max_price": 25600.0,
+        "min_price": 25600.0
+    },
+    "EFI": {
+        "max_price": 2800.0,
+        "min_price": 2800.0
+    },
+    "EIB": {
+        "max_price": 31100.0,
+        "min_price": 31100.0
+    },
+    "EIC": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "EID": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "EIN": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "ELC": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "EMC": {
+        "max_price": 23200.0,
+        "min_price": 23200.0
+    },
+    "EME": {
+        "max_price": 42500.0,
+        "min_price": 42500.0
+    },
+    "EMG": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "EMS": {
+        "max_price": 29800.0,
+        "min_price": 29800.0
+    },
+    "EPC": {
+        "max_price": 8600.0,
+        "min_price": 8600.0
+    },
+    "EPH": {
+        "max_price": 10600.0,
+        "min_price": 10600.0
+    },
+    "EVE": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "EVF": {
+        "max_price": 10400.0,
+        "min_price": 10400.0
+    },
+    "EVG": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "EVS": {
+        "max_price": 31000.0,
+        "min_price": 31000.0
+    },
+    "FBA": {
+        "max_price": 900.0,
+        "min_price": 900.0
+    },
+    "FBC": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "FCC": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "FCM": {
+        "max_price": 5940.0,
+        "min_price": 5940.0
+    },
+    "FCN": {
+        "max_price": 14300.0,
+        "min_price": 14300.0
+    },
+    "FCS": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "FDC": {
+        "max_price": 23700.0,
+        "min_price": 23700.0
+    },
+    "FDG": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "FGL": {
+        "max_price": 12500.0,
+        "min_price": 12500.0
+    },
+    "FHN": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "FHS": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "FIC": {
+        "max_price": 34000.0,
+        "min_price": 34000.0
+    },
+    "FID": {
+        "max_price": 4300.0,
+        "min_price": 4300.0
+    },
+    "FIR": {
+        "max_price": 39500.0,
+        "min_price": 39500.0
+    },
+    "FIT": {
+        "max_price": 8420.0,
+        "min_price": 8420.0
+    },
+    "FLC": {
+        "max_price": 6800.0,
+        "min_price": 6800.0
+    },
+    "FMC": {
+        "max_price": 51500.0,
+        "min_price": 51500.0
+    },
+    "FOC": {
+        "max_price": 129300.0,
+        "min_price": 129300.0
+    },
+    "FOX": {
+        "max_price": 70400.0,
+        "min_price": 70400.0
+    },
+    "FPT": {
+        "max_price": 93200.0,
+        "min_price": 93200.0
+    },
+    "FRC": {
+        "max_price": 44000.0,
+        "min_price": 44000.0
+    },
+    "FRM": {
+        "max_price": 15900.0,
+        "min_price": 15900.0
+    },
+    "FRT": {
+        "max_price": 101600.0,
+        "min_price": 101600.0
+    },
+    "FSO": {
+        "max_price": 11500.0,
+        "min_price": 11500.0
+    },
+    "FT1": {
+        "max_price": 41000.0,
+        "min_price": 41000.0
+    },
+    "FTI": {
+        "max_price": 4900.0,
+        "min_price": 4900.0
+    },
+    "FTS": {
+        "max_price": 32800.0,
+        "min_price": 32800.0
+    },
+    "FUCTVGF3": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "FUCVREIT": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "FUEIP100": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "FUEKIV30": {
+        "max_price": 7920.0,
+        "min_price": 7920.0
+    },
+    "FUEMAV30": {
+        "max_price": 14240.0,
+        "min_price": 14240.0
+    },
+    "FUESSV30": {
+        "max_price": 15680.0,
+        "min_price": 15680.0
+    },
+    "FUESSV50": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "FUESSVFL": {
+        "max_price": 16450.0,
+        "min_price": 16450.0
+    },
+    "FUEVFVND": {
+        "max_price": 24500.0,
+        "min_price": 24500.0
+    },
+    "FUEVN100": {
+        "max_price": 17410.0,
+        "min_price": 17410.0
+    },
+    "G20": {
+        "max_price": 1400.0,
+        "min_price": 1400.0
+    },
+    "G36": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "GAB": {
+        "max_price": 196400.0,
+        "min_price": 196400.0
+    },
+    "GAS": {
+        "max_price": 95000.0,
+        "min_price": 95000.0
+    },
+    "GCB": {
+        "max_price": 21500.0,
+        "min_price": 21500.0
+    },
+    "GDT": {
+        "max_price": 46800.0,
+        "min_price": 46800.0
+    },
+    "GDW": {
+        "max_price": 35900.0,
+        "min_price": 35900.0
+    },
+    "GE2": {
+        "max_price": 29000.0,
+        "min_price": 29000.0
+    },
+    "GEE": {
+        "max_price": 31100.0,
+        "min_price": 31100.0
+    },
+    "GEG": {
+        "max_price": 18800.0,
+        "min_price": 18800.0
+    },
+    "GER": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "GEX": {
+        "max_price": 19700.0,
+        "min_price": 19700.0
+    },
+    "GGG": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "GH3": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "GHC": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "GIC": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "GIL": {
+        "max_price": 60900.0,
+        "min_price": 60900.0
+    },
+    "GKM": {
+        "max_price": 52300.0,
+        "min_price": 52300.0
+    },
+    "GLC": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "GLT": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "GLW": {
+        "max_price": 3800.0,
+        "min_price": 3800.0
+    },
+    "GMA": {
+        "max_price": 50000.0,
+        "min_price": 50000.0
+    },
+    "GMC": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "GMD": {
+        "max_price": 48400.0,
+        "min_price": 48400.0
+    },
+    "GMH": {
+        "max_price": 17550.0,
+        "min_price": 17550.0
+    },
+    "GMX": {
+        "max_price": 18200.0,
+        "min_price": 18200.0
+    },
+    "GND": {
+        "max_price": 31900.0,
+        "min_price": 31900.0
+    },
+    "GSM": {
+        "max_price": 13400.0,
+        "min_price": 13400.0
+    },
+    "GSP": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "GTA": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "GTD": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "GTH": {
+        "max_price": 6600.0,
+        "min_price": 6600.0
+    },
+    "GTS": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "GTT": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "GVR": {
+        "max_price": 21850.0,
+        "min_price": 21850.0
+    },
+    "GVT": {
+        "max_price": 130200.0,
+        "min_price": 130200.0
+    },
+    "H11": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "HAC": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "HAD": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "HAF": {
+        "max_price": 20800.0,
+        "min_price": 20800.0
+    },
+    "HAG": {
+        "max_price": 8050.0,
+        "min_price": 8050.0
+    },
+    "HAH": {
+        "max_price": 68000.0,
+        "min_price": 68000.0
+    },
+    "HAI": {
+        "max_price": 3580.0,
+        "min_price": 3580.0
+    },
+    "HAM": {
+        "max_price": 25500.0,
+        "min_price": 25500.0
+    },
+    "HAN": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "HAP": {
+        "max_price": 7320.0,
+        "min_price": 7320.0
+    },
+    "HAR": {
+        "max_price": 6600.0,
+        "min_price": 6600.0
+    },
+    "HAS": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "HAT": {
+        "max_price": 20600.0,
+        "min_price": 20600.0
+    },
+    "HAV": {
+        "max_price": 5800.0,
+        "min_price": 5800.0
+    },
+    "HAX": {
+        "max_price": 17800.0,
+        "min_price": 17800.0
+    },
+    "HBC": {
+        "max_price": 18000.0,
+        "min_price": 18000.0
+    },
+    "HBD": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "HBH": {
+        "max_price": 9200.0,
+        "min_price": 9200.0
+    },
+    "HBS": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "HC1": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "HC3": {
+        "max_price": 35000.0,
+        "min_price": 35000.0
+    },
+    "HCB": {
+        "max_price": 19800.0,
+        "min_price": 19800.0
+    },
+    "HCC": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "HCD": {
+        "max_price": 10600.0,
+        "min_price": 10600.0
+    },
+    "HCI": {
+        "max_price": 29500.0,
+        "min_price": 29500.0
+    },
+    "HCM": {
+        "max_price": 21150.0,
+        "min_price": 21150.0
+    },
+    "HCT": {
+        "max_price": 16000.0,
+        "min_price": 16000.0
+    },
+    "HD2": {
+        "max_price": 13300.0,
+        "min_price": 13300.0
+    },
+    "HD6": {
+        "max_price": 20200.0,
+        "min_price": 20200.0
+    },
+    "HD8": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "HDA": {
+        "max_price": 24800.0,
+        "min_price": 24800.0
+    },
+    "HDB": {
+        "max_price": 22500.0,
+        "min_price": 22500.0
+    },
+    "HDC": {
+        "max_price": 50200.0,
+        "min_price": 50200.0
+    },
+    "HDG": {
+        "max_price": 37900.0,
+        "min_price": 37900.0
+    },
+    "HDM": {
+        "max_price": 44800.0,
+        "min_price": 44800.0
+    },
+    "HDO": {
+        "max_price": 1400.0,
+        "min_price": 1400.0
+    },
+    "HDP": {
+        "max_price": 14900.0,
+        "min_price": 14900.0
+    },
+    "HDW": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "HEC": {
+        "max_price": 60000.0,
+        "min_price": 60000.0
+    },
+    "HEJ": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "HEM": {
+        "max_price": 12300.0,
+        "min_price": 12300.0
+    },
+    "HEP": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "HES": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "HEV": {
+        "max_price": 35900.0,
+        "min_price": 35900.0
+    },
+    "HFB": {
+        "max_price": 12500.0,
+        "min_price": 12500.0
+    },
+    "HFC": {
+        "max_price": 11200.0,
+        "min_price": 11200.0
+    },
+    "HFX": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "HGM": {
+        "max_price": 45500.0,
+        "min_price": 45500.0
+    },
+    "HGT": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "HGW": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "HHC": {
+        "max_price": 84500.0,
+        "min_price": 84500.0
+    },
+    "HHG": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "HHN": {
+        "max_price": 6600.0,
+        "min_price": 6600.0
+    },
+    "HHP": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "HHR": {
+        "max_price": 400.0,
+        "min_price": 400.0
+    },
+    "HHS": {
+        "max_price": 6310.0,
+        "min_price": 6310.0
+    },
+    "HHV": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "HID": {
+        "max_price": 6050.0,
+        "min_price": 6050.0
+    },
+    "HIG": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "HII": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "HJC": {
+        "max_price": 10200.0,
+        "min_price": 10200.0
+    },
+    "HJS": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "HKB": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "HKP": {
+        "max_price": 23500.0,
+        "min_price": 23500.0
+    },
+    "HKT": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "HLA": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "HLB": {
+        "max_price": 205000.0,
+        "min_price": 205000.0
+    },
+    "HLC": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "HLD": {
+        "max_price": 34200.0,
+        "min_price": 34200.0
+    },
+    "HLE": {
+        "max_price": 3100.0,
+        "min_price": 3100.0
+    },
+    "HLG": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "HLR": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "HLS": {
+        "max_price": 36000.0,
+        "min_price": 36000.0
+    },
+    "HLT": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "HLY": {
+        "max_price": 12400.0,
+        "min_price": 12400.0
+    },
+    "HMC": {
+        "max_price": 27200.0,
+        "min_price": 27200.0
+    },
+    "HMG": {
+        "max_price": 18900.0,
+        "min_price": 18900.0
+    },
+    "HMH": {
+        "max_price": 19800.0,
+        "min_price": 19800.0
+    },
+    "HMR": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "HMS": {
+        "max_price": 38900.0,
+        "min_price": 38900.0
+    },
+    "HNA": {
+        "max_price": 15300.0,
+        "min_price": 15300.0
+    },
+    "HNB": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "HND": {
+        "max_price": 16200.0,
+        "min_price": 16200.0
+    },
+    "HNF": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "HNG": {
+        "max_price": 5850.0,
+        "min_price": 5850.0
+    },
+    "HNI": {
+        "max_price": 56500.0,
+        "min_price": 56500.0
+    },
+    "HNM": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "HNP": {
+        "max_price": 24500.0,
+        "min_price": 24500.0
+    },
+    "HNR": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "HNT": {
+        "max_price": 6500.0,
+        "min_price": 6500.0
+    },
+    "HOM": {
+        "max_price": 7400.0,
+        "min_price": 7400.0
+    },
+    "HOT": {
+        "max_price": 33050.0,
+        "min_price": 33050.0
+    },
+    "HPB": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "HPD": {
+        "max_price": 21600.0,
+        "min_price": 21600.0
+    },
+    "HPG": {
+        "max_price": 36300.0,
+        "min_price": 36300.0
+    },
+    "HPH": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "HPI": {
+        "max_price": 20700.0,
+        "min_price": 20700.0
+    },
+    "HPM": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "HPP": {
+        "max_price": 57000.0,
+        "min_price": 57000.0
+    },
+    "HPT": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "HPW": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "HPX": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "HQC": {
+        "max_price": 5100.0,
+        "min_price": 5100.0
+    },
+    "HRB": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "HRC": {
+        "max_price": 54000.0,
+        "min_price": 54000.0
+    },
+    "HRT": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "HSA": {
+        "max_price": 66600.0,
+        "min_price": 66600.0
+    },
+    "HSG": {
+        "max_price": 19800.0,
+        "min_price": 19800.0
+    },
+    "HSI": {
+        "max_price": 2200.0,
+        "min_price": 2200.0
+    },
+    "HSL": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "HSM": {
+        "max_price": 20700.0,
+        "min_price": 20700.0
+    },
+    "HSP": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "HSV": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "HT1": {
+        "max_price": 14850.0,
+        "min_price": 14850.0
+    },
+    "HTC": {
+        "max_price": 36100.0,
+        "min_price": 36100.0
+    },
+    "HTE": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "HTG": {
+        "max_price": 45000.0,
+        "min_price": 45000.0
+    },
+    "HTH": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "HTI": {
+        "max_price": 17800.0,
+        "min_price": 17800.0
+    },
+    "HTL": {
+        "max_price": 20650.0,
+        "min_price": 20650.0
+    },
+    "HTM": {
+        "max_price": 16300.0,
+        "min_price": 16300.0
+    },
+    "HTN": {
+        "max_price": 32500.0,
+        "min_price": 32500.0
+    },
+    "HTP": {
+        "max_price": 38100.0,
+        "min_price": 38100.0
+    },
+    "HTR": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "HTT": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "HTV": {
+        "max_price": 12200.0,
+        "min_price": 12200.0
+    },
+    "HTW": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "HU1": {
+        "max_price": 12650.0,
+        "min_price": 12650.0
+    },
+    "HU3": {
+        "max_price": 7670.0,
+        "min_price": 7670.0
+    },
+    "HU4": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "HU6": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "HUB": {
+        "max_price": 25350.0,
+        "min_price": 25350.0
+    },
+    "HUG": {
+        "max_price": 36500.0,
+        "min_price": 36500.0
+    },
+    "HUT": {
+        "max_price": 21300.0,
+        "min_price": 21300.0
+    },
+    "HVA": {
+        "max_price": 6700.0,
+        "min_price": 6700.0
+    },
+    "HVG": {
+        "max_price": 3400.0,
+        "min_price": 3400.0
+    },
+    "HVH": {
+        "max_price": 7200.0,
+        "min_price": 7200.0
+    },
+    "HVN": {
+        "max_price": 18100.0,
+        "min_price": 18100.0
+    },
+    "HVT": {
+        "max_price": 54000.0,
+        "min_price": 54000.0
+    },
+    "HVX": {
+        "max_price": 5110.0,
+        "min_price": 5110.0
+    },
+    "HWS": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "IBC": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "IBD": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "IBN": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "ICC": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "ICF": {
+        "max_price": 2300.0,
+        "min_price": 2300.0
+    },
+    "ICG": {
+        "max_price": 11300.0,
+        "min_price": 11300.0
+    },
+    "ICI": {
+        "max_price": 7700.0,
+        "min_price": 7700.0
+    },
+    "ICN": {
+        "max_price": 91000.0,
+        "min_price": 91000.0
+    },
+    "ICT": {
+        "max_price": 15800.0,
+        "min_price": 15800.0
+    },
+    "IDC": {
+        "max_price": 44400.0,
+        "min_price": 44400.0
+    },
+    "IDI": {
+        "max_price": 18350.0,
+        "min_price": 18350.0
+    },
+    "IDJ": {
+        "max_price": 17400.0,
+        "min_price": 17400.0
+    },
+    "IDP": {
+        "max_price": 155200.0,
+        "min_price": 155200.0
+    },
+    "IDV": {
+        "max_price": 53000.0,
+        "min_price": 53000.0
+    },
+    "IFS": {
+        "max_price": 23600.0,
+        "min_price": 23600.0
+    },
+    "IHK": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "IJC": {
+        "max_price": 16000.0,
+        "min_price": 16000.0
+    },
+    "ILA": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "ILB": {
+        "max_price": 34700.0,
+        "min_price": 34700.0
+    },
+    "ILC": {
+        "max_price": 9800.0,
+        "min_price": 9800.0
+    },
+    "ILS": {
+        "max_price": 17300.0,
+        "min_price": 17300.0
+    },
+    "IME": {
+        "max_price": 101000.0,
+        "min_price": 101000.0
+    },
+    "IMP": {
+        "max_price": 62300.0,
+        "min_price": 62300.0
+    },
+    "IN4": {
+        "max_price": 100000.0,
+        "min_price": 100000.0
+    },
+    "INC": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "INN": {
+        "max_price": 45000.0,
+        "min_price": 45000.0
+    },
+    "IPA": {
+        "max_price": 29900.0,
+        "min_price": 29900.0
+    },
+    "IRC": {
+        "max_price": 8700.0,
+        "min_price": 8700.0
+    },
+    "ISG": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "ISH": {
+        "max_price": 19400.0,
+        "min_price": 19400.0
+    },
+    "IST": {
+        "max_price": 43500.0,
+        "min_price": 43500.0
+    },
+    "ITA": {
+        "max_price": 10350.0,
+        "min_price": 10350.0
+    },
+    "ITC": {
+        "max_price": 11300.0,
+        "min_price": 11300.0
+    },
+    "ITD": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "ITQ": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "ITS": {
+        "max_price": 4900.0,
+        "min_price": 4900.0
+    },
+    "IVS": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "JOS": {
+        "max_price": 2200.0,
+        "min_price": 2200.0
+    },
+    "JVC": {
+        "max_price": 5980.0,
+        "min_price": 5980.0
+    },
+    "KAC": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "KBC": {
+        "max_price": 36250.0,
+        "min_price": 36250.0
+    },
+    "KCB": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "KCE": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "KDC": {
+        "max_price": 49800.0,
+        "min_price": 49800.0
+    },
+    "KDH": {
+        "max_price": 39300.0,
+        "min_price": 39300.0
+    },
+    "KDM": {
+        "max_price": 21900.0,
+        "min_price": 21900.0
+    },
+    "KGM": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "KHA": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "KHB": {
+        "max_price": 2900.0,
+        "min_price": 2900.0
+    },
+    "KHD": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "KHG": {
+        "max_price": 9400.0,
+        "min_price": 9400.0
+    },
+    "KHL": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "KHP": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "KHS": {
+        "max_price": 32500.0,
+        "min_price": 32500.0
+    },
+    "KHW": {
+        "max_price": 16900.0,
+        "min_price": 16900.0
+    },
+    "KIP": {
+        "max_price": 11100.0,
+        "min_price": 11100.0
+    },
+    "KKC": {
+        "max_price": 20300.0,
+        "min_price": 20300.0
+    },
+    "KLB": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "KLF": {
+        "max_price": 4400.0,
+        "min_price": 4400.0
+    },
+    "KLM": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "KMR": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "KMT": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "KOS": {
+        "max_price": 34900.0,
+        "min_price": 34900.0
+    },
+    "KPF": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "KSB": {
+        "max_price": 30400.0,
+        "min_price": 30400.0
+    },
+    "KSD": {
+        "max_price": 8200.0,
+        "min_price": 8200.0
+    },
+    "KSF": {
+        "max_price": 106000.0,
+        "min_price": 106000.0
+    },
+    "KSH": {
+        "max_price": 1800.0,
+        "min_price": 1800.0
+    },
+    "KSQ": {
+        "max_price": 4100.0,
+        "min_price": 4100.0
+    },
+    "KST": {
+        "max_price": 16400.0,
+        "min_price": 16400.0
+    },
+    "KSV": {
+        "max_price": 41900.0,
+        "min_price": 41900.0
+    },
+    "KTC": {
+        "max_price": 17400.0,
+        "min_price": 17400.0
+    },
+    "KTL": {
+        "max_price": 20700.0,
+        "min_price": 20700.0
+    },
+    "KTS": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "KTT": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "KVC": {
+        "max_price": 4000.0,
+        "min_price": 4000.0
+    },
+    "L10": {
+        "max_price": 28500.0,
+        "min_price": 28500.0
+    },
+    "L12": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "L14": {
+        "max_price": 128000.0,
+        "min_price": 128000.0
+    },
+    "L18": {
+        "max_price": 32800.0,
+        "min_price": 32800.0
+    },
+    "L35": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "L40": {
+        "max_price": 27200.0,
+        "min_price": 27200.0
+    },
+    "L43": {
+        "max_price": 4700.0,
+        "min_price": 4700.0
+    },
+    "L44": {
+        "max_price": 1300.0,
+        "min_price": 1300.0
+    },
+    "L45": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "L61": {
+        "max_price": 8400.0,
+        "min_price": 8400.0
+    },
+    "L62": {
+        "max_price": 5400.0,
+        "min_price": 5400.0
+    },
+    "L63": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "LAF": {
+        "max_price": 22950.0,
+        "min_price": 22950.0
+    },
+    "LAI": {
+        "max_price": 30300.0,
+        "min_price": 30300.0
+    },
+    "LAS": {
+        "max_price": 12300.0,
+        "min_price": 12300.0
+    },
+    "LAW": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "LBC": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "LBE": {
+        "max_price": 26100.0,
+        "min_price": 26100.0
+    },
+    "LBM": {
+        "max_price": 93400.0,
+        "min_price": 93400.0
+    },
+    "LCC": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "LCD": {
+        "max_price": 24300.0,
+        "min_price": 24300.0
+    },
+    "LCG": {
+        "max_price": 12900.0,
+        "min_price": 12900.0
+    },
+    "LCM": {
+        "max_price": 4010.0,
+        "min_price": 4010.0
+    },
+    "LCS": {
+        "max_price": 2700.0,
+        "min_price": 2700.0
+    },
+    "LCW": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "LDG": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "LDP": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "LDW": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "LEC": {
+        "max_price": 10950.0,
+        "min_price": 10950.0
+    },
+    "LG9": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "LGC": {
+        "max_price": 43800.0,
+        "min_price": 43800.0
+    },
+    "LGL": {
+        "max_price": 5800.0,
+        "min_price": 5800.0
+    },
+    "LGM": {
+        "max_price": 9200.0,
+        "min_price": 9200.0
+    },
+    "LHC": {
+        "max_price": 124000.0,
+        "min_price": 124000.0
+    },
+    "LHG": {
+        "max_price": 30600.0,
+        "min_price": 30600.0
+    },
+    "LIC": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "LIG": {
+        "max_price": 7600.0,
+        "min_price": 7600.0
+    },
+    "LIX": {
+        "max_price": 42000.0,
+        "min_price": 42000.0
+    },
+    "LKW": {
+        "max_price": 45300.0,
+        "min_price": 45300.0
+    },
+    "LLM": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "LM3": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "LM7": {
+        "max_price": 4100.0,
+        "min_price": 4100.0
+    },
+    "LM8": {
+        "max_price": 12200.0,
+        "min_price": 12200.0
+    },
+    "LMC": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "LMH": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "LMI": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "LNC": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "LO5": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "LPB": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "LPT": {
+        "max_price": 9200.0,
+        "min_price": 9200.0
+    },
+    "LQN": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "LSG": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "LSS": {
+        "max_price": 9560.0,
+        "min_price": 9560.0
+    },
+    "LTC": {
+        "max_price": 3500.0,
+        "min_price": 3500.0
+    },
+    "LTG": {
+        "max_price": 33200.0,
+        "min_price": 33200.0
+    },
+    "LUT": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "LWS": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "LYF": {
+        "max_price": 16800.0,
+        "min_price": 16800.0
+    },
+    "M10": {
+        "max_price": 22200.0,
+        "min_price": 22200.0
+    },
+    "MA1": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "MAC": {
+        "max_price": 6700.0,
+        "min_price": 6700.0
+    },
+    "MAS": {
+        "max_price": 39000.0,
+        "min_price": 39000.0
+    },
+    "MBB": {
+        "max_price": 24600.0,
+        "min_price": 24600.0
+    },
+    "MBG": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "MBN": {
+        "max_price": 8400.0,
+        "min_price": 8400.0
+    },
+    "MBS": {
+        "max_price": 20700.0,
+        "min_price": 20700.0
+    },
+    "MC3": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "MCC": {
+        "max_price": 10200.0,
+        "min_price": 10200.0
+    },
+    "MCF": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "MCG": {
+        "max_price": 5010.0,
+        "min_price": 5010.0
+    },
+    "MCH": {
+        "max_price": 102000.0,
+        "min_price": 102000.0
+    },
+    "MCI": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "MCM": {
+        "max_price": 47500.0,
+        "min_price": 47500.0
+    },
+    "MCO": {
+        "max_price": 5000.0,
+        "min_price": 5000.0
+    },
+    "MCP": {
+        "max_price": 28500.0,
+        "min_price": 28500.0
+    },
+    "MDA": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "MDC": {
+        "max_price": 10800.0,
+        "min_price": 10800.0
+    },
+    "MDF": {
+        "max_price": 18900.0,
+        "min_price": 18900.0
+    },
+    "MDG": {
+        "max_price": 16450.0,
+        "min_price": 16450.0
+    },
+    "MEC": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "MED": {
+        "max_price": 26800.0,
+        "min_price": 26800.0
+    },
+    "MEF": {
+        "max_price": 1600.0,
+        "min_price": 1600.0
+    },
+    "MEG": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "MEL": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "MES": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "MFS": {
+        "max_price": 30000.0,
+        "min_price": 30000.0
+    },
+    "MGC": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "MGG": {
+        "max_price": 34000.0,
+        "min_price": 34000.0
+    },
+    "MGR": {
+        "max_price": 16400.0,
+        "min_price": 16400.0
+    },
+    "MH3": {
+        "max_price": 58000.0,
+        "min_price": 58000.0
+    },
+    "MHC": {
+        "max_price": 6900.0,
+        "min_price": 6900.0
+    },
+    "MHL": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "MIC": {
+        "max_price": 12900.0,
+        "min_price": 12900.0
+    },
+    "MIE": {
+        "max_price": 12500.0,
+        "min_price": 12500.0
+    },
+    "MIG": {
+        "max_price": 23300.0,
+        "min_price": 23300.0
+    },
+    "MIM": {
+        "max_price": 8400.0,
+        "min_price": 8400.0
+    },
+    "MKP": {
+        "max_price": 46100.0,
+        "min_price": 46100.0
+    },
+    "MKV": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "MLC": {
+        "max_price": 5800.0,
+        "min_price": 5800.0
+    },
+    "MLS": {
+        "max_price": 21500.0,
+        "min_price": 21500.0
+    },
+    "MML": {
+        "max_price": 70000.0,
+        "min_price": 70000.0
+    },
+    "MNB": {
+        "max_price": 26600.0,
+        "min_price": 26600.0
+    },
+    "MND": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "MPC": {
+        "max_price": 37400.0,
+        "min_price": 37400.0
+    },
+    "MPT": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "MPY": {
+        "max_price": 7400.0,
+        "min_price": 7400.0
+    },
+    "MQB": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "MQN": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "MRF": {
+        "max_price": 57100.0,
+        "min_price": 57100.0
+    },
+    "MSB": {
+        "max_price": 18250.0,
+        "min_price": 18250.0
+    },
+    "MSH": {
+        "max_price": 65000.0,
+        "min_price": 65000.0
+    },
+    "MSN": {
+        "max_price": 90200.0,
+        "min_price": 90200.0
+    },
+    "MSR": {
+        "max_price": 19700.0,
+        "min_price": 19700.0
+    },
+    "MST": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "MTA": {
+        "max_price": 9900.0,
+        "min_price": 9900.0
+    },
+    "MTB": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "MTC": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "MTG": {
+        "max_price": 7100.0,
+        "min_price": 7100.0
+    },
+    "MTH": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "MTL": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "MTP": {
+        "max_price": 15100.0,
+        "min_price": 15100.0
+    },
+    "MTS": {
+        "max_price": 11500.0,
+        "min_price": 11500.0
+    },
+    "MTV": {
+        "max_price": 17700.0,
+        "min_price": 17700.0
+    },
+    "MVB": {
+        "max_price": 22300.0,
+        "min_price": 22300.0
+    },
+    "MVC": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "MVN": {
+        "max_price": 29500.0,
+        "min_price": 29500.0
+    },
+    "MWG": {
+        "max_price": 123000.0,
+        "min_price": 123000.0
+    },
+    "NAB": {
+        "max_price": 14700.0,
+        "min_price": 14700.0
+    },
+    "NAC": {
+        "max_price": 1400.0,
+        "min_price": 1400.0
+    },
+    "NAF": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "NAG": {
+        "max_price": 15200.0,
+        "min_price": 15200.0
+    },
+    "NAP": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "NAS": {
+        "max_price": 30400.0,
+        "min_price": 30400.0
+    },
+    "NAU": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "NAV": {
+        "max_price": 24250.0,
+        "min_price": 24250.0
+    },
+    "NAW": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "NBB": {
+        "max_price": 16000.0,
+        "min_price": 16000.0
+    },
+    "NBC": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "NBE": {
+        "max_price": 14200.0,
+        "min_price": 14200.0
+    },
+    "NBP": {
+        "max_price": 21200.0,
+        "min_price": 21200.0
+    },
+    "NBT": {
+        "max_price": 15100.0,
+        "min_price": 15100.0
+    },
+    "NBW": {
+        "max_price": 21200.0,
+        "min_price": 21200.0
+    },
+    "NCS": {
+        "max_price": 23300.0,
+        "min_price": 23300.0
+    },
+    "NCT": {
+        "max_price": 86800.0,
+        "min_price": 86800.0
+    },
+    "ND2": {
+        "max_price": 33300.0,
+        "min_price": 33300.0
+    },
+    "NDC": {
+        "max_price": 120100.0,
+        "min_price": 120100.0
+    },
+    "NDF": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "NDN": {
+        "max_price": 12900.0,
+        "min_price": 12900.0
+    },
+    "NDP": {
+        "max_price": 22000.0,
+        "min_price": 22000.0
+    },
+    "NDT": {
+        "max_price": 24500.0,
+        "min_price": 24500.0
+    },
+    "NDW": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "NDX": {
+        "max_price": 7200.0,
+        "min_price": 7200.0
+    },
+    "NED": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "NET": {
+        "max_price": 55000.0,
+        "min_price": 55000.0
+    },
+    "NFC": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "NGC": {
+        "max_price": 18900.0,
+        "min_price": 18900.0
+    },
+    "NHA": {
+        "max_price": 27500.0,
+        "min_price": 27500.0
+    },
+    "NHC": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "NHH": {
+        "max_price": 16900.0,
+        "min_price": 16900.0
+    },
+    "NHP": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "NHT": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "NHV": {
+        "max_price": 29600.0,
+        "min_price": 29600.0
+    },
+    "NJC": {
+        "max_price": 22700.0,
+        "min_price": 22700.0
+    },
+    "NKG": {
+        "max_price": 25700.0,
+        "min_price": 25700.0
+    },
+    "NLG": {
+        "max_price": 44700.0,
+        "min_price": 44700.0
+    },
+    "NLS": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "NNC": {
+        "max_price": 18400.0,
+        "min_price": 18400.0
+    },
+    "NNG": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "NNT": {
+        "max_price": 40300.0,
+        "min_price": 40300.0
+    },
+    "NOS": {
+        "max_price": 3200.0,
+        "min_price": 3200.0
+    },
+    "NQB": {
+        "max_price": 20100.0,
+        "min_price": 20100.0
+    },
+    "NQN": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "NQT": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "NRC": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "NS2": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "NS3": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "NSC": {
+        "max_price": 87400.0,
+        "min_price": 87400.0
+    },
+    "NSG": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "NSH": {
+        "max_price": 7400.0,
+        "min_price": 7400.0
+    },
+    "NSL": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "NSS": {
+        "max_price": 4000.0,
+        "min_price": 4000.0
+    },
+    "NST": {
+        "max_price": 7900.0,
+        "min_price": 7900.0
+    },
+    "NT2": {
+        "max_price": 20850.0,
+        "min_price": 20850.0
+    },
+    "NTB": {
+        "max_price": 1300.0,
+        "min_price": 1300.0
+    },
+    "NTC": {
+        "max_price": 173400.0,
+        "min_price": 173400.0
+    },
+    "NTF": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "NTH": {
+        "max_price": 42000.0,
+        "min_price": 42000.0
+    },
+    "NTL": {
+        "max_price": 24900.0,
+        "min_price": 24900.0
+    },
+    "NTP": {
+        "max_price": 46700.0,
+        "min_price": 46700.0
+    },
+    "NTT": {
+        "max_price": 8800.0,
+        "min_price": 8800.0
+    },
+    "NTW": {
+        "max_price": 19900.0,
+        "min_price": 19900.0
+    },
+    "NUE": {
+        "max_price": 10200.0,
+        "min_price": 10200.0
+    },
+    "NVB": {
+        "max_price": 34700.0,
+        "min_price": 34700.0
+    },
+    "NVL": {
+        "max_price": 75000.0,
+        "min_price": 75000.0
+    },
+    "NVP": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "NVT": {
+        "max_price": 15150.0,
+        "min_price": 15150.0
+    },
+    "NWT": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "NXT": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "OCB": {
+        "max_price": 17300.0,
+        "min_price": 17300.0
+    },
+    "OCH": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "ODE": {
+        "max_price": 47500.0,
+        "min_price": 47500.0
+    },
+    "OGC": {
+        "max_price": 13600.0,
+        "min_price": 13600.0
+    },
+    "OIL": {
+        "max_price": 12400.0,
+        "min_price": 12400.0
+    },
+    "ONE": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "ONW": {
+        "max_price": 3800.0,
+        "min_price": 3800.0
+    },
+    "OPC": {
+        "max_price": 55000.0,
+        "min_price": 55000.0
+    },
+    "ORS": {
+        "max_price": 15650.0,
+        "min_price": 15650.0
+    },
+    "PAC": {
+        "max_price": 34350.0,
+        "min_price": 34350.0
+    },
+    "PAI": {
+        "max_price": 15300.0,
+        "min_price": 15300.0
+    },
+    "PAN": {
+        "max_price": 19600.0,
+        "min_price": 19600.0
+    },
+    "PAP": {
+        "max_price": 11200.0,
+        "min_price": 11200.0
+    },
+    "PAS": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "PBC": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "PBP": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "PBT": {
+        "max_price": 9200.0,
+        "min_price": 9200.0
+    },
+    "PC1": {
+        "max_price": 30300.0,
+        "min_price": 30300.0
+    },
+    "PCC": {
+        "max_price": 18200.0,
+        "min_price": 18200.0
+    },
+    "PCE": {
+        "max_price": 21000.0,
+        "min_price": 21000.0
+    },
+    "PCF": {
+        "max_price": 7400.0,
+        "min_price": 7400.0
+    },
+    "PCG": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "PCM": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "PCN": {
+        "max_price": 4100.0,
+        "min_price": 4100.0
+    },
+    "PCT": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "PDB": {
+        "max_price": 22400.0,
+        "min_price": 22400.0
+    },
+    "PDC": {
+        "max_price": 7700.0,
+        "min_price": 7700.0
+    },
+    "PDN": {
+        "max_price": 113600.0,
+        "min_price": 113600.0
+    },
+    "PDR": {
+        "max_price": 54600.0,
+        "min_price": 54600.0
+    },
+    "PDV": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "PEC": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "PEG": {
+        "max_price": 8900.0,
+        "min_price": 8900.0
+    },
+    "PEN": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "PEQ": {
+        "max_price": 48000.0,
+        "min_price": 48000.0
+    },
+    "PET": {
+        "max_price": 30750.0,
+        "min_price": 30750.0
+    },
+    "PFL": {
+        "max_price": 6500.0,
+        "min_price": 6500.0
+    },
+    "PGB": {
+        "max_price": 20400.0,
+        "min_price": 20400.0
+    },
+    "PGC": {
+        "max_price": 19100.0,
+        "min_price": 19100.0
+    },
+    "PGD": {
+        "max_price": 30600.0,
+        "min_price": 30600.0
+    },
+    "PGI": {
+        "max_price": 27500.0,
+        "min_price": 27500.0
+    },
+    "PGN": {
+        "max_price": 14300.0,
+        "min_price": 14300.0
+    },
+    "PGS": {
+        "max_price": 24000.0,
+        "min_price": 24000.0
+    },
+    "PGT": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "PGV": {
+        "max_price": 28350.0,
+        "min_price": 28350.0
+    },
+    "PHC": {
+        "max_price": 9080.0,
+        "min_price": 9080.0
+    },
+    "PHH": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "PHN": {
+        "max_price": 39500.0,
+        "min_price": 39500.0
+    },
+    "PHP": {
+        "max_price": 18500.0,
+        "min_price": 18500.0
+    },
+    "PHR": {
+        "max_price": 55000.0,
+        "min_price": 55000.0
+    },
+    "PHS": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "PIA": {
+        "max_price": 31000.0,
+        "min_price": 31000.0
+    },
+    "PIC": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "PID": {
+        "max_price": 2400.0,
+        "min_price": 2400.0
+    },
+    "PIS": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "PIT": {
+        "max_price": 8510.0,
+        "min_price": 8510.0
+    },
+    "PIV": {
+        "max_price": 1900.0,
+        "min_price": 1900.0
+    },
+    "PJC": {
+        "max_price": 25300.0,
+        "min_price": 25300.0
+    },
+    "PJS": {
+        "max_price": 22100.0,
+        "min_price": 22100.0
+    },
+    "PJT": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "PLA": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "PLC": {
+        "max_price": 26800.0,
+        "min_price": 26800.0
+    },
+    "PLE": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "PLO": {
+        "max_price": 4300.0,
+        "min_price": 4300.0
+    },
+    "PLP": {
+        "max_price": 9560.0,
+        "min_price": 9560.0
+    },
+    "PLX": {
+        "max_price": 39100.0,
+        "min_price": 39100.0
+    },
+    "PMB": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "PMC": {
+        "max_price": 65300.0,
+        "min_price": 65300.0
+    },
+    "PMG": {
+        "max_price": 15350.0,
+        "min_price": 15350.0
+    },
+    "PMJ": {
+        "max_price": 25300.0,
+        "min_price": 25300.0
+    },
+    "PMP": {
+        "max_price": 16700.0,
+        "min_price": 16700.0
+    },
+    "PMS": {
+        "max_price": 25300.0,
+        "min_price": 25300.0
+    },
+    "PMT": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "PMW": {
+        "max_price": 34800.0,
+        "min_price": 34800.0
+    },
+    "PNC": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "PND": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "PNG": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "PNJ": {
+        "max_price": 98000.0,
+        "min_price": 98000.0
+    },
+    "PNP": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "PNT": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "POB": {
+        "max_price": 23400.0,
+        "min_price": 23400.0
+    },
+    "POM": {
+        "max_price": 8670.0,
+        "min_price": 8670.0
+    },
+    "POS": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "POT": {
+        "max_price": 33800.0,
+        "min_price": 33800.0
+    },
+    "POV": {
+        "max_price": 11400.0,
+        "min_price": 11400.0
+    },
+    "POW": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "PPC": {
+        "max_price": 17650.0,
+        "min_price": 17650.0
+    },
+    "PPE": {
+        "max_price": 14100.0,
+        "min_price": 14100.0
+    },
+    "PPH": {
+        "max_price": 34900.0,
+        "min_price": 34900.0
+    },
+    "PPI": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "PPP": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "PPS": {
+        "max_price": 11900.0,
+        "min_price": 11900.0
+    },
+    "PPY": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "PQN": {
+        "max_price": 4000.0,
+        "min_price": 4000.0
+    },
+    "PRC": {
+        "max_price": 16600.0,
+        "min_price": 16600.0
+    },
+    "PRE": {
+        "max_price": 18500.0,
+        "min_price": 18500.0
+    },
+    "PRO": {
+        "max_price": 8300.0,
+        "min_price": 8300.0
+    },
+    "PRT": {
+        "max_price": 16100.0,
+        "min_price": 16100.0
+    },
+    "PSB": {
+        "max_price": 7900.0,
+        "min_price": 7900.0
+    },
+    "PSC": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "PSD": {
+        "max_price": 25900.0,
+        "min_price": 25900.0
+    },
+    "PSE": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "PSG": {
+        "max_price": 3700.0,
+        "min_price": 3700.0
+    },
+    "PSH": {
+        "max_price": 12650.0,
+        "min_price": 12650.0
+    },
+    "PSI": {
+        "max_price": 8400.0,
+        "min_price": 8400.0
+    },
+    "PSL": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "PSN": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "PSP": {
+        "max_price": 11600.0,
+        "min_price": 11600.0
+    },
+    "PSW": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "PTB": {
+        "max_price": 96000.0,
+        "min_price": 96000.0
+    },
+    "PTC": {
+        "max_price": 14800.0,
+        "min_price": 14800.0
+    },
+    "PTD": {
+        "max_price": 18100.0,
+        "min_price": 18100.0
+    },
+    "PTE": {
+        "max_price": 2700.0,
+        "min_price": 2700.0
+    },
+    "PTG": {
+        "max_price": 200.0,
+        "min_price": 200.0
+    },
+    "PTH": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "PTI": {
+        "max_price": 67000.0,
+        "min_price": 67000.0
+    },
+    "PTL": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "PTO": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "PTP": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "PTS": {
+        "max_price": 11900.0,
+        "min_price": 11900.0
+    },
+    "PTT": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "PTV": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "PTX": {
+        "max_price": 300.0,
+        "min_price": 300.0
+    },
+    "PV2": {
+        "max_price": 4000.0,
+        "min_price": 4000.0
+    },
+    "PVA": {
+        "max_price": 2200.0,
+        "min_price": 2200.0
+    },
+    "PVB": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "PVC": {
+        "max_price": 20200.0,
+        "min_price": 20200.0
+    },
+    "PVD": {
+        "max_price": 17300.0,
+        "min_price": 17300.0
+    },
+    "PVE": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "PVG": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "PVH": {
+        "max_price": 2200.0,
+        "min_price": 2200.0
+    },
+    "PVI": {
+        "max_price": 47300.0,
+        "min_price": 47300.0
+    },
+    "PVL": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "PVM": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "PVO": {
+        "max_price": 9700.0,
+        "min_price": 9700.0
+    },
+    "PVP": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "PVR": {
+        "max_price": 3400.0,
+        "min_price": 3400.0
+    },
+    "PVS": {
+        "max_price": 25400.0,
+        "min_price": 25400.0
+    },
+    "PVT": {
+        "max_price": 17700.0,
+        "min_price": 17700.0
+    },
+    "PVV": {
+        "max_price": 3200.0,
+        "min_price": 3200.0
+    },
+    "PVX": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "PVY": {
+        "max_price": 2900.0,
+        "min_price": 2900.0
+    },
+    "PWA": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "PWS": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "PX1": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "PXA": {
+        "max_price": 1800.0,
+        "min_price": 1800.0
+    },
+    "PXC": {
+        "max_price": 500.0,
+        "min_price": 500.0
+    },
+    "PXL": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "PXM": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "PXS": {
+        "max_price": 5310.0,
+        "min_price": 5310.0
+    },
+    "PXT": {
+        "max_price": 5600.0,
+        "min_price": 5600.0
+    },
+    "PYU": {
+        "max_price": 22500.0,
+        "min_price": 22500.0
+    },
+    "QBS": {
+        "max_price": 4410.0,
+        "min_price": 4410.0
+    },
+    "QCC": {
+        "max_price": 10400.0,
+        "min_price": 10400.0
+    },
+    "QCG": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "QHD": {
+        "max_price": 44300.0,
+        "min_price": 44300.0
+    },
+    "QHW": {
+        "max_price": 25300.0,
+        "min_price": 25300.0
+    },
+    "QLD": {
+        "max_price": 4400.0,
+        "min_price": 4400.0
+    },
+    "QLT": {
+        "max_price": 26400.0,
+        "min_price": 26400.0
+    },
+    "QNC": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "QNS": {
+        "max_price": 43900.0,
+        "min_price": 43900.0
+    },
+    "QNT": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "QNU": {
+        "max_price": 15200.0,
+        "min_price": 15200.0
+    },
+    "QNW": {
+        "max_price": 8600.0,
+        "min_price": 8600.0
+    },
+    "QPH": {
+        "max_price": 29500.0,
+        "min_price": 29500.0
+    },
+    "QSP": {
+        "max_price": 24300.0,
+        "min_price": 24300.0
+    },
+    "QST": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "QTC": {
+        "max_price": 15500.0,
+        "min_price": 15500.0
+    },
+    "QTP": {
+        "max_price": 16100.0,
+        "min_price": 16100.0
+    },
+    "RAL": {
+        "max_price": 127000.0,
+        "min_price": 127000.0
+    },
+    "RAT": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "RBC": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "RCC": {
+        "max_price": 37000.0,
+        "min_price": 37000.0
+    },
+    "RCD": {
+        "max_price": 3500.0,
+        "min_price": 3500.0
+    },
+    "RCL": {
+        "max_price": 19300.0,
+        "min_price": 19300.0
+    },
+    "RDP": {
+        "max_price": 9910.0,
+        "min_price": 9910.0
+    },
+    "REE": {
+        "max_price": 75400.0,
+        "min_price": 75400.0
+    },
+    "RGC": {
+        "max_price": 13300.0,
+        "min_price": 13300.0
+    },
+    "ROS": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "RTB": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "S12": {
+        "max_price": 3300.0,
+        "min_price": 3300.0
+    },
+    "S27": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "S4A": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "S55": {
+        "max_price": 60000.0,
+        "min_price": 60000.0
+    },
+    "S72": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "S74": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "S96": {
+        "max_price": 1200.0,
+        "min_price": 1200.0
+    },
+    "S99": {
+        "max_price": 12100.0,
+        "min_price": 12100.0
+    },
+    "SAB": {
+        "max_price": 157800.0,
+        "min_price": 157800.0
+    },
+    "SAC": {
+        "max_price": 13400.0,
+        "min_price": 13400.0
+    },
+    "SAF": {
+        "max_price": 61700.0,
+        "min_price": 61700.0
+    },
+    "SAL": {
+        "max_price": 12800.0,
+        "min_price": 12800.0
+    },
+    "SAM": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "SAP": {
+        "max_price": 25100.0,
+        "min_price": 25100.0
+    },
+    "SAS": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "SAV": {
+        "max_price": 23400.0,
+        "min_price": 23400.0
+    },
+    "SB1": {
+        "max_price": 7900.0,
+        "min_price": 7900.0
+    },
+    "SBA": {
+        "max_price": 20050.0,
+        "min_price": 20050.0
+    },
+    "SBD": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "SBH": {
+        "max_price": 40500.0,
+        "min_price": 40500.0
+    },
+    "SBL": {
+        "max_price": 8500.0,
+        "min_price": 8500.0
+    },
+    "SBM": {
+        "max_price": 28100.0,
+        "min_price": 28100.0
+    },
+    "SBR": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "SBS": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "SBT": {
+        "max_price": 14700.0,
+        "min_price": 14700.0
+    },
+    "SBV": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "SC5": {
+        "max_price": 22800.0,
+        "min_price": 22800.0
+    },
+    "SCA": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "SCC": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "SCD": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "SCG": {
+        "max_price": 67800.0,
+        "min_price": 67800.0
+    },
+    "SCI": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "SCJ": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "SCL": {
+        "max_price": 11900.0,
+        "min_price": 11900.0
+    },
+    "SCO": {
+        "max_price": 5600.0,
+        "min_price": 5600.0
+    },
+    "SCR": {
+        "max_price": 11500.0,
+        "min_price": 11500.0
+    },
+    "SCS": {
+        "max_price": 162000.0,
+        "min_price": 162000.0
+    },
+    "SCV": {
+        "max_price": 23500.0,
+        "min_price": 23500.0
+    },
+    "SCY": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "SD1": {
+        "max_price": 2300.0,
+        "min_price": 2300.0
+    },
+    "SD2": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "SD3": {
+        "max_price": 5500.0,
+        "min_price": 5500.0
+    },
+    "SD4": {
+        "max_price": 5400.0,
+        "min_price": 5400.0
+    },
+    "SD5": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "SD6": {
+        "max_price": 4900.0,
+        "min_price": 4900.0
+    },
+    "SD7": {
+        "max_price": 5400.0,
+        "min_price": 5400.0
+    },
+    "SD8": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "SD9": {
+        "max_price": 8400.0,
+        "min_price": 8400.0
+    },
+    "SDA": {
+        "max_price": 21100.0,
+        "min_price": 21100.0
+    },
+    "SDB": {
+        "max_price": 1300.0,
+        "min_price": 1300.0
+    },
+    "SDC": {
+        "max_price": 9800.0,
+        "min_price": 9800.0
+    },
+    "SDD": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "SDG": {
+        "max_price": 34900.0,
+        "min_price": 34900.0
+    },
+    "SDH": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "SDJ": {
+        "max_price": 5800.0,
+        "min_price": 5800.0
+    },
+    "SDK": {
+        "max_price": 27400.0,
+        "min_price": 27400.0
+    },
+    "SDN": {
+        "max_price": 48800.0,
+        "min_price": 48800.0
+    },
+    "SDP": {
+        "max_price": 2300.0,
+        "min_price": 2300.0
+    },
+    "SDT": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "SDU": {
+        "max_price": 19800.0,
+        "min_price": 19800.0
+    },
+    "SDV": {
+        "max_price": 31100.0,
+        "min_price": 31100.0
+    },
+    "SDX": {
+        "max_price": 2800.0,
+        "min_price": 2800.0
+    },
+    "SDY": {
+        "max_price": 3300.0,
+        "min_price": 3300.0
+    },
+    "SEA": {
+        "max_price": 28500.0,
+        "min_price": 28500.0
+    },
+    "SEB": {
+        "max_price": 55700.0,
+        "min_price": 55700.0
+    },
+    "SED": {
+        "max_price": 21400.0,
+        "min_price": 21400.0
+    },
+    "SEP": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "SFC": {
+        "max_price": 23800.0,
+        "min_price": 23800.0
+    },
+    "SFG": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "SFI": {
+        "max_price": 70000.0,
+        "min_price": 70000.0
+    },
+    "SFN": {
+        "max_price": 25400.0,
+        "min_price": 25400.0
+    },
+    "SGB": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "SGC": {
+        "max_price": 85000.0,
+        "min_price": 85000.0
+    },
+    "SGD": {
+        "max_price": 15400.0,
+        "min_price": 15400.0
+    },
+    "SGH": {
+        "max_price": 33600.0,
+        "min_price": 33600.0
+    },
+    "SGI": {
+        "max_price": 22900.0,
+        "min_price": 22900.0
+    },
+    "SGN": {
+        "max_price": 66100.0,
+        "min_price": 66100.0
+    },
+    "SGO": {
+        "max_price": 1300.0,
+        "min_price": 1300.0
+    },
+    "SGP": {
+        "max_price": 24500.0,
+        "min_price": 24500.0
+    },
+    "SGR": {
+        "max_price": 20400.0,
+        "min_price": 20400.0
+    },
+    "SGS": {
+        "max_price": 16800.0,
+        "min_price": 16800.0
+    },
+    "SGT": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "SHA": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "SHB": {
+        "max_price": 12150.0,
+        "min_price": 12150.0
+    },
+    "SHC": {
+        "max_price": 12100.0,
+        "min_price": 12100.0
+    },
+    "SHE": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "SHG": {
+        "max_price": 2600.0,
+        "min_price": 2600.0
+    },
+    "SHI": {
+        "max_price": 14300.0,
+        "min_price": 14300.0
+    },
+    "SHN": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "SHP": {
+        "max_price": 28300.0,
+        "min_price": 28300.0
+    },
+    "SHS": {
+        "max_price": 15300.0,
+        "min_price": 15300.0
+    },
+    "SHX": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "SIC": {
+        "max_price": 20900.0,
+        "min_price": 20900.0
+    },
+    "SID": {
+        "max_price": 14800.0,
+        "min_price": 14800.0
+    },
+    "SIG": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "SII": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "SIP": {
+        "max_price": 100000.0,
+        "min_price": 100000.0
+    },
+    "SIV": {
+        "max_price": 52100.0,
+        "min_price": 52100.0
+    },
+    "SJ1": {
+        "max_price": 14900.0,
+        "min_price": 14900.0
+    },
+    "SJC": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "SJD": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "SJE": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "SJF": {
+        "max_price": 10550.0,
+        "min_price": 10550.0
+    },
+    "SJG": {
+        "max_price": 26200.0,
+        "min_price": 26200.0
+    },
+    "SJM": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "SJS": {
+        "max_price": 70400.0,
+        "min_price": 70400.0
+    },
+    "SKG": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "SKH": {
+        "max_price": 26500.0,
+        "min_price": 26500.0
+    },
+    "SKN": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "SKV": {
+        "max_price": 28500.0,
+        "min_price": 28500.0
+    },
+    "SLS": {
+        "max_price": 133900.0,
+        "min_price": 133900.0
+    },
+    "SMA": {
+        "max_price": 9200.0,
+        "min_price": 9200.0
+    },
+    "SMB": {
+        "max_price": 40800.0,
+        "min_price": 40800.0
+    },
+    "SMC": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "SMN": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "SMT": {
+        "max_price": 14100.0,
+        "min_price": 14100.0
+    },
+    "SNC": {
+        "max_price": 16200.0,
+        "min_price": 16200.0
+    },
+    "SNZ": {
+        "max_price": 37800.0,
+        "min_price": 37800.0
+    },
+    "SP2": {
+        "max_price": 16100.0,
+        "min_price": 16100.0
+    },
+    "SPA": {
+        "max_price": 9900.0,
+        "min_price": 9900.0
+    },
+    "SPB": {
+        "max_price": 42000.0,
+        "min_price": 42000.0
+    },
+    "SPC": {
+        "max_price": 17600.0,
+        "min_price": 17600.0
+    },
+    "SPD": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "SPH": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "SPI": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "SPM": {
+        "max_price": 19500.0,
+        "min_price": 19500.0
+    },
+    "SPP": {
+        "max_price": 1200.0,
+        "min_price": 1200.0
+    },
+    "SPV": {
+        "max_price": 15200.0,
+        "min_price": 15200.0
+    },
+    "SQC": {
+        "max_price": 12700.0,
+        "min_price": 12700.0
+    },
+    "SRA": {
+        "max_price": 7600.0,
+        "min_price": 7600.0
+    },
+    "SRB": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "SRC": {
+        "max_price": 16600.0,
+        "min_price": 16600.0
+    },
+    "SRF": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "SRT": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "SSB": {
+        "max_price": 34800.0,
+        "min_price": 34800.0
+    },
+    "SSC": {
+        "max_price": 38500.0,
+        "min_price": 38500.0
+    },
+    "SSF": {
+        "max_price": 4200.0,
+        "min_price": 4200.0
+    },
+    "SSG": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "SSH": {
+        "max_price": 96100.0,
+        "min_price": 96100.0
+    },
+    "SSI": {
+        "max_price": 27300.0,
+        "min_price": 27300.0
+    },
+    "SSM": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "SSN": {
+        "max_price": 5100.0,
+        "min_price": 5100.0
+    },
+    "SSU": {
+        "max_price": 2300.0,
+        "min_price": 2300.0
+    },
+    "ST8": {
+        "max_price": 15550.0,
+        "min_price": 15550.0
+    },
+    "STB": {
+        "max_price": 19050.0,
+        "min_price": 19050.0
+    },
+    "STC": {
+        "max_price": 21500.0,
+        "min_price": 21500.0
+    },
+    "STG": {
+        "max_price": 30850.0,
+        "min_price": 30850.0
+    },
+    "STH": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "STK": {
+        "max_price": 48900.0,
+        "min_price": 48900.0
+    },
+    "STL": {
+        "max_price": 2700.0,
+        "min_price": 2700.0
+    },
+    "STP": {
+        "max_price": 8700.0,
+        "min_price": 8700.0
+    },
+    "STS": {
+        "max_price": 35000.0,
+        "min_price": 35000.0
+    },
+    "STT": {
+        "max_price": 3400.0,
+        "min_price": 3400.0
+    },
+    "STW": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "SVC": {
+        "max_price": 102700.0,
+        "min_price": 102700.0
+    },
+    "SVD": {
+        "max_price": 7060.0,
+        "min_price": 7060.0
+    },
+    "SVG": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "SVH": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "SVI": {
+        "max_price": 62400.0,
+        "min_price": 62400.0
+    },
+    "SVN": {
+        "max_price": 6800.0,
+        "min_price": 6800.0
+    },
+    "SVT": {
+        "max_price": 16050.0,
+        "min_price": 16050.0
+    },
+    "SWC": {
+        "max_price": 25900.0,
+        "min_price": 25900.0
+    },
+    "SZB": {
+        "max_price": 35600.0,
+        "min_price": 35600.0
+    },
+    "SZC": {
+        "max_price": 44000.0,
+        "min_price": 44000.0
+    },
+    "SZE": {
+        "max_price": 14700.0,
+        "min_price": 14700.0
+    },
+    "SZG": {
+        "max_price": 37500.0,
+        "min_price": 37500.0
+    },
+    "SZL": {
+        "max_price": 57300.0,
+        "min_price": 57300.0
+    },
+    "TA3": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "TA6": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "TA9": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "TAC": {
+        "max_price": 54800.0,
+        "min_price": 54800.0
+    },
+    "TAG": {
+        "max_price": 186000.0,
+        "min_price": 186000.0
+    },
+    "TAN": {
+        "max_price": 55100.0,
+        "min_price": 55100.0
+    },
+    "TAP": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "TAR": {
+        "max_price": 22300.0,
+        "min_price": 22300.0
+    },
+    "TAW": {
+        "max_price": 15100.0,
+        "min_price": 15100.0
+    },
+    "TB8": {
+        "max_price": 6500.0,
+        "min_price": 6500.0
+    },
+    "TBC": {
+        "max_price": 29800.0,
+        "min_price": 29800.0
+    },
+    "TBD": {
+        "max_price": 93000.0,
+        "min_price": 93000.0
+    },
+    "TBH": {
+        "max_price": 61800.0,
+        "min_price": 61800.0
+    },
+    "TBT": {
+        "max_price": 4900.0,
+        "min_price": 4900.0
+    },
+    "TBX": {
+        "max_price": 22300.0,
+        "min_price": 22300.0
+    },
+    "TC6": {
+        "max_price": 8700.0,
+        "min_price": 8700.0
+    },
+    "TCB": {
+        "max_price": 32600.0,
+        "min_price": 32600.0
+    },
+    "TCD": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "TCH": {
+        "max_price": 11950.0,
+        "min_price": 11950.0
+    },
+    "TCI": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "TCJ": {
+        "max_price": 4500.0,
+        "min_price": 4500.0
+    },
+    "TCK": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "TCL": {
+        "max_price": 33300.0,
+        "min_price": 33300.0
+    },
+    "TCM": {
+        "max_price": 57000.0,
+        "min_price": 57000.0
+    },
+    "TCO": {
+        "max_price": 12300.0,
+        "min_price": 12300.0
+    },
+    "TCR": {
+        "max_price": 6090.0,
+        "min_price": 6090.0
+    },
+    "TCT": {
+        "max_price": 36500.0,
+        "min_price": 36500.0
+    },
+    "TCW": {
+        "max_price": 29000.0,
+        "min_price": 29000.0
+    },
+    "TDB": {
+        "max_price": 36200.0,
+        "min_price": 36200.0
+    },
+    "TDC": {
+        "max_price": 13700.0,
+        "min_price": 13700.0
+    },
+    "TDF": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "TDG": {
+        "max_price": 6790.0,
+        "min_price": 6790.0
+    },
+    "TDH": {
+        "max_price": 7170.0,
+        "min_price": 7170.0
+    },
+    "TDM": {
+        "max_price": 35000.0,
+        "min_price": 35000.0
+    },
+    "TDN": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "TDP": {
+        "max_price": 25500.0,
+        "min_price": 25500.0
+    },
+    "TDS": {
+        "max_price": 18200.0,
+        "min_price": 18200.0
+    },
+    "TDT": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "TDW": {
+        "max_price": 46800.0,
+        "min_price": 46800.0
+    },
+    "TEC": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "TED": {
+        "max_price": 40200.0,
+        "min_price": 40200.0
+    },
+    "TEG": {
+        "max_price": 10150.0,
+        "min_price": 10150.0
+    },
+    "TEL": {
+        "max_price": 14000.0,
+        "min_price": 14000.0
+    },
+    "TET": {
+        "max_price": 31200.0,
+        "min_price": 31200.0
+    },
+    "TFC": {
+        "max_price": 7300.0,
+        "min_price": 7300.0
+    },
+    "TGG": {
+        "max_price": 9940.0,
+        "min_price": 9940.0
+    },
+    "TGP": {
+        "max_price": 7200.0,
+        "min_price": 7200.0
+    },
+    "TH1": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "THB": {
+        "max_price": 16200.0,
+        "min_price": 16200.0
+    },
+    "THD": {
+        "max_price": 81000.0,
+        "min_price": 81000.0
+    },
+    "THG": {
+        "max_price": 69500.0,
+        "min_price": 69500.0
+    },
+    "THI": {
+        "max_price": 25800.0,
+        "min_price": 25800.0
+    },
+    "THN": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "THP": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "THS": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "THT": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "THU": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "THW": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "TID": {
+        "max_price": 35700.0,
+        "min_price": 35700.0
+    },
+    "TIE": {
+        "max_price": 5000.0,
+        "min_price": 5000.0
+    },
+    "TIG": {
+        "max_price": 15300.0,
+        "min_price": 15300.0
+    },
+    "TIN": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "TIP": {
+        "max_price": 24900.0,
+        "min_price": 24900.0
+    },
+    "TIS": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "TIX": {
+        "max_price": 36300.0,
+        "min_price": 36300.0
+    },
+    "TJC": {
+        "max_price": 18100.0,
+        "min_price": 18100.0
+    },
+    "TKA": {
+        "max_price": 10300.0,
+        "min_price": 10300.0
+    },
+    "TKC": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "TKG": {
+        "max_price": 13800.0,
+        "min_price": 13800.0
+    },
+    "TKU": {
+        "max_price": 24400.0,
+        "min_price": 24400.0
+    },
+    "TL4": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "TLD": {
+        "max_price": 6600.0,
+        "min_price": 6600.0
+    },
+    "TLG": {
+        "max_price": 41900.0,
+        "min_price": 41900.0
+    },
+    "TLH": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "TLI": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "TLP": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "TLT": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "TMB": {
+        "max_price": 19400.0,
+        "min_price": 19400.0
+    },
+    "TMC": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "TMG": {
+        "max_price": 68100.0,
+        "min_price": 68100.0
+    },
+    "TMP": {
+        "max_price": 65200.0,
+        "min_price": 65200.0
+    },
+    "TMS": {
+        "max_price": 91900.0,
+        "min_price": 91900.0
+    },
+    "TMT": {
+        "max_price": 19250.0,
+        "min_price": 19250.0
+    },
+    "TMW": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "TMX": {
+        "max_price": 11100.0,
+        "min_price": 11100.0
+    },
+    "TN1": {
+        "max_price": 34500.0,
+        "min_price": 34500.0
+    },
+    "TNA": {
+        "max_price": 10400.0,
+        "min_price": 10400.0
+    },
+    "TNB": {
+        "max_price": 30000.0,
+        "min_price": 30000.0
+    },
+    "TNC": {
+        "max_price": 46100.0,
+        "min_price": 46100.0
+    },
+    "TNG": {
+        "max_price": 24700.0,
+        "min_price": 24700.0
+    },
+    "TNH": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "TNI": {
+        "max_price": 4830.0,
+        "min_price": 4830.0
+    },
+    "TNM": {
+        "max_price": 7800.0,
+        "min_price": 7800.0
+    },
+    "TNP": {
+        "max_price": 27000.0,
+        "min_price": 27000.0
+    },
+    "TNS": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "TNT": {
+        "max_price": 10850.0,
+        "min_price": 10850.0
+    },
+    "TNW": {
+        "max_price": 11900.0,
+        "min_price": 11900.0
+    },
+    "TOP": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "TOS": {
+        "max_price": 52200.0,
+        "min_price": 52200.0
+    },
+    "TOT": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "TOW": {
+        "max_price": 26000.0,
+        "min_price": 26000.0
+    },
+    "TPB": {
+        "max_price": 31000.0,
+        "min_price": 31000.0
+    },
+    "TPC": {
+        "max_price": 9600.0,
+        "min_price": 9600.0
+    },
+    "TPH": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "TPP": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "TPS": {
+        "max_price": 28100.0,
+        "min_price": 28100.0
+    },
+    "TQN": {
+        "max_price": 30300.0,
+        "min_price": 30300.0
+    },
+    "TQW": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "TR1": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "TRA": {
+        "max_price": 98900.0,
+        "min_price": 98900.0
+    },
+    "TRC": {
+        "max_price": 41500.0,
+        "min_price": 41500.0
+    },
+    "TRS": {
+        "max_price": 33000.0,
+        "min_price": 33000.0
+    },
+    "TRT": {
+        "max_price": 12100.0,
+        "min_price": 12100.0
+    },
+    "TS3": {
+        "max_price": 6500.0,
+        "min_price": 6500.0
+    },
+    "TS4": {
+        "max_price": 3100.0,
+        "min_price": 3100.0
+    },
+    "TSB": {
+        "max_price": 10500.0,
+        "min_price": 10500.0
+    },
+    "TSC": {
+        "max_price": 8980.0,
+        "min_price": 8980.0
+    },
+    "TSD": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "TSG": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "TSJ": {
+        "max_price": 21100.0,
+        "min_price": 21100.0
+    },
+    "TST": {
+        "max_price": 11800.0,
+        "min_price": 11800.0
+    },
+    "TTA": {
+        "max_price": 13050.0,
+        "min_price": 13050.0
+    },
+    "TTB": {
+        "max_price": 5300.0,
+        "min_price": 5300.0
+    },
+    "TTC": {
+        "max_price": 14900.0,
+        "min_price": 14900.0
+    },
+    "TTD": {
+        "max_price": 43600.0,
+        "min_price": 43600.0
+    },
+    "TTE": {
+        "max_price": 18950.0,
+        "min_price": 18950.0
+    },
+    "TTF": {
+        "max_price": 8760.0,
+        "min_price": 8760.0
+    },
+    "TTG": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "TTH": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "TTL": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "TTN": {
+        "max_price": 16000.0,
+        "min_price": 16000.0
+    },
+    "TTP": {
+        "max_price": 38000.0,
+        "min_price": 38000.0
+    },
+    "TTS": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "TTT": {
+        "max_price": 52000.0,
+        "min_price": 52000.0
+    },
+    "TTZ": {
+        "max_price": 4800.0,
+        "min_price": 4800.0
+    },
+    "TUG": {
+        "max_price": 18300.0,
+        "min_price": 18300.0
+    },
+    "TV1": {
+        "max_price": 9800.0,
+        "min_price": 9800.0
+    },
+    "TV2": {
+        "max_price": 43500.0,
+        "min_price": 43500.0
+    },
+    "TV3": {
+        "max_price": 23500.0,
+        "min_price": 23500.0
+    },
+    "TV4": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "TV6": {
+        "max_price": 10400.0,
+        "min_price": 10400.0
+    },
+    "TVA": {
+        "max_price": 20400.0,
+        "min_price": 20400.0
+    },
+    "TVB": {
+        "max_price": 8770.0,
+        "min_price": 8770.0
+    },
+    "TVC": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "TVD": {
+        "max_price": 13900.0,
+        "min_price": 13900.0
+    },
+    "TVG": {
+        "max_price": 9100.0,
+        "min_price": 9100.0
+    },
+    "TVH": {
+        "max_price": 36800.0,
+        "min_price": 36800.0
+    },
+    "TVM": {
+        "max_price": 9000.0,
+        "min_price": 9000.0
+    },
+    "TVN": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "TVP": {
+        "max_price": 47000.0,
+        "min_price": 47000.0
+    },
+    "TVS": {
+        "max_price": 27500.0,
+        "min_price": 27500.0
+    },
+    "TVT": {
+        "max_price": 29000.0,
+        "min_price": 29000.0
+    },
+    "TVW": {
+        "max_price": 13200.0,
+        "min_price": 13200.0
+    },
+    "TW3": {
+        "max_price": 18200.0,
+        "min_price": 18200.0
+    },
+    "TXM": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "TYA": {
+        "max_price": 18850.0,
+        "min_price": 18850.0
+    },
+    "UCT": {
+        "max_price": 9500.0,
+        "min_price": 9500.0
+    },
+    "UDC": {
+        "max_price": 9710.0,
+        "min_price": 9710.0
+    },
+    "UDJ": {
+        "max_price": 13300.0,
+        "min_price": 13300.0
+    },
+    "UDL": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "UEM": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "UIC": {
+        "max_price": 52900.0,
+        "min_price": 52900.0
+    },
+    "UMC": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "UNI": {
+        "max_price": 15900.0,
+        "min_price": 15900.0
+    },
+    "UPC": {
+        "max_price": 22600.0,
+        "min_price": 22600.0
+    },
+    "UPH": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "USC": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "USD": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "V11": {
+        "max_price": 1400.0,
+        "min_price": 1400.0
+    },
+    "V12": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "V15": {
+        "max_price": 1200.0,
+        "min_price": 1200.0
+    },
+    "V21": {
+        "max_price": 7600.0,
+        "min_price": 7600.0
+    },
+    "VAB": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "VAF": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "VAT": {
+        "max_price": 2200.0,
+        "min_price": 2200.0
+    },
+    "VAV": {
+        "max_price": 30600.0,
+        "min_price": 30600.0
+    },
+    "VBB": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "VBC": {
+        "max_price": 36400.0,
+        "min_price": 36400.0
+    },
+    "VBG": {
+        "max_price": 5700.0,
+        "min_price": 5700.0
+    },
+    "VBH": {
+        "max_price": 12300.0,
+        "min_price": 12300.0
+    },
+    "VC1": {
+        "max_price": 14400.0,
+        "min_price": 14400.0
+    },
+    "VC2": {
+        "max_price": 43800.0,
+        "min_price": 43800.0
+    },
+    "VC3": {
+        "max_price": 46400.0,
+        "min_price": 46400.0
+    },
+    "VC5": {
+        "max_price": 2000.0,
+        "min_price": 2000.0
+    },
+    "VC6": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "VC7": {
+        "max_price": 11700.0,
+        "min_price": 11700.0
+    },
+    "VC9": {
+        "max_price": 14500.0,
+        "min_price": 14500.0
+    },
+    "VCA": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "VCB": {
+        "max_price": 74200.0,
+        "min_price": 74200.0
+    },
+    "VCC": {
+        "max_price": 19200.0,
+        "min_price": 19200.0
+    },
+    "VCE": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "VCF": {
+        "max_price": 252000.0,
+        "min_price": 252000.0
+    },
+    "VCG": {
+        "max_price": 24050.0,
+        "min_price": 24050.0
+    },
+    "VCI": {
+        "max_price": 31050.0,
+        "min_price": 31050.0
+    },
+    "VCM": {
+        "max_price": 18700.0,
+        "min_price": 18700.0
+    },
+    "VCP": {
+        "max_price": 26000.0,
+        "min_price": 26000.0
+    },
+    "VCR": {
+        "max_price": 28900.0,
+        "min_price": 28900.0
+    },
+    "VCS": {
+        "max_price": 82100.0,
+        "min_price": 82100.0
+    },
+    "VCT": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "VCW": {
+        "max_price": 32400.0,
+        "min_price": 32400.0
+    },
+    "VCX": {
+        "max_price": 8800.0,
+        "min_price": 8800.0
+    },
+    "VDB": {
+        "max_price": 1000.0,
+        "min_price": 1000.0
+    },
+    "VDL": {
+        "max_price": 26600.0,
+        "min_price": 26600.0
+    },
+    "VDM": {
+        "max_price": 29900.0,
+        "min_price": 29900.0
+    },
+    "VDN": {
+        "max_price": 24000.0,
+        "min_price": 24000.0
+    },
+    "VDP": {
+        "max_price": 39000.0,
+        "min_price": 39000.0
+    },
+    "VDS": {
+        "max_price": 19600.0,
+        "min_price": 19600.0
+    },
+    "VDT": {
+        "max_price": 26700.0,
+        "min_price": 26700.0
+    },
+    "VE1": {
+        "max_price": 5500.0,
+        "min_price": 5500.0
+    },
+    "VE2": {
+        "max_price": 8800.0,
+        "min_price": 8800.0
+    },
+    "VE3": {
+        "max_price": 10700.0,
+        "min_price": 10700.0
+    },
+    "VE4": {
+        "max_price": 81700.0,
+        "min_price": 81700.0
+    },
+    "VE8": {
+        "max_price": 8700.0,
+        "min_price": 8700.0
+    },
+    "VE9": {
+        "max_price": 3900.0,
+        "min_price": 3900.0
+    },
+    "VEA": {
+        "max_price": 42500.0,
+        "min_price": 42500.0
+    },
+    "VEC": {
+        "max_price": 15400.0,
+        "min_price": 15400.0
+    },
+    "VEF": {
+        "max_price": 170000.0,
+        "min_price": 170000.0
+    },
+    "VES": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "VET": {
+        "max_price": 75000.0,
+        "min_price": 75000.0
+    },
+    "VFC": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "VFG": {
+        "max_price": 59800.0,
+        "min_price": 59800.0
+    },
+    "VFR": {
+        "max_price": 7200.0,
+        "min_price": 7200.0
+    },
+    "VFS": {
+        "max_price": 16400.0,
+        "min_price": 16400.0
+    },
+    "VGC": {
+        "max_price": 32200.0,
+        "min_price": 32200.0
+    },
+    "VGG": {
+        "max_price": 41600.0,
+        "min_price": 41600.0
+    },
+    "VGI": {
+        "max_price": 27900.0,
+        "min_price": 27900.0
+    },
+    "VGL": {
+        "max_price": 20000.0,
+        "min_price": 20000.0
+    },
+    "VGP": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "VGR": {
+        "max_price": 38700.0,
+        "min_price": 38700.0
+    },
+    "VGS": {
+        "max_price": 19200.0,
+        "min_price": 19200.0
+    },
+    "VGT": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "VGV": {
+        "max_price": 13300.0,
+        "min_price": 13300.0
+    },
+    "VHC": {
+        "max_price": 81400.0,
+        "min_price": 81400.0
+    },
+    "VHD": {
+        "max_price": 24900.0,
+        "min_price": 24900.0
+    },
+    "VHE": {
+        "max_price": 5900.0,
+        "min_price": 5900.0
+    },
+    "VHF": {
+        "max_price": 9800.0,
+        "min_price": 9800.0
+    },
+    "VHG": {
+        "max_price": 5200.0,
+        "min_price": 5200.0
+    },
+    "VHH": {
+        "max_price": 7700.0,
+        "min_price": 7700.0
+    },
+    "VHL": {
+        "max_price": 25800.0,
+        "min_price": 25800.0
+    },
+    "VHM": {
+        "max_price": 65800.0,
+        "min_price": 65800.0
+    },
+    "VIB": {
+        "max_price": 25550.0,
+        "min_price": 25550.0
+    },
+    "VIC": {
+        "max_price": 77000.0,
+        "min_price": 77000.0
+    },
+    "VID": {
+        "max_price": 9300.0,
+        "min_price": 9300.0
+    },
+    "VIE": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "VIF": {
+        "max_price": 15900.0,
+        "min_price": 15900.0
+    },
+    "VIG": {
+        "max_price": 6800.0,
+        "min_price": 6800.0
+    },
+    "VIH": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "VIM": {
+        "max_price": 32000.0,
+        "min_price": 32000.0
+    },
+    "VIN": {
+        "max_price": 34000.0,
+        "min_price": 34000.0
+    },
+    "VIP": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "VIR": {
+        "max_price": 8000.0,
+        "min_price": 8000.0
+    },
+    "VIT": {
+        "max_price": 19000.0,
+        "min_price": 19000.0
+    },
+    "VIW": {
+        "max_price": 13100.0,
+        "min_price": 13100.0
+    },
+    "VIX": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "VJC": {
+        "max_price": 126000.0,
+        "min_price": 126000.0
+    },
+    "VKC": {
+        "max_price": 5100.0,
+        "min_price": 5100.0
+    },
+    "VKD": {
+        "max_price": 99200.0,
+        "min_price": 99200.0
+    },
+    "VKP": {
+        "max_price": 500.0,
+        "min_price": 500.0
+    },
+    "VLA": {
+        "max_price": 55000.0,
+        "min_price": 55000.0
+    },
+    "VLB": {
+        "max_price": 33500.0,
+        "min_price": 33500.0
+    },
+    "VLC": {
+        "max_price": 29400.0,
+        "min_price": 29400.0
+    },
+    "VLF": {
+        "max_price": 1700.0,
+        "min_price": 1700.0
+    },
+    "VLG": {
+        "max_price": 6400.0,
+        "min_price": 6400.0
+    },
+    "VLP": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "VLW": {
+        "max_price": 25000.0,
+        "min_price": 25000.0
+    },
+    "VMA": {
+        "max_price": 7000.0,
+        "min_price": 7000.0
+    },
+    "VMC": {
+        "max_price": 14600.0,
+        "min_price": 14600.0
+    },
+    "VMD": {
+        "max_price": 23350.0,
+        "min_price": 23350.0
+    },
+    "VMG": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "VMI": {
+        "max_price": 1500.0,
+        "min_price": 1500.0
+    },
+    "VMS": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "VNA": {
+        "max_price": 38000.0,
+        "min_price": 38000.0
+    },
+    "VNB": {
+        "max_price": 14200.0,
+        "min_price": 14200.0
+    },
+    "VNC": {
+        "max_price": 35000.0,
+        "min_price": 35000.0
+    },
+    "VND": {
+        "max_price": 22650.0,
+        "min_price": 22650.0
+    },
+    "VNE": {
+        "max_price": 10350.0,
+        "min_price": 10350.0
+    },
+    "VNF": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "VNG": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "VNH": {
+        "max_price": 4500.0,
+        "min_price": 4500.0
+    },
+    "VNI": {
+        "max_price": 10000.0,
+        "min_price": 10000.0
+    },
+    "VNL": {
+        "max_price": 22800.0,
+        "min_price": 22800.0
+    },
+    "VNM": {
+        "max_price": 65800.0,
+        "min_price": 65800.0
+    },
+    "VNP": {
+        "max_price": 16800.0,
+        "min_price": 16800.0
+    },
+    "VNR": {
+        "max_price": 22200.0,
+        "min_price": 22200.0
+    },
+    "VNS": {
+        "max_price": 12000.0,
+        "min_price": 12000.0
+    },
+    "VNT": {
+        "max_price": 61300.0,
+        "min_price": 61300.0
+    },
+    "VNX": {
+        "max_price": 53200.0,
+        "min_price": 53200.0
+    },
+    "VNY": {
+        "max_price": 6100.0,
+        "min_price": 6100.0
+    },
+    "VOC": {
+        "max_price": 17200.0,
+        "min_price": 17200.0
+    },
+    "VOS": {
+        "max_price": 13250.0,
+        "min_price": 13250.0
+    },
+    "VPA": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "VPB": {
+        "max_price": 29000.0,
+        "min_price": 29000.0
+    },
+    "VPC": {
+        "max_price": 6800.0,
+        "min_price": 6800.0
+    },
+    "VPD": {
+        "max_price": 17350.0,
+        "min_price": 17350.0
+    },
+    "VPG": {
+        "max_price": 48000.0,
+        "min_price": 48000.0
+    },
+    "VPH": {
+        "max_price": 8950.0,
+        "min_price": 8950.0
+    },
+    "VPI": {
+        "max_price": 58900.0,
+        "min_price": 58900.0
+    },
+    "VPR": {
+        "max_price": 21700.0,
+        "min_price": 21700.0
+    },
+    "VPS": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "VPW": {
+        "max_price": 6700.0,
+        "min_price": 6700.0
+    },
+    "VQC": {
+        "max_price": 18500.0,
+        "min_price": 18500.0
+    },
+    "VRC": {
+        "max_price": 13500.0,
+        "min_price": 13500.0
+    },
+    "VRE": {
+        "max_price": 26250.0,
+        "min_price": 26250.0
+    },
+    "VRG": {
+        "max_price": 32400.0,
+        "min_price": 32400.0
+    },
+    "VSA": {
+        "max_price": 30400.0,
+        "min_price": 30400.0
+    },
+    "VSC": {
+        "max_price": 41400.0,
+        "min_price": 41400.0
+    },
+    "VSE": {
+        "max_price": 11200.0,
+        "min_price": 11200.0
+    },
+    "VSF": {
+        "max_price": 6000.0,
+        "min_price": 6000.0
+    },
+    "VSG": {
+        "max_price": 2700.0,
+        "min_price": 2700.0
+    },
+    "VSH": {
+        "max_price": 27950.0,
+        "min_price": 27950.0
+    },
+    "VSI": {
+        "max_price": 22500.0,
+        "min_price": 22500.0
+    },
+    "VSM": {
+        "max_price": 24300.0,
+        "min_price": 24300.0
+    },
+    "VSN": {
+        "max_price": 28900.0,
+        "min_price": 28900.0
+    },
+    "VSP": {
+        "max_price": 1100.0,
+        "min_price": 1100.0
+    },
+    "VST": {
+        "max_price": 4600.0,
+        "min_price": 4600.0
+    },
+    "VTA": {
+        "max_price": 6300.0,
+        "min_price": 6300.0
+    },
+    "VTB": {
+        "max_price": 13000.0,
+        "min_price": 13000.0
+    },
+    "VTC": {
+        "max_price": 15000.0,
+        "min_price": 15000.0
+    },
+    "VTD": {
+        "max_price": 16400.0,
+        "min_price": 16400.0
+    },
+    "VTE": {
+        "max_price": 7700.0,
+        "min_price": 7700.0
+    },
+    "VTG": {
+        "max_price": 23000.0,
+        "min_price": 23000.0
+    },
+    "VTH": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "VTI": {
+        "max_price": 4700.0,
+        "min_price": 4700.0
+    },
+    "VTJ": {
+        "max_price": 5500.0,
+        "min_price": 5500.0
+    },
+    "VTK": {
+        "max_price": 36000.0,
+        "min_price": 36000.0
+    },
+    "VTL": {
+        "max_price": 11100.0,
+        "min_price": 11100.0
+    },
+    "VTM": {
+        "max_price": 21800.0,
+        "min_price": 21800.0
+    },
+    "VTO": {
+        "max_price": 9400.0,
+        "min_price": 9400.0
+    },
+    "VTP": {
+        "max_price": 67700.0,
+        "min_price": 67700.0
+    },
+    "VTQ": {
+        "max_price": 28000.0,
+        "min_price": 28000.0
+    },
+    "VTR": {
+        "max_price": 29900.0,
+        "min_price": 29900.0
+    },
+    "VTS": {
+        "max_price": 27900.0,
+        "min_price": 27900.0
+    },
+    "VTV": {
+        "max_price": 6200.0,
+        "min_price": 6200.0
+    },
+    "VTX": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "VTZ": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "VUA": {
+        "max_price": 45400.0,
+        "min_price": 45400.0
+    },
+    "VVN": {
+        "max_price": 8200.0,
+        "min_price": 8200.0
+    },
+    "VW3": {
+        "max_price": 17500.0,
+        "min_price": 17500.0
+    },
+    "VWS": {
+        "max_price": 16400.0,
+        "min_price": 16400.0
+    },
+    "VXB": {
+        "max_price": 17900.0,
+        "min_price": 17900.0
+    },
+    "VXP": {
+        "max_price": 22300.0,
+        "min_price": 22300.0
+    },
+    "VXT": {
+        "max_price": 14400.0,
+        "min_price": 14400.0
+    },
+    "WCS": {
+        "max_price": 170000.0,
+        "min_price": 170000.0
+    },
+    "WSB": {
+        "max_price": 48800.0,
+        "min_price": 48800.0
+    },
+    "WSS": {
+        "max_price": 8100.0,
+        "min_price": 8100.0
+    },
+    "WTC": {
+        "max_price": 15800.0,
+        "min_price": 15800.0
+    },
+    "X20": {
+        "max_price": 10100.0,
+        "min_price": 10100.0
+    },
+    "X26": {
+        "max_price": 36000.0,
+        "min_price": 36000.0
+    },
+    "X77": {
+        "max_price": 300.0,
+        "min_price": 300.0
+    },
+    "XDH": {
+        "max_price": 10700.0,
+        "min_price": 10700.0
+    },
+    "XHC": {
+        "max_price": 30400.0,
+        "min_price": 30400.0
+    },
+    "XLV": {
+        "max_price": 8800.0,
+        "min_price": 8800.0
+    },
+    "XMC": {
+        "max_price": 11000.0,
+        "min_price": 11000.0
+    },
+    "XMD": {
+        "max_price": 16500.0,
+        "min_price": 16500.0
+    },
+    "XMP": {
+        "max_price": 17000.0,
+        "min_price": 17000.0
+    },
+    "XPH": {
+        "max_price": 10900.0,
+        "min_price": 10900.0
+    },
+    "YBC": {
+        "max_price": 14200.0,
+        "min_price": 14200.0
+    },
+    "YBM": {
+        "max_price": 7500.0,
+        "min_price": 7500.0
+    },
+    "YEG": {
+        "max_price": 17150.0,
+        "min_price": 17150.0
+    },
+    "YTC": {
+        "max_price": 68000.0,
+        "min_price": 68000.0
+    }
+}
