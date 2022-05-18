@@ -2,14 +2,14 @@
     "MBB": {
         "should_buy": "24656",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "24100",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "24100"
     },
     "FPT": {
         "should_buy": "95833",
-        "enable_sound": 1,
+        "enable_sound": 0,
         "bought": "96000",
         "percent_cut_loss": "4.0",
         "percent_sell": "3.5",
@@ -18,7 +18,7 @@
     "MWG": {
         "should_buy": "24656",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "125100",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "125100"
@@ -26,7 +26,7 @@
     "KDH": {
         "should_buy": "41127",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "39300",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "39300"
@@ -34,7 +34,7 @@
     "VPB": {
         "should_buy": "30588",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "29000",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "29000"
@@ -42,7 +42,7 @@
     "PNJ": {
         "should_buy": "100245",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "97500",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "97500"
@@ -50,7 +50,7 @@
     "TCB": {
         "should_buy": "36446",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "34050",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "33800"
@@ -58,7 +58,7 @@
     "REE": {
         "should_buy": "85784",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "70470",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "81000"
@@ -66,23 +66,23 @@
     "HPG": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "35900",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "35000"
     },
     "VIC": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "78000",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "77500"
     },
     "VCB": {
         "should_buy": "75000",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "73000",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "73000"
@@ -90,34 +90,34 @@
     "TPB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "30000",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "30000"
     },
     "VHM": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "68000",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "65200"
     },
     "STB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "20450",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "20450"
     },
     "VNM": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "0",
+        "bought": "66100",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "0"
+        "min_last_week": "66100"
     },
     "GAS": {
         "should_buy": "101176",
@@ -126,5 +126,13 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "100000"
+    },
+    "ACB": {
+        "should_buy": "27500",
+        "enable_sound": 0,
+        "bought": "27500",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "min_last_week": "27500"
     }
 }
