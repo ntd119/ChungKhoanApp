@@ -6,7 +6,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "28950"
+        "best_value": "28600.0"
     },
     "BID": {
         "should_buy": "31800",
@@ -15,7 +15,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "34900"
+        "best_value": "34650.0"
     },
     "CTG": {
         "should_buy": "24000",
@@ -24,7 +24,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "26600"
+        "best_value": "26100.0"
     },
     "EIB": {
         "should_buy": "31300",
@@ -33,7 +33,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "31500"
+        "best_value": "30400.0"
     },
     "HDB": {
         "should_buy": "22200",
@@ -42,7 +42,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "24000"
+        "best_value": "24300.0"
     },
     "LPB": {
         "should_buy": "12950",
@@ -51,7 +51,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "14800"
+        "best_value": "14550.0"
     },
     "MBB": {
         "should_buy": "24656",
@@ -60,7 +60,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "24100",
-        "best_value": "26650"
+        "best_value": "26750.0"
     },
     "MSB": {
         "should_buy": "18200",
@@ -69,7 +69,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "19600"
+        "best_value": "19600.0"
     },
     "OCB": {
         "should_buy": "17800",
@@ -78,7 +78,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "18950"
+        "best_value": "20200.0"
     },
     "SHB": {
         "should_buy": "12800",
@@ -87,7 +87,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "13900"
+        "best_value": "14450.0"
     },
     "SSB": {
         "should_buy": "34650",
@@ -96,7 +96,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "34800"
+        "best_value": "34600.0"
     },
     "STB": {
         "should_buy": "20450",
@@ -105,7 +105,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "21750"
+        "best_value": "21750.0"
     },
     "TCB": {
         "should_buy": "33800",
@@ -114,7 +114,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "36050"
+        "best_value": "35800.0"
     },
     "TPB": {
         "should_buy": "30000",
@@ -123,7 +123,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "32200"
+        "best_value": "31150.0"
     },
     "VCB": {
         "should_buy": "75000",
@@ -132,7 +132,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "73000",
-        "best_value": "75400"
+        "best_value": "76000.0"
     },
     "VIB": {
         "should_buy": "25300",
@@ -141,7 +141,7 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "26600"
+        "best_value": "25800.0"
     },
     "VPB": {
         "should_buy": "29000",
@@ -150,6 +150,6 @@
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
-        "best_value": "30950"
+        "best_value": "30450.0"
     }
 }

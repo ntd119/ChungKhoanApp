@@ -24,7 +24,6 @@ def update_data():
     response = requests.get(END_POINT, params=paramters, headers=HEADERS)
     response.raise_for_status()
     data_list = response.json()
-    print(data_list)
     try:
         with open(FILE_NAME) as stock_file:
             data_from_file = json.load(stock_file)
@@ -36,7 +35,7 @@ def update_data():
         for data in data_list:
             stock_code = data["_sc_"]
             if stock_code in STOCK_LIST:
-                current_price = data["_cp_"]
+                current_price = str(data["_cp_"])
                 should_buy = data_from_file[stock_code]["should_buy"]
                 enable_sound = data_from_file[stock_code]["enable_sound"]
                 bought = data_from_file[stock_code]["bought"]
