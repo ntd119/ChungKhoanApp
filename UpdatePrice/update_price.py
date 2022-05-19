@@ -16,7 +16,8 @@ paramters = {
     "languageID": 1
 }
 
-STOCK_LIST = ["ACB","BID","CTG","EIB","HDB","LPB","MBB","MSB","OCB","SHB","SSB","STB","TCB","TPB","VCB","VIB","VPB"]
+STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
+              "VIB", "VPB"]
 
 
 def update_data():
@@ -36,35 +37,21 @@ def update_data():
             stock_code = data["_sc_"]
             if stock_code in STOCK_LIST:
                 current_price = data["_cp_"]
-                current_time = round(time.time() * 1000)
-                line_price: list
-                try:
-                    max_price = max(data_from_file[stock_code]["max_price"], current_price)
-                    min_price = min(data_from_file[stock_code]["min_price"], current_price)
-                    max_price_time = data_from_file[stock_code]["max_price_time"]
-                    if current_price > max_price:
-                        max_price_time = current_time
-                    min_price_time = data_from_file[stock_code]["min_price_time"]
-                    if current_price < min_price:
-                        min_price_time = current_time
-                    line_price = data_from_file[stock_code]["line_price"]
-                    last_item = line_price[-1]
-                    last_item_price = last_item["price"]
-                    if last_item_price != current_price:
-                        line_price.append({"price": current_price, "time": current_time})
-                except KeyError:
-                    max_price = current_price
-                    min_price = current_price
-                    max_price_time = current_time
-                    min_price_time = current_time
-                    line_price = [{"price": current_price, "time": current_time}]
+                should_buy = data_from_file[stock_code]["should_buy"]
+                enable_sound = data_from_file[stock_code]["enable_sound"]
+                bought = data_from_file[stock_code]["bought"]
+                percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
+                percent_sell = data_from_file[stock_code]["percent_sell"]
+                min_last_week = data_from_file[stock_code]["min_last_week"]
                 stock = {
                     data["_sc_"]: {
-                        "max_price": max_price,
-                        "max_price_time": max_price_time,
-                        "min_price": min_price,
-                        "min_price_time": min_price_time,
-                        "line_price": line_price,
+                        "should_buy": should_buy,
+                        "enable_sound": enable_sound,
+                        "bought": bought,
+                        "percent_cut_loss": percent_cut_loss,
+                        "percent_sell": percent_sell,
+                        "min_last_week": min_last_week,
+                        "best_value": current_price
                     }
                 }
                 data_from_file.update(stock)
