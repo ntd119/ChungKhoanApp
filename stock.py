@@ -427,7 +427,8 @@ class Stock:
             gia_tot_nhat_entry.grid(column=column_index, row=row)
             self.item_list[f'gia_tot_nhat_entry{stock_code.lower()}'] = gia_tot_nhat_entry
 
-            percent_tai_gia_tot_nhat_entry = Label(text="xx")
+            percent_tai_gia_tot_nhat_entry = Label()
+            self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value, percent_tai_gia_tot_nhat_entry)
             column_index += 1
             percent_tai_gia_tot_nhat_entry.grid(column=column_index, row=row)
 
@@ -613,3 +614,21 @@ class Stock:
             return True
         except ValueError:
             return False
+    def percent_lai_lo(self, start_value, end_value, label: Label):
+        final_value = ((end_value - start_value) / start_value) * 100
+        if final_value >= 0:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#00E11A")
+        else:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#F33232")
+
+            # current_value = float(stock_single['_cp_'])
+            # percent = stock_single['_pc_']
+            # final_value = "{:.2f}".format(percent)
+            # if percent < 0:
+            #     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+            #         text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#F33232")
+            # else:
+            #     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
+            #         text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
