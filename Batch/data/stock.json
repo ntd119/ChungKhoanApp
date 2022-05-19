@@ -1,0 +1,206 @@
+{
+    "ACB": {
+        "max_price": 28950.0,
+        "max_price_time": 1652878179583,
+        "min_price": 28950.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 28950.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "FPT": {
+        "max_price": 97700.0,
+        "max_price_time": 1652878179583,
+        "min_price": 97700.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 97700.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "GAS": {
+        "max_price": 105000.0,
+        "max_price_time": 1652878179583,
+        "min_price": 105000.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 105000.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "HPG": {
+        "max_price": 38200.0,
+        "max_price_time": 1652878179583,
+        "min_price": 38200.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 38200.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "KDH": {
+        "max_price": 41500.0,
+        "max_price_time": 1652878179583,
+        "min_price": 41500.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 41500.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "MBB": {
+        "max_price": 26650.0,
+        "max_price_time": 1652878179583,
+        "min_price": 26650.0,
+        "min_price_time": 1652878179583,
+        "line_price": [
+            {
+                "price": 26650.0,
+                "time": 1652878179583
+            }
+        ]
+    },
+    "MWG": {
+        "max_price": 133500.0,
+        "max_price_time": 1652878179584,
+        "min_price": 133500.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 133500.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "PNJ": {
+        "max_price": 102100.0,
+        "max_price_time": 1652878179584,
+        "min_price": 102100.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 102100.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "REE": {
+        "max_price": 73000.0,
+        "max_price_time": 1652878179584,
+        "min_price": 73000.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 73000.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "STB": {
+        "max_price": 21750.0,
+        "max_price_time": 1652878179584,
+        "min_price": 21750.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 21750.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "TCB": {
+        "max_price": 36050.0,
+        "max_price_time": 1652878179584,
+        "min_price": 36050.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 36050.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "TPB": {
+        "max_price": 32200.0,
+        "max_price_time": 1652878179584,
+        "min_price": 32200.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 32200.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "VCB": {
+        "max_price": 75400.0,
+        "max_price_time": 1652878179584,
+        "min_price": 75400.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 75400.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "VHM": {
+        "max_price": 66900.0,
+        "max_price_time": 1652878179584,
+        "min_price": 66900.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 66900.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "VIC": {
+        "max_price": 78000.0,
+        "max_price_time": 1652878179584,
+        "min_price": 78000.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 78000.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "VNM": {
+        "max_price": 70300.0,
+        "max_price_time": 1652878179584,
+        "min_price": 70300.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 70300.0,
+                "time": 1652878179584
+            }
+        ]
+    },
+    "VPB": {
+        "max_price": 30950.0,
+        "max_price_time": 1652878179584,
+        "min_price": 30950.0,
+        "min_price_time": 1652878179584,
+        "line_price": [
+            {
+                "price": 30950.0,
+                "time": 1652878179584
+            }
+        ]
+    }
+}

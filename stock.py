@@ -312,6 +312,14 @@ class Stock:
         column_body += 1
         gia_da_mua_label.grid(column=column_body, row=3)
 
+        gia_tot_nhat_label = Label(text="GTN", font=FONT_HEADER)
+        column_body += 1
+        gia_tot_nhat_label.grid(column=column_body, row=3)
+
+        percent_tai_gia_tot_nhat_label = Label(text="% GTN", font=FONT_HEADER)
+        column_body += 1
+        percent_tai_gia_tot_nhat_label.grid(column=column_body, row=3)
+
         lai_lo_label = Label(text="Lãi/lỗ", font=FONT_HEADER)
         column_body += 1
         lai_lo_label.grid(column=column_body, row=3)
@@ -409,6 +417,20 @@ class Stock:
             gia_da_mua_entry.grid(column=column_index, row=row)
             self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
 
+            try:
+                gia_tot_nhat_value = int(item_dict.get("best_value"))
+            except TypeError:
+                gia_tot_nhat_value = 0
+            gia_tot_nhat_entry = Entry(width=ENTRY_WIDTH)
+            gia_tot_nhat_entry.insert(END, gia_tot_nhat_value)
+            column_index += 1
+            gia_tot_nhat_entry.grid(column=column_index, row=row)
+            self.item_list[f'gia_tot_nhat_entry{stock_code.lower()}'] = gia_tot_nhat_entry
+
+            percent_tai_gia_tot_nhat_entry = Label(text="xx")
+            column_index += 1
+            percent_tai_gia_tot_nhat_entry.grid(column=column_index, row=row)
+
             lai_lo_label = Label(text="0")
             column_index += 1
             lai_lo_label.grid(column=column_index, row=row)
@@ -500,7 +522,8 @@ class Stock:
                         "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
                         "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
-                        "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get()
+                        "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get(),
+                        "best_value": self.item_list[f'gia_tot_nhat_entry{stock_code.lower()}'].get()
                     }
                 }
                 self.stock_code_from_file.update(update_data)

@@ -24,6 +24,7 @@ def update_data():
     response = requests.get(END_POINT, params=paramters, headers=HEADERS)
     response.raise_for_status()
     data_list = response.json()
+    print(data_list)
     try:
         with open(FILE_NAME) as stock_file:
             data_from_file = json.load(stock_file)
