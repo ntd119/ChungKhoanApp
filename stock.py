@@ -139,13 +139,24 @@ class Stock:
                             should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
                             min_value_last_week = float(
                                 self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
-                            if min_value_last_week > 0 and should_buy >0:
+                            if min_value_last_week > 0 and should_buy > 0:
                                 gia_dao_dong = float((
-                                                        current_value - min_value_last_week) / min_value_last_week) * 100
+                                                             current_value - min_value_last_week) / min_value_last_week) * 100
                                 if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
                                     status_label.config(text="Nên mua", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
+
+                        # % gía tốt nhất - giá hiện tại
+                        gia_tot_nhat = int(self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get())
+                        percent_gia_tot_nhat = ((gia_tot_nhat - gia_da_mua) / gia_da_mua) * 100
+                        percent_gia_tot_nhat = float("{:.2f}".format(percent_gia_tot_nhat))
+
+                        percent_hien_tai = ((current_value - gia_da_mua) / gia_da_mua) * 100
+                        percent_hien_tai = float("{:.2f}".format(percent_hien_tai))
+
+                        self.percent_gia_tot_nhat_hien_tai(percent_gia_tot_nhat, percent_hien_tai, self.item_list[
+                            f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'])
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -324,6 +335,10 @@ class Stock:
         column_body += 1
         lai_lo_label.grid(column=column_body, row=3)
 
+        percent_gia_tot_nhat_hien_tai_label = Label(text="% GTN - HT", font=FONT_HEADER)
+        column_body += 1
+        percent_gia_tot_nhat_hien_tai_label.grid(column=column_body, row=3)
+
         radio_choose = Label(text="Status", font=FONT_HEADER)
         column_body += 1
         radio_choose.grid(column=column_body, row=3)
@@ -425,17 +440,25 @@ class Stock:
             gia_tot_nhat_entry.insert(END, gia_tot_nhat_value)
             column_index += 1
             gia_tot_nhat_entry.grid(column=column_index, row=row)
-            self.item_list[f'gia_tot_nhat_entry{stock_code.lower()}'] = gia_tot_nhat_entry
+            self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'] = gia_tot_nhat_entry
 
             percent_tai_gia_tot_nhat_entry = Label()
-            self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value, percent_tai_gia_tot_nhat_entry)
+            percent_tai_gia_tot_value = self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value,
+                                                            percent_tai_gia_tot_nhat_entry)
             column_index += 1
             percent_tai_gia_tot_nhat_entry.grid(column=column_index, row=row)
+            self.item_list[f'percent_tai_gia_tot_nhat_entry_{stock_code.lower()}'] = percent_tai_gia_tot_nhat_entry
 
             lai_lo_label = Label(text="0")
             column_index += 1
             lai_lo_label.grid(column=column_index, row=row)
             self.item_list[f'lai_lo_label_{stock_code.lower()}'] = lai_lo_label
+
+            percent_gia_tot_nhat_hien_tai_label = Label(text=percent_tai_gia_tot_value)
+            column_index += 1
+            percent_gia_tot_nhat_hien_tai_label.grid(column=column_index, row=row)
+            self.item_list[
+                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'] = percent_gia_tot_nhat_hien_tai_label
 
             status_label = Label(text=STATUS_CHECK)
             column_index += 1
@@ -524,7 +547,7 @@ class Stock:
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
                         "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
                         "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get(),
-                        "best_value": self.item_list[f'gia_tot_nhat_entry{stock_code.lower()}'].get()
+                        "best_value": self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get()
                     }
                 }
                 self.stock_code_from_file.update(update_data)
@@ -614,6 +637,7 @@ class Stock:
             return True
         except ValueError:
             return False
+
     def percent_lai_lo(self, start_value, end_value, label: Label):
         final_value = ((end_value - start_value) / start_value) * 100
         if final_value >= 0:
@@ -622,13 +646,14 @@ class Stock:
         else:
             final_value = "{:.2f}".format(abs(final_value))
             label.config(text=f"{final_value}%", bg="#F33232")
+        return final_value
 
-            # current_value = float(stock_single['_cp_'])
-            # percent = stock_single['_pc_']
-            # final_value = "{:.2f}".format(percent)
-            # if percent < 0:
-            #     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-            #         text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#F33232")
-            # else:
-            #     self.item_list.get(f"current_value_label_{stock_code.lower()}").config(
-            #         text="{:,.0f}".format(current_value) + " (" + final_value + "%)", bg="#00E11A")
+    def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
+        final_value = end_value - start_value
+        if final_value >= 0:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#00E11A")
+        else:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#F33232")
+        return final_value
