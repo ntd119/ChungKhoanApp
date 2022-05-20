@@ -149,14 +149,18 @@ class Stock:
 
                         # % gía tốt nhất - giá hiện tại
                         gia_tot_nhat = int(self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get())
-                        percent_gia_tot_nhat = ((gia_tot_nhat - gia_da_mua) / gia_da_mua) * 100
-                        percent_gia_tot_nhat = float("{:.2f}".format(percent_gia_tot_nhat))
+                        if gia_tot_nhat > 0:
+                            percent_gia_tot_nhat = ((gia_tot_nhat - gia_da_mua) / gia_da_mua) * 100
+                            percent_gia_tot_nhat = float("{:.2f}".format(percent_gia_tot_nhat))
 
-                        percent_hien_tai = ((current_value - gia_da_mua) / gia_da_mua) * 100
-                        percent_hien_tai = float("{:.2f}".format(percent_hien_tai))
+                            percent_hien_tai = ((current_value - gia_da_mua) / gia_da_mua) * 100
+                            percent_hien_tai = float("{:.2f}".format(percent_hien_tai))
 
-                        self.percent_gia_tot_nhat_hien_tai(percent_gia_tot_nhat, percent_hien_tai, self.item_list[
-                            f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'])
+                            self.percent_gia_tot_nhat_hien_tai(percent_gia_tot_nhat, percent_hien_tai, self.item_list[
+                                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'])
+                        else:
+                            self.item_list[
+                                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'].config(text="0")
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -436,6 +440,8 @@ class Stock:
                 gia_tot_nhat_value = int(item_dict.get("best_value"))
             except TypeError:
                 gia_tot_nhat_value = 0
+
+            percent_tai_gia_tot_value = 0
             gia_tot_nhat_entry = Entry(width=ENTRY_WIDTH)
             gia_tot_nhat_entry.insert(END, gia_tot_nhat_value)
             column_index += 1
@@ -443,8 +449,12 @@ class Stock:
             self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'] = gia_tot_nhat_entry
 
             percent_tai_gia_tot_nhat_entry = Label()
-            percent_tai_gia_tot_value = self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value,
+
+            if gia_tot_nhat_value > 0:
+                percent_tai_gia_tot_value = self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value,
                                                             percent_tai_gia_tot_nhat_entry)
+            else:
+                percent_tai_gia_tot_nhat_entry.config(text="0")
             column_index += 1
             percent_tai_gia_tot_nhat_entry.grid(column=column_index, row=row)
             self.item_list[f'percent_tai_gia_tot_nhat_entry_{stock_code.lower()}'] = percent_tai_gia_tot_nhat_entry
