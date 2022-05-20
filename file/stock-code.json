@@ -1,6 +1,6 @@
 {
     "ACB": {
-        "should_buy": "27500",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "28650",
         "percent_cut_loss": "4.0",
@@ -9,7 +9,7 @@
         "best_value": "0"
     },
     "BID": {
-        "should_buy": "31800",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "34700",
         "percent_cut_loss": "4.0",
@@ -18,7 +18,7 @@
         "best_value": "0"
     },
     "CTG": {
-        "should_buy": "24000",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "26000",
         "percent_cut_loss": "4.0",
@@ -27,7 +27,7 @@
         "best_value": "0"
     },
     "EIB": {
-        "should_buy": "31300",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "30000",
         "percent_cut_loss": "4.0",
@@ -36,7 +36,7 @@
         "best_value": "0"
     },
     "HDB": {
-        "should_buy": "22200",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "24300",
         "percent_cut_loss": "4.0",
@@ -45,7 +45,7 @@
         "best_value": "0"
     },
     "LPB": {
-        "should_buy": "12950",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "14600",
         "percent_cut_loss": "4.0",
@@ -54,16 +54,16 @@
         "best_value": "0"
     },
     "MBB": {
-        "should_buy": "24656",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "26900",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "24100",
+        "min_last_week": "0",
         "best_value": "0"
     },
     "MSB": {
-        "should_buy": "18200",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "19450",
         "percent_cut_loss": "4.0",
@@ -72,7 +72,7 @@
         "best_value": "0"
     },
     "OCB": {
-        "should_buy": "17800",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "20100",
         "percent_cut_loss": "4.0",
@@ -81,7 +81,7 @@
         "best_value": "0"
     },
     "SHB": {
-        "should_buy": "12800",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "14700",
         "percent_cut_loss": "4.0",
@@ -90,7 +90,7 @@
         "best_value": "0"
     },
     "SSB": {
-        "should_buy": "34650",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "34750",
         "percent_cut_loss": "4.0",
@@ -99,7 +99,7 @@
         "best_value": "0"
     },
     "STB": {
-        "should_buy": "20450",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "21550",
         "percent_cut_loss": "4.0",
@@ -108,7 +108,7 @@
         "best_value": "0"
     },
     "TCB": {
-        "should_buy": "33800",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "35650",
         "percent_cut_loss": "4.0",
@@ -117,7 +117,7 @@
         "best_value": "0"
     },
     "TPB": {
-        "should_buy": "30000",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "31300",
         "percent_cut_loss": "4.0",
@@ -126,25 +126,25 @@
         "best_value": "0"
     },
     "VCB": {
-        "should_buy": "75000",
+        "should_buy": "0",
         "enable_sound": 0,
-        "bought": "75000",
+        "bought": "75100",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "min_last_week": "73000",
+        "min_last_week": "0",
         "best_value": "0"
     },
     "VIB": {
-        "should_buy": "25300",
+        "should_buy": "0",
         "enable_sound": 0,
-        "bought": "25550",
+        "bought": "25600",
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
         "min_last_week": "0",
         "best_value": "0"
     },
     "VPB": {
-        "should_buy": "29000",
+        "should_buy": "0",
         "enable_sound": 0,
         "bought": "30350",
         "percent_cut_loss": "4.0",
