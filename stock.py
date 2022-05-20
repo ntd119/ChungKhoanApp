@@ -651,9 +651,9 @@ class Stock:
     def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
         final_value = end_value - start_value
         if final_value >= 0:
-            final_value = "{:.2f}".format(abs(final_value))
+            final_value = "{:.2f}".format(final_value)
             label.config(text=f"{final_value}%", bg="#00E11A")
         else:
-            final_value = "{:.2f}".format(abs(final_value))
+            final_value = "{:.2f}".format(final_value)
             label.config(text=f"{final_value}%", bg="#F33232")
         return final_value
