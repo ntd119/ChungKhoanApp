@@ -75,6 +75,16 @@ class Stock:
                     line_price_4 = []
                     line_price_5 = []
                     line_price_6 = []
+                    if day_of_week == 2:
+                        line_price_2 = self.update_line_price(line_price_2, current_price, current_time)
+                    elif day_of_week == 3:
+                        line_price_3 = self.update_line_price(line_price_3, current_price, current_time)
+                    elif day_of_week == 4:
+                        line_price_4 = self.update_line_price(line_price_4, current_price, current_time)
+                    elif day_of_week == 5:
+                        line_price_5 = self.update_line_price(line_price_5, current_price, current_time)
+                    elif day_of_week == 6:
+                        line_price_6 = self.update_line_price(line_price_6, current_price, current_time)
                 stock = {
                     data["_sc_"]: {
                         "max_price": int(max_price),
