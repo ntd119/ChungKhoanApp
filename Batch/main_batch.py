@@ -11,9 +11,9 @@ delete_file_flag = True
 while True:
     now_time = dt.datetime.now(VN_UTC)
     day_of_week = now_time.weekday() + 2
-    day_of_week = 4 # delete this
+    # day_of_week = 4 # delete this
     hour = now_time.hour
-    if day_of_week in DAY_LIST and (9 <= hour <= 24): # <= 15
+    if day_of_week in DAY_LIST and (9 <= hour <= 15): # <= 15
         if day_of_week == 2 and delete_file_flag:
             stock.delete_file()
             delete_file_flag = False
