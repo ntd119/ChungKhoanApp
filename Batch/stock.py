@@ -2,7 +2,6 @@ import datetime
 
 import requests
 import json
-import time
 import os
 
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
@@ -24,7 +23,7 @@ class Stock:
     def __init__(self):
         self.up = True
 
-    def update_data(self, day_of_week: int):
+    def update_data(self, day_of_week: int, now_time: datetime.datetime):
         response = requests.get(END_POINT, params=paramters, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
@@ -39,7 +38,7 @@ class Stock:
             for data in data_list:
                 stock_code = data["_sc_"]
                 current_price = int(data["_cp_"])
-                current_time = round(time.time() * 1000)
+                current_time = now_time.timestamp()  * 1000
                 try:
                     max_price = max(data_from_file[stock_code]["max_price"], current_price)
                     min_price = min(data_from_file[stock_code]["min_price"], current_price)
@@ -130,3 +129,12 @@ class Stock:
                     line_price.append({"price": current_price, "time": current_time})
                 self.up = False
         return line_price
+
+    def check_running(self, now_time: datetime.datetime):
+        with open("data/check.json", 'w') as check_file:
+            data = {
+                "current_time": now_time.timestamp()  * 1000
+            }
+            json.dump(data, check_file, indent=4)
+
+
