@@ -22,7 +22,7 @@ paramters = {
 class Stock:
 
     def __init__(self):
-        pass
+        self.up = True
 
     def update_data(self, day_of_week: int):
         response = requests.get(END_POINT, params=paramters, headers=HEADERS)
@@ -53,8 +53,20 @@ class Stock:
                     line_price = data_from_file[stock_code][f"line_price_{day_of_week}"]
                     last_item = line_price[-1]
                     last_item_price = last_item["price"]
-                    if last_item_price != current_price:
-                        line_price.append({"price": current_price, "time": current_time})
+                    percent_one = ((current_price - last_item_price) / last_item_price) * 100
+                    if abs(percent_one) > 1:
+                        if last_item_price <= current_price:
+                            if self.up:
+                                line_price[-1] = ({"price": current_price, "time": current_time})
+                            else:
+                                line_price.append({"price": current_price, "time": current_time})
+                            self.up = True
+                        else:
+                            if not self.up:
+                                line_price[-1] = ({"price": current_price, "time": current_time})
+                            else:
+                                line_price.append({"price": current_price, "time": current_time})
+                            self.up = False
                 except KeyError:
                     max_price = current_price
                     min_price = current_price
