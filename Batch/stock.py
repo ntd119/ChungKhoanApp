@@ -114,8 +114,11 @@ class Stock:
                           {"price": current_price, "time": current_time}]
         last_item = line_price[-1]
         last_item_price = last_item["price"]
-        percent_one = ((current_price - last_item_price) / last_item_price) * 100
-        if abs(percent_one) > 1:
+        try:
+            percent_one = ((current_price - last_item_price) / last_item_price) * 100
+        except ZeroDivisionError:
+            percent_one = 0
+        if abs(percent_one) > 1 or last_item_price == 0:
             if last_item_price <= current_price:
                 if self.up:
                     line_price[-1] = ({"price": current_price, "time": current_time})
