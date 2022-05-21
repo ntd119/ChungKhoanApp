@@ -5,6 +5,16 @@
         "min_price": 28300,
         "min_price_time": 1653130334506,
         "type": "S\u1ea3n xu\u1ea5t",
+        "line_price_2": [
+            {
+                "price": 12,
+                "time": 124555
+            },
+            {
+                "price": 566,
+                "time": 45
+            }
+        ],
         "line_price_3": [
             {
                 "price": 28300,
