@@ -225,6 +225,11 @@ class Stock(Tk):
             format_time = now.strftime("%H:%M:%S")
             print(f"RUNNING... {format_time}")
 
+    def play_sound(self):
+        duration = 1000  # milliseconds
+        freq = 440  # Hz
+        winsound.Beep(freq, duration)
+
     def add_stock_to_file(self):
         start_value = self.start_change_input.get()
         end_value = self.end_change_input.get()
