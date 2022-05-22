@@ -138,8 +138,8 @@ class Stock(Tk):
 
     def stop_progress(self):
         self.is_running = False
-        self.root.after_cancel(timer_api)
-        self.root.after_cancel(timer_time)
+        self.after_cancel(timer_api)
+        self.after_cancel(timer_time)
         self.disable_button()
 
     def show_time(self):
@@ -147,7 +147,7 @@ class Stock(Tk):
         now = datetime.now().time()
         format_time = now.strftime("%H:%M:%S")
         self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
-        timer_time = self.root.after(1000, self.show_time)
+        timer_time = self.after(1000, self.show_time)
 
     def save_all(self):
         with open(FILE_NAME, 'w') as data_file:
