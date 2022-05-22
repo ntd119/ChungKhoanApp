@@ -37,6 +37,10 @@ class MyApp(Tk):
                         activebackground='orange', text='text ')
         button.grid(row=1, column=1, sticky='news')
 
+        button1 = Button(master=buttons_frame, padx=7, pady=7, relief=RIDGE,
+                        activebackground='orange', text='text ')
+        button1.grid(row=1, column=2, sticky='news')
+
         canvas.create_window((0, 0), window=buttons_frame, anchor=NW)
 
         buttons_frame.update_idletasks()
