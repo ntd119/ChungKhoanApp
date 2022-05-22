@@ -131,6 +131,41 @@ class Stock(Tk):
             tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
+    def start_progress(self):
+        self.is_running = True
+        # self.call_api()
+        self.show_time()
+
+    def stop_progress(self):
+        self.is_running = False
+        self.root.after_cancel(timer_api)
+        self.root.after_cancel(timer_time)
+        self.disable_button()
+
+    def show_time(self):
+        global timer_time
+        now = datetime.now().time()
+        format_time = now.strftime("%H:%M:%S")
+        self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
+        timer_time = self.root.after(1000, self.show_time)
+
+    def save_all(self):
+        with open(FILE_NAME, 'w') as data_file:
+            for stock_code in self.stock_code_from_file:
+                update_data = {
+                    stock_code: {
+                        "should_buy": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
+                        "enable_sound": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
+                        "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
+                        "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
+                        "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
+                        "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get(),
+                        "best_value": self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get()
+                    }
+                }
+                self.stock_code_from_file.update(update_data)
+            json.dump(self.stock_code_from_file, data_file, indent=4)
+            tkinter.messagebox.showinfo("Success", "Save successful!")
 
     def draw_header(self, frame):
         row = 1
@@ -167,6 +202,25 @@ class Stock(Tk):
                                            command=self.add_stock_to_file)
         add_to_file_button_header.grid(column=14, row=row)
         # Tính % thay đổi END
+        row += 1
+
+        # Start stop START
+        start_button = Button(master=frame,text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
+        start_button.grid(column=1, row=row)
+        self.start_button = start_button
+
+        stop_button = Button(master=frame,text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
+        stop_button.grid(column=2, row=row)
+        stop_button.config(state=DISABLED)
+        self.stop_button = stop_button
+
+        save_all_button = Button(master=frame,text="Save", foreground="green", font=FONT_HEADER, command=self.save_all)
+        save_all_button.grid(column=3, row=row)
+
+        status_label = Label(master=frame,text="STOPPED", foreground="red", font=FONT_HEADER)
+        status_label.grid(column=4, row=row, columnspan=2)
+        self.status_label = status_label
+        # Start stop START
 
         row += 1
         column = 1
@@ -257,7 +311,7 @@ class Stock(Tk):
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
             stock_code_from_file = json.load(data_file)
-        row = 3
+        row = 4
         for stock_code in stock_code_from_file:
             item_dict = stock_code_from_file[stock_code]
             column = 0
