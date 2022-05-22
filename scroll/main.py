@@ -6,22 +6,6 @@ ROWS_DISP = 3  # Number of rows to display.
 COLS_DISP = 4  # Number of columns to display.
 
 
-class HoverButton(tk.Button):
-    """ Button that changes color to activebackground when mouse is over it. """
-
-    def __init__(self, master, **kw):
-        super().__init__(master=master, **kw)
-        self.default_Background = self.cget('background')
-        self.hover_Background = self.cget('activebackground')
-        self.bind('<Enter>', self.on_enter)
-        self.bind('<Leave>', self.on_leave)
-
-    def on_enter(self, e):
-        self.config(background=self.hover_Background)
-
-    def on_leave(self, e):
-        self.config(background=self.default_Background)
-
 
 class MyApp(tk.Tk):
     def __init__(self, title='Sample App', *args, **kwargs):
@@ -59,7 +43,7 @@ class MyApp(tk.Tk):
         # Add the buttons to the frame.
         for i in range(1, ROWS+1):
             for j in range(1, COLS+1):
-                button = HoverButton(buttons_frame, padx=7, pady=7, relief=tk.RIDGE,
+                button = tk.Button(master=buttons_frame,padx=7, pady=7, relief=tk.RIDGE,
                                      activebackground= 'orange', text='[%d, %d]' % (i, j))
                 button.grid(row=i, column=j, sticky='news')
 
