@@ -6,7 +6,7 @@ COLS_DISP = 10
 
 
 class Stock(Tk):
-    def __init__(self, title='Sample App', *args, **kwargs):
+    def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
 
         self.title(title)
@@ -17,7 +17,7 @@ class Stock(Tk):
         master_frame.grid(sticky=NSEW)
         master_frame.columnconfigure(0, weight=1)
 
-        label1 = Label(master_frame, text='Frame1 Contents')
+        label1 = Label(master_frame, text='MTD TEAM')
         label1.grid(row=0, column=0, pady=5, sticky=NW)
 
         frame2 = Frame(master_frame, bd=2, relief=FLAT)
