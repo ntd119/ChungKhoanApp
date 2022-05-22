@@ -26,8 +26,8 @@ ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
 
-ROWS, COLS = 20, 10
-ROWS_DISP = 15
+ROWS, COLS = 17, 10
+ROWS_DISP = 17
 COLS_DISP = 11
 
 
@@ -274,6 +274,15 @@ class Stock(Tk):
         self.status_label.config(text=f"RUNNING... {format_time}", foreground="green")
         timer_time = self.after(1000, self.show_time)
 
+    def check_all_function(self):
+        value = int(self.check_all_checkbox.get())
+        for stock_code in self.stock_code_from_file:
+            check_value = self.item_list[f'stock_checkbox_{stock_code.lower()}']
+            if value == 0:
+                check_value.set(0)
+            else:
+                check_value.set(1)
+
     def save_all(self):
         with open(FILE_NAME, 'w') as data_file:
             for stock_code in self.stock_code_from_file:
@@ -354,9 +363,9 @@ class Stock(Tk):
         check_value = IntVar()
         check_value.set(0)
         sound_all_checkbox = Checkbutton(master=frame, text="Sound", variable=check_value, onvalue=1, offvalue=0,
-                                         font=FONT_HEADER)
+                                         font=FONT_HEADER, command=self.check_all_function)
         sound_all_checkbox.grid(column=column, row=row)
-        # self.check_all_checkbox = check_value
+        self.check_all_checkbox = check_value
 
         # Mã chứng khoán
         stock_code = Label(master=frame, text="Mã ck", font=FONT_HEADER)
