@@ -247,10 +247,18 @@ class Stock(Tk):
             tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
             tkinter.messagebox.showerror("Error", "Invalid input")
+
     def start_progress(self):
         self.is_running = True
         self.call_api()
         self.show_time()
+
+    def isfloat(self, num):
+        try:
+            float(num)
+            return True
+        except ValueError:
+            return False
 
     def stop_progress(self):
         self.is_running = False
@@ -282,6 +290,49 @@ class Stock(Tk):
                 check_value.set(0)
             else:
                 check_value.set(1)
+
+    def distance_value(self):
+        start_value = self.khoang_cach_an_toan_min_input.get()
+        end_value = self.khoang_cach_an_toan_max_input.get()
+        percent_input = self.khoang_cach_an_toan_to_input.get()
+        if not self.isfloat(start_value):
+            tkinter.messagebox.showerror("Error", "Invalid min input")
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_ERROR)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_min_input.focus()
+        elif not self.isfloat(end_value):
+            tkinter.messagebox.showerror("Error", "Invalid max input")
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_ERROR)
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.focus()
+        elif not self.isfloat(percent_input):
+            tkinter.messagebox.showerror("Error", "Invalid percent input")
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_ERROR)
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.focus()
+        else:
+            min_input = float(start_value)
+            max_input = float(end_value)
+            percent = ((max_input - min_input) / min_input) * 100
+            percent_input_float = float(percent_input)
+            while percent > percent_input_float:
+                max_input -= 1
+                min_input += 1
+                percent = ((max_input - min_input) / min_input) * 100
+            while percent < percent_input_float:
+                max_input += 1
+                min_input -= 1
+                percent = ((max_input - min_input) / min_input) * 100
+            self.khoang_cach_an_toan_result_min_input.delete(0, END)
+            self.khoang_cach_an_toan_result_min_input.insert(END, int(min_input))
+            self.khoang_cach_an_toan_result_max_input.delete(0, END)
+            self.khoang_cach_an_toan_result_max_input.insert(END, int(max_input))
+            self.khoang_cach_an_toan_min_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_max_input.config(bg=COLOR_OK)
+            self.khoang_cach_an_toan_to_input.config(bg=COLOR_OK)
 
     def save_all(self):
         with open(FILE_NAME, 'w') as data_file:
@@ -337,6 +388,39 @@ class Stock(Tk):
         add_to_file_button_header.grid(column=14, row=row)
         # Tính % thay đổi END
         row += 1
+
+        # Khoang cach an toàn start
+        khoang_cach_an_toan_label = Label(master=frame,text="Khoảng cách an toàn:", font=FONT_HEADER)
+        khoang_cach_an_toan_label.grid(column=1, row=row, columnspan=3)
+
+        khoang_cach_an_toan_min_input = Entry(master=frame,width=ENTRY_WIDTH)
+        khoang_cach_an_toan_min_input.grid(column=4, row=row, columnspan=2)
+        self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
+
+        khoang_cach_an_toan_to_input = Entry(master=frame,width=ENTRY_WIDTH)
+        khoang_cach_an_toan_to_input.insert(END, 4)
+        khoang_cach_an_toan_to_input.grid(column=6, row=row)
+        self.khoang_cach_an_toan_to_input = khoang_cach_an_toan_to_input
+
+        khoang_cach_an_toan_max_input = Entry(master=frame, width=ENTRY_WIDTH)
+        khoang_cach_an_toan_max_input.grid(column=7, row=row, columnspan=2)
+        self.khoang_cach_an_toan_max_input = khoang_cach_an_toan_max_input
+
+        khoang_cach_an_toan_cal_button = Button(master=frame,text="  =  ", foreground="green", font=FONT_HEADER,
+                                                command=self.distance_value)
+        khoang_cach_an_toan_cal_button.grid(column=9, row=row)
+        self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
+
+        khoang_cach_an_toan_result_min_input = Entry(master=frame)
+        khoang_cach_an_toan_result_min_input.grid(column=10, row=row, columnspan=2)
+        self.khoang_cach_an_toan_result_min_input = khoang_cach_an_toan_result_min_input
+
+        khoang_cach_an_toan_result_max_input = Entry(master=frame)
+        khoang_cach_an_toan_result_max_input.grid(column=12, row=row, columnspan=2)
+        self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
+        # Khoang cach an toàn END
+
+        row +=1
 
         # Start stop START
         start_button = Button(master=frame,text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
@@ -445,7 +529,7 @@ class Stock(Tk):
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
             self.stock_code_from_file = json.load(data_file)
-        row = 4
+        row = 5
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             column = 0
