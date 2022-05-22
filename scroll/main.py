@@ -17,6 +17,9 @@ class MyApp(Tk):
         master_frame.grid(sticky=NSEW)
         master_frame.columnconfigure(0, weight=1)
 
+        label1 = Label(master_frame, text='Frame1 Contents')
+        label1.grid(row=0, column=0, pady=5, sticky=NW)
+
         frame2 = Frame(master_frame, bd=2, relief=FLAT)
         frame2.grid(row=3, column=0, sticky=NW)
 
