@@ -92,9 +92,83 @@ class Stock(Tk):
         w, h = bbox[2] - bbox[1], bbox[3] - bbox[1]
         dw, dh = int((w / COLS) * COLS_DISP), int((h / ROWS) * ROWS_DISP)
         canvas.configure(scrollregion=bbox, width=dw, height=dh)
+    def calculate_percent(self):
+        start_value = self.start_change_input.get()
+        end_value = self.end_change_input.get()
+        if start_value.isnumeric() and end_value.isnumeric():
+            start_value = float(start_value)
+            end_value = float(end_value)
+            final_value = ((end_value - start_value) / start_value) * 100
+            if final_value >= 0:
+                final_value = "{:.2f}".format(abs(final_value))
+                self.percent_symbol_label.config(text=f"⬆ {final_value} %", foreground="green")
+            else:
+                final_value = "{:.2f}".format(abs(final_value))
+                self.percent_symbol_label.config(text=f"⬇ {final_value} %", foreground="red")
+        else:
+            tkinter.messagebox.showerror("Error", "Invalid input")
+            self.percent_symbol_label.config(text="%")
+
+    def add_stock_to_file(self):
+        start_value = self.start_change_input.get()
+        end_value = self.end_change_input.get()
+        stock_code = self.stock_code_input_header.get()
+        if start_value.isnumeric() and end_value.isnumeric() and len(stock_code.strip()) != 0:
+            with open(FILE_NAME, 'w') as data_file:
+                new_data = {
+                    stock_code.upper(): {
+                        "should_buy": start_value,
+                        "enable_sound": 0,
+                        "bought": "0",
+                        "percent_cut_loss": "4.0",
+                        "percent_sell": "4.0",
+                        "min_last_week": "0"
+                    }
+                }
+                self.stock_code_from_file.update(new_data)
+                json.dump(self.stock_code_from_file, data_file, indent=4)
+                self.draw_body()
+            tkinter.messagebox.showinfo("Success", "Add stock successful")
+        else:
+            tkinter.messagebox.showerror("Error", "Invalid input")
 
     def draw_header(self, frame):
         row = 1
+        # Tính % thay đổi START
+        percent_change_label = Label(master=frame, text="Tính % thay đổi", font=FONT_HEADER)
+        percent_change_label.grid(column=1, row=row, columnspan=3)
+
+        start_change_input = Entry(master=frame, width=ENTRY_WIDTH)
+        start_change_input.grid(column=4, row=row, columnspan=2)
+        self.start_change_input = start_change_input
+
+        to_change_label = Label(master=frame, text="-", font=FONT_HEADER)
+        to_change_label.grid(column=6, row=row)
+
+        end_change_input = Entry(master=frame, width=ENTRY_WIDTH)
+        end_change_input.grid(column=7, row=row, columnspan=2)
+        self.end_change_input = end_change_input
+
+        equal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
+        equal_button.grid(column=9, row=row)
+
+        percent_symbol_label = Label(master=frame,text="%", font=FONT_HEADER)
+        percent_symbol_label.grid(column=10, row=row)
+        self.percent_symbol_label = percent_symbol_label
+
+        stock_code_label_header = Label(master=frame, text="Mã CK:", font=FONT_HEADER)
+        stock_code_label_header.grid(column=11, row=row)
+
+        stock_code_input_header = Entry(master=frame, width=ENTRY_WIDTH)
+        stock_code_input_header.grid(column=12, row=row, columnspan=2)
+        self.stock_code_input_header = stock_code_input_header
+
+        add_to_file_button_header = Button(master=frame, text="Add", foreground="green", font=FONT_HEADER,
+                                           command=self.add_stock_to_file)
+        add_to_file_button_header.grid(column=14, row=row)
+        # Tính % thay đổi END
+
+        row += 1
         column = 1
 
         # sound
@@ -183,7 +257,7 @@ class Stock(Tk):
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
             stock_code_from_file = json.load(data_file)
-        row = 2
+        row = 3
         for stock_code in stock_code_from_file:
             item_dict = stock_code_from_file[stock_code]
             column = 0
