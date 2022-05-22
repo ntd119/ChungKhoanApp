@@ -26,7 +26,7 @@ ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
 
-ROWS, COLS = 5, 16
+ROWS, COLS = 5, 10
 ROWS_DISP = 16
 COLS_DISP = 10
 
@@ -162,9 +162,3 @@ class Stock(Tk):
 
     def draw_table(self, frame):
         self.draw_header(frame)
-        # button = Button(master=frame, padx=7, pady=7, relief=RIDGE,
-        #                 activebackground='orange', text='text ')
-        # button.grid(row=1, column=1, sticky='news')
-        #
-        # button1 = Label(master=frame, text="sdsd")
-        # button1.grid(row=1, column=2, sticky='news')
