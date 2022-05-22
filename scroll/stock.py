@@ -26,7 +26,7 @@ ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
 
-ROWS, COLS = 17, 10
+ROWS, COLS = 0, 10
 ROWS_DISP = 17
 COLS_DISP = 11
 
@@ -534,6 +534,8 @@ class Stock(Tk):
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
             self.stock_code_from_file = json.load(data_file)
+            global ROWS
+            ROWS = len(self.stock_code_from_file)
         row = 5
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
