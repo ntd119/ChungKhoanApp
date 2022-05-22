@@ -1,9 +1,8 @@
 import tkinter as tk
 
-LABEL_BG = 'light grey'
-ROWS, COLS = 10, 6  # Size of grid.
-ROWS_DISP = 3  # Number of rows to display.
-COLS_DISP = 4  # Number of columns to display.
+ROWS, COLS = 1, 1  # Size of grid.
+ROWS_DISP = 10  # Number of rows to display.
+COLS_DISP = 10  # Number of columns to display.
 
 
 
@@ -12,19 +11,18 @@ class MyApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
 
         self.title(title)
-        self.configure(background='Gray')
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
-        master_frame = tk.Frame(self, bg='Light Blue', bd=3, relief=tk.RIDGE)
+        master_frame = tk.Frame(self, bd=3, relief=tk.RIDGE)
         master_frame.grid(sticky=tk.NSEW)
         master_frame.columnconfigure(0, weight=1)
 
-        frame2 = tk.Frame(master_frame, bg='Red', bd=2, relief=tk.FLAT)
+        frame2 = tk.Frame(master_frame, bd=2, relief=tk.FLAT)
         frame2.grid(row=3, column=0, sticky=tk.NW)
         #
         # # Add a canvas in that frame.
-        canvas = tk.Canvas(frame2, bg='Yellow')
+        canvas = tk.Canvas(frame2)
         canvas.grid(row=0, column=0)
         #
         # # Create a vertical scrollbar linked to the canvas.
@@ -40,12 +38,9 @@ class MyApp(tk.Tk):
         # Create a frame on the canvas to contain the grid of buttons.
         buttons_frame = tk.Frame(canvas)
 
-        # Add the buttons to the frame.
-        for i in range(1, ROWS+1):
-            for j in range(1, COLS+1):
-                button = tk.Button(master=buttons_frame,padx=7, pady=7, relief=tk.RIDGE,
-                                     activebackground= 'orange', text='[%d, %d]' % (i, j))
-                button.grid(row=i, column=j, sticky='news')
+        button = tk.Button(master=buttons_frame, padx=7, pady=7, relief=tk.RIDGE,
+                                                        activebackground= 'orange', text='text' )
+        button.grid(row=1, column=1, sticky='news')
 
 
         # Create canvas window to hold the buttons_frame.
