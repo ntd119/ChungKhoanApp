@@ -19,6 +19,6 @@ while True:
             delete_file_flag = False
         if day_of_week != 2:
             delete_file_flag = True
-        print(f"RUNNING...{now_time}")
-        stock.update_data(day_of_week)
+        stock.update_data(day_of_week, now_time)
+    stock.check_running(now_time)
     time.sleep(5)
