@@ -43,10 +43,10 @@ class Stock:
                     max_price = max(data_from_file[stock_code]["max_price"], current_price)
                     min_price = min(data_from_file[stock_code]["min_price"], current_price)
                     max_price_time = data_from_file[stock_code]["max_price_time"]
-                    if current_price > data_from_file[stock_code]["max_price"]:
+                    if current_price > int(data_from_file[stock_code]["max_price"]):
                         max_price_time = current_time
                     min_price_time = data_from_file[stock_code]["min_price_time"]
-                    if current_price < data_from_file[stock_code]["min_price"]:
+                    if current_price < int(data_from_file[stock_code]["min_price"]):
                         min_price_time = current_time
                     line_price_2 = data_from_file[stock_code][f"line_price_2"]
                     line_price_3 = data_from_file[stock_code][f"line_price_3"]
