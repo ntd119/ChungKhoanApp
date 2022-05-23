@@ -30,7 +30,8 @@ ROWS, COLS = 0, 10
 ROWS_DISP = 17
 COLS_DISP = 11
 
-
+STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
+              "VIB", "VPB"]
 
 class Stock(Tk):
     def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
@@ -357,6 +358,63 @@ class Stock(Tk):
             json.dump(self.stock_code_from_file, data_file, indent=4)
             tkinter.messagebox.showinfo("Success", "Save successful!")
 
+    def percent_lai_lo(self, start_value, end_value, label: Label):
+        final_value = ((end_value - start_value) / start_value) * 100
+        if final_value >= 0:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#00E11A")
+        else:
+            final_value = "{:.2f}".format(abs(final_value))
+            label.config(text=f"{final_value}%", bg="#F33232")
+        return final_value
+
+    def update_gia_tot_nhat(self):
+        response = requests.get(END_POINT, headers=HEADERS)
+        response.raise_for_status()
+        data_list = response.json()
+        try:
+            with open(FILE_NAME) as stock_file:
+                data_from_file = json.load(stock_file)
+        except FileNotFoundError:
+            with open(FILE_NAME, "a") as stock_file:
+                data_from_file = {}
+
+        with open(FILE_NAME, 'w') as stock_file:
+            for data in data_list:
+                stock_code = data["_sc_"]
+                if stock_code in STOCK_LIST:
+                    current_price = int(data["_cp_"])
+                    should_buy = data_from_file[stock_code]["should_buy"]
+                    enable_sound = data_from_file[stock_code]["enable_sound"]
+                    percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
+                    percent_sell = data_from_file[stock_code]["percent_sell"]
+                    min_last_week = data_from_file[stock_code]["min_last_week"]
+                    bought = data_from_file[stock_code]["bought"]
+                    stock = {
+                        data["_sc_"]: {
+                            "should_buy": should_buy,
+                            "enable_sound": enable_sound,
+                            "bought": bought,
+                            "percent_cut_loss": percent_cut_loss,
+                            "percent_sell": percent_sell,
+                            "min_last_week": min_last_week,
+                            "best_value": current_price,
+                        }
+                    }
+                    data_from_file.update(stock)
+            json.dump(data_from_file, stock_file, indent=4)
+
+    def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
+        final_value = end_value - start_value
+        if final_value >= 0:
+            final_value = "{:.2f}".format(final_value)
+            label.config(text=f"{final_value}%", bg="#00E11A")
+        else:
+            final_value = "{:.2f}".format(final_value)
+            label.config(text=f"{final_value}%", bg="#F33232")
+        return final_value
+
+
     def draw_header(self, frame):
         row = 1
         # Tính % thay đổi START
@@ -444,6 +502,19 @@ class Stock(Tk):
         status_label.grid(column=4, row=row, columnspan=2)
         self.status_label = status_label
         # Start stop START
+        row += 1
+        # Update giá tốt nhất START
+        update_gia_tot_nhat_start_button = Button(master=frame, text="Update GTN", foreground="green", font=FONT_HEADER,
+                              command=self.update_gia_tot_nhat)
+        update_gia_tot_nhat_start_button.grid(column=1, row=row, columnspan=2)
+        # self.start_button = start_button
+
+        update_gia_tot_nhat_stop_button = Button(master=frame, text="Stop", foreground="orange", font=FONT_HEADER,
+                             command=self.stop_progress)
+        update_gia_tot_nhat_stop_button.grid(column=3, row=row)
+        update_gia_tot_nhat_stop_button.config(state=DISABLED)
+        # self.stop_button = stop_button
+        # Update giá tốt nhất END
 
         row += 1
         column = 1
@@ -536,7 +607,7 @@ class Stock(Tk):
             self.stock_code_from_file = json.load(data_file)
             global ROWS
             ROWS = len(self.stock_code_from_file)
-        row = 5
+        row = 6
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             column = 0
