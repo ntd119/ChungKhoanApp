@@ -583,9 +583,14 @@ class Stock(Tk):
         stock_code.grid(column=column, row=row)
 
         # Giá min tuần này
-        min_value_last_week_label = Label(master=frame, text="Min t/này", font=FONT_HEADER)
+        min_value_this_week_label = Label(master=frame, text="Min t/này", font=FONT_HEADER)
         column += 1
-        min_value_last_week_label.grid(column=column, row=row)
+        min_value_this_week_label.grid(column=column, row=row)
+
+        # Thời gian giá nhỏ nhất tuần này
+        min_time_this_week_label = Label(master=frame, text="Time", font=FONT_HEADER)
+        column += 1
+        min_time_this_week_label.grid(column=column, row=row)
 
         # % Cắt lỗ
         max_value = Label(master=frame, text="% Cắt lỗ", font=FONT_HEADER)
@@ -676,10 +681,19 @@ class Stock(Tk):
             column += 1
             stock_code_label.grid(column=column, row=row)
 
-            min_value_last_week_value = collection_data["min_price"]
-            min_value_last_week_label = Label(master=frame, width=ENTRY_WIDTH, text="{:,.0f}".format(min_value_last_week_value))
+            min_value_this_week_value = collection_data["min_price"]
+            min_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH, text="{:,.0f}".format(min_value_this_week_value))
             column += 1
-            min_value_last_week_label.grid(column=column, row=row)
+            min_value_this_week_label.grid(column=column, row=row)
+
+            # Thời gian giá nhỏ nhất tuần này
+            min_time_this_week_value = collection_data["min_price_time"]
+            date = datetime.fromtimestamp(min_time_this_week_value / 1000.0)
+            day_of_week = int(date.strftime("%w")) + 1
+            time_min = date.strftime(f"T{day_of_week}, %d-%m, %I:%M %p")
+            min_time_this_week_label = Label(master=frame, text=time_min)
+            column += 1
+            min_time_this_week_label.grid(column=column, row=row)
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
