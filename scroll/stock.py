@@ -106,7 +106,7 @@ class Stock(Tk):
         response = requests.get(END_POINT_DATA, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
-        self.collection_data = [{key: value for (key, value) in data_list.items() if key in STOCK_LIST}]
+        self.collection_data = {key: value for (key, value) in data_list.items() if key in STOCK_LIST}
 
     def calculate_percent(self):
         start_value = self.start_change_input.get()
@@ -199,18 +199,18 @@ class Stock(Tk):
                                     status_label.config(text="Bán", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
-                        else:
+                        # else:
                             # Nên mua
-                            should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
-                            min_value_last_week = float(
-                                self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get())
-                            if min_value_last_week > 0 and should_buy > 0:
-                                gia_dao_dong = float((
-                                                             current_value - min_value_last_week) / min_value_last_week) * 100
-                                if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
-                                    status_label.config(text="Nên mua", foreground="green")
-                                    if stock_checkbox:
-                                        flag_sound = True
+                            # should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
+                            # min_value_last_week = float(
+                            #     self.item_list[f'min_value_this_week_label_{stock_code.lower()}'].get())
+                            # if min_value_last_week > 0 and should_buy > 0:
+                            #     gia_dao_dong = float((
+                            #                                  current_value - min_value_last_week) / min_value_last_week) * 100
+                            #     if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
+                            #         status_label.config(text="Nên mua", foreground="green")
+                            #         if stock_checkbox:
+                            #             flag_sound = True
 
                         # % gía tốt nhất - giá hiện tại
                         gia_tot_nhat = int(self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get())
@@ -364,7 +364,6 @@ class Stock(Tk):
                         "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
                         "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
-                        "min_last_week": self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'].get(),
                         "best_value": self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get()
                     }
                 }
@@ -583,8 +582,8 @@ class Stock(Tk):
         column += 1
         stock_code.grid(column=column, row=row)
 
-        # Giá min tuần trước
-        min_value_last_week_label = Label(master=frame, text="Min t/trước", font=FONT_HEADER)
+        # Giá min tuần này
+        min_value_last_week_label = Label(master=frame, text="Min t/này", font=FONT_HEADER)
         column += 1
         min_value_last_week_label.grid(column=column, row=row)
 
@@ -661,6 +660,7 @@ class Stock(Tk):
         row = 6
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
+            collection_data = self.collection_data[stock_code]
             column = 0
 
             # sound
@@ -676,15 +676,10 @@ class Stock(Tk):
             column += 1
             stock_code_label.grid(column=column, row=row)
 
-            try:
-                min_value_last_week_value = int(item_dict.get("min_last_week"))
-            except TypeError:
-                min_value_last_week_value = 0
-            min_value_last_week_entry = Entry(master=frame, width=ENTRY_WIDTH)
-            min_value_last_week_entry.insert(END, min_value_last_week_value)
+            min_value_last_week_value = collection_data["min_price"]
+            min_value_last_week_label = Label(master=frame, width=ENTRY_WIDTH, text="{:,.0f}".format(min_value_last_week_value))
             column += 1
-            min_value_last_week_entry.grid(column=column, row=row)
-            self.item_list[f'min_value_last_week_entry_{stock_code.lower()}'] = min_value_last_week_entry
+            min_value_last_week_label.grid(column=column, row=row)
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
