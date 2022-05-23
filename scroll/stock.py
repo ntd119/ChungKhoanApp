@@ -16,6 +16,8 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
            }
 FONT_HEADER = ("Arial", 10, "bold")
 
+END_POINT_DATA = "https://topchonlua.com/batch/data/stock_T0.json"
+
 STATUS_CHECK = "No"
 timer_api = None
 timer_time = None
@@ -63,6 +65,9 @@ class Stock(Tk):
         self.khoang_cach_an_toan_to_input = None
         self.background_color = BACKGROUND_COLOR
         self.frame = None
+        self.collection_data = None
+
+        self.get_data_from_collection()
 
         master_frame = Frame(self, bd=3, relief=RIDGE)
         master_frame.grid(sticky=NSEW)
@@ -96,6 +101,13 @@ class Stock(Tk):
         w, h = bbox[2] - bbox[1], bbox[3] - bbox[1]
         dw, dh = int((w / COLS) * COLS_DISP), int((h / ROWS) * ROWS_DISP)
         canvas.configure(scrollregion=bbox, width=dw, height=dh)
+
+    def get_data_from_collection(self):
+        response = requests.get(END_POINT_DATA, headers=HEADERS)
+        response.raise_for_status()
+        data_list = response.json()
+        self.collection_data = [{key: value for (key, value) in data_list.items() if key in STOCK_LIST}]
+
     def calculate_percent(self):
         start_value = self.start_change_input.get()
         end_value = self.end_change_input.get()
