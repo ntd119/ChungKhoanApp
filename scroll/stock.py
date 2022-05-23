@@ -504,15 +504,15 @@ class Stock(Tk):
         # Start stop START
         row += 1
         # Update giá tốt nhất START
-        update_gia_tot_nhat_start_button = Button(master=frame, text="Update GTN", foreground="green", font=FONT_HEADER,
+        update_gia_tot_nhat_start_button = Button(master=frame, text="Update GB", foreground="green", font=FONT_HEADER,
                               command=self.update_gia_tot_nhat)
         update_gia_tot_nhat_start_button.grid(column=1, row=row, columnspan=2)
         # self.start_button = start_button
 
-        update_gia_tot_nhat_stop_button = Button(master=frame, text="Stop", foreground="orange", font=FONT_HEADER,
+        update_gia_tot_nhat_stop_button = Button(master=frame, text="Update GM", foreground="orange", font=FONT_HEADER,
                              command=self.stop_progress)
-        update_gia_tot_nhat_stop_button.grid(column=3, row=row)
-        update_gia_tot_nhat_stop_button.config(state=DISABLED)
+        update_gia_tot_nhat_stop_button.grid(column=3, row=row, columnspan=2)
+        update_gia_tot_nhat_stop_button.config()
         # self.stop_button = stop_button
         # Update giá tốt nhất END
 
@@ -578,12 +578,12 @@ class Stock(Tk):
         gia_da_mua_label.grid(column=column, row=row)
 
         # GTN
-        gia_tot_nhat_label = Label(master=frame, text="GTN", font=FONT_HEADER)
+        gia_tot_nhat_label = Label(master=frame, text="Giá bán(GB)", font=FONT_HEADER)
         column += 1
         gia_tot_nhat_label.grid(column=column, row=row)
 
         # % GTN
-        percent_tai_gia_tot_nhat_label = Label(master=frame, text="% GTN", font=FONT_HEADER)
+        percent_tai_gia_tot_nhat_label = Label(master=frame, text="% GB", font=FONT_HEADER)
         column += 1
         percent_tai_gia_tot_nhat_label.grid(column=column, row=row)
 
