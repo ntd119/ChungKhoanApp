@@ -404,6 +404,42 @@ class Stock(Tk):
                     data_from_file.update(stock)
             json.dump(data_from_file, stock_file, indent=4)
 
+    def update_gia_mua(self):
+        response = requests.get(END_POINT, headers=HEADERS)
+        response.raise_for_status()
+        data_list = response.json()
+        try:
+            with open(FILE_NAME) as stock_file:
+                data_from_file = json.load(stock_file)
+        except FileNotFoundError:
+            with open(FILE_NAME, "a") as stock_file:
+                data_from_file = {}
+
+        with open(FILE_NAME, 'w') as stock_file:
+            for data in data_list:
+                stock_code = data["_sc_"]
+                if stock_code in STOCK_LIST:
+                    current_price = int(data["_cp_"])
+                    should_buy = data_from_file[stock_code]["should_buy"]
+                    enable_sound = data_from_file[stock_code]["enable_sound"]
+                    percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
+                    percent_sell = data_from_file[stock_code]["percent_sell"]
+                    min_last_week = data_from_file[stock_code]["min_last_week"]
+                    best_value = data_from_file[stock_code]["best_value"]
+                    stock = {
+                        data["_sc_"]: {
+                            "should_buy": should_buy,
+                            "enable_sound": enable_sound,
+                            "bought": current_price,
+                            "percent_cut_loss": percent_cut_loss,
+                            "percent_sell": percent_sell,
+                            "min_last_week": min_last_week,
+                            "best_value": best_value,
+                        }
+                    }
+                    data_from_file.update(stock)
+            json.dump(data_from_file, stock_file, indent=4)
+
     def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
         final_value = end_value - start_value
         if final_value >= 0:
@@ -509,10 +545,10 @@ class Stock(Tk):
         update_gia_tot_nhat_start_button.grid(column=1, row=row, columnspan=2)
         # self.start_button = start_button
 
-        update_gia_tot_nhat_stop_button = Button(master=frame, text="Update GM", foreground="orange", font=FONT_HEADER,
-                             command=self.stop_progress)
-        update_gia_tot_nhat_stop_button.grid(column=3, row=row, columnspan=2)
-        update_gia_tot_nhat_stop_button.config()
+        update_gia_mua_button = Button(master=frame, text="Update GM", foreground="orange", font=FONT_HEADER,
+                             command=self.update_gia_mua)
+        update_gia_mua_button.grid(column=3, row=row, columnspan=2)
+        update_gia_mua_button.config()
         # self.stop_button = stop_button
         # Update giá tốt nhất END
 
