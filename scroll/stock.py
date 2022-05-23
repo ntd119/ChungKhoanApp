@@ -62,6 +62,7 @@ class Stock(Tk):
         self.khoang_cach_an_toan_result_max_input = None
         self.khoang_cach_an_toan_to_input = None
         self.background_color = BACKGROUND_COLOR
+        self.frame = None
 
         master_frame = Frame(self, bd=3, relief=RIDGE)
         master_frame.grid(sticky=NSEW)
@@ -85,6 +86,7 @@ class Stock(Tk):
         canvas.configure(xscrollcommand=hsbar.set)
 
         frame = Frame(canvas)
+        self.frame = frame
         self.draw_table(frame)
         canvas.create_window((0, 0), window=frame, anchor=NW)
 
@@ -439,6 +441,7 @@ class Stock(Tk):
                     }
                     data_from_file.update(stock)
             json.dump(data_from_file, stock_file, indent=4)
+            # self.draw_body(self.frame)
 
     def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
         final_value = end_value - start_value
