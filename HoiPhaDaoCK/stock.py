@@ -27,6 +27,7 @@ COLOR_OK = "white"
 ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
+BACKGROUND_LAI = "#00E11A"
 
 ROWS, COLS = 0, 0
 ROWS_DISP = 15
@@ -618,6 +619,11 @@ class Stock(Tk):
         column += 1
         max_time_this_week_label.grid(column=column, row=row)
 
+        # Phần trăm giữa giá lớn nhất và nhỏ nhất
+        percent_max_min_price_label = Label(master=frame, text="% Max-Min", font=FONT_HEADER)
+        column += 1
+        percent_max_min_price_label.grid(column=column, row=row)
+
         # % Cắt lỗ
         max_value = Label(master=frame, text="% Cắt lỗ", font=FONT_HEADER)
         column += 1
@@ -709,6 +715,7 @@ class Stock(Tk):
             column += 1
             stock_code_label.grid(column=column, row=row)
 
+            # Giá nhỏ nhất tuần này
             min_value_this_week_value = collection_data["min_price"]
             min_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH,
                                               text="{:,.0f}".format(min_value_this_week_value))
@@ -735,6 +742,12 @@ class Stock(Tk):
                                              background=max_time_this_week_value["background"])
             column += 1
             max_time_this_week_label.grid(column=column, row=row)
+
+            # Phần trăm giữa giá lớn nhất và nhỏ nhất
+            percent_min_max = ((max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
+            percent_max_min_price_label = Label(master=frame, text="{:.2f}".format(percent_min_max) + "%", bg=BACKGROUND_LAI)
+            column += 1
+            percent_max_min_price_label.grid(column=column, row=row)
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
