@@ -28,9 +28,9 @@ ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
 
-ROWS, COLS = 0, 10
-ROWS_DISP = 17
-COLS_DISP = 11
+ROWS, COLS = 0, 0
+ROWS_DISP = 15
+COLS_DISP = 15
 AM_COLOR_BACKGROUND = "#DE3163"
 PM_COLOR_BACKGROUND = "#FF7F50"
 
@@ -599,6 +599,11 @@ class Stock(Tk):
         column += 1
         max_value_this_week_label.grid(column=column, row=row)
 
+        # Thời gian giá lớn nhất tuần này
+        max_time_this_week_label = Label(master=frame, text="Time", font=FONT_HEADER)
+        column += 1
+        max_time_this_week_label.grid(column=column, row=row)
+
         # % Cắt lỗ
         max_value = Label(master=frame, text="% Cắt lỗ", font=FONT_HEADER)
         column += 1
@@ -663,6 +668,8 @@ class Stock(Tk):
         radio_choose = Label(master=frame, text="Status", font=FONT_HEADER)
         column += 1
         radio_choose.grid(column=column, row=row)
+        global COLS
+        COLS = column
 
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
