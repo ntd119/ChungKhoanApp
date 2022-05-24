@@ -688,8 +688,13 @@ class Stock(Tk):
         radio_choose = Label(master=frame, text="Status", font=FONT_HEADER)
         column += 1
         radio_choose.grid(column=column, row=row)
+
+        empty_label = Label(master=frame, text="        ", font=FONT_HEADER)
+        column += 1
+        empty_label.grid(column=column, row=row)
+
         global COLS
-        COLS = column
+        COLS = column + 2
 
     def draw_body(self, frame):
         with open(FILE_NAME) as data_file:
