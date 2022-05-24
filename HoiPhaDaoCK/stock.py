@@ -729,6 +729,13 @@ class Stock(Tk):
             column += 1
             max_value_this_week_label.grid(column=column, row=row)
 
+            # Thời gian giá lớn nhất tuần này
+            max_time_this_week_value = self.format_time(collection_data["max_price_time"])
+            max_time_this_week_label = Label(master=frame, text=max_time_this_week_value["time"],
+                                             background=max_time_this_week_value["background"])
+            column += 1
+            max_time_this_week_label.grid(column=column, row=row)
+
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
             except TypeError:
