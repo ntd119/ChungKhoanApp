@@ -37,6 +37,7 @@ PM_COLOR_BACKGROUND = "#FF7F50"
 STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
               "VIB", "VPB"]
 
+
 class Stock(Tk):
     def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
@@ -202,17 +203,17 @@ class Stock(Tk):
                                     if stock_checkbox:
                                         flag_sound = True
                         # else:
-                            # Nên mua
-                            # should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
-                            # min_value_last_week = float(
-                            #     self.item_list[f'min_value_this_week_label_{stock_code.lower()}'].get())
-                            # if min_value_last_week > 0 and should_buy > 0:
-                            #     gia_dao_dong = float((
-                            #                                  current_value - min_value_last_week) / min_value_last_week) * 100
-                            #     if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
-                            #         status_label.config(text="Nên mua", foreground="green")
-                            #         if stock_checkbox:
-                            #             flag_sound = True
+                        # Nên mua
+                        # should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
+                        # min_value_last_week = float(
+                        #     self.item_list[f'min_value_this_week_label_{stock_code.lower()}'].get())
+                        # if min_value_last_week > 0 and should_buy > 0:
+                        #     gia_dao_dong = float((
+                        #                                  current_value - min_value_last_week) / min_value_last_week) * 100
+                        #     if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
+                        #         status_label.config(text="Nên mua", foreground="green")
+                        #         if stock_checkbox:
+                        #             flag_sound = True
 
                         # % gía tốt nhất - giá hiện tại
                         gia_tot_nhat = int(self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get())
@@ -466,6 +467,16 @@ class Stock(Tk):
             label.config(text=f"{final_value}%", bg="#F33232")
         return final_value
 
+    def format_time(self, time_value):
+        min_time_this_week_value = time_value
+        date = datetime.fromtimestamp(min_time_this_week_value / 1000.0)
+        day_of_week = int(date.strftime("%w")) + 1
+        am_pm = date.strftime("%p").lower()
+        background = AM_COLOR_BACKGROUND
+        if am_pm == "pm":
+            background = PM_COLOR_BACKGROUND
+        date_str = date.strftime(f"T{day_of_week}, %d-%m, %I:%M %p")
+        return {"background": background, "time": date_str}
 
     def draw_header(self, frame):
         row = 1
@@ -484,10 +495,11 @@ class Stock(Tk):
         end_change_input.grid(column=7, row=row, columnspan=2)
         self.end_change_input = end_change_input
 
-        equal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER, command=self.calculate_percent)
+        equal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER,
+                              command=self.calculate_percent)
         equal_button.grid(column=9, row=row)
 
-        percent_symbol_label = Label(master=frame,text="%", font=FONT_HEADER)
+        percent_symbol_label = Label(master=frame, text="%", font=FONT_HEADER)
         percent_symbol_label.grid(column=10, row=row)
         self.percent_symbol_label = percent_symbol_label
 
@@ -505,14 +517,14 @@ class Stock(Tk):
         row += 1
 
         # Khoang cach an toàn start
-        khoang_cach_an_toan_label = Label(master=frame,text="Khoảng cách an toàn:", font=FONT_HEADER)
+        khoang_cach_an_toan_label = Label(master=frame, text="Khoảng cách an toàn:", font=FONT_HEADER)
         khoang_cach_an_toan_label.grid(column=1, row=row, columnspan=3)
 
-        khoang_cach_an_toan_min_input = Entry(master=frame,width=ENTRY_WIDTH)
+        khoang_cach_an_toan_min_input = Entry(master=frame, width=ENTRY_WIDTH)
         khoang_cach_an_toan_min_input.grid(column=4, row=row, columnspan=2)
         self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
 
-        khoang_cach_an_toan_to_input = Entry(master=frame,width=ENTRY_WIDTH)
+        khoang_cach_an_toan_to_input = Entry(master=frame, width=ENTRY_WIDTH)
         khoang_cach_an_toan_to_input.insert(END, 4)
         khoang_cach_an_toan_to_input.grid(column=6, row=row)
         self.khoang_cach_an_toan_to_input = khoang_cach_an_toan_to_input
@@ -521,7 +533,7 @@ class Stock(Tk):
         khoang_cach_an_toan_max_input.grid(column=7, row=row, columnspan=2)
         self.khoang_cach_an_toan_max_input = khoang_cach_an_toan_max_input
 
-        khoang_cach_an_toan_cal_button = Button(master=frame,text="  =  ", foreground="green", font=FONT_HEADER,
+        khoang_cach_an_toan_cal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER,
                                                 command=self.distance_value)
         khoang_cach_an_toan_cal_button.grid(column=9, row=row)
         self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
@@ -535,34 +547,36 @@ class Stock(Tk):
         self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
         # Khoang cach an toàn END
 
-        row +=1
+        row += 1
 
         # Start stop START
-        start_button = Button(master=frame,text="Start", foreground="green", font=FONT_HEADER, command=self.start_progress)
+        start_button = Button(master=frame, text="Start", foreground="green", font=FONT_HEADER,
+                              command=self.start_progress)
         start_button.grid(column=1, row=row)
         self.start_button = start_button
 
-        stop_button = Button(master=frame,text="Stop", foreground="orange", font=FONT_HEADER, command=self.stop_progress)
+        stop_button = Button(master=frame, text="Stop", foreground="orange", font=FONT_HEADER,
+                             command=self.stop_progress)
         stop_button.grid(column=2, row=row)
         stop_button.config(state=DISABLED)
         self.stop_button = stop_button
 
-        save_all_button = Button(master=frame,text="Save", foreground="green", font=FONT_HEADER, command=self.save_all)
+        save_all_button = Button(master=frame, text="Save", foreground="green", font=FONT_HEADER, command=self.save_all)
         save_all_button.grid(column=3, row=row)
 
-        status_label = Label(master=frame,text="STOPPED", foreground="red", font=FONT_HEADER)
+        status_label = Label(master=frame, text="STOPPED", foreground="red", font=FONT_HEADER)
         status_label.grid(column=4, row=row, columnspan=2)
         self.status_label = status_label
         # Start stop START
         row += 1
         # Update giá tốt nhất START
         update_gia_tot_nhat_start_button = Button(master=frame, text="Update GB", foreground="green", font=FONT_HEADER,
-                              command=self.update_gia_tot_nhat)
+                                                  command=self.update_gia_tot_nhat)
         update_gia_tot_nhat_start_button.grid(column=1, row=row, columnspan=2)
         # self.start_button = start_button
 
         update_gia_mua_button = Button(master=frame, text="Update GM", foreground="orange", font=FONT_HEADER,
-                             command=self.update_gia_mua)
+                                       command=self.update_gia_mua)
         update_gia_mua_button.grid(column=3, row=row, columnspan=2)
         update_gia_mua_button.config()
         # self.stop_button = stop_button
@@ -615,12 +629,12 @@ class Stock(Tk):
         min_value.grid(column=column, row=row)
 
         # Giá nên mua
-        max_value = Label(master=frame,text="Giá nên mua", font=FONT_HEADER)
+        max_value = Label(master=frame, text="Giá nên mua", font=FONT_HEADER)
         column += 1
         max_value.grid(column=column, row=row)
 
         # Trần
-        gia_tran_label = Label(master=frame,text="Trần", font=FONT_HEADER)
+        gia_tran_label = Label(master=frame, text="Trần", font=FONT_HEADER)
         column += 1
         gia_tran_label.grid(column=column, row=row)
 
@@ -696,20 +710,15 @@ class Stock(Tk):
             stock_code_label.grid(column=column, row=row)
 
             min_value_this_week_value = collection_data["min_price"]
-            min_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH, text="{:,.0f}".format(min_value_this_week_value))
+            min_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH,
+                                              text="{:,.0f}".format(min_value_this_week_value))
             column += 1
             min_value_this_week_label.grid(column=column, row=row)
 
             # Thời gian giá nhỏ nhất tuần này
-            min_time_this_week_value = collection_data["min_price_time"]
-            date = datetime.fromtimestamp(min_time_this_week_value / 1000.0)
-            day_of_week = int(date.strftime("%w")) + 1
-            time_min = date.strftime(f"T{day_of_week}, %d-%m, %I:%M %p")
-            am_pm = date.strftime("%p").lower()
-            background = AM_COLOR_BACKGROUND
-            if am_pm == "pm":
-                background = PM_COLOR_BACKGROUND
-            min_time_this_week_label = Label(master=frame, text=time_min, background=background)
+            min_time_this_week_value = self.format_time(collection_data["min_price_time"])
+            min_time_this_week_label = Label(master=frame, text=min_time_this_week_value["time"],
+                                             background=min_time_this_week_value["background"])
             column += 1
             min_time_this_week_label.grid(column=column, row=row)
 
@@ -724,7 +733,7 @@ class Stock(Tk):
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
             except TypeError:
                 percent_cut_loss_value = float(4)
-            percent_cut_loss_entry = Entry(master= frame, width=ENTRY_WIDTH)
+            percent_cut_loss_entry = Entry(master=frame, width=ENTRY_WIDTH)
             percent_cut_loss_entry.insert(0, percent_cut_loss_value)
             column += 1
             percent_cut_loss_entry.grid(column=column, row=row)
@@ -761,7 +770,7 @@ class Stock(Tk):
             gia_mo_cua_label.grid(column=column, row=row)
             self.item_list[f'gia_mo_cua_label_{stock_code.lower()}'] = gia_mo_cua_label
 
-            current_value_label = Label(master= frame, text="{:,.0f}".format(0.00))
+            current_value_label = Label(master=frame, text="{:,.0f}".format(0.00))
             column += 1
             current_value_label.grid(column=column, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
@@ -819,5 +828,3 @@ class Stock(Tk):
     def draw_table(self, frame):
         self.draw_header(frame)
         self.draw_body(frame)
-
-
