@@ -594,6 +594,11 @@ class Stock(Tk):
         column += 1
         min_time_this_week_label.grid(column=column, row=row)
 
+        # Giá max tuần này
+        max_value_this_week_label = Label(master=frame, text="Max t/này", font=FONT_HEADER)
+        column += 1
+        max_value_this_week_label.grid(column=column, row=row)
+
         # % Cắt lỗ
         max_value = Label(master=frame, text="% Cắt lỗ", font=FONT_HEADER)
         column += 1
@@ -700,6 +705,13 @@ class Stock(Tk):
             min_time_this_week_label = Label(master=frame, text=time_min, background=background)
             column += 1
             min_time_this_week_label.grid(column=column, row=row)
+
+            # Giá max tuần này
+            max_value_this_week_value = collection_data["max_price"]
+            max_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH,
+                                              text="{:,.0f}".format(max_value_this_week_value))
+            column += 1
+            max_value_this_week_label.grid(column=column, row=row)
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
