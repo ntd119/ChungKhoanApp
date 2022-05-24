@@ -31,6 +31,8 @@ BACKGROUND_COLOR = "#F0F0F0"
 ROWS, COLS = 0, 10
 ROWS_DISP = 17
 COLS_DISP = 11
+AM_COLOR_BACKGROUND = "#DE3163"
+PM_COLOR_BACKGROUND = "#FF7F50"
 
 STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
               "VIB", "VPB"]
@@ -691,7 +693,11 @@ class Stock(Tk):
             date = datetime.fromtimestamp(min_time_this_week_value / 1000.0)
             day_of_week = int(date.strftime("%w")) + 1
             time_min = date.strftime(f"T{day_of_week}, %d-%m, %I:%M %p")
-            min_time_this_week_label = Label(master=frame, text=time_min)
+            am_pm = date.strftime("%p").lower()
+            background = AM_COLOR_BACKGROUND
+            if am_pm == "pm":
+                background = PM_COLOR_BACKGROUND
+            min_time_this_week_label = Label(master=frame, text=time_min, background=background)
             column += 1
             min_time_this_week_label.grid(column=column, row=row)
 
