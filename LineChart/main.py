@@ -1,11 +1,11 @@
-import matplotlib.pyplot as plt
+# Using graph_objects
+import plotly.graph_objects as go
 
-plt.plot([0,1,2,3,4], [1,2,3,4,10], 'go-', label='Python')
-plt.plot([0,1,2,3,4], [10,4,3,2,1], 'ro-', label='C#')
-plt.plot([2.5,2.5,2.5,1.5,0.5], [1,3,5,7,10], 'bo-', label='Java')
-plt.title('Vẽ đồ thị trong Python với Matplotlib')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.legend(loc='best')
-plt.show()
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
+dx = ["2015-02-17", "2015-02-18"]
+dy = ["128.880005", "129.880005"]
+
+fig = go.Figure([go.Scatter(x=dx, y=dy)])
+fig.show()
