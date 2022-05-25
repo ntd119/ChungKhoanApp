@@ -729,7 +729,7 @@ class Stock(Tk):
             bg_color = "#F08080"
             if row % 2 == 0:
                 bg_color = "#FFA07A"
-            show_chart_label = Button(master=frame, text="Show chart", background=bg_color)
+            show_chart_label = Button(master=frame, text="Show chart", background=bg_color, command=self.show_chart)
             column += 1
             show_chart_label.grid(column=column, row=row)
 
@@ -868,3 +868,6 @@ class Stock(Tk):
     def draw_table(self, frame):
         self.draw_header(frame)
         self.draw_body(frame)
+
+    def show_chart(self):
+        print("sdsd")
