@@ -5,6 +5,7 @@ import winsound
 from datetime import datetime, time
 import tkinter.messagebox
 import json
+import plotly.graph_objects as go
 
 FILE_NAME = "./data/stock-code.json"
 DELAY_TIME = 5000
@@ -870,4 +871,8 @@ class Stock(Tk):
         self.draw_body(frame)
 
     def show_chart(self):
-        print("sdsd")
+        dx = ["2015-02-17", "2015-02-18"]
+        dy = ["128.880005", "129.880005"]
+
+        fig = go.Figure([go.Scatter(x=dx, y=dy)])
+        fig.show()
