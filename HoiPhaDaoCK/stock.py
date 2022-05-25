@@ -764,7 +764,7 @@ class Stock(Tk):
 
             # Phần trăm giữa giá lớn nhất và nhỏ nhất
             percent_min_max = ((
-                                           max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
+                                       max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
             percent_max_min_price_label = Label(master=frame, text="{:.2f}".format(percent_min_max) + "%",
                                                 bg=BACKGROUND_LAI)
             column += 1
@@ -871,8 +871,10 @@ class Stock(Tk):
         self.draw_body(frame)
 
     def show_chart(self):
-        dx = ["2015-02-17", "2015-02-18"]
-        dy = ["128.880005", "129.880005"]
-
+        list_data = self.collection_data["ACB"]
+        data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
+            "line_price_5"] + list_data["line_price_6"]
+        dx = [item["time"] for item in data]
+        dy = [item["price"] for item in data]
         fig = go.Figure([go.Scatter(x=dx, y=dy)])
         fig.show()
