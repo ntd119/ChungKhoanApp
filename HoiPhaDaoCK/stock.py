@@ -599,6 +599,11 @@ class Stock(Tk):
         column += 1
         stock_code.grid(column=column, row=row)
 
+        # Show chart
+        show_chart_label = Label(master=frame, text="Chart", font=FONT_HEADER)
+        column += 1
+        show_chart_label.grid(column=column, row=row)
+
         # Giá min tuần này
         min_value_this_week_label = Label(master=frame, text="Min t/này", font=FONT_HEADER)
         column += 1
@@ -720,6 +725,14 @@ class Stock(Tk):
             column += 1
             stock_code_label.grid(column=column, row=row)
 
+            # Show chart
+            bg_color = "#F08080"
+            if row % 2 == 0:
+                bg_color = "#FFA07A"
+            show_chart_label = Button(master=frame, text="Show chart", background=bg_color)
+            column += 1
+            show_chart_label.grid(column=column, row=row)
+
             # Giá nhỏ nhất tuần này
             min_value_this_week_value = collection_data["min_price"]
             min_value_this_week_label = Label(master=frame, width=ENTRY_WIDTH,
@@ -749,8 +762,10 @@ class Stock(Tk):
             max_time_this_week_label.grid(column=column, row=row)
 
             # Phần trăm giữa giá lớn nhất và nhỏ nhất
-            percent_min_max = ((max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
-            percent_max_min_price_label = Label(master=frame, text="{:.2f}".format(percent_min_max) + "%", bg=BACKGROUND_LAI)
+            percent_min_max = ((
+                                           max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
+            percent_max_min_price_label = Label(master=frame, text="{:.2f}".format(percent_min_max) + "%",
+                                                bg=BACKGROUND_LAI)
             column += 1
             percent_max_min_price_label.grid(column=column, row=row)
 
