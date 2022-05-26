@@ -6,6 +6,7 @@ from datetime import datetime, time
 import tkinter.messagebox
 import json
 import plotly.graph_objects as go
+from scipy.signal._ltisys import Bunch
 
 FILE_NAME = "./data/stock-code.json"
 DELAY_TIME = 5000
@@ -550,7 +551,6 @@ class Stock(Tk):
         # Khoang cach an toàn END
 
         row += 1
-
         # Start stop START
         start_button = Button(master=frame, text="Start", foreground="green", font=FONT_HEADER,
                               command=self.start_progress)
@@ -583,6 +583,13 @@ class Stock(Tk):
         update_gia_mua_button.config()
         # self.stop_button = stop_button
         # Update giá tốt nhất END
+
+        row += 1
+        # Show chart START
+        show_chart_button = Button(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND,
+                                   command=self.show_chart)
+        show_chart_button.grid(column=1, row=row, columnspan=2)
+        # Show chart STOP
 
         row += 1
         column = 1
@@ -707,7 +714,7 @@ class Stock(Tk):
             self.stock_code_from_file = json.load(data_file)
             global ROWS
             ROWS = len(self.stock_code_from_file)
-        row = 6
+        row = 7
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
             collection_data = self.collection_data[stock_code]
@@ -727,12 +734,11 @@ class Stock(Tk):
             stock_code_label.grid(column=column, row=row)
 
             # Show chart
-            bg_color = "#F08080"
-            if row % 2 == 0:
-                bg_color = "#FFA07A"
-            show_chart_label = Button(master=frame, text="Show chart", background=bg_color, command=self.show_chart)
+            chart_value = IntVar()
+            show_chart_checkbox = Checkbutton(master=frame, variable=chart_value, onvalue=1, offvalue=0)
             column += 1
-            show_chart_label.grid(column=column, row=row)
+            show_chart_checkbox.grid(column=column, row=row)
+            self.item_list[f'show_chart_checkbox_{stock_code.lower()}'] = chart_value
 
             # Giá nhỏ nhất tuần này
             min_value_this_week_value = collection_data["min_price"]
