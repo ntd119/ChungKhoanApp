@@ -888,7 +888,6 @@ class Stock(Tk):
                 data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
                     "line_price_5"] + list_data["line_price_6"]
                 dx = [self.format_time(item["time"])["time"] for item in data]
-                print(dx)
                 dy = [item["price"] for item in data]
                 fig = go.Figure([go.Scatter(x=dx, y=dy)])
                 fig.show()
