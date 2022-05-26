@@ -1,12 +1,10 @@
-import pandas
 from tkinter import *
 import requests
 import winsound
-from datetime import datetime, time
+from datetime import datetime
 import tkinter.messagebox
 import json
 import plotly.graph_objects as go
-from scipy.signal._ltisys import Bunch
 
 FILE_NAME = "./data/stock-code.json"
 DELAY_TIME = 5000
