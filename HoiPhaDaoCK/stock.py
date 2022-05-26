@@ -878,9 +878,11 @@ class Stock(Tk):
         self.draw_body(frame)
 
     def show_chart(self):
+        check_exist = False
         for stock_code in self.stock_code_from_file:
             check_value = self.item_list[f'show_chart_checkbox_{stock_code.lower()}'].get()
             if check_value == 1:
+                check_exist = True
                 list_data = self.collection_data[stock_code]
                 data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
                     "line_price_5"] + list_data["line_price_6"]
@@ -889,3 +891,5 @@ class Stock(Tk):
                 fig = go.Figure([go.Scatter(x=dx, y=dy)])
                 fig.show()
                 break
+        if not check_exist:
+            tkinter.messagebox.showerror("Error", "Tại colum 'Chart' vui lòng check ít nhất 1 record")
