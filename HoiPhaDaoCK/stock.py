@@ -735,6 +735,7 @@ class Stock(Tk):
 
             # Show chart
             chart_value = IntVar()
+            chart_value.set(0)
             show_chart_checkbox = Checkbutton(master=frame, variable=chart_value, onvalue=1, offvalue=0)
             column += 1
             show_chart_checkbox.grid(column=column, row=row)
@@ -877,10 +878,14 @@ class Stock(Tk):
         self.draw_body(frame)
 
     def show_chart(self):
-        list_data = self.collection_data["ACB"]
-        data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
-            "line_price_5"] + list_data["line_price_6"]
-        dx = [item["time"] for item in data]
-        dy = [item["price"] for item in data]
-        fig = go.Figure([go.Scatter(x=dx, y=dy)])
-        fig.show()
+        for stock_code in self.stock_code_from_file:
+            check_value = self.item_list[f'show_chart_checkbox_{stock_code.lower()}'].get()
+            if check_value == 1:
+                list_data = self.collection_data[stock_code]
+                data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
+                    "line_price_5"] + list_data["line_price_6"]
+                dx = [item["time"] for item in data]
+                dy = [item["price"] for item in data]
+                fig = go.Figure([go.Scatter(x=dx, y=dy)])
+                fig.show()
+                break
