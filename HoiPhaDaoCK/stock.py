@@ -203,33 +203,6 @@ class Stock(Tk):
                                     status_label.config(text="Bán", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
-                        # else:
-                        # Nên mua
-                        # should_buy = float(self.item_list[f'min_value_entry_{stock_code.lower()}'].get())
-                        # min_value_last_week = float(
-                        #     self.item_list[f'min_value_this_week_label_{stock_code.lower()}'].get())
-                        # if min_value_last_week > 0 and should_buy > 0:
-                        #     gia_dao_dong = float((
-                        #                                  current_value - min_value_last_week) / min_value_last_week) * 100
-                        #     if gia_dao_dong > 0 and abs(gia_dao_dong) >= 1.2 and should_buy > min_value_last_week:
-                        #         status_label.config(text="Nên mua", foreground="green")
-                        #         if stock_checkbox:
-                        #             flag_sound = True
-
-                        # % gía tốt nhất - giá hiện tại
-                        gia_tot_nhat = int(self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get())
-                        if gia_tot_nhat > 0:
-                            percent_gia_tot_nhat = ((gia_tot_nhat - gia_da_mua) / gia_da_mua) * 100
-                            percent_gia_tot_nhat = float("{:.2f}".format(percent_gia_tot_nhat))
-
-                            percent_hien_tai = ((current_value - gia_da_mua) / gia_da_mua) * 100
-                            percent_hien_tai = float("{:.2f}".format(percent_hien_tai))
-
-                            self.percent_gia_tot_nhat_hien_tai(percent_gia_tot_nhat, percent_hien_tai, self.item_list[
-                                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'])
-                        else:
-                            self.item_list[
-                                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'].config(text="0")
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -367,8 +340,7 @@ class Stock(Tk):
                         "enable_sound": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
                         "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
-                        "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get(),
-                        "best_value": self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'].get()
+                        "percent_sell": self.item_list[f'percent_sell_entry_{stock_code.lower()}'].get()
                     }
                 }
                 self.stock_code_from_file.update(update_data)
@@ -675,25 +647,15 @@ class Stock(Tk):
         column += 1
         gia_da_mua_label.grid(column=column, row=row)
 
-        # GTN
-        gia_tot_nhat_label = Label(master=frame, text="Giá bán(GB)", font=FONT_HEADER)
+        # Mã chứng khoán
+        ma_chung_khoan_label = Label(master=frame, text="Mã CK", font=FONT_HEADER)
         column += 1
-        gia_tot_nhat_label.grid(column=column, row=row)
-
-        # % GTN
-        percent_tai_gia_tot_nhat_label = Label(master=frame, text="% GB", font=FONT_HEADER)
-        column += 1
-        percent_tai_gia_tot_nhat_label.grid(column=column, row=row)
+        ma_chung_khoan_label.grid(column=column, row=row)
 
         # Lãi/lỗ
         lai_lo_label = Label(master=frame, text="Lãi/lỗ", font=FONT_HEADER)
         column += 1
         lai_lo_label.grid(column=column, row=row)
-
-        # % GTN - HT
-        percent_gia_tot_nhat_hien_tai_label = Label(master=frame, text="% GTN - HT", font=FONT_HEADER)
-        column += 1
-        percent_gia_tot_nhat_hien_tai_label.grid(column=column, row=row)
 
         # Status
         radio_choose = Label(master=frame, text="Status", font=FONT_HEADER)
@@ -836,34 +798,14 @@ class Stock(Tk):
             except TypeError:
                 gia_tot_nhat_value = 0
 
-            percent_tai_gia_tot_value = 0
-            gia_tot_nhat_entry = Entry(master=frame, width=ENTRY_WIDTH)
-            gia_tot_nhat_entry.insert(END, gia_tot_nhat_value)
+            ma_chung_khoan_label = Label(master=frame, text=stock_code)
             column += 1
-            gia_tot_nhat_entry.grid(column=column, row=row)
-            self.item_list[f'gia_tot_nhat_entry_{stock_code.lower()}'] = gia_tot_nhat_entry
-
-            percent_tai_gia_tot_nhat_entry = Label(master=frame)
-
-            if gia_tot_nhat_value > 0:
-                percent_tai_gia_tot_value = self.percent_lai_lo(gia_da_mua, gia_tot_nhat_value,
-                                                                percent_tai_gia_tot_nhat_entry)
-            else:
-                percent_tai_gia_tot_nhat_entry.config(text="0")
-            column += 1
-            percent_tai_gia_tot_nhat_entry.grid(column=column, row=row)
-            self.item_list[f'percent_tai_gia_tot_nhat_entry_{stock_code.lower()}'] = percent_tai_gia_tot_nhat_entry
+            ma_chung_khoan_label.grid(column=column, row=row)
 
             lai_lo_label = Label(master=frame, text="0")
             column += 1
             lai_lo_label.grid(column=column, row=row)
             self.item_list[f'lai_lo_label_{stock_code.lower()}'] = lai_lo_label
-
-            percent_gia_tot_nhat_hien_tai_label = Label(master=frame, text=percent_tai_gia_tot_value)
-            column += 1
-            percent_gia_tot_nhat_hien_tai_label.grid(column=column, row=row)
-            self.item_list[
-                f'percent_gia_tot_nhat_hien_tai_label_{stock_code.lower()}'] = percent_gia_tot_nhat_hien_tai_label
 
             status_label = Label(master=frame, text=STATUS_CHECK)
             column += 1
