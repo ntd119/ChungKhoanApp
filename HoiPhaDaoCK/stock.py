@@ -878,6 +878,7 @@ class Stock(Tk):
         self.draw_body(frame)
 
     def show_chart(self):
+        self.get_data_from_collection()
         check_exist = False
         for stock_code in self.stock_code_from_file:
             check_value = self.item_list[f'show_chart_checkbox_{stock_code.lower()}'].get()
