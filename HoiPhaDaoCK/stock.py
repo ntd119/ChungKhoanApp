@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter.ttk import Combobox
+
 import requests
 import winsound
 from datetime import datetime
@@ -70,6 +72,7 @@ class Stock(Tk):
         self.background_color = BACKGROUND_COLOR
         self.frame = None
         self.collection_data = None
+        self.stock_type = ()
 
         self.get_data_from_collection()
 
@@ -110,6 +113,10 @@ class Stock(Tk):
         response = requests.get(END_POINT_DATA, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
+        stock_type = set()
+        for item in data_list:
+            stock_type.add(data_list[item]["type"])
+        self.stock_type = tuple(stock_type)
         self.collection_data = {key: value for (key, value) in data_list.items() if key in STOCK_LIST}
 
     def calculate_percent(self):
@@ -551,10 +558,15 @@ class Stock(Tk):
                                        command=self.update_gia_mua)
         update_gia_mua_button.grid(column=3, row=row, columnspan=2)
         update_gia_mua_button.config()
-        # self.stop_button = stop_button
-        # Update giá tốt nhất END
+         # Update giá tốt nhất END
 
+        # Stock type START
+        stock_type_combobox = Combobox(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND, width=30)
+        stock_type_combobox['values'] = self.stock_type
+        stock_type_combobox.grid(column=5, row=row, columnspan=3)
         row += 1
+        # Stock type STOP
+
         # Show chart START
         show_chart_button = Button(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND,
                                    command=self.show_chart)
