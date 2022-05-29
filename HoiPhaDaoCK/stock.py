@@ -536,6 +536,7 @@ class Stock(Tk):
             "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
             "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
             "Max-min trước 8 tuần")
+        max_min_combobox.current(0)
         max_min_combobox.grid(column=5, row=row, columnspan=2)
 
         # button min max
@@ -549,6 +550,7 @@ class Stock(Tk):
         "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
         "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
         "Giá đã mua trước 8 tuần")
+        gia_da_mua_combobox.current(0)
         gia_da_mua_combobox.grid(column=8, row=row, columnspan=2)
 
         # button load giá đã mua
