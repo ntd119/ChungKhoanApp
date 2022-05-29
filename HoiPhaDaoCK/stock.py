@@ -384,6 +384,9 @@ class Stock(Tk):
                     enable_sound = data_from_file[stock_code]["enable_sound"]
                     percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
                     percent_sell = data_from_file[stock_code]["percent_sell"]
+                    gia_da_mua_entry = self.item_list[f'gia_da_mua_entry_{stock_code.lower()}']
+                    gia_da_mua_entry.delete(0, END)
+                    gia_da_mua_entry.insert(END, current_price)
                     stock = {
                         data["_sc_"]: {
                             "should_buy": should_buy,
@@ -748,11 +751,6 @@ class Stock(Tk):
             column += 1
             gia_da_mua_entry.grid(column=column, row=row)
             self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
-
-            try:
-                gia_tot_nhat_value = int(item_dict.get("best_value"))
-            except TypeError:
-                gia_tot_nhat_value = 0
 
             ma_chung_khoan_label = Label(master=frame, text=stock_code)
             column += 1
