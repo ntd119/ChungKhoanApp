@@ -584,11 +584,6 @@ class Stock(Tk):
         column += 1
         min_value.grid(column=column, row=row)
 
-        # Giá nên mua
-        max_value = Label(master=frame, text="Giá nên mua", font=FONT_HEADER)
-        column += 1
-        max_value.grid(column=column, row=row)
-
         # Trần
         gia_tran_label = Label(master=frame, text="Trần", font=FONT_HEADER)
         column += 1
@@ -723,12 +718,6 @@ class Stock(Tk):
             column += 1
             percent_sell_entry.grid(column=column, row=row)
             self.item_list[f'percent_sell_entry_{stock_code.lower()}'] = percent_sell_entry
-
-            min_value_entry = Entry(master=frame, width=ENTRY_WIDTH)
-            min_value_entry.insert(END, item_dict.get("should_buy"))
-            column += 1
-            min_value_entry.grid(column=column, row=row)
-            self.item_list[f'min_value_entry_{stock_code.lower()}'] = min_value_entry
 
             gia_tran_label = Label(master=frame, text="{:,.0f}".format(0.00))
             column += 1
