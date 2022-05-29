@@ -375,10 +375,10 @@ class Stock(Tk):
         response = requests.get(END_POINT, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
-        name = "data/stock_code_T0.json"
+        name = "data/stock_code_T8.json"
         if os.path.exists(name):
             os.remove(name)
-        for i in range(7, -1, -1):
+        for i in range(7, 0, -1):
             try:
                 os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
             except FileNotFoundError:
