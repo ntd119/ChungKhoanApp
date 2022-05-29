@@ -364,42 +364,6 @@ class Stock(Tk):
             label.config(text=f"{final_value}%", bg="#F33232")
         return final_value
 
-    def update_gia_tot_nhat(self):
-        response = requests.get(END_POINT, headers=HEADERS)
-        response.raise_for_status()
-        data_list = response.json()
-        try:
-            with open(FILE_NAME) as stock_file:
-                data_from_file = json.load(stock_file)
-        except FileNotFoundError:
-            with open(FILE_NAME, "a") as stock_file:
-                data_from_file = {}
-
-        with open(FILE_NAME, 'w') as stock_file:
-            for data in data_list:
-                stock_code = data["_sc_"]
-                if stock_code in STOCK_LIST:
-                    current_price = int(data["_cp_"])
-                    should_buy = data_from_file[stock_code]["should_buy"]
-                    enable_sound = data_from_file[stock_code]["enable_sound"]
-                    percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
-                    percent_sell = data_from_file[stock_code]["percent_sell"]
-                    min_last_week = data_from_file[stock_code]["min_last_week"]
-                    bought = data_from_file[stock_code]["bought"]
-                    stock = {
-                        data["_sc_"]: {
-                            "should_buy": should_buy,
-                            "enable_sound": enable_sound,
-                            "bought": bought,
-                            "percent_cut_loss": percent_cut_loss,
-                            "percent_sell": percent_sell,
-                            "min_last_week": min_last_week,
-                            "best_value": current_price,
-                        }
-                    }
-                    data_from_file.update(stock)
-            json.dump(data_from_file, stock_file, indent=4)
-
     def update_gia_mua(self):
         response = requests.get(END_POINT, headers=HEADERS)
         response.raise_for_status()
@@ -547,30 +511,25 @@ class Stock(Tk):
         status_label.grid(column=4, row=row, columnspan=2)
         self.status_label = status_label
         # Start stop START
-        row += 1
-        # Update giá tốt nhất START
-        update_gia_tot_nhat_start_button = Button(master=frame, text="Update GB", foreground="green", font=FONT_HEADER,
-                                                  command=self.update_gia_tot_nhat)
-        update_gia_tot_nhat_start_button.grid(column=1, row=row, columnspan=2)
-        # self.start_button = start_button
-
-        update_gia_mua_button = Button(master=frame, text="Update GM", foreground="orange", font=FONT_HEADER,
-                                       command=self.update_gia_mua)
-        update_gia_mua_button.grid(column=3, row=row, columnspan=2)
-        update_gia_mua_button.config()
          # Update giá tốt nhất END
 
         # Stock type START
-        stock_type_combobox = Combobox(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND, width=30)
+        stock_type_combobox = Combobox(master=frame, font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND, width=30)
         stock_type_combobox['values'] = self.stock_type
-        stock_type_combobox.grid(column=5, row=row, columnspan=3)
+        stock_type_combobox.grid(column=6, row=row, columnspan=3)
         row += 1
         # Stock type STOP
+
 
         # Show chart START
         show_chart_button = Button(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND,
                                    command=self.show_chart)
         show_chart_button.grid(column=1, row=row, columnspan=2)
+
+        update_gia_mua_button = Button(master=frame, text="Update giá mua", foreground="orange", font=FONT_HEADER,
+                                       command=self.update_gia_mua)
+        update_gia_mua_button.grid(column=3, row=row, columnspan=2)
+        update_gia_mua_button.config()
         # Show chart STOP
 
         row += 1
