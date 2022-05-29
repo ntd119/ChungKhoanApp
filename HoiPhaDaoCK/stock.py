@@ -40,6 +40,10 @@ PM_COLOR_BACKGROUND = "#FF7F50"
 STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
               "VIB", "VPB"]
 
+MAX_MIN_COMBOBOX_VALUE = (
+            "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
+            "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
+            "Max-min trước 8 tuần")
 
 class Stock(Tk):
     def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
@@ -73,6 +77,7 @@ class Stock(Tk):
         self.frame = None
         self.collection_data = None
         self.stock_type = ()
+        self.max_min_combobox = None
 
         self.get_data_from_collection()
 
@@ -532,11 +537,9 @@ class Stock(Tk):
 
         # combobox min max
         max_min_combobox = Combobox(master=frame)
-        max_min_combobox['values'] = (
-            "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
-            "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
-            "Max-min trước 8 tuần")
+        max_min_combobox['values'] = MAX_MIN_COMBOBOX_VALUE
         max_min_combobox.current(0)
+        self.max_min_combobox = max_min_combobox
         max_min_combobox.grid(column=5, row=row, columnspan=2)
 
         # button min max
@@ -817,6 +820,21 @@ class Stock(Tk):
             tkinter.messagebox.showerror("Error", "Tại colum 'Chart' vui lòng check ít nhất 1 record")
 
     def load_max_min(self):
+        combobox_value = self.max_min_combobox.get()
+        count = 0
+        for item in MAX_MIN_COMBOBOX_VALUE:
+             if item == combobox_value:
+                break
+             count += 1
+        end_point = f"https://topchonlua.com/batch/data/stock_T{count}.json"
+        response = requests.get(end_point, headers=HEADERS)
+        response.raise_for_status()
+        data_list = response.json()
+        stock_type = set()
+        for item in data_list:
+            stock_type.add(data_list[item]["type"])
+        self.stock_type = tuple(stock_type)
+        self.collection_data = {key: value for (key, value) in data_list.items() if key in STOCK_LIST}
         tkinter.messagebox.showinfo("Success", "Loading max min successful")
 
     def load_gia_da_mua(self):
