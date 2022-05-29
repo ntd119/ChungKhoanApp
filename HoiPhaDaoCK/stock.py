@@ -47,6 +47,11 @@ MAX_MIN_COMBOBOX_VALUE = (
     "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
     "Max-min trước 8 tuần")
 
+GIA_DA_MUA_COMBOBOX_VALUE = (
+    "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
+    "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
+    "Giá đã mua trước 8 tuần")
+
 
 class Stock(Tk):
     def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
@@ -81,6 +86,7 @@ class Stock(Tk):
         self.collection_data = None
         self.stock_type = ()
         self.max_min_combobox = None
+        self.gia_da_mua_combobox = None
 
         self.get_data_from_collection()
 
@@ -561,13 +567,11 @@ class Stock(Tk):
                                      command=self.load_max_min)
         load_max_min_button.grid(column=7, row=row, columnspan=1)
 
-        # combobox  giá đã mua
+        # combobox giá đã mua
         gia_da_mua_combobox = Combobox(master=frame)
-        gia_da_mua_combobox['values'] = (
-            "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
-            "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
-            "Giá đã mua trước 8 tuần")
+        gia_da_mua_combobox['values'] = GIA_DA_MUA_COMBOBOX_VALUE
         gia_da_mua_combobox.current(0)
+        self.gia_da_mua_combobox = gia_da_mua_combobox
         gia_da_mua_combobox.grid(column=8, row=row, columnspan=2)
 
         # button load giá đã mua
@@ -855,7 +859,6 @@ class Stock(Tk):
         self.stock_type = tuple(stock_type)
         self.collection_data = {key: value for (key, value) in data_list.items() if key in STOCK_LIST}
         for stock_code in self.stock_code_from_file:
-            item_dict = self.stock_code_from_file[stock_code]
             min_value_this_week_label = self.item_list[f'min_value_this_week_label_{stock_code.lower()}']
             min_time_this_week_label = self.item_list[f'min_time_this_week_label_{stock_code.lower()}']
             max_value_this_week_label = self.item_list[f'max_value_this_week_label_{stock_code.lower()}']
@@ -893,4 +896,27 @@ class Stock(Tk):
         tkinter.messagebox.showinfo("Success", "Loading max min successful")
 
     def load_gia_da_mua(self):
+        combobox_value = self.gia_da_mua_combobox.get()
+        count = 0
+        for item in GIA_DA_MUA_COMBOBOX_VALUE:
+            if item == combobox_value:
+                break
+            count += 1
+        with open(f"data/stock_code_T{count}.json") as data_file:
+            data_from_file = json.load(data_file)
+        if len(data_from_file) > 0:
+            for stock_code in data_from_file:
+                item_dict = data_from_file[stock_code]
+                try:
+                    gia_da_mua = int(item_dict.get("bought"))
+                except TypeError:
+                    gia_da_mua = 0
+                gia_da_mua_entry = self.item_list[f'gia_da_mua_entry_{stock_code.lower()}']
+                gia_da_mua_entry.delete(0, END)
+                gia_da_mua_entry.insert(END, gia_da_mua)
+        else:
+            for stock_code in self.stock_code_from_file:
+                gia_da_mua_entry = self.item_list[f'gia_da_mua_entry_{stock_code.lower()}']
+                gia_da_mua_entry.delete(0, END)
+                gia_da_mua_entry.insert(END, 0)
         tkinter.messagebox.showinfo("Success", "Loading giá đã mua successful")
