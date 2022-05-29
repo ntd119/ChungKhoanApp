@@ -41,9 +41,10 @@ STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SH
               "VIB", "VPB"]
 
 MAX_MIN_COMBOBOX_VALUE = (
-            "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
-            "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
-            "Max-min trước 8 tuần")
+    "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
+    "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
+    "Max-min trước 8 tuần")
+
 
 class Stock(Tk):
     def __init__(self, title='Hội Phá Đảo CK', *args, **kwargs):
@@ -550,9 +551,9 @@ class Stock(Tk):
         # combobox  giá đã mua
         gia_da_mua_combobox = Combobox(master=frame)
         gia_da_mua_combobox['values'] = (
-        "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
-        "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
-        "Giá đã mua trước 8 tuần")
+            "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
+            "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
+            "Giá đã mua trước 8 tuần")
         gia_da_mua_combobox.current(0)
         gia_da_mua_combobox.grid(column=8, row=row, columnspan=2)
 
@@ -702,6 +703,7 @@ class Stock(Tk):
                                               text="{:,.0f}".format(min_value_this_week_value))
             column += 1
             min_value_this_week_label.grid(column=column, row=row)
+            self.item_list[f'min_value_this_week_label_{stock_code.lower()}'] = min_value_this_week_label
 
             # Thời gian giá nhỏ nhất tuần này
             min_time_this_week_value = self.format_time(collection_data["min_price_time"])
@@ -709,6 +711,7 @@ class Stock(Tk):
                                              background=min_time_this_week_value["background"])
             column += 1
             min_time_this_week_label.grid(column=column, row=row)
+            self.item_list[f'min_time_this_week_label_{stock_code.lower()}'] = min_time_this_week_label
 
             # Giá max tuần này
             max_value_this_week_value = collection_data["max_price"]
@@ -716,6 +719,7 @@ class Stock(Tk):
                                               text="{:,.0f}".format(max_value_this_week_value))
             column += 1
             max_value_this_week_label.grid(column=column, row=row)
+            self.item_list[f'max_value_this_week_label_{stock_code.lower()}'] = max_value_this_week_label
 
             # Thời gian giá lớn nhất tuần này
             max_time_this_week_value = self.format_time(collection_data["max_price_time"])
@@ -723,6 +727,7 @@ class Stock(Tk):
                                              background=max_time_this_week_value["background"])
             column += 1
             max_time_this_week_label.grid(column=column, row=row)
+            self.item_list[f'max_time_this_week_value_{stock_code.lower()}'] = max_time_this_week_value
 
             # Phần trăm giữa giá lớn nhất và nhỏ nhất
             percent_min_max = ((
@@ -731,6 +736,7 @@ class Stock(Tk):
                                                 bg=BACKGROUND_LAI)
             column += 1
             percent_max_min_price_label.grid(column=column, row=row)
+            self.item_list[f'percent_max_min_price_label_{stock_code.lower()}'] = percent_max_min_price_label
 
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
@@ -823,9 +829,9 @@ class Stock(Tk):
         combobox_value = self.max_min_combobox.get()
         count = 0
         for item in MAX_MIN_COMBOBOX_VALUE:
-             if item == combobox_value:
+            if item == combobox_value:
                 break
-             count += 1
+            count += 1
         end_point = f"https://topchonlua.com/batch/data/stock_T{count}.json"
         response = requests.get(end_point, headers=HEADERS)
         response.raise_for_status()
@@ -835,6 +841,28 @@ class Stock(Tk):
             stock_type.add(data_list[item]["type"])
         self.stock_type = tuple(stock_type)
         self.collection_data = {key: value for (key, value) in data_list.items() if key in STOCK_LIST}
+        for stock_code in self.stock_code_from_file:
+            item_dict = self.stock_code_from_file[stock_code]
+            min_value_this_week_label = self.item_list[f'min_value_this_week_label_{stock_code.lower()}']
+            min_time_this_week_label = self.item_list[f'min_time_this_week_label_{stock_code.lower()}']
+            max_value_this_week_label = self.item_list[f'max_value_this_week_label_{stock_code.lower()}']
+            try:
+                collection_data = self.collection_data[stock_code]
+                # Giá nhỏ nhất
+                min_value_this_week_value = collection_data["min_price"]
+                min_value_this_week_label.config(text="{:,.0f}".format(min_value_this_week_value))
+                # Thời gian giá nhỏ nhất
+                min_time_this_week_value = self.format_time(collection_data["min_price_time"])
+                min_time_this_week_label.config(text=min_time_this_week_value["time"],
+                                                background=min_time_this_week_value["background"])
+                # Giá lớn nhất
+                max_value_this_week_value = collection_data["max_price"]
+                max_value_this_week_label.config(text="{:,.0f}".format(max_value_this_week_value))
+            except KeyError:
+                min_value_this_week_label.config(text="0")
+                min_time_this_week_label.config(text="0", bg=BACKGROUND_COLOR)
+                max_value_this_week_label.config(text="0")
+
         tkinter.messagebox.showinfo("Success", "Loading max min successful")
 
     def load_gia_da_mua(self):
