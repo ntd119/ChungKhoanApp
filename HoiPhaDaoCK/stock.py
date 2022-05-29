@@ -510,7 +510,7 @@ class Stock(Tk):
         status_label.grid(column=4, row=row, columnspan=2)
         self.status_label = status_label
         # Start stop START
-         # Update giá tốt nhất END
+        # Update giá tốt nhất END
 
         # Stock type START
         stock_type_combobox = Combobox(master=frame, font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND, width=30)
@@ -519,17 +519,42 @@ class Stock(Tk):
         row += 1
         # Stock type STOP
 
-
         # Show chart START
         show_chart_button = Button(master=frame, text="Show chart", font=FONT_HEADER, foreground=AM_COLOR_BACKGROUND,
                                    command=self.show_chart)
         show_chart_button.grid(column=1, row=row, columnspan=2)
+        # Show chart STOP
 
+        # button update giá đã mua
         update_gia_mua_button = Button(master=frame, text="Update giá mua", foreground="orange", font=FONT_HEADER,
                                        command=self.update_gia_mua)
         update_gia_mua_button.grid(column=3, row=row, columnspan=2)
-        update_gia_mua_button.config()
-        # Show chart STOP
+
+        # combobox min max
+        max_min_combobox = Combobox(master=frame)
+        max_min_combobox['values'] = (
+            "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
+            "Max-min trước 4 tuần", "Max-min trước 5 tuần", "Max-min trước 6 tuần", "Max-min trước 7 tuần",
+            "Max-min trước 8 tuần")
+        max_min_combobox.grid(column=5, row=row, columnspan=2)
+
+        # button min max
+        load_max_min_button = Button(master=frame, text="Load max min", foreground="green", font=FONT_HEADER,
+                                     command=self.load_max_min)
+        load_max_min_button.grid(column=7, row=row, columnspan=1)
+
+        # combobox  giá đã mua
+        gia_da_mua_combobox = Combobox(master=frame)
+        gia_da_mua_combobox['values'] = (
+        "Giá đã mua tuần này", "Giá đã mua trước 1 tuần", "Giá đã mua trước 2 tuần", "Giá đã mua trước 3 tuần",
+        "Giá đã mua trước 4 tuần", "Giá đã mua trước 5 tuần", "Giá đã mua trước 6 tuần", "Giá đã mua trước 7 tuần",
+        "Giá đã mua trước 8 tuần")
+        gia_da_mua_combobox.grid(column=8, row=row, columnspan=2)
+
+        # button load giá đã mua
+        load_gia_da_mua_button = Button(master=frame, text="Load giá mua", foreground="green", font=FONT_HEADER,
+                                        command=self.load_gia_da_mua)
+        load_gia_da_mua_button.grid(column=10, row=row, columnspan=1)
 
         row += 1
         column = 1
@@ -788,3 +813,9 @@ class Stock(Tk):
                 break
         if not check_exist:
             tkinter.messagebox.showerror("Error", "Tại colum 'Chart' vui lòng check ít nhất 1 record")
+
+    def load_max_min(self):
+        tkinter.messagebox.showinfo("Success", "Loading max min successful")
+
+    def load_gia_da_mua(self):
+        tkinter.messagebox.showinfo("Success", "Loading giá đã mua successful")
