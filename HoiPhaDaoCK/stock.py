@@ -379,7 +379,10 @@ class Stock(Tk):
         if os.path.exists(name):
             os.remove(name)
         for i in range(7, -1, -1):
-            os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
+            try:
+                os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
+            except FileNotFoundError:
+                pass
         try:
             with open(FILE_NAME) as stock_file:
                 data_from_file = json.load(stock_file)
