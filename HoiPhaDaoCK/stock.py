@@ -7,6 +7,7 @@ from datetime import datetime
 import tkinter.messagebox
 import json
 import plotly.graph_objects as go
+import os
 
 FILE_NAME = "data/stock_code_T0.json"
 DELAY_TIME = 5000
@@ -374,11 +375,16 @@ class Stock(Tk):
         response = requests.get(END_POINT, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
+        name = "data/stock_code_T0.json"
+        if os.path.exists(name):
+            os.remove(name)
+        for i in range(7, -1, -1):
+            os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
         try:
             with open(FILE_NAME) as stock_file:
                 data_from_file = json.load(stock_file)
         except FileNotFoundError:
-            with open(FILE_NAME, "a") as stock_file:
+            with open(FILE_NAME, "a"):
                 data_from_file = {}
 
         with open(FILE_NAME, 'w') as stock_file:
