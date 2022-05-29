@@ -384,17 +384,13 @@ class Stock(Tk):
                     enable_sound = data_from_file[stock_code]["enable_sound"]
                     percent_cut_loss = data_from_file[stock_code]["percent_cut_loss"]
                     percent_sell = data_from_file[stock_code]["percent_sell"]
-                    min_last_week = data_from_file[stock_code]["min_last_week"]
-                    best_value = data_from_file[stock_code]["best_value"]
                     stock = {
                         data["_sc_"]: {
                             "should_buy": should_buy,
                             "enable_sound": enable_sound,
                             "bought": current_price,
                             "percent_cut_loss": percent_cut_loss,
-                            "percent_sell": percent_sell,
-                            "min_last_week": min_last_week,
-                            "best_value": best_value,
+                            "percent_sell": percent_sell
                         }
                     }
                     data_from_file.update(stock)
