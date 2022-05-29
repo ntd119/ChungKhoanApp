@@ -8,6 +8,7 @@ import tkinter.messagebox
 import json
 import plotly.graph_objects as go
 import os
+import shutil
 
 FILE_NAME = "data/stock_code_T0.json"
 DELAY_TIME = 5000
@@ -378,9 +379,12 @@ class Stock(Tk):
         name = "data/stock_code_T8.json"
         if os.path.exists(name):
             os.remove(name)
-        for i in range(7, 0, -1):
+        for i in range(7, -1, -1):
             try:
-                os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
+                if i > 0:
+                    os.rename(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
+                else:
+                    shutil.copyfile(f'data/stock_code_T{i}.json', f'data/stock_code_T{i + 1}.json')
             except FileNotFoundError:
                 pass
         try:
