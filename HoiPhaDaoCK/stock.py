@@ -8,7 +8,7 @@ import tkinter.messagebox
 import json
 import plotly.graph_objects as go
 
-FILE_NAME = "./data/stock-code.json"
+FILE_NAME = "data/stock_code_T0.json"
 DELAY_TIME = 5000
 END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1"
 error = ""
