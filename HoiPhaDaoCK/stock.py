@@ -395,7 +395,7 @@ class Stock(Tk):
                     }
                     data_from_file.update(stock)
             json.dump(data_from_file, stock_file, indent=4)
-            # self.draw_body(self.frame)
+            tkinter.messagebox.showinfo("Success", "Update giá mua successful")
 
     def percent_gia_tot_nhat_hien_tai(self, start_value, end_value, label: Label):
         final_value = end_value - start_value
