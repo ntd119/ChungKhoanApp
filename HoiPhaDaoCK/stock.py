@@ -847,6 +847,7 @@ class Stock(Tk):
             min_time_this_week_label = self.item_list[f'min_time_this_week_label_{stock_code.lower()}']
             max_value_this_week_label = self.item_list[f'max_value_this_week_label_{stock_code.lower()}']
             max_time_this_week_label = self.item_list[f'max_time_this_week_label_{stock_code.lower()}']
+            percent_max_min_price_label = self.item_list[f'percent_max_min_price_label_{stock_code.lower()}']
             try:
                 collection_data = self.collection_data[stock_code]
                 # Giá nhỏ nhất
@@ -863,12 +864,18 @@ class Stock(Tk):
                 # Thời gian giá lớn nhất
                 max_time_this_week_value = self.format_time(collection_data["max_price_time"])
                 max_time_this_week_label.config(text=max_time_this_week_value["time"],
-                                             background=max_time_this_week_value["background"])
+                                                background=max_time_this_week_value["background"])
+                # Phần trăm giữa giá lớn nhất và nhỏ nhất
+                percent_min_max = ((
+                                           max_value_this_week_value - min_value_this_week_value) / min_value_this_week_value) * 100
+                percent_max_min_price_label.config(text="{:.2f}".format(percent_min_max) + "%",
+                                                   bg=BACKGROUND_LAI)
             except KeyError:
                 min_value_this_week_label.config(text="0")
                 min_time_this_week_label.config(text="0", bg=BACKGROUND_COLOR)
                 max_value_this_week_label.config(text="0")
                 max_time_this_week_label.config(text="0", bg=BACKGROUND_COLOR)
+                percent_max_min_price_label.config(text="0", bg=BACKGROUND_COLOR)
 
         tkinter.messagebox.showinfo("Success", "Loading max min successful")
 
