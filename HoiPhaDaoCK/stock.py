@@ -813,7 +813,7 @@ class Stock(Tk):
                 has_background = item_dict.get("has_background")
             except KeyError:
                 has_background = 0
-            background = COLOR_OK
+            background = BACKGROUND_COLOR
             if has_background == 1:
                 background = COLOR_TANG_TRAN
 
