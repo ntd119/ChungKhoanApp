@@ -245,14 +245,12 @@ class Stock(Tk):
         winsound.Beep(freq, duration)
 
     def add_stock_to_file(self):
-        start_value = self.start_change_input.get()
-        end_value = self.end_change_input.get()
         stock_code = self.stock_code_input_header.get()
-        if start_value.isnumeric() and end_value.isnumeric() and len(stock_code.strip()) != 0:
+        if len(stock_code.strip()) != 0:
             with open(FILE_NAME, 'w') as data_file:
                 new_data = {
                     stock_code.upper(): {
-                        "should_buy": start_value,
+                        "should_buy": 0,
                         "enable_sound": 0,
                         "bought": "0",
                         "percent_cut_loss": "4.0",
@@ -262,9 +260,11 @@ class Stock(Tk):
                 }
                 self.stock_code_from_file.update(new_data)
                 json.dump(self.stock_code_from_file, data_file, indent=4)
-                self.draw_body()
+            self.stock_code_input_header.config(bg=COLOR_OK)
             tkinter.messagebox.showinfo("Success", "Add stock successful")
         else:
+            self.stock_code_input_header.focus()
+            self.stock_code_input_header.config(bg=COLOR_ERROR)
             tkinter.messagebox.showerror("Error", "Invalid input")
 
     def start_progress(self):
@@ -454,34 +454,31 @@ class Stock(Tk):
         percent_change_label.grid(column=1, row=row, columnspan=3)
 
         start_change_input = Entry(master=frame, width=ENTRY_WIDTH)
-        start_change_input.grid(column=4, row=row, columnspan=2)
+        start_change_input.grid(column=4, row=row, columnspan=1)
         self.start_change_input = start_change_input
 
-        to_change_label = Label(master=frame, text="-", font=FONT_HEADER)
-        to_change_label.grid(column=6, row=row)
-
         end_change_input = Entry(master=frame, width=ENTRY_WIDTH)
-        end_change_input.grid(column=7, row=row, columnspan=2)
+        end_change_input.grid(column=5, row=row, columnspan=1)
         self.end_change_input = end_change_input
 
         equal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER,
                               command=self.calculate_percent)
-        equal_button.grid(column=9, row=row)
+        equal_button.grid(column=6, row=row)
 
         percent_symbol_label = Label(master=frame, text="%", font=FONT_HEADER)
-        percent_symbol_label.grid(column=10, row=row)
+        percent_symbol_label.grid(column=7, row=row)
         self.percent_symbol_label = percent_symbol_label
 
         stock_code_label_header = Label(master=frame, text="Mã CK:", font=FONT_HEADER)
-        stock_code_label_header.grid(column=11, row=row)
+        stock_code_label_header.grid(column=8, row=row)
 
         stock_code_input_header = Entry(master=frame, width=ENTRY_WIDTH)
-        stock_code_input_header.grid(column=12, row=row, columnspan=2)
+        stock_code_input_header.grid(column=9, row=row, columnspan=1)
         self.stock_code_input_header = stock_code_input_header
 
         add_to_file_button_header = Button(master=frame, text="Add", foreground="green", font=FONT_HEADER,
                                            command=self.add_stock_to_file)
-        add_to_file_button_header.grid(column=14, row=row)
+        add_to_file_button_header.grid(column=10, row=row)
         # Tính % thay đổi END
         row += 1
 
