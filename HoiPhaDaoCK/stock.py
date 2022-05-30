@@ -28,6 +28,8 @@ timer_time = None
 COLOR_ERROR = "#F7DC6F"
 COLOR_OK = "white"
 
+COLOR_TANG_TRAN = "#BF1BD8"
+
 ENTRY_WIDTH = 10
 PERCENT_DESIRE = 4
 BACKGROUND_COLOR = "#F0F0F0"
@@ -808,7 +810,15 @@ class Stock(Tk):
             gia_da_mua_entry.grid(column=column, row=row)
             self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
 
-            ma_chung_khoan_label = Label(master=frame, text=stock_code)
+            try:
+                has_background = item_dict.get("has_background")
+            except KeyError:
+                has_background = 0
+            background = COLOR_OK
+            if has_background == 1:
+                background = COLOR_TANG_TRAN
+
+            ma_chung_khoan_label = Label(master=frame, text=stock_code, bg=background)
             column += 1
             ma_chung_khoan_label.grid(column=column, row=row)
 

@@ -60,7 +60,8 @@
         "enable_sound": 0,
         "bought": 20350,
         "percent_cut_loss": "4.0",
-        "percent_sell": "4.0"
+        "percent_sell": "4.0",
+        "has_background": 1
     },
     "SHB": {
         "should_buy": "0",
@@ -123,7 +124,8 @@
         "enable_sound": 0,
         "bought": 72300,
         "percent_cut_loss": "4.0",
-        "percent_sell": "4.0"
+        "percent_sell": "4.0",
+        "has_background": 1
     },
     "HVN": {
         "should_buy": "0",
