@@ -2,133 +2,133 @@
     "ACB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "28650",
+        "bought": 31800,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "BID": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "34700",
+        "bought": 35600,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "CTG": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "26000",
+        "bought": 27300,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "EIB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "30000",
+        "bought": 34050,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "HDB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "24300",
+        "bought": 26000,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "LPB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "14600",
+        "bought": 15250,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "MBB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "26900",
+        "bought": 28000,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "MSB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "19450",
+        "bought": 20650,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "OCB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "20100",
+        "bought": 20350,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "SHB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "14700",
+        "bought": 15200,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "SSB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "34750",
+        "bought": 34350,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "STB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "21550",
+        "bought": 22850,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "TCB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "35650",
+        "bought": 37700,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "TPB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "31300",
+        "bought": 32550,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "VCB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "75100",
+        "bought": 80500,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "VIB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "25600",
+        "bought": 27200,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
     "VPB": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "30350",
+        "bought": 31450,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
-     "BCM": {
+    "BCM": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "72300",
+        "bought": 72300,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     },
-     "HVN": {
+    "HVN": {
         "should_buy": "0",
         "enable_sound": 0,
-        "bought": "17000",
+        "bought": 19050,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
     }
