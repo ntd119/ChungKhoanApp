@@ -40,7 +40,7 @@ AM_COLOR_BACKGROUND = "#DE3163"
 PM_COLOR_BACKGROUND = "#FF7F50"
 
 STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
-              "VIB", "VPB"]
+              "VIB", "VPB", "BCM"]
 
 MAX_MIN_COMBOBOX_VALUE = (
     "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
