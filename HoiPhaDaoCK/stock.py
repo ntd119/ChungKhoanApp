@@ -360,7 +360,6 @@ class Stock(Tk):
             for stock_code in self.stock_code_from_file:
                 update_data = {
                     stock_code: {
-                        "should_buy": self.item_list[f'min_value_entry_{stock_code.lower()}'].get(),
                         "enable_sound": self.item_list[f'stock_checkbox_{stock_code.lower()}'].get(),
                         "bought": self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'].get(),
                         "percent_cut_loss": self.item_list[f'percent_cut_loss_entry_{stock_code.lower()}'].get(),
@@ -507,11 +506,11 @@ class Stock(Tk):
         self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
 
         khoang_cach_an_toan_result_min_input = Entry(master=frame)
-        khoang_cach_an_toan_result_min_input.grid(column=8, row=row, columnspan=1)
+        khoang_cach_an_toan_result_min_input.grid(column=8, row=row, columnspan=2)
         self.khoang_cach_an_toan_result_min_input = khoang_cach_an_toan_result_min_input
 
         khoang_cach_an_toan_result_max_input = Entry(master=frame)
-        khoang_cach_an_toan_result_max_input.grid(column=9, row=row, columnspan=1)
+        khoang_cach_an_toan_result_max_input.grid(column=10, row=row, columnspan=2)
         self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
         # Khoang cach an toàn END
 
@@ -572,7 +571,7 @@ class Stock(Tk):
         gia_da_mua_combobox['values'] = GIA_DA_MUA_COMBOBOX_VALUE
         gia_da_mua_combobox.current(0)
         self.gia_da_mua_combobox = gia_da_mua_combobox
-        gia_da_mua_combobox.grid(column=8, row=row, columnspan=2)
+        gia_da_mua_combobox.grid(column=8, row=row, columnspan=3)
 
         # button load giá đã mua
         load_gia_da_mua_button = Button(master=frame, text="Load giá mua", foreground="green", font=FONT_HEADER,
