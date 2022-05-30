@@ -39,8 +39,7 @@ COLS_DISP = 15
 AM_COLOR_BACKGROUND = "#DE3163"
 PM_COLOR_BACKGROUND = "#FF7F50"
 
-STOCK_LIST = ["ACB", "BID", "CTG", "EIB", "HDB", "LPB", "MBB", "MSB", "OCB", "SHB", "SSB", "STB", "TCB", "TPB", "VCB",
-              "VIB", "VPB", "BCM", "HVN"]
+STOCK_LIST = []
 
 MAX_MIN_COMBOBOX_VALUE = (
     "Max-min tuần này", "Max-min trước 1 tuần", "Max-min trước 2 tuần", "Max-min trước 3 tuần",
@@ -88,6 +87,8 @@ class Stock(Tk):
         self.max_min_combobox = None
         self.gia_da_mua_combobox = None
 
+
+        self.load_stock_from_file()
         self.get_data_from_collection()
 
         master_frame = Frame(self, bd=3, relief=RIDGE)
@@ -682,11 +683,16 @@ class Stock(Tk):
         global COLS
         COLS = column + 2
 
-    def draw_body(self, frame):
+    def load_stock_from_file(self):
         with open(FILE_NAME) as data_file:
             self.stock_code_from_file = json.load(data_file)
             global ROWS
             ROWS = len(self.stock_code_from_file)
+            global STOCK_LIST
+            STOCK_LIST = [key for (key, value) in self.stock_code_from_file.items()]
+
+    def draw_body(self, frame):
+
         row = 7
         for stock_code in self.stock_code_from_file:
             item_dict = self.stock_code_from_file[stock_code]
@@ -920,3 +926,40 @@ class Stock(Tk):
                 gia_da_mua_entry.delete(0, END)
                 gia_da_mua_entry.insert(END, 0)
         tkinter.messagebox.showinfo("Success", "Loading giá đã mua successful")
+
+    def show_chart_bk(self):
+        self.get_data_from_collection()
+        check_exist = False
+        time_list = []
+        merge_data = {}
+        for stock_code in self.stock_code_from_file:
+            check_value = self.item_list[f'show_chart_checkbox_{stock_code.lower()}'].get()
+            if check_value == 1:
+                check_exist = True
+                list_data = self.collection_data[stock_code]
+                data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + list_data[
+                    "line_price_5"] + list_data["line_price_6"]
+                merge_data[stock_code] = data
+                for time in data:
+                    time_list.append(time["time"])
+        if not check_exist:
+            tkinter.messagebox.showerror("Error", "Tại colum 'Chart' vui lòng check ít nhất 1 record")
+        else:
+            print(merge_data)
+            # sort
+            time_list.sort()
+            # remove duplicate
+            time_list = list(dict.fromkeys(time_list))
+            for stock_code in self.stock_code_from_file:
+                data_dict = []
+                check_value = self.item_list[f'show_chart_checkbox_{stock_code.lower()}'].get()
+                if check_value == 1:
+                    list_data = self.collection_data[stock_code]
+                    # data = list_data["line_price_2"] + list_data["line_price_3"] + list_data["line_price_4"] + \
+                    #        list_data[
+                    #            "line_price_5"] + list_data["line_price_6"]
+                    #
+                    # for time in time_list:
+                    #     price = data
+                    #     data = {"date": time, stock_code: 1.018172}
+                    #     time_list.append(time["time"])
