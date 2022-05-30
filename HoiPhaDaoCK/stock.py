@@ -576,7 +576,7 @@ class Stock(Tk):
         # button load giá đã mua
         load_gia_da_mua_button = Button(master=frame, text="Load giá mua", foreground="green", font=FONT_HEADER,
                                         command=self.load_gia_da_mua)
-        load_gia_da_mua_button.grid(column=10, row=row, columnspan=1)
+        load_gia_da_mua_button.grid(column=11, row=row, columnspan=1)
 
         row += 1
         column = 1
