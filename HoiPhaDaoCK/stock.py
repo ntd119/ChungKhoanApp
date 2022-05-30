@@ -487,29 +487,29 @@ class Stock(Tk):
         khoang_cach_an_toan_label.grid(column=1, row=row, columnspan=3)
 
         khoang_cach_an_toan_min_input = Entry(master=frame, width=ENTRY_WIDTH)
-        khoang_cach_an_toan_min_input.grid(column=4, row=row, columnspan=2)
+        khoang_cach_an_toan_min_input.grid(column=4, row=row, columnspan=1)
         self.khoang_cach_an_toan_min_input = khoang_cach_an_toan_min_input
 
         khoang_cach_an_toan_to_input = Entry(master=frame, width=ENTRY_WIDTH)
         khoang_cach_an_toan_to_input.insert(END, 4)
-        khoang_cach_an_toan_to_input.grid(column=6, row=row)
+        khoang_cach_an_toan_to_input.grid(column=5, row=row)
         self.khoang_cach_an_toan_to_input = khoang_cach_an_toan_to_input
 
         khoang_cach_an_toan_max_input = Entry(master=frame, width=ENTRY_WIDTH)
-        khoang_cach_an_toan_max_input.grid(column=7, row=row, columnspan=2)
+        khoang_cach_an_toan_max_input.grid(column=6, row=row, columnspan=1)
         self.khoang_cach_an_toan_max_input = khoang_cach_an_toan_max_input
 
         khoang_cach_an_toan_cal_button = Button(master=frame, text="  =  ", foreground="green", font=FONT_HEADER,
                                                 command=self.distance_value)
-        khoang_cach_an_toan_cal_button.grid(column=9, row=row)
+        khoang_cach_an_toan_cal_button.grid(column=7, row=row)
         self.khoang_cach_an_toan_cal_button = khoang_cach_an_toan_cal_button
 
         khoang_cach_an_toan_result_min_input = Entry(master=frame)
-        khoang_cach_an_toan_result_min_input.grid(column=10, row=row, columnspan=2)
+        khoang_cach_an_toan_result_min_input.grid(column=8, row=row, columnspan=1)
         self.khoang_cach_an_toan_result_min_input = khoang_cach_an_toan_result_min_input
 
         khoang_cach_an_toan_result_max_input = Entry(master=frame)
-        khoang_cach_an_toan_result_max_input.grid(column=12, row=row, columnspan=2)
+        khoang_cach_an_toan_result_max_input.grid(column=9, row=row, columnspan=1)
         self.khoang_cach_an_toan_result_max_input = khoang_cach_an_toan_result_max_input
         # Khoang cach an toàn END
 
