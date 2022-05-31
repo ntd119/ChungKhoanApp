@@ -133,5 +133,14 @@
         "bought": 19050,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0"
+    },
+    "PNJ": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": "117000",
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "min_last_week": "0",
+        "has_background": 1
     }
 }
