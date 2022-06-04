@@ -227,6 +227,12 @@ class Stock(Tk):
                                     status_label.config(text="Bán", foreground="green")
                                     if stock_checkbox:
                                         flag_sound = True
+                        # Phần trăm gía lớn nhất và gía hiện tại
+                        max_value = self.item_list.get(f"max_value_this_week_value_{stock_code.lower()}")
+                        percent_max_current = abs(((current_value - max_value) / max_value) * 100)
+
+                        self.item_list.get(f"percent_max_current_price_label_{stock_code.lower()}").config(
+                            text="{:.2f}".format(percent_max_current) + "%")
                     else:
                         self.item_list.get(f"current_value_label_{stock_code.lower()}").config(text="Wrong code",
                                                                                                foreground="red")
@@ -748,6 +754,7 @@ class Stock(Tk):
             column += 1
             max_value_this_week_label.grid(column=column, row=row)
             self.item_list[f'max_value_this_week_label_{stock_code.lower()}'] = max_value_this_week_label
+            self.item_list[f'max_value_this_week_value_{stock_code.lower()}'] = collection_data["max_price"]
 
             # Thời gian giá lớn nhất tuần này
             max_time_this_week_value = self.format_time(collection_data["max_price_time"])
