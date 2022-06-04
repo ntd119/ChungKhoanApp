@@ -630,11 +630,6 @@ class Stock(Tk):
         column += 1
         percent_max_min_price_label.grid(column=column, row=row)
 
-        # Phần trăm giá hiện tại so với giá lớn nhất
-        percent_max_current_price_label = Label(master=frame, text="% Max-Current", font=FONT_HEADER)
-        column += 1
-        percent_max_current_price_label.grid(column=column, row=row)
-
         # % Cắt lỗ
         max_value = Label(master=frame, text="% Cắt lỗ", font=FONT_HEADER)
         column += 1
@@ -664,6 +659,11 @@ class Stock(Tk):
         current_value_label = Label(master=frame, text="Hiện tại", font=FONT_HEADER)
         column += 1
         current_value_label.grid(column=column, row=row)
+
+        # Phần trăm giá hiện tại so với giá lớn nhất
+        percent_max_current_price_label = Label(master=frame, text="% Max-Current", font=FONT_HEADER)
+        column += 1
+        percent_max_current_price_label.grid(column=column, row=row)
 
         # Giá đã mua
         gia_da_mua_label = Label(master=frame, text="Giá đã mua", font=FONT_HEADER)
@@ -773,12 +773,6 @@ class Stock(Tk):
             percent_max_min_price_label.grid(column=column, row=row)
             self.item_list[f'percent_max_min_price_label_{stock_code.lower()}'] = percent_max_min_price_label
 
-            # Phần trăm giá lớn nhất và hiện tại
-            percent_max_current_price_label = Label(master=frame, text="{:.2f}".format(0) + "%", bg=BACKGROUND_LO)
-            column += 1
-            percent_max_current_price_label.grid(column=column, row=row)
-            self.item_list[f'percent_max_current_price_label_{stock_code.lower()}'] = percent_max_current_price_label
-
             try:
                 percent_cut_loss_value = float(item_dict.get("percent_cut_loss"))
             except TypeError:
@@ -818,6 +812,12 @@ class Stock(Tk):
             column += 1
             current_value_label.grid(column=column, row=row)
             self.item_list[f'current_value_label_{stock_code.lower()}'] = current_value_label
+
+            # Phần trăm giá lớn nhất và hiện tại
+            percent_max_current_price_label = Label(master=frame, text="{:.2f}".format(0) + "%", bg=BACKGROUND_LO)
+            column += 1
+            percent_max_current_price_label.grid(column=column, row=row)
+            self.item_list[f'percent_max_current_price_label_{stock_code.lower()}'] = percent_max_current_price_label
 
             gia_da_mua_entry = Entry(master=frame, width=ENTRY_WIDTH)
             try:
