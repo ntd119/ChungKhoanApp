@@ -89,7 +89,6 @@ class Stock(Tk):
         self.max_min_combobox = None
         self.gia_da_mua_combobox = None
 
-
         self.load_stock_from_file()
         self.get_data_from_collection()
 
@@ -683,7 +682,9 @@ class Stock(Tk):
 
     def load_stock_from_file(self):
         with open(FILE_NAME) as data_file:
-            self.stock_code_from_file = json.load(data_file)
+            data_list = json.load(data_file)
+            self.stock_code_from_file = dict(
+                sorted(data_list.items(), key=lambda item: item[1]["follow"], reverse=True))
             global ROWS
             ROWS = len(self.stock_code_from_file)
             global STOCK_LIST
@@ -810,7 +811,7 @@ class Stock(Tk):
             self.item_list[f'gia_da_mua_entry_{stock_code.lower()}'] = gia_da_mua_entry
 
             try:
-                has_background = item_dict.get("has_background")
+                has_background = item_dict.get("follow")
             except KeyError:
                 has_background = 0
             background = BACKGROUND_COLOR
