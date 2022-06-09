@@ -30,7 +30,6 @@ class Stock:
             response = requests.get(END_POINT, params=paramters, headers=HEADERS)
             self.data_list = response.json()
         except:
-            print("Loi")
             time.sleep(5)
             self.connectAPI()
 
