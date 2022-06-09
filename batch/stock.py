@@ -1,4 +1,5 @@
 import datetime
+import time
 
 import requests
 import json
@@ -22,11 +23,20 @@ class Stock:
 
     def __init__(self):
         self.up = True
+        self.data_list = None
+
+    def connectAPI(self):
+        try:
+            response = requests.get(END_POINT, params=paramters, headers=HEADERS)
+            self.data_list = response.json()
+        except:
+            print("Loi")
+            time.sleep(5)
+            self.connectAPI()
 
     def update_data(self, day_of_week: int, now_time: datetime.datetime):
-        response = requests.get(END_POINT, params=paramters, headers=HEADERS)
-        response.raise_for_status()
-        data_list = response.json()
+        self.connectAPI()
+        data_list = self.data_list
         hour = now_time.hour
         minute = now_time.minute
         try:
