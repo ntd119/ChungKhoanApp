@@ -27,6 +27,8 @@ class Stock:
         response = requests.get(END_POINT, params=paramters, headers=HEADERS)
         response.raise_for_status()
         data_list = response.json()
+        hour = now_time.hour
+        minute = now_time.minute
         try:
             with open(FILE_NAME) as stock_file:
                 data_from_file = json.load(stock_file)
@@ -38,7 +40,7 @@ class Stock:
             for data in data_list:
                 stock_code = data["_sc_"]
                 current_price = int(data["_cp_"])
-                current_time = now_time.timestamp()  * 1000
+                current_time = now_time.timestamp() * 1000
                 try:
                     max_price = max(data_from_file[stock_code]["max_price"], current_price)
                     min_price = min(data_from_file[stock_code]["min_price"], current_price)
@@ -84,12 +86,25 @@ class Stock:
                         line_price_5 = self.update_line_price(line_price_5, current_price, current_time)
                     elif day_of_week == 6:
                         line_price_6 = self.update_line_price(line_price_6, current_price, current_time)
+                try:
+                    head_price = data_from_file[stock_code]["head_price"]
+                    tail_price = data_from_file[stock_code]["tail_price"]
+                except KeyError:
+                    head_price = 0
+                    tail_price = 0
+
+                if day_of_week == 2 and hour == 9 and minute == 15:
+                    head_price = current_price
+                if day_of_week == 6 and hour == 14 and minute == 45:
+                    tail_price = current_price
                 stock = {
                     data["_sc_"]: {
                         "max_price": int(max_price),
                         "max_price_time": max_price_time,
                         "min_price": int(min_price),
                         "min_price_time": min_price_time,
+                        "head_price": head_price,
+                        "tail_price": tail_price,
                         "type": data["_in_"],
                         "line_price_2": line_price_2,
                         "line_price_3": line_price_3,
@@ -136,8 +151,6 @@ class Stock:
     def check_running(self, now_time: datetime.datetime):
         with open("data/check.json", 'w') as check_file:
             data = {
-                "current_time": now_time.timestamp()  * 1000
+                "current_time": now_time.timestamp() * 1000
             }
             json.dump(data, check_file, indent=4)
-
-
