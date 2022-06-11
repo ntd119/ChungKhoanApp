@@ -50,10 +50,15 @@ class MainUI:
             self.uic.tableWidget.setColumnCount(20)
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
+            # column
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setHorizontalHeaderItem(0, item)
+            item.setText(_translate("MainWindow", "name"))
+
+            # row
             row_index = -1
             for stock_item in stock_list:
                 row_index +=1
-                # row
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
                 item.setText(_translate("MainWindow", stock_item))
