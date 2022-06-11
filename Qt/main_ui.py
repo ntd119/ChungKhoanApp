@@ -69,3 +69,8 @@ class MainUI:
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
                 item.setText(_translate("MainWindow", stock_item))
+
+                # data body
+                item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, 0, item)
+                item.setText(_translate("MainWindow", "data"))
