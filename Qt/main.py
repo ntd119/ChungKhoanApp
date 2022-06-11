@@ -1,17 +1,14 @@
 import sys
 
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QHBoxLayout
-from PyQt5.QtWidgets import QPushButton
-from PyQt5.QtWidgets import QWidget
+from PyQt5 import QtWidgets, uic
 
-app = QApplication(sys.argv)
-window = QWidget()
-window.setWindowTitle('QHBoxLayout')
-layout = QHBoxLayout()
-layout.addWidget(QPushButton('Left'))
-layout.addWidget(QPushButton('Center'))
-layout.addWidget(QPushButton('Right'))
-window.setLayout(layout)
-window.show()
-sys.exit(app.exec_())
+class Stock (QtWidgets.QMainWindow):
+    def __init__(self):
+        super(Stock, self).__init__()
+        uic.loadUi("qt_form.ui", self)
+
+app = QtWidgets.QApplication(sys.argv)
+
+form = Stock()
+form.show()
+app.exec()
