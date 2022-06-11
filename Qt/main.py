@@ -1,23 +1,20 @@
 import sys
-
-
-from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QApplication,QMainWindow
 from qt_form import Ui_MainWindow
 
-# class Stock (QtWidgets.QMainWindow):
-#     def __init__(self):
-#         super(Stock, self).__init__()
-#         # self.setupUi(self)
-#         uic.loadUi("qt_form.ui", self)
 
-
-class Stock (QtWidgets.QMainWindow, Ui_MainWindow):
+class MainWindow:
     def __init__(self):
-        super(Stock, self).__init__()
-        self.setupUi(self)
+        self.main_win = QMainWindow()
+        self.uic = Ui_MainWindow()
+        self.uic.setupUi(self.main_win)
 
-app = QtWidgets.QApplication(sys.argv)
 
-form = Stock()
-form.show()
-app.exec()
+    def show(self):
+        self.main_win.show()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    main_win = MainWindow()
+    main_win.show()
+    sys.exit(app.exec())

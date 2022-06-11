@@ -6,33 +6,98 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
-    <height>379</height>
+    <width>533</width>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>10</y>
-      <width>391</width>
-      <height>121</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>150</y>
-      <width>401</width>
-      <height>161</height>
+      <x>30</x>
+      <y>10</y>
+      <width>541</width>
+      <height>321</height>
      </rect>
     </property>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Row</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>New Column</string>
+     </property>
+    </column>
+    <item row="1" column="0">
+     <property name="text">
+      <string>dsd</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>dsd</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>ds</string>
+     </property>
+    </item>
+    <item row="2" column="1">
+     <property name="text">
+      <string>dsd</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string>dsd</string>
+     </property>
+    </item>
+    <item row="3" column="1">
+     <property name="text">
+      <string>dsdsd</string>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string>dsd</string>
+     </property>
+    </item>
+    <item row="4" column="1">
+     <property name="text">
+      <string>dsds</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -40,7 +105,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>577</width>
+     <width>533</width>
      <height>18</height>
     </rect>
    </property>
