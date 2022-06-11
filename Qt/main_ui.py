@@ -5,6 +5,7 @@ from PyQt5 import QtCore, QtWidgets
 from qt_form import Ui_MainWindow
 import requests
 import json
+from utils.Constant import *
 
 VIETSTOCK_END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2"
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
@@ -65,12 +66,17 @@ class MainUI:
                 item.setText(_translate("MainWindow", column_name))
 
             # row
-            for row_index, stock_item in enumerate(self.data_from_file):
+            for row_index, stock_code in enumerate(self.data_from_file):
+                item_dict = self.data_from_file[stock_code]
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
-                item.setText(_translate("MainWindow", stock_item))
+                item.setText(_translate("MainWindow", stock_code))
 
                 # data body
                 item = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, 0, item)
-                item.setText(_translate("MainWindow", "data"))
+                try:
+                    gia_da_mua = int(item_dict.get("bought"))
+                except TypeError:
+                    gia_da_mua = 0
+                self.uic.tableWidget.setItem(row_index, CONSTANT_BOUGHT, item)
+                item.setText(_translate("MainWindow", str(gia_da_mua)))
