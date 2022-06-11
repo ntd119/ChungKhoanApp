@@ -1,3 +1,8 @@
-chuyển file
+1. chuyển file
+    Mở command line và chạy lệnh bên dưới
+    pyuic5 qt_form.ui > qt_form.py
 
-pyuic5 qt_form.ui > qt_form.py
+2. Đóng gói
+    pyinstaller --onefile main.py
+    nếu pyinstaller not found thì chạy lệnh pip install -U pyinstaller
+    Sau đó chạy lại lệnh pyinstaller --onefile main.py
