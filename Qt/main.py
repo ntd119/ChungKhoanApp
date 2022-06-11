@@ -1,7 +1,15 @@
 import sys
 
+
 from PyQt5 import QtWidgets, uic
 from qt_form import Ui_MainWindow
+
+# class Stock (QtWidgets.QMainWindow):
+#     def __init__(self):
+#         super(Stock, self).__init__()
+#         # self.setupUi(self)
+#         uic.loadUi("qt_form.ui", self)
+
 
 class Stock (QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):

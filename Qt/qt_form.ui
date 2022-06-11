@@ -6,32 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>390</width>
-    <height>295</height>
+    <width>577</width>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>70</x>
       <y>10</y>
-      <width>161</width>
-      <height>91</height>
+      <width>391</width>
+      <height>121</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>401</width>
+      <height>161</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -40,7 +40,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>390</width>
+     <width>577</width>
      <height>18</height>
     </rect>
    </property>
