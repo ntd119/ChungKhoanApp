@@ -11,6 +11,10 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
+COLUMN_NAME = ["Status", "Giá mua", "Giá HT", "Lãi/Lỗ", "% Max-HT", "Min week", "Time",
+               "Max week", "Time", "% Max-Min",
+               "% Cắt lỗ", "% Bán", "Trần", "Sàn", "Sound"]
+
 
 class MainUI:
     def __init__(self):
@@ -47,19 +51,18 @@ class MainUI:
             stock_list = json.load(file_data)
             row_number = len(stock_list)
             self.uic.tableWidget.setGeometry(QtCore.QRect(30, 10, 1050, 321))
-            self.uic.tableWidget.setColumnCount(20)
+            self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
+
             # column
-            item = QtWidgets.QTableWidgetItem()
-            self.uic.tableWidget.setHorizontalHeaderItem(0, item)
-            item.setText(_translate("MainWindow", "name"))
+            for column_index, column_name in enumerate(COLUMN_NAME):
+                item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setHorizontalHeaderItem(column_index, item)
+                item.setText(_translate("MainWindow", column_name))
 
             # row
-            row_index = -1
-            for stock_item in stock_list:
-                row_index +=1
+            for row_index, stock_item in enumerate(stock_list):
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
                 item.setText(_translate("MainWindow", stock_item))
-
