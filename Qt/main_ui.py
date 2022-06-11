@@ -1,8 +1,10 @@
 import time
 
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5 import QtCore, QtWidgets
 from qt_form import Ui_MainWindow
 import requests
+import json
 
 VIETSTOCK_END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2"
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
@@ -20,6 +22,10 @@ class MainUI:
 
     def run(self):
         self.call_api_vietstock()
+        self.draw_table()
+
+    def show(self):
+        self.main_win.show()
 
     def call_api_vietstock(self):
         vietstock_prams = {
@@ -36,5 +42,19 @@ class MainUI:
             time.sleep(5)
             self.call_api_vietstock()
 
-    def show(self):
-        self.main_win.show()
+    def draw_table(self):
+        with open("data/stock_code.json") as file_data:
+            stock_list = json.load(file_data)
+            row_number = len(stock_list)
+            self.uic.tableWidget.setGeometry(QtCore.QRect(30, 10, 1050, 321))
+            self.uic.tableWidget.setColumnCount(20)
+            self.uic.tableWidget.setRowCount(row_number)
+            _translate = QtCore.QCoreApplication.translate
+            row_index = -1
+            for stock_item in stock_list:
+                row_index +=1
+                # row
+                item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
+                item.setText(_translate("MainWindow", stock_item))
+
