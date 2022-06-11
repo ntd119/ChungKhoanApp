@@ -1,0 +1,3 @@
+chuyển file
+
+pyuic5 qt_form.ui > qt_form.py
