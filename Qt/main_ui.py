@@ -22,6 +22,7 @@ class MainUI:
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self.main_win)
         self.data_vietstock = None
+        self.data_from_file = None
         self.run()
 
     def run(self):
@@ -48,8 +49,10 @@ class MainUI:
 
     def draw_table(self):
         with open("data/stock_code.json") as file_data:
-            stock_list = json.load(file_data)
-            row_number = len(stock_list)
+            self.data_from_file = json.load(file_data)
+            self.data_from_file = dict(
+                sorted(self.data_from_file.items(), key=lambda item:item[1]["follow"], reverse=True))
+            row_number = len(self.data_from_file)
             self.uic.tableWidget.setGeometry(QtCore.QRect(30, 10, 1050, 521))
             self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
             self.uic.tableWidget.setRowCount(row_number)
@@ -62,7 +65,7 @@ class MainUI:
                 item.setText(_translate("MainWindow", column_name))
 
             # row
-            for row_index, stock_item in enumerate(stock_list):
+            for row_index, stock_item in enumerate(self.data_from_file):
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
                 item.setText(_translate("MainWindow", stock_item))
