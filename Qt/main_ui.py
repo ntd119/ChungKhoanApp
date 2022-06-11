@@ -76,7 +76,9 @@ class MainUI:
                 item = QtWidgets.QTableWidgetItem()
                 try:
                     gia_da_mua = int(item_dict.get("bought"))
+                    if gia_da_mua == 0:
+                        gia_da_mua = ""
                 except TypeError:
-                    gia_da_mua = 0
+                    gia_da_mua = ""
                 self.uic.tableWidget.setItem(row_index, CONSTANT_BOUGHT, item)
                 item.setText(_translate("MainWindow", str(gia_da_mua)))
