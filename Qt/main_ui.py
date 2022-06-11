@@ -50,7 +50,7 @@ class MainUI:
         with open("data/stock_code.json") as file_data:
             stock_list = json.load(file_data)
             row_number = len(stock_list)
-            self.uic.tableWidget.setGeometry(QtCore.QRect(30, 10, 1050, 321))
+            self.uic.tableWidget.setGeometry(QtCore.QRect(30, 10, 1050, 521))
             self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
