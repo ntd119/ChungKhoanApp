@@ -137,3 +137,24 @@ class MainUI:
                     else:
                         self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setForeground(
                             QtGui.QColor(BACKGROUND_LAI))
+
+                    # Status
+                    percent_cat_lo = self.uic.tableWidget.item(row_index,
+                                                               COLUMN_NAME["percent_cut_loss"]["index"]).text()
+                    percent_ban = self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_sell"]["index"]).text()
+                    if percent_lai_lo >= 0:
+                        if float(percent_lai_lo) >= float(percent_ban):
+                            status_ban_item = QtWidgets.QTableWidgetItem()
+                            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["status"]["index"],
+                                                         status_ban_item)
+                            status_ban_item.setText(_translate("MainWindow", "Bán"))
+                            self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
+                                QtGui.QColor(BACKGROUND_LAI))
+                    else:
+                        if abs(float(percent_lai_lo)) >= float(percent_cat_lo):
+                            status_cat_lo_item = QtWidgets.QTableWidgetItem()
+                            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["status"]["index"],
+                                                         status_cat_lo_item)
+                            status_cat_lo_item.setText(_translate("MainWindow", "Cắt lỗ"))
+                            self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
+                                QtGui.QColor(BACKGROUND_LO))
