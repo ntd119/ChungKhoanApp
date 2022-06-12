@@ -48,8 +48,11 @@ class MainUI:
         except:
             return ""
 
-    def format_value(self, value):
+    def format_value(self,  value):
         return "{:,.0f}".format(value)
+
+    def format_2_decimal(self, value):
+        return "{:.2f}".format(value)
 
     def draw_table(self):
         with open("data/stock_code.json") as file_data:
@@ -115,7 +118,17 @@ class MainUI:
                gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
 
                # giá hiện tại _cp_
+               gia_hien_tai_value = stock_single['_cp_']
                gia_hien_tai_item = QtWidgets.QTableWidgetItem()
                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
-               gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(stock_single['_cp_'])))
+               gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(gia_hien_tai_value)))
+
+               # Tính lãi lỗ
+               gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
+               if len(gia_da_mua) > 0:
+                   gia_da_mua = int(gia_da_mua)
+                   percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
+                   percen_lai_lo_item = QtWidgets.QTableWidgetItem()
+                   self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
+                   percen_lai_lo_item.setText(_translate("MainWindow", self.format_2_decimal(percent_lai_lo)))
 
