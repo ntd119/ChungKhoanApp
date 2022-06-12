@@ -18,8 +18,8 @@ class MainUI:
         self.run()
 
     def run(self):
-        self.call_api_vietstock()
         self.draw_table()
+        self.update_table()
 
     def show(self):
         self.main_win.show()
@@ -47,6 +47,9 @@ class MainUI:
             return str(value)
         except:
             return ""
+
+    def format_value(self, value):
+        return "{:,.0f}".format(value)
 
     def draw_table(self):
         with open("data/stock_code.json") as file_data:
@@ -87,3 +90,27 @@ class MainUI:
                 item_sell = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
                 item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
+
+    def update_table(self):
+        self.call_api_vietstock()
+        _translate = QtCore.QCoreApplication.translate
+        for row_index, stock_code in enumerate(self.data_from_file):
+            item_dict = self.data_from_file[stock_code]
+            stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
+            if len(stock_single) == 1:
+               stock_single = stock_single[0]
+               # giá trần _clp_
+               gia_tran_item = QtWidgets.QTableWidgetItem()
+               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["tran_value"]["index"], gia_tran_item)
+               gia_tran_item.setText(_translate("MainWindow", self.format_value(stock_single['_clp_'])))
+
+               # giá sàn _fp_
+               gia_san_item = QtWidgets.QTableWidgetItem()
+               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["san_value"]["index"], gia_san_item)
+               gia_san_item.setText(_translate("MainWindow", self.format_value(stock_single['_fp_'])))
+
+               # giá mở cửa _op_
+               gia_mo_cua_item = QtWidgets.QTableWidgetItem()
+               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
+               gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
+

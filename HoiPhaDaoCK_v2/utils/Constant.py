@@ -61,8 +61,12 @@ COLUMN_NAME = {
         "index": 13,
         "name": "Sàn"
     },
-    "sound_enable": {
+    "open_value": {
         "index": 14,
+        "name": "Mở cửa"
+    },
+    "sound_enable": {
+        "index": 15,
         "name": "Sound"
     }
 }
