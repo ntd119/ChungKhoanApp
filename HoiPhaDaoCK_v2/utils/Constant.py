@@ -8,3 +8,4 @@ COLUMN_NAME = ["Status", "Giá mua", "Giá HT", "Lãi/Lỗ", "% Max-HT", "Min we
                "% Cắt lỗ", "% Bán", "Trần", "Sàn", "Sound"]
 
 CONSTANT_BOUGHT = 1
+CONSTANT_PERCENT_CAT_LO = 10
