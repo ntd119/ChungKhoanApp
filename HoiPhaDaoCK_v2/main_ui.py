@@ -98,7 +98,7 @@ class MainUI:
     def update_table(self):
         now = datetime.now().time()
         format_time = now.strftime("%H:%M:%S")
-        print(f"RUNNING... {format_time}")
+        print(f"Update gia co phieu... {format_time}")
         self.call_api_vietstock()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
@@ -172,7 +172,13 @@ class MainUI:
             time.sleep(5)
             self.call_api_max_min()
 
+    def format_time(self, time_value):
+        date = datetime.fromtimestamp(time_value / 1000.0)
+        day_of_week = int(date.strftime("%w")) + 1
+        return date.strftime(f"T{day_of_week}, %d-%m, %I:%M %p")
+
     def update_max_min(self):
+        print("Update gia max min")
         self.call_api_max_min()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
@@ -182,7 +188,17 @@ class MainUI:
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["min_value_week"]["index"], gia_min_this_week_item)
             gia_min_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["min_price"])))
 
+            # Thời gian giá nhỏ nhất tuần này
+            min_time_this_week_item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["min_time_week"]["index"], min_time_this_week_item)
+            min_time_this_week_item.setText(_translate("MainWindow", self.format_time(max_min_dict["min_price_time"])))
+
             # giá max tuần này
             gia_max_this_week_item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["max_value_week"]["index"], gia_max_this_week_item)
             gia_max_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["max_price"])))
+
+            # Thời gian giá lớn nhất tuần này
+            max_time_this_week_item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["max_time_week"]["index"], max_time_this_week_item)
+            max_time_this_week_item.setText(_translate("MainWindow", self.format_time(max_min_dict["max_price_time"])))
