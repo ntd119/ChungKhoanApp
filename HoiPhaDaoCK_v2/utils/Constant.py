@@ -18,7 +18,7 @@ COLUMN_NAME = {
     },
     "current_value": {
         "index": 2,
-        "name": "Giá HT"
+        "name": "Giá hiện tại"
     },
     "lai_lo": {
         "index": 3,
@@ -58,15 +58,15 @@ COLUMN_NAME = {
     },
     "tran_value": {
         "index": 12,
-        "name": "Trần"
+        "name": "Giá trần"
     },
     "san_value": {
         "index": 13,
-        "name": "Sàn"
+        "name": "Giá sàn"
     },
     "open_value": {
         "index": 14,
-        "name": "Mở cửa"
+        "name": "Giá mở cửa"
     },
     "sound_enable": {
         "index": 15,
