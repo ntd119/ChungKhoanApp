@@ -16,13 +16,13 @@ COLUMN_NAME = {
         "index": 1,
         "name": "Giá mua"
     },
-    "current_value": {
-        "index": 2,
-        "name": "Giá hiện tại"
-    },
     "lai_lo": {
-        "index": 3,
+        "index": 2,
         "name": "Lãi/Lỗ"
+    },
+    "current_value": {
+        "index": 3,
+        "name": "Giá hiện tại"
     },
     "min_value_week": {
         "index": 4,
