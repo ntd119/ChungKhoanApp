@@ -132,8 +132,8 @@ class MainUI:
                     self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
                     percen_lai_lo_item.setText(_translate("MainWindow", self.format_2_decimal(percent_lai_lo) + "%"))
                     if percent_lai_lo < 0:
-                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setBackground(
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setForeground(
                             QtGui.QColor(BACKGROUND_LO))
                     else:
-                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setBackground(
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setForeground(
                             QtGui.QColor(BACKGROUND_LAI))
