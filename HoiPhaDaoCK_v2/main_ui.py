@@ -19,8 +19,8 @@ class MainUI:
 
     def run(self):
         self.draw_table()
-        self.update_table()
         self.update_max_min()
+        self.update_table()
 
     def show(self):
         self.main_win.show()
