@@ -114,3 +114,8 @@ class MainUI:
                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
                gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
 
+               # giá hiện tại _cp_
+               gia_hien_tai_item = QtWidgets.QTableWidgetItem()
+               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
+               gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(stock_single['_cp_'])))
+
