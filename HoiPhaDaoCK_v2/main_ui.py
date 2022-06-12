@@ -184,9 +184,10 @@ class MainUI:
         for row_index, stock_code in enumerate(self.data_from_file):
             max_min_dict = self.data_max_min[stock_code]
             # giá min tuần này
+            min_value = max_min_dict["min_price"]
             gia_min_this_week_item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["min_value_week"]["index"], gia_min_this_week_item)
-            gia_min_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["min_price"])))
+            gia_min_this_week_item.setText(_translate("MainWindow", self.format_value(min_value)))
 
             # Thời gian giá nhỏ nhất tuần này
             min_time_this_week_item = QtWidgets.QTableWidgetItem()
@@ -194,11 +195,19 @@ class MainUI:
             min_time_this_week_item.setText(_translate("MainWindow", self.format_time(max_min_dict["min_price_time"])))
 
             # giá max tuần này
+            max_value = max_min_dict["max_price"]
             gia_max_this_week_item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["max_value_week"]["index"], gia_max_this_week_item)
-            gia_max_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["max_price"])))
+            gia_max_this_week_item.setText(_translate("MainWindow", self.format_value(max_value)))
 
             # Thời gian giá lớn nhất tuần này
             max_time_this_week_item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["max_time_week"]["index"], max_time_this_week_item)
             max_time_this_week_item.setText(_translate("MainWindow", self.format_time(max_min_dict["max_price_time"])))
+
+            # Phần trăm max min
+            percent_max_min_this_week_item = QtWidgets.QTableWidgetItem()
+            percent_max_min = ((max_value - min_value)/min_value)*100
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_min"]["index"], percent_max_min_this_week_item)
+            percent_max_min_this_week_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_min)))
+
