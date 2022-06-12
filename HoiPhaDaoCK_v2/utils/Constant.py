@@ -38,7 +38,7 @@ COLUMN_NAME = {
     },
     "percent_max_current": {
         "index": 7,
-        "name": "% Giá max so với\n Giá hiện tại"
+        "name": "% Giá hiện tại\nso với giá max"
     },
     "min_time_week": {
         "index": 8,
