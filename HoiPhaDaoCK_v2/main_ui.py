@@ -1,7 +1,7 @@
 import time
 
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtWidgets, QtGui
 from qt_form import Ui_MainWindow
 import requests
 import json
@@ -48,7 +48,7 @@ class MainUI:
         except:
             return ""
 
-    def format_value(self,  value):
+    def format_value(self, value):
         return "{:,.0f}".format(value)
 
     def format_2_decimal(self, value):
@@ -101,34 +101,39 @@ class MainUI:
             item_dict = self.data_from_file[stock_code]
             stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
             if len(stock_single) == 1:
-               stock_single = stock_single[0]
-               # giá trần _clp_
-               gia_tran_item = QtWidgets.QTableWidgetItem()
-               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["tran_value"]["index"], gia_tran_item)
-               gia_tran_item.setText(_translate("MainWindow", self.format_value(stock_single['_clp_'])))
+                stock_single = stock_single[0]
+                # giá trần _clp_
+                gia_tran_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["tran_value"]["index"], gia_tran_item)
+                gia_tran_item.setText(_translate("MainWindow", self.format_value(stock_single['_clp_'])))
 
-               # giá sàn _fp_
-               gia_san_item = QtWidgets.QTableWidgetItem()
-               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["san_value"]["index"], gia_san_item)
-               gia_san_item.setText(_translate("MainWindow", self.format_value(stock_single['_fp_'])))
+                # giá sàn _fp_
+                gia_san_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["san_value"]["index"], gia_san_item)
+                gia_san_item.setText(_translate("MainWindow", self.format_value(stock_single['_fp_'])))
 
-               # giá mở cửa _op_
-               gia_mo_cua_item = QtWidgets.QTableWidgetItem()
-               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
-               gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
+                # giá mở cửa _op_
+                gia_mo_cua_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
+                gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
 
-               # giá hiện tại _cp_
-               gia_hien_tai_value = stock_single['_cp_']
-               gia_hien_tai_item = QtWidgets.QTableWidgetItem()
-               self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
-               gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(gia_hien_tai_value)))
+                # giá hiện tại _cp_
+                gia_hien_tai_value = stock_single['_cp_']
+                gia_hien_tai_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
+                gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(gia_hien_tai_value)))
 
-               # Tính lãi lỗ
-               gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
-               if len(gia_da_mua) > 0:
-                   gia_da_mua = int(gia_da_mua)
-                   percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
-                   percen_lai_lo_item = QtWidgets.QTableWidgetItem()
-                   self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
-                   percen_lai_lo_item.setText(_translate("MainWindow", self.format_2_decimal(percent_lai_lo)))
-
+                # Tính lãi lỗ
+                gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
+                if len(gia_da_mua) > 0:
+                    gia_da_mua = int(gia_da_mua)
+                    percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
+                    percen_lai_lo_item = QtWidgets.QTableWidgetItem()
+                    self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
+                    percen_lai_lo_item.setText(_translate("MainWindow", self.format_2_decimal(percent_lai_lo) + "%"))
+                    if percent_lai_lo < 0:
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setBackground(
+                            QtGui.QColor(BACKGROUND_LO))
+                    else:
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["lai_lo"]["index"]).setBackground(
+                            QtGui.QColor(BACKGROUND_LAI))
