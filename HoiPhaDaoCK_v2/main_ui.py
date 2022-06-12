@@ -171,6 +171,12 @@ class MainUI:
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_current"]["index"],
                                              percent_max_current_item)
                 percent_max_current_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_current_value)))
+                if percent_max_current_value >= 0:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_current"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_LAI))
+                else:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_current"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_LO))
 
     def call_api_max_min(self):
         try:
@@ -220,3 +226,10 @@ class MainUI:
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_min"]["index"],
                                          percent_max_min_this_week_item)
             percent_max_min_this_week_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_min)))
+            if percent_max_min >= 0:
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_min"]["index"]).setBackground(
+                    QtGui.QColor(BACKGROUND_LAI))
+            else:
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_min"]["index"]).setBackground(
+                    QtGui.QColor(BACKGROUND_LO))
+
