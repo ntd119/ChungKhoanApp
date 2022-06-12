@@ -60,10 +60,10 @@ class MainUI:
             _translate = QtCore.QCoreApplication.translate
 
             # column
-            for column_index, column_name in enumerate(COLUMN_NAME):
+            for column_index, dict_name in enumerate(COLUMN_NAME):
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setHorizontalHeaderItem(column_index, item)
-                item.setText(_translate("MainWindow", column_name))
+                item.setText(_translate("MainWindow", COLUMN_NAME[dict_name]["name"]))
 
             # row
             for row_index, stock_code in enumerate(self.data_from_file):
@@ -73,12 +73,17 @@ class MainUI:
                 item.setText(_translate("MainWindow", stock_code))
 
                 # data body
-                # Giá đã mua
+                # Giá đã mua bought
                 item_bought = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, CONSTANT_BOUGHT, item_bought)
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
                 item_bought.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "bought")))
 
-                # phần trăm cắt lỗ
+                # phần trăm cắt lỗ percent_cut_loss
                 item_cut_loss = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, CONSTANT_PERCENT_CAT_LO, item_cut_loss)
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_cut_loss"]["index"], item_cut_loss)
                 item_cut_loss.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_cut_loss")))
+
+                # phần trăm bán percent_sell
+                item_sell = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
+                item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
