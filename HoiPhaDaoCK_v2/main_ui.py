@@ -128,7 +128,8 @@ class MainUI:
                 gia_hien_tai_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
                 gia_hien_tai_item.setText(
-                    _translate("MainWindow", self.format_value(gia_hien_tai_value) + " (" + self.format_2_decimal(percent) + "%)"))
+                    _translate("MainWindow",
+                               self.format_value(gia_hien_tai_value) + " (" + self.format_2_decimal(percent) + "%)"))
                 if percent >= 0:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_LAI))
@@ -139,8 +140,12 @@ class MainUI:
                 # Tính lãi lỗ
                 gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
                 if len(gia_da_mua) > 0:
-                    gia_da_mua = int(gia_da_mua)
-                    percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
+                    try:
+                        gia_da_mua = int(gia_da_mua)
+                        percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
+                    except:
+                        gia_da_mua = 0
+                        percent_lai_lo = 0
                     percen_lai_lo_item = QtWidgets.QTableWidgetItem()
                     self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
                     percen_lai_lo_item.setText(_translate("MainWindow", self.format_2_decimal(percent_lai_lo) + "%"))
