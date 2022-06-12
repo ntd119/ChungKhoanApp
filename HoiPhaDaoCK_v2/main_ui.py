@@ -13,12 +13,14 @@ class MainUI:
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self.main_win)
         self.data_vietstock = None
+        self.data_max_min = None
         self.data_from_file = None
         self.run()
 
     def run(self):
         self.draw_table()
         self.update_table()
+        self.update_max_min()
 
     def show(self):
         self.main_win.show()
@@ -160,3 +162,27 @@ class MainUI:
                             status_cat_lo_item.setText(_translate("MainWindow", "Cắt lỗ"))
                             self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
                                 QtGui.QColor(BACKGROUND_LO))
+
+    def call_api_max_min(self):
+        try:
+            response = requests.get(MAX_MIN_END_POINT, headers=HEADERS)
+            self.data_max_min = response.json()
+        except:
+            print("Max min api error")
+            time.sleep(5)
+            self.call_api_max_min()
+
+    def update_max_min(self):
+        self.call_api_max_min()
+        _translate = QtCore.QCoreApplication.translate
+        for row_index, stock_code in enumerate(self.data_from_file):
+            max_min_dict = self.data_max_min[stock_code]
+            # giá min tuần này
+            gia_min_this_week_item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["min_value_week"]["index"], gia_min_this_week_item)
+            gia_min_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["min_price"])))
+
+            # giá max tuần này
+            gia_max_this_week_item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["max_value_week"]["index"], gia_max_this_week_item)
+            gia_max_this_week_item.setText(_translate("MainWindow", self.format_value(max_min_dict["max_price"])))
