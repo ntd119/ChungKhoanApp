@@ -124,9 +124,17 @@ class MainUI:
 
                 # giá hiện tại _cp_
                 gia_hien_tai_value = stock_single['_cp_']
+                percent = stock_single['_pc_']
                 gia_hien_tai_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
-                gia_hien_tai_item.setText(_translate("MainWindow", self.format_value(gia_hien_tai_value)))
+                gia_hien_tai_item.setText(
+                    _translate("MainWindow", self.format_value(gia_hien_tai_value) + " (" + self.format_2_decimal(percent) + "%)"))
+                if percent >= 0:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_LAI))
+                else:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_LO))
 
                 # Tính lãi lỗ
                 gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
@@ -166,11 +174,13 @@ class MainUI:
                 # Phần trăm giá max so với hiện tại
                 gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
                 gia_max_this_week = gia_max_this_week.replace(',', '')
-                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week))/float(gia_max_this_week))*100
+                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week)) / float(
+                    gia_max_this_week)) * 100
                 percent_max_current_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_current"]["index"],
                                              percent_max_current_item)
-                percent_max_current_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_current_value)))
+                percent_max_current_item.setText(
+                    _translate("MainWindow", self.format_2_decimal(percent_max_current_value)))
                 if percent_max_current_value >= 0:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_current"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_LAI))
@@ -232,4 +242,3 @@ class MainUI:
             else:
                 self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_min"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LO))
-
