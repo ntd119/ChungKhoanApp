@@ -166,7 +166,7 @@ class MainUI:
                 # Phần trăm giá max so với hiện tại
                 gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
                 gia_max_this_week = gia_max_this_week.replace(',', '')
-                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week))/float(gia_hien_tai_value))*100
+                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week))/float(gia_max_this_week))*100
                 percent_max_current_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_current"]["index"],
                                              percent_max_current_item)
