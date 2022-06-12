@@ -2,6 +2,7 @@ import time
 
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtCore import QTimer
 from qt_form import Ui_MainWindow
 import requests
 import json
@@ -20,6 +21,13 @@ class MainUI:
     def run(self):
         self.draw_table()
         self.update_table()
+        self.interval_update_table()
+
+    def interval_update_table(self):
+        timer = QTimer()
+        timer.timeout.connect(self.update_table)
+        timer.setInterval(1000)  # 1000ms = 1s
+        timer.start()
 
     def show(self):
         self.main_win.show()
@@ -95,6 +103,7 @@ class MainUI:
                 item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
 
     def update_table(self):
+        print("aaa")
         self.call_api_vietstock()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
