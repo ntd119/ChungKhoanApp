@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 from utils.Constant import *
 
+
 class MainUI:
     def __init__(self):
         self.main_win = QMainWindow()
@@ -162,6 +163,14 @@ class MainUI:
                             status_cat_lo_item.setText(_translate("MainWindow", "Cắt lỗ"))
                             self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
                                 QtGui.QColor(BACKGROUND_LO))
+                # Phần trăm giá max so với hiện tại
+                gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
+                gia_max_this_week = gia_max_this_week.replace(',', '')
+                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week))/float(gia_hien_tai_value))*100
+                percent_max_current_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_current"]["index"],
+                                             percent_max_current_item)
+                percent_max_current_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_current_value)))
 
     def call_api_max_min(self):
         try:
@@ -207,7 +216,7 @@ class MainUI:
 
             # Phần trăm max min
             percent_max_min_this_week_item = QtWidgets.QTableWidgetItem()
-            percent_max_min = ((max_value - min_value)/min_value)*100
-            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_min"]["index"], percent_max_min_this_week_item)
+            percent_max_min = ((max_value - min_value) / min_value) * 100
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_min"]["index"],
+                                         percent_max_min_this_week_item)
             percent_max_min_this_week_item.setText(_translate("MainWindow", self.format_2_decimal(percent_max_min)))
-
