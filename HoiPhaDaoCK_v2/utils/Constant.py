@@ -24,29 +24,29 @@ COLUMN_NAME = {
         "index": 3,
         "name": "Lãi/Lỗ"
     },
-    "percent_max_current": {
+    "percent_max_min": {
         "index": 4,
+        "name": "% Max-Min"
+    },
+    "percent_max_current": {
+        "index": 5,
         "name": "% Max-HT"
     },
     "min_value_week": {
-        "index": 5,
+        "index": 6,
         "name": "Min week"
     },
     "min_time_week": {
-        "index": 6,
+        "index": 7,
         "name": "Min Time"
     },
     "max_value_week": {
-        "index": 7,
+        "index": 8,
         "name": "Max week"
     },
     "max_time_week": {
-        "index": 8,
-        "name": "Max Time"
-    },
-    "percent_max_min": {
         "index": 9,
-        "name": "% Max-Min"
+        "name": "Max Time"
     },
     "percent_cut_loss": {
         "index": 10,
