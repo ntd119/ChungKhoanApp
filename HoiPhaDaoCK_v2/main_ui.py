@@ -68,6 +68,7 @@ class MainUI:
         return "{:.2f}".format(value)
 
     def draw_table(self, file_name):
+        self.uic.tableWidget.clear()
         with open(f"data/{file_name}") as file_data:
             self.data_from_file = json.load(file_data)
             self.data_from_file = dict(
