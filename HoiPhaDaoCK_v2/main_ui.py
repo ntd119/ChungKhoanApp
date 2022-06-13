@@ -174,11 +174,13 @@ class MainUI:
                     percent_cat_lo = self.uic.tableWidget.item(row_index,
                                                                COLUMN_NAME["percent_cut_loss"]["index"]).text()
                     percent_ban = self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_sell"]["index"]).text()
+                    status_ban_item = QtWidgets.QTableWidgetItem()
+                    self.uic.tableWidget.setItem(row_index, COLUMN_NAME["status"]["index"],
+                                                 status_ban_item)
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_NONE))
                     if percent_lai_lo >= 0:
                         if float(percent_lai_lo) >= float(percent_ban):
-                            status_ban_item = QtWidgets.QTableWidgetItem()
-                            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["status"]["index"],
-                                                         status_ban_item)
                             status_ban_item.setText(_translate("MainWindow", "Bán"))
                             self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
                                 QtGui.QColor(BACKGROUND_LAI))
