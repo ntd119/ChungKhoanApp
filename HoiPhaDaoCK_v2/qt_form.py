@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
 
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
-        self.nhomCoPhieuLabel.setGeometry(QtCore.QRect(10, 10, 211, 31))
+        self.nhomCoPhieuLabel.setGeometry(QtCore.QRect(10, 10, 511, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)

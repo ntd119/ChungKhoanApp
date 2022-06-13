@@ -21,9 +21,18 @@ class MainUI:
         self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
 
     def run(self, file_name):
+        self.update_title(file_name)
         self.draw_table(file_name)
         self.update_max_min()
         self.update_table()
+
+    def update_title(self, file_name):
+        title = "Nhóm cổ phiếu: "
+        if file_name == FILE_NGAN_HANG:
+            title += "Ngân Hàng"
+        elif file_name == FILE_VN100:
+            title += "VN100"
+        self.uic.nhomCoPhieuLabel.setText(title)
 
     def show(self):
         self.main_win.show()
