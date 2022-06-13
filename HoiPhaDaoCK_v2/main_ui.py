@@ -17,6 +17,10 @@ class MainUI:
         self.data_max_min = None
         self.data_from_file = None
         self.run()
+        self.uic.menuDaMua.triggered.connect(self.test)
+
+    def test(self):
+        print("Test ....")
 
     def run(self):
         self.draw_table()
