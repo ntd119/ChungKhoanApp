@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.nhomCoPhieuLabel.setText(_translate("MainWindow", "Nhóm cổ phiếu: "))
-        self.menuNhonCoPhieu.setTitle(_translate("MainWindow", "Nhóm cổ phiếu"))
+        self.menuNhonCoPhieu.setTitle(_translate("MainWindow", "Chọn cổ phiếu"))
         self.menuDaMua.setText(_translate("MainWindow", "Cổ phiếu đã mua"))
         self.menuDaMua.setShortcut(_translate("MainWindow", "Ctrl+D"))
         self.menuVn100.setText(_translate("MainWindow", "VN100"))
