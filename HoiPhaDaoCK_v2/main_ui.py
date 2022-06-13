@@ -108,19 +108,22 @@ class MainUI:
             if len(stock_single) == 1:
                 stock_single = stock_single[0]
                 # giá trần _clp_
+                gia_tran_value = stock_single['_clp_']
                 gia_tran_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["tran_value"]["index"], gia_tran_item)
-                gia_tran_item.setText(_translate("MainWindow", self.format_value(stock_single['_clp_'])))
+                gia_tran_item.setText(_translate("MainWindow", self.format_value(gia_tran_value)))
 
                 # giá sàn _fp_
+                gia_san_value = stock_single['_fp_']
                 gia_san_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["san_value"]["index"], gia_san_item)
-                gia_san_item.setText(_translate("MainWindow", self.format_value(stock_single['_fp_'])))
+                gia_san_item.setText(_translate("MainWindow", self.format_value(gia_san_value)))
 
                 # giá mở cửa _op_
+                gia_mo_cua_value = stock_single['_op_']
                 gia_mo_cua_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
-                gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(stock_single['_op_'])))
+                gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(gia_mo_cua_value)))
 
                 # giá hiện tại _cp_
                 gia_hien_tai_value = stock_single['_cp_']
@@ -130,12 +133,21 @@ class MainUI:
                 gia_hien_tai_item.setText(
                     _translate("MainWindow",
                                self.format_value(gia_hien_tai_value) + " (" + self.format_2_decimal(percent) + "%)"))
-                if percent >= 0:
+                if gia_hien_tai_value == gia_tran_value:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
-                        QtGui.QColor(BACKGROUND_LAI))
+                        QtGui.QColor(BACKGROUND_TRAN))
+                elif gia_hien_tai_value == gia_san_value:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_SAN))
+                elif gia_hien_tai_value == gia_mo_cua_value:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_DUNG))
+                elif percent >= 0:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_TANG))
                 else:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
-                        QtGui.QColor(BACKGROUND_LO))
+                        QtGui.QColor(BACKGROUND_GIAM))
 
                 # Tính lãi lỗ
                 gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()

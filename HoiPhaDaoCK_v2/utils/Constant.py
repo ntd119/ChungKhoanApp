@@ -6,6 +6,11 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 MAX_MIN_END_POINT = "https://topchonlua.com/batch/data/stock_T0.json"
 BACKGROUND_LO = "#F33232"
 BACKGROUND_LAI = "#00E11A"
+BACKGROUND_TRAN = "#860D98"
+BACKGROUND_TANG = "#00E11A"
+BACKGROUND_DUNG = "#FEA50C"
+BACKGROUND_GIAM = "#F33232"
+BACKGROUND_SAN = "#0A8AE3"
 
 COLUMN_NAME = {
     "status": {
