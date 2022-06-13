@@ -17,6 +17,16 @@ class Ui_MainWindow(object):
         MainWindow.resize(1380, 720)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
+        self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
+        self.nhomCoPhieuLabel.setGeometry(QtCore.QRect(10, 10, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.nhomCoPhieuLabel.setFont(font)
+        self.nhomCoPhieuLabel.setObjectName("nhomCoPhieuLabel")
+
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(10, 20, 256, 192))
         self.tableWidget.setObjectName("tableWidget")
@@ -55,6 +65,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.nhomCoPhieuLabel.setText(_translate("MainWindow", "Nhóm cổ phiếu: "))
         self.menuNhonCoPhieu.setTitle(_translate("MainWindow", "Nhóm cổ phiếu"))
         self.menuDaMua.setText(_translate("MainWindow", "Cổ phiếu đã mua"))
         self.menuDaMua.setShortcut(_translate("MainWindow", "Ctrl+D"))
