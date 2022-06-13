@@ -133,13 +133,15 @@ class MainUI:
                 gia_hien_tai_item.setText(
                     _translate("MainWindow",
                                self.format_value(gia_hien_tai_value) + " (" + self.format_2_decimal(percent) + "%)"))
+                # Giá tham chiếu _bp_
+                gia_tham_chieu_value = stock_single['_bp_']
                 if gia_hien_tai_value == gia_tran_value:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_TRAN))
                 elif gia_hien_tai_value == gia_san_value:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_SAN))
-                elif gia_hien_tai_value == gia_mo_cua_value:
+                elif gia_hien_tai_value == gia_tham_chieu_value:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["current_value"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_DUNG))
                 elif percent >= 0:
