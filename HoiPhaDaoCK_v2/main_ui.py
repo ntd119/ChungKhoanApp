@@ -16,14 +16,12 @@ class MainUI:
         self.data_vietstock = None
         self.data_max_min = None
         self.data_from_file = None
-        self.run()
-        self.uic.menuDaMua.triggered.connect(self.test)
+        self.run(FILE_VN100)
+        self.uic.menuDaMua.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
+        self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
 
-    def test(self):
-        print("Test ....")
-
-    def run(self):
-        self.draw_table()
+    def run(self, file_name):
+        self.draw_table(file_name)
         self.update_max_min()
         self.update_table()
 
@@ -60,8 +58,8 @@ class MainUI:
     def format_2_decimal(self, value):
         return "{:.2f}".format(value)
 
-    def draw_table(self):
-        with open("data/vn100.json") as file_data:
+    def draw_table(self, file_name):
+        with open(f"data/{file_name}") as file_data:
             self.data_from_file = json.load(file_data)
             self.data_from_file = dict(
                 sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
