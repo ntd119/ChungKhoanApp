@@ -61,7 +61,7 @@ class MainUI:
         return "{:.2f}".format(value)
 
     def draw_table(self):
-        with open("data/stock_code.json") as file_data:
+        with open("data/vn100.json") as file_data:
             self.data_from_file = json.load(file_data)
             self.data_from_file = dict(
                 sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
