@@ -31,6 +31,7 @@ class MainUI:
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(300)
         self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
+        self.uic.searchInput.setToolTip("Nếu chữ cần tìm có dấu thì phải nhập có dấu")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def event_on(self):
