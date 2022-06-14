@@ -13,6 +13,7 @@ class MainUI:
         self.main_win = QMainWindow()
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self.main_win)
+        self.setPositon()
         self.data_vietstock = None
         self.data_max_min = None
         self.data_from_file = None
@@ -24,6 +25,15 @@ class MainUI:
         self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
         self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
         self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
+
+    def setPositon(self):
+        self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
+        self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhomCoPhieuLabel"]["geometry"])
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.uic.nhomCoPhieuLabel.setFont(font)
 
     def run(self, file_name):
         self.update_title(file_name)
@@ -75,7 +85,6 @@ class MainUI:
             self.data_from_file = dict(
                 sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
             row_number = len(self.data_from_file)
-            self.uic.tableWidget.setGeometry(QtCore.QRect(10, 70, 1440, 521))
             self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate

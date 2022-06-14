@@ -1,3 +1,5 @@
+from PyQt5 import QtCore
+
 VIETSTOCK_END_POINT = "https://api.vietstock.vn/finance/sectorInfo_v2"
 HEADERS = {"X-Requested-With": "XMLHttpRequest",
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -42,6 +44,15 @@ NHOM_CO_PHIEU = {
     FILE_LUA_CHON_BOI_CAC_QUY: {
         "name": "Lựa chọn bởi các quỹ"
     }
+}
+
+POSITION = {
+  "table": {
+    "geometry": QtCore.QRect(10, 70, 1440, 521)
+  },
+  "nhomCoPhieuLabel": {
+    "geometry": QtCore.QRect(10, 10, 511, 31)
+  }
 }
 
 COLUMN_NAME = {
