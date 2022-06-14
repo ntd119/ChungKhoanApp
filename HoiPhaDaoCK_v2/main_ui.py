@@ -29,15 +29,7 @@ class MainUI:
         self.update_table()
 
     def update_title(self, file_name):
-        title = "Nhóm cổ phiếu: "
-        if file_name == FILE_DA_MUA:
-            title += "CP đã mua"
-        elif file_name == FILE_NGAN_HANG:
-            title += "Ngân Hàng"
-        elif file_name == FILE_VN100:
-            title += "VN100"
-        elif file_name == FILE_NANG_LUONG:
-            title += "Năng lượng"
+        title = "Nhóm cổ phiếu: " + NHOM_CO_PHIEU[file_name]["name"]
         self.uic.nhomCoPhieuLabel.setText(title)
 
     def show(self):

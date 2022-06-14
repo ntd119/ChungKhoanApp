@@ -17,6 +17,22 @@ FILE_VN100 = "vn100.json"
 FILE_NGAN_HANG = "ngan_hang.json"
 FILE_NANG_LUONG = "nang_luong.json"
 
+
+NHOM_CO_PHIEU = {
+    FILE_DA_MUA : {
+        "name" : "CP đã mua"
+    },
+    FILE_VN100: {
+        "name": "VN100"
+    },
+    FILE_NGAN_HANG: {
+        "name": "Ngân Hàng"
+    },
+    FILE_NANG_LUONG: {
+        "name": "Năng lượng"
+    }
+}
+
 COLUMN_NAME = {
     "status": {
         "index": 0,
