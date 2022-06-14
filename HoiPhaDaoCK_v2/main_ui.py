@@ -6,6 +6,7 @@ import requests
 import json
 from datetime import datetime
 from utils.Constant import *
+import unidecode
 
 
 class MainUI:
@@ -31,7 +32,7 @@ class MainUI:
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(300)
         self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
-        self.uic.searchInput.setToolTip("Nếu chữ cần tìm có dấu thì phải nhập có dấu")
+        self.uic.searchInput.setToolTip("Không cần nhập có dấu")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def event_on(self):
@@ -45,12 +46,15 @@ class MainUI:
         self.uic.searchInput.textChanged.connect(self.search_on_table)
 
     def search_on_table(self):
-        searching = self.uic.searchInput.text().lower()
+        searching = self.remove_dau_tieng_viet(self.uic.searchInput.text().lower())
         for row in range(self.uic.tableWidget.rowCount()):
-            stock_code = self.uic.tableWidget.verticalHeaderItem(row)
-            name = self.uic.tableWidget.item(row, 0)
+            stock_code = self.remove_dau_tieng_viet(self.uic.tableWidget.verticalHeaderItem(row).text().lower())
+            name = self.remove_dau_tieng_viet(self.uic.tableWidget.item(row, 0).text().lower())
             self.uic.tableWidget.setRowHidden(row, (
-                        searching not in stock_code.text().lower() and searching not in name.text().lower()))
+                    searching not in stock_code and searching not in name))
+
+    def remove_dau_tieng_viet(self, accented_string):
+        return unidecode.unidecode(accented_string)
 
     def run(self, file_name):
         self.uic.searchInput.clear()
