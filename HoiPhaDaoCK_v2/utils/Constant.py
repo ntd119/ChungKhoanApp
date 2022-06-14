@@ -21,8 +21,8 @@ FILE_CONG_NGHE_THONG_TIN = "cong_nghe_thong_tin.json"
 FILE_LUA_CHON_BOI_CAC_QUY = "chon_boi_quy.json"
 
 NHOM_CO_PHIEU = {
-    FILE_DA_MUA : {
-        "name" : "CP đã mua"
+    FILE_DA_MUA: {
+        "name": "CP đã mua"
     },
     FILE_VN100: {
         "name": "VN100"
@@ -45,69 +45,72 @@ NHOM_CO_PHIEU = {
 }
 
 COLUMN_NAME = {
-    "status": {
+    "name": {
         "index": 0,
+        "name": "Name"
+    },
+    "status": {
+        "index": 1,
         "name": "Status"
     },
     "bought": {
-        "index": 1,
+        "index": 2,
         "name": "Giá mua"
     },
     "lai_lo": {
-        "index": 2,
+        "index": 3,
         "name": "Lãi/Lỗ"
     },
     "current_value": {
-        "index": 3,
+        "index": 4,
         "name": "Giá hiện tại"
     },
     "min_value_week": {
-        "index": 4,
+        "index": 5,
         "name": "Giá min \ntrong tuần"
     },
     "max_value_week": {
-        "index": 5,
+        "index": 6,
         "name": "Giá max \ntrong tuần"
     },
     "percent_max_min": {
-        "index": 6,
+        "index": 7,
         "name": "% Giá Max-Min"
     },
     "percent_max_current": {
-        "index": 7,
+        "index": 8,
         "name": "% Giá hiện tại\nso với giá max"
     },
     "min_time_week": {
-        "index": 8,
+        "index": 9,
         "name": "Min Time"
     },
     "max_time_week": {
-        "index": 9,
+        "index": 10,
         "name": "Max Time"
     },
     "percent_cut_loss": {
-        "index": 10,
+        "index": 11,
         "name": "% Cắt lỗ"
     },
     "percent_sell": {
-        "index": 11,
+        "index": 12,
         "name": "% Bán"
     },
     "tran_value": {
-        "index": 12,
+        "index": 13,
         "name": "Giá trần"
     },
     "san_value": {
-        "index": 13,
+        "index": 14,
         "name": "Giá sàn"
     },
     "open_value": {
-        "index": 14,
+        "index": 15,
         "name": "Giá mở cửa"
     },
     "sound_enable": {
-        "index": 15,
+        "index": 16,
         "name": "Sound"
     }
 }
-

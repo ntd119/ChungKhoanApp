@@ -120,6 +120,13 @@ class MainUI:
             stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
             if len(stock_single) == 1:
                 stock_single = stock_single[0]
+
+                # giá trần _clp_
+                stock_name_value = stock_single['stockName']
+                stock_name_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["name"]["index"], stock_name_item)
+                stock_name_item.setText(_translate("MainWindow", str(stock_name_value)))
+
                 # giá trần _clp_
                 gia_tran_value = stock_single['_clp_']
                 gia_tran_item = QtWidgets.QTableWidgetItem()
