@@ -75,7 +75,7 @@ class MainUI:
             self.data_from_file = dict(
                 sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
             row_number = len(self.data_from_file)
-            self.uic.tableWidget.setGeometry(QtCore.QRect(10, 70, 1350, 521))
+            self.uic.tableWidget.setGeometry(QtCore.QRect(10, 70, 1440, 521))
             self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
