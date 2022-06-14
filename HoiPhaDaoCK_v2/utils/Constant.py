@@ -47,12 +47,15 @@ NHOM_CO_PHIEU = {
 }
 
 POSITION = {
-    "nhomCoPhieuLabel": {
+    "nhom_co_phieu_label": {
         "geometry": QtCore.QRect(10, 10, 511, 31)
     },
-    "table": {
-        "geometry": QtCore.QRect(10, 70, 1440, 521)
+    "search_input": {
+        "geometry": QtCore.QRect(10, 50, 511, 31)
     },
+    "table": {
+        "geometry": QtCore.QRect(10, 100, 1440, 521)
+    }
 }
 
 COLUMN_NAME = {

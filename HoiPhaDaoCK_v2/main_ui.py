@@ -28,12 +28,15 @@ class MainUI:
 
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
-        self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhomCoPhieuLabel"]["geometry"])
+        self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhom_co_phieu_label"]["geometry"])
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.uic.nhomCoPhieuLabel.setFont(font)
+        # textbox tìm kiếm
+        self.uic.searchInput.setFixedWidth(100)
+        self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def run(self, file_name):
         self.update_title(file_name)

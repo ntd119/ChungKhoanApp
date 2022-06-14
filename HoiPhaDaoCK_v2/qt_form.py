@@ -20,6 +20,9 @@ class Ui_MainWindow(object):
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
         self.nhomCoPhieuLabel.setObjectName("nhomCoPhieuLabel")
 
+        self.searchInput = QtWidgets.QLineEdit(self.centralwidget)
+        self.searchInput.setObjectName("searchInput")
+
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setObjectName("tableWidget")
         MainWindow.setCentralWidget(self.centralwidget)
