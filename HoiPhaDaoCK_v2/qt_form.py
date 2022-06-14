@@ -52,11 +52,14 @@ class Ui_MainWindow(object):
         self.menuNangLuong.setObjectName("menuNangLuong")
         self.menuSanXuat = QtWidgets.QAction(MainWindow)
         self.menuSanXuat.setObjectName("menuSanXuat")
+        self.menuCongNgheThongTin = QtWidgets.QAction(MainWindow)
+        self.menuCongNgheThongTin.setObjectName("menuCongNgheThongTin")
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
         self.menuNhonCoPhieu.addAction(self.menuNganHang)
         self.menuNhonCoPhieu.addAction(self.menuNangLuong)
         self.menuNhonCoPhieu.addAction(self.menuSanXuat)
+        self.menuNhonCoPhieu.addAction(self.menuCongNgheThongTin)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -77,3 +80,7 @@ class Ui_MainWindow(object):
         self.menuNangLuong.setShortcut(_translate("MainWindow", "Ctrl+L"))
         self.menuSanXuat.setText(_translate("MainWindow", "Sản xuất"))
         self.menuSanXuat.setShortcut(_translate("MainWindow", "Ctrl+S"))
+        self.menuCongNgheThongTin.setText(_translate("MainWindow", "CNTT"))
+        self.menuCongNgheThongTin.setShortcut(_translate("MainWindow", "Ctrl+C"))
+
+
