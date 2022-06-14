@@ -17,6 +17,7 @@ class MainUI:
         self.data_max_min = None
         self.data_from_file = None
         self.run(FILE_VN100)
+        self.uic.menuDaMua.triggered.connect(lambda : self.run(FILE_DA_MUA))
         self.uic.menuNganHang.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
 
@@ -28,7 +29,9 @@ class MainUI:
 
     def update_title(self, file_name):
         title = "Nhóm cổ phiếu: "
-        if file_name == FILE_NGAN_HANG:
+        if file_name == FILE_DA_MUA:
+            title += "CP đã mua"
+        elif file_name == FILE_NGAN_HANG:
             title += "Ngân Hàng"
         elif file_name == FILE_VN100:
             title += "VN100"

@@ -1,0 +1,42 @@
+{
+  "EIB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 31400,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "HBC": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 21100,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "OCB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 20350,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "VHC": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 102500,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "BCM": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 72300,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  }
+}
