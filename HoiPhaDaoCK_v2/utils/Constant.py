@@ -16,6 +16,7 @@ FILE_DA_MUA = "da_mua.json"
 FILE_VN100 = "vn100.json"
 FILE_NGAN_HANG = "ngan_hang.json"
 FILE_NANG_LUONG = "nang_luong.json"
+FILE_SAN_XUAT = "san_xuat.json"
 
 
 NHOM_CO_PHIEU = {
@@ -30,6 +31,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_NANG_LUONG: {
         "name": "Năng lượng"
+    },
+    FILE_SAN_XUAT: {
+        "name": "Sản xuất"
     }
 }
 

@@ -21,6 +21,7 @@ class MainUI:
         self.uic.menuNganHang.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
         self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
+        self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
 
     def run(self, file_name):
         self.update_title(file_name)
