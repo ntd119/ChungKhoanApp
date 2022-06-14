@@ -1,6 +1,6 @@
 import time
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
 import requests
 import json
