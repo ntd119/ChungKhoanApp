@@ -30,7 +30,7 @@ class MainUI:
         self.uic.nhomCoPhieuLabel.setFont(font)
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(300)
-        self.uic.searchInput.setPlaceholderText("Tìm kiếm mã CK")
+        self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def event_on(self):
@@ -46,8 +46,10 @@ class MainUI:
     def search_on_table(self):
         searching = self.uic.searchInput.text().lower()
         for row in range(self.uic.tableWidget.rowCount()):
-            item = self.uic.tableWidget.verticalHeaderItem(row)
-            self.uic.tableWidget.setRowHidden(row, searching not in item.text().lower())
+            stock_code = self.uic.tableWidget.verticalHeaderItem(row)
+            name = self.uic.tableWidget.item(row, 0)
+            self.uic.tableWidget.setRowHidden(row, (
+                        searching not in stock_code.text().lower() and searching not in name.text().lower()))
 
     def run(self, file_name):
         self.uic.searchInput.clear()
