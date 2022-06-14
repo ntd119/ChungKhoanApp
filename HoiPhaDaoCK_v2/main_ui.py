@@ -29,7 +29,8 @@ class MainUI:
         font.setWeight(75)
         self.uic.nhomCoPhieuLabel.setFont(font)
         # textbox tìm kiếm
-        self.uic.searchInput.setFixedWidth(100)
+        self.uic.searchInput.setFixedWidth(300)
+        self.uic.searchInput.setPlaceholderText("Search theo mã hoặc tên ck")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def event_on(self):
@@ -43,7 +44,10 @@ class MainUI:
         self.uic.searchInput.textChanged.connect(self.search_on_table)
 
     def search_on_table(self):
-        print("xxxx")
+        searching = self.uic.searchInput.text().lower()
+        for row in range(self.uic.tableWidget.rowCount()):
+            item = self.uic.tableWidget.item(row, 0)
+            self.uic.tableWidget.setRowHidden(row, searching not in item.text().lower())
 
     def run(self, file_name):
         self.update_title(file_name)
