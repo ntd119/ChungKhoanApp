@@ -122,10 +122,10 @@
     "CTG": {
         "should_buy": 0,
         "enable_sound": 0,
-        "bought": 0,
+        "bought": 25250,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "follow": 0
+        "follow": 1
     },
     "DBC": {
         "should_buy": 0,
@@ -402,10 +402,10 @@
     "LPB": {
         "should_buy": 0,
         "enable_sound": 0,
-        "bought": 0,
+        "bought": 13150,
         "percent_cut_loss": "4.0",
         "percent_sell": "4.0",
-        "follow": 0
+        "follow": 1
     },
     "MBB": {
         "should_buy": 0,
