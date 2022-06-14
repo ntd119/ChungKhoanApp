@@ -50,6 +50,7 @@ class MainUI:
             self.uic.tableWidget.setRowHidden(row, searching not in item.text().lower())
 
     def run(self, file_name):
+        self.uic.searchInput.clear()
         self.update_title(file_name)
         self.draw_table(file_name)
         self.update_max_min()
