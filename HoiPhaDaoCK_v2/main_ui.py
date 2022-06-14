@@ -17,7 +17,7 @@ class MainUI:
         self.data_max_min = None
         self.data_from_file = None
         self.run(FILE_VN100)
-        self.uic.menuDaMua.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
+        self.uic.menuNganHang.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
 
     def run(self, file_name):
