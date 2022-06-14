@@ -15,6 +15,7 @@ BACKGROUND_NONE = "#FFFFFF"
 FILE_DA_MUA = "da_mua.json"
 FILE_VN100 = "vn100.json"
 FILE_NGAN_HANG = "ngan_hang.json"
+FILE_NANG_LUONG = "nang_luong.json"
 
 COLUMN_NAME = {
     "status": {

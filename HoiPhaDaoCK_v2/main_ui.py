@@ -20,6 +20,7 @@ class MainUI:
         self.uic.menuDaMua.triggered.connect(lambda : self.run(FILE_DA_MUA))
         self.uic.menuNganHang.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
+        self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
 
     def run(self, file_name):
         self.update_title(file_name)
@@ -35,6 +36,8 @@ class MainUI:
             title += "Ngân Hàng"
         elif file_name == FILE_VN100:
             title += "VN100"
+        elif file_name == FILE_NANG_LUONG:
+            title += "Năng lượng"
         self.uic.nhomCoPhieuLabel.setText(title)
 
     def show(self):
