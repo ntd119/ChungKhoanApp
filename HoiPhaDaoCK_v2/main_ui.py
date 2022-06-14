@@ -18,13 +18,7 @@ class MainUI:
         self.data_max_min = None
         self.data_from_file = None
         self.run(FILE_VN100)
-        self.uic.menuDaMua.triggered.connect(lambda : self.run(FILE_DA_MUA))
-        self.uic.menuNganHang.triggered.connect(lambda : self.run(FILE_NGAN_HANG))
-        self.uic.menuVn100.triggered.connect(lambda : self.run(FILE_VN100))
-        self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
-        self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
-        self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
-        self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
+        self.event_on()
 
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
@@ -37,6 +31,19 @@ class MainUI:
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(100)
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
+
+    def event_on(self):
+        self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
+        self.uic.menuNganHang.triggered.connect(lambda: self.run(FILE_NGAN_HANG))
+        self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
+        self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
+        self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
+        self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
+        self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
+        self.uic.searchInput.textChanged.connect(self.search_on_table)
+
+    def search_on_table(self):
+        print("xxxx")
 
     def run(self, file_name):
         self.update_title(file_name)
