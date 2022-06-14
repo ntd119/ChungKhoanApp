@@ -23,6 +23,7 @@ class MainUI:
         self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
         self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
         self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
+        self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
 
     def run(self, file_name):
         self.update_title(file_name)
