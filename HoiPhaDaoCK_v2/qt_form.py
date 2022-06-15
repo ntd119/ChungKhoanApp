@@ -23,6 +23,9 @@ class Ui_MainWindow(object):
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
         self.nhomCoPhieuLabel.setObjectName("nhomCoPhieuLabel")
 
+        self.phanTramThayDoiTrongTuanLabel = QtWidgets.QLabel(self.centralwidget)
+        self.phanTramThayDoiTrongTuanLabel.setObjectName("phanTramThayDoiTrongTuanLabel")
+
         self.searchInput = QtWidgets.QLineEdit(self.centralwidget)
         self.searchInput.setObjectName("searchInput")
 

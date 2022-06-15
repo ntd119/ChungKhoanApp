@@ -57,8 +57,11 @@ POSITION = {
     "search_input": {
         "geometry": QtCore.QRect(10, 50, 511, 31)
     },
+    "phan_tram_thay_doi_trong_tuan": {
+        "geometry": QtCore.QRect(10, 100, 511, 31)
+    },
     "table": {
-        "geometry": QtCore.QRect(10, 100, 1440, 571)
+        "geometry": QtCore.QRect(10, 150, 1440, 571)
     }
 }
 

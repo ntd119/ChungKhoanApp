@@ -14,10 +14,12 @@ class MainUI:
         self.main_win = QMainWindow()
         self.uic = Ui_MainWindow()
         self.uic.setupUi(self.main_win)
-        self.setPositon()
+        self.head_sum = 0
+        self.current_sum = 0
         self.data_vietstock = None
         self.data_max_min = None
         self.data_from_file = None
+        self.setPositon()
         self.run(FILE_VN100)
         self.event_on()
 
@@ -29,6 +31,12 @@ class MainUI:
         font.setBold(True)
         font.setWeight(75)
         self.uic.nhomCoPhieuLabel.setFont(font)
+
+        # Phần trăm thay đổi trong tuần
+        self.uic.phanTramThayDoiTrongTuanLabel.setGeometry(POSITION["phan_tram_thay_doi_trong_tuan"]["geometry"])
+        self.uic.phanTramThayDoiTrongTuanLabel.setText("% thay đổi trong tuần")
+        self.uic.phanTramThayDoiTrongTuanLabel.setFont(font)
+
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(300)
         self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
@@ -142,6 +150,7 @@ class MainUI:
                 item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
 
     def update_table(self):
+        self.current_sum = 0
         now = datetime.now().time()
         format_time = now.strftime("%H:%M:%S")
         print(f"Update gia co phieu... {format_time}")
@@ -178,6 +187,7 @@ class MainUI:
 
                 # giá hiện tại _cp_
                 gia_hien_tai_value = stock_single['_cp_']
+                self.current_sum += gia_hien_tai_value
                 percent = stock_single['_pc_']
                 gia_hien_tai_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["current_value"]["index"], gia_hien_tai_item)
@@ -265,6 +275,12 @@ class MainUI:
                 stock_name_item.setText(_translate("MainWindow", "Mã ck không tồn tại"))
                 self.uic.tableWidget.item(row_index, COLUMN_NAME["name"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LO))
+
+        # Set phần trăm thay đổi trong tuần
+        percent_sum = ((self.current_sum - self.head_sum) / self.head_sum) * 100
+        self.uic.phanTramThayDoiTrongTuanLabel.setText(
+            "% thay đổi trong tuần " + self.format_2_decimal(percent_sum) + "%")
+
     def call_api_max_min(self):
         try:
             response = requests.get(MAX_MIN_END_POINT, headers=HEADERS)
@@ -281,6 +297,7 @@ class MainUI:
 
     def update_max_min(self):
         print("Update gia max min")
+        self.head_sum = 0
         self.call_api_max_min()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
@@ -288,6 +305,7 @@ class MainUI:
                 max_min_dict = self.data_max_min[stock_code]
             except KeyError:
                 continue
+            self.head_sum += max_min_dict["head_price"]
             # giá min tuần này
             min_value = max_min_dict["min_price"]
             gia_min_this_week_item = QtWidgets.QTableWidgetItem()
