@@ -17,7 +17,7 @@ from utils.Constant import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1480, 720)
+        MainWindow.resize(1480, 770)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
