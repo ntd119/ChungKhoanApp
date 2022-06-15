@@ -148,12 +148,11 @@ class MainUI:
         self.call_api_vietstock()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
-            item_dict = self.data_from_file[stock_code]
             stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
             if len(stock_single) == 1:
                 stock_single = stock_single[0]
 
-                # giá trần _clp_
+                # Tên cổ phiếu
                 stock_name_value = stock_single['stockName']
                 stock_name_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["name"]["index"], stock_name_item)
@@ -260,7 +259,12 @@ class MainUI:
                 else:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_current"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_LO))
-
+            else:
+                stock_name_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["name"]["index"], stock_name_item)
+                stock_name_item.setText(_translate("MainWindow", "Mã ck không tồn tại"))
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["name"]["index"]).setBackground(
+                    QtGui.QColor(BACKGROUND_LO))
     def call_api_max_min(self):
         try:
             response = requests.get(MAX_MIN_END_POINT, headers=HEADERS)
@@ -280,7 +284,10 @@ class MainUI:
         self.call_api_max_min()
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
-            max_min_dict = self.data_max_min[stock_code]
+            try:
+                max_min_dict = self.data_max_min[stock_code]
+            except KeyError:
+                continue
             # giá min tuần này
             min_value = max_min_dict["min_price"]
             gia_min_this_week_item = QtWidgets.QTableWidgetItem()
