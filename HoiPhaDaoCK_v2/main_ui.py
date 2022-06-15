@@ -1,4 +1,6 @@
 import time
+
+from PyQt5.QtGui import QPalette
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
@@ -34,8 +36,14 @@ class MainUI:
 
         # Phần trăm thay đổi trong tuần
         self.uic.phanTramThayDoiTrongTuanLabel.setGeometry(POSITION["phan_tram_thay_doi_trong_tuan"]["geometry"])
-        self.uic.phanTramThayDoiTrongTuanLabel.setText("% thay đổi trong tuần")
+        self.uic.phanTramThayDoiTrongTuanLabel.setText("Phần trăm thay đổi trong tuần: ")
         self.uic.phanTramThayDoiTrongTuanLabel.setFont(font)
+
+        # Giá trị phần trăm thay đổi trong tuần
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setGeometry(POSITION["phan_tram_thay_doi_trong_tuan_value"]["geometry"])
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setText(self.format_2_decimal(0) + "%")
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setFont(font)
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setStyleSheet(f'color: {BACKGROUND_LAI}')
 
         # textbox tìm kiếm
         self.uic.searchInput.setFixedWidth(300)
@@ -278,8 +286,11 @@ class MainUI:
 
         # Set phần trăm thay đổi trong tuần
         percent_sum = ((self.current_sum - self.head_sum) / self.head_sum) * 100
-        self.uic.phanTramThayDoiTrongTuanLabel.setText(
-            "% thay đổi trong tuần " + self.format_2_decimal(percent_sum) + "%")
+        color_sum = BACKGROUND_LAI
+        if percent_sum < 0:
+            color_sum = BACKGROUND_LO
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setText(self.format_2_decimal(percent_sum) + "%")
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setStyleSheet(f'color: {color_sum}')
 
     def call_api_max_min(self):
         try:

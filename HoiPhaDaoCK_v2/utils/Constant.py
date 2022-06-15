@@ -60,6 +60,9 @@ POSITION = {
     "phan_tram_thay_doi_trong_tuan": {
         "geometry": QtCore.QRect(10, 100, 511, 31)
     },
+    "phan_tram_thay_doi_trong_tuan_value": {
+        "geometry": QtCore.QRect(400, 100, 511, 31)
+    },
     "table": {
         "geometry": QtCore.QRect(10, 150, 1440, 571)
     }

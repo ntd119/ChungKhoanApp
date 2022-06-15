@@ -26,6 +26,9 @@ class Ui_MainWindow(object):
         self.phanTramThayDoiTrongTuanLabel = QtWidgets.QLabel(self.centralwidget)
         self.phanTramThayDoiTrongTuanLabel.setObjectName("phanTramThayDoiTrongTuanLabel")
 
+        self.phanTramThayDoiTrongTuanValueLabel = QtWidgets.QLabel(self.centralwidget)
+        self.phanTramThayDoiTrongTuanValueLabel.setObjectName("phanTramThayDoiTrongTuanValueLabel")
+
         self.searchInput = QtWidgets.QLineEdit(self.centralwidget)
         self.searchInput.setObjectName("searchInput")
 
