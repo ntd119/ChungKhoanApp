@@ -36,6 +36,7 @@ class MainUI:
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def event_on(self):
+        self.uic.searchInput.textChanged.connect(self.search_on_table)
         self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
         self.uic.menuNganHang.triggered.connect(lambda: self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
@@ -43,7 +44,7 @@ class MainUI:
         self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
         self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
         self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
-        self.uic.searchInput.textChanged.connect(self.search_on_table)
+        self.uic.menuQuyETF.triggered.connect(lambda: self.run(FILE_QUY_ETF))
 
     def search_on_table(self):
         searching = self.remove_dau_tieng_viet(self.uic.searchInput.text().lower())

@@ -21,6 +21,7 @@ FILE_NANG_LUONG = "nang_luong.json"
 FILE_SAN_XUAT = "san_xuat.json"
 FILE_CONG_NGHE_THONG_TIN = "cong_nghe_thong_tin.json"
 FILE_LUA_CHON_BOI_CAC_QUY = "chon_boi_quy.json"
+FILE_QUY_ETF = "quy_etf.json"
 
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
@@ -43,6 +44,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_LUA_CHON_BOI_CAC_QUY: {
         "name": "Lựa chọn bởi các quỹ"
+    },
+    FILE_QUY_ETF: {
+        "name": "Quỹ ETF"
     }
 }
 
