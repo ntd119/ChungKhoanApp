@@ -1,0 +1,178 @@
+{
+    "BMC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "C32": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DHA": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DHM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DTL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "FCM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HPG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HSG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "KSB": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "LCM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "MDG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NKG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NNC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "POM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "PVD": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "SMC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TLH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TNI": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TNT": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VCA": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VIS": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VPG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    }
+}
