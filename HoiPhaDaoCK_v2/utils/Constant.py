@@ -15,6 +15,7 @@ BACKGROUND_GIAM = "#F33232"
 BACKGROUND_SAN = "#0A8AE3"
 BACKGROUND_NONE = "#FFFFFF"
 FILE_DA_MUA = "da_mua.json"
+FILE_VN30 = "vn30.json"
 FILE_VN100 = "vn100.json"
 FILE_NGAN_HANG = "ngan_hang.json"
 FILE_NANG_LUONG = "nang_luong.json"
@@ -26,6 +27,9 @@ FILE_QUY_ETF = "quy_etf.json"
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
         "name": "CP đã mua"
+    },
+    FILE_VN30: {
+        "name": "VN30"
     },
     FILE_VN100: {
         "name": "VN100"

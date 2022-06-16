@@ -54,6 +54,7 @@ class MainUI:
     def event_on(self):
         self.uic.searchInput.textChanged.connect(self.search_on_table)
         self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
+        self.uic.menuVn30.triggered.connect(lambda: self.run(FILE_VN30))
         self.uic.menuNganHang.triggered.connect(lambda: self.run(FILE_NGAN_HANG))
         self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
         self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
