@@ -17,7 +17,7 @@ from utils.Constant import *
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1480, 770)
+        MainWindow.resize(1480, 790)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
@@ -63,6 +63,11 @@ class Ui_MainWindow(object):
         self.menuLuaChonBoiCacQuy.setObjectName("menuLuaChonBoiCacQuy")
         self.menuQuyETF = QtWidgets.QAction(MainWindow)
         self.menuQuyETF.setObjectName("menuQuyETF")
+
+        # Cổ phiếu trong khoản 10k
+        self.menuCoPhieuTrongKhoan10k = QtWidgets.QAction(MainWindow)
+        self.menuCoPhieuTrongKhoan10k.setObjectName("menuCoPhieuTrongKhoan10k")
+
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -72,6 +77,7 @@ class Ui_MainWindow(object):
         self.menuNhonCoPhieu.addAction(self.menuCongNgheThongTin)
         self.menuNhonCoPhieu.addAction(self.menuLuaChonBoiCacQuy)
         self.menuNhonCoPhieu.addAction(self.menuQuyETF)
+        self.menuNhonCoPhieu.addAction(self.menuCoPhieuTrongKhoan10k)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -97,6 +103,8 @@ class Ui_MainWindow(object):
         self.menuLuaChonBoiCacQuy.setText(_translate("MainWindow", "Lựa chọn bởi các quỹ"))
         self.menuLuaChonBoiCacQuy.setShortcut(_translate("MainWindow", "Ctrl+Q"))
         self.menuQuyETF.setText(_translate("MainWindow", NHOM_CO_PHIEU[FILE_QUY_ETF]["name"]))
+        self.menuCoPhieuTrongKhoan10k.setText(_translate("MainWindow", NHOM_CO_PHIEU[FILE_CO_PHIEU_TRONG_KHOAN_10K]["name"]))
+
 
 
 
