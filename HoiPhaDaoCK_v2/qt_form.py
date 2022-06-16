@@ -75,6 +75,10 @@ class Ui_MainWindow(object):
         self.menuBatDongSan = QtWidgets.QAction(MainWindow)
         self.menuBatDongSan.setObjectName("menuBatDongSan")
 
+        # Dược phẩm và y tế
+        self.menuDuocPhamVaYte = QtWidgets.QAction(MainWindow)
+        self.menuDuocPhamVaYte.setObjectName("menuDuocPhamVaYte")
+
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -87,6 +91,7 @@ class Ui_MainWindow(object):
         self.menuNhonCoPhieu.addAction(self.menuCoPhieuTrongKhoan10k)
         self.menuNhonCoPhieu.addAction(self.menuBanLe)
         self.menuNhonCoPhieu.addAction(self.menuBatDongSan)
+        self.menuNhonCoPhieu.addAction(self.menuDuocPhamVaYte)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -118,3 +123,5 @@ class Ui_MainWindow(object):
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_BAN_LE]["name"]))
         self.menuBatDongSan.setText(
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_BAT_DONG_SAN]["name"]))
+        self.menuDuocPhamVaYte.setText(
+            _translate("MainWindow", NHOM_CO_PHIEU[FILE_DUOC_PHAM_Y_TE]["name"]))
