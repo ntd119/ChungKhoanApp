@@ -71,6 +71,10 @@ class Ui_MainWindow(object):
         self.menuBanLe = QtWidgets.QAction(MainWindow)
         self.menuBanLe.setObjectName("menuBanLe")
 
+        # Bất động sản
+        self.menuBatDongSan = QtWidgets.QAction(MainWindow)
+        self.menuBatDongSan.setObjectName("menuBatDongSan")
+
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -82,6 +86,7 @@ class Ui_MainWindow(object):
         self.menuNhonCoPhieu.addAction(self.menuQuyETF)
         self.menuNhonCoPhieu.addAction(self.menuCoPhieuTrongKhoan10k)
         self.menuNhonCoPhieu.addAction(self.menuBanLe)
+        self.menuNhonCoPhieu.addAction(self.menuBatDongSan)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -111,3 +116,5 @@ class Ui_MainWindow(object):
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_CO_PHIEU_TRONG_KHOAN_10K]["name"]))
         self.menuBanLe.setText(
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_BAN_LE]["name"]))
+        self.menuBatDongSan.setText(
+            _translate("MainWindow", NHOM_CO_PHIEU[FILE_BAT_DONG_SAN]["name"]))
