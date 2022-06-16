@@ -24,6 +24,7 @@ FILE_CONG_NGHE_THONG_TIN = "cong_nghe_thong_tin.json"
 FILE_LUA_CHON_BOI_CAC_QUY = "chon_boi_quy.json"
 FILE_QUY_ETF = "quy_etf.json"
 FILE_CO_PHIEU_TRONG_KHOAN_10K = "cp_10k.json"
+FILE_BAN_LE = "ban_le.json"
 
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
@@ -55,6 +56,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_CO_PHIEU_TRONG_KHOAN_10K: {
         "name": "Cổ phiếu trong khoản 10k"
+    },
+    FILE_BAN_LE: {
+        "name": "Bán lẻ"
     }
 }
 

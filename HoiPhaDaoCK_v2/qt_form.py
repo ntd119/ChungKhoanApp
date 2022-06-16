@@ -13,7 +13,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from utils.Constant import *
 
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -68,6 +67,10 @@ class Ui_MainWindow(object):
         self.menuCoPhieuTrongKhoan10k = QtWidgets.QAction(MainWindow)
         self.menuCoPhieuTrongKhoan10k.setObjectName("menuCoPhieuTrongKhoan10k")
 
+        # Bán lẻ
+        self.menuBanLe = QtWidgets.QAction(MainWindow)
+        self.menuBanLe.setObjectName("menuBanLe")
+
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -78,6 +81,7 @@ class Ui_MainWindow(object):
         self.menuNhonCoPhieu.addAction(self.menuLuaChonBoiCacQuy)
         self.menuNhonCoPhieu.addAction(self.menuQuyETF)
         self.menuNhonCoPhieu.addAction(self.menuCoPhieuTrongKhoan10k)
+        self.menuNhonCoPhieu.addAction(self.menuBanLe)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -103,8 +107,7 @@ class Ui_MainWindow(object):
         self.menuLuaChonBoiCacQuy.setText(_translate("MainWindow", "Lựa chọn bởi các quỹ"))
         self.menuLuaChonBoiCacQuy.setShortcut(_translate("MainWindow", "Ctrl+Q"))
         self.menuQuyETF.setText(_translate("MainWindow", NHOM_CO_PHIEU[FILE_QUY_ETF]["name"]))
-        self.menuCoPhieuTrongKhoan10k.setText(_translate("MainWindow", NHOM_CO_PHIEU[FILE_CO_PHIEU_TRONG_KHOAN_10K]["name"]))
-
-
-
-
+        self.menuCoPhieuTrongKhoan10k.setText(
+            _translate("MainWindow", NHOM_CO_PHIEU[FILE_CO_PHIEU_TRONG_KHOAN_10K]["name"]))
+        self.menuBanLe.setText(
+            _translate("MainWindow", NHOM_CO_PHIEU[FILE_BAN_LE]["name"]))
