@@ -28,6 +28,7 @@ FILE_BAN_LE = "ban_le.json"
 FILE_BAT_DONG_SAN = "bat_dong_san.json"
 FILE_DUOC_PHAM_Y_TE = "duoc_pham_y_te.json"
 FILE_TAI_CHINH = "tai_chinh.json"
+FILE_TAI_NGUYEN = "tai_nguyen.json"
 
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
@@ -71,6 +72,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_TAI_CHINH: {
         "name": "Tài chính"
+    },
+    FILE_TAI_NGUYEN: {
+        "name": "Tài nguyên"
     }
 }
 
