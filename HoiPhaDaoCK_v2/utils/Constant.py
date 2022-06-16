@@ -27,6 +27,7 @@ FILE_CO_PHIEU_TRONG_KHOAN_10K = "cp_10k.json"
 FILE_BAN_LE = "ban_le.json"
 FILE_BAT_DONG_SAN = "bat_dong_san.json"
 FILE_DUOC_PHAM_Y_TE = "duoc_pham_y_te.json"
+FILE_TAI_CHINH = "tai_chinh.json"
 
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
@@ -67,6 +68,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_DUOC_PHAM_Y_TE: {
         "name": "Dược phẩm và y tế"
+    },
+    FILE_TAI_CHINH: {
+        "name": "Tài chính"
     }
 }
 
