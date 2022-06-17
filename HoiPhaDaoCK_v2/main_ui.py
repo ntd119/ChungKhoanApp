@@ -25,7 +25,6 @@ class MainUI:
         self.run(FILE_VN100)
         self.write_to_all_file()
         self.event_on()
-        self.chang_in_week()
 
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
@@ -62,7 +61,10 @@ class MainUI:
                 continue
             head_price = max_min_dict["head_price"]
             tail_price = max_min_dict["tail_price"]
-            percent = ((tail_price - head_price)/head_price) * 100
+            try:
+                percent = ((tail_price - head_price) / head_price) * 100
+            except:
+                percent = 0
             item_bought = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["changT8"]["index"], item_bought)
             item_bought.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
@@ -131,6 +133,7 @@ class MainUI:
         self.draw_table(file_name)
         self.update_max_min()
         self.update_table()
+        self.chang_in_week()
 
     def update_title(self, file_name):
         title = "Nhóm cổ phiếu: " + NHOM_CO_PHIEU[file_name]["name"]
