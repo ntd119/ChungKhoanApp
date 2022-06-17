@@ -99,6 +99,10 @@ class Ui_MainWindow(object):
         self.menuXayDungVaVatLieu = QtWidgets.QAction(MainWindow)
         self.menuXayDungVaVatLieu.setObjectName("menuXayDungVaVatLieu")
 
+        # Tất cả
+        self.menuTatCa = QtWidgets.QAction(MainWindow)
+        self.menuTatCa.setObjectName("menuTatCa")
+
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -117,6 +121,7 @@ class Ui_MainWindow(object):
         self.menuNhonCoPhieu.addAction(self.menuThucPhamVaDoUong)
         self.menuNhonCoPhieu.addAction(self.menuVanTai)
         self.menuNhonCoPhieu.addAction(self.menuXayDungVaVatLieu)
+        self.menuNhonCoPhieu.addAction(self.menuTatCa)
         self.menubar.addAction(self.menuNhonCoPhieu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -160,3 +165,5 @@ class Ui_MainWindow(object):
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_VAN_TAI]["name"]))
         self.menuXayDungVaVatLieu.setText(
             _translate("MainWindow", NHOM_CO_PHIEU[FILE_XAY_DUNG_VA_VAT_LIEU]["name"]))
+        self.menuTatCa.setText(
+            _translate("MainWindow", NHOM_CO_PHIEU[FILE_TAT_CA]["name"]))
