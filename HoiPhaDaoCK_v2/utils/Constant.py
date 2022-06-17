@@ -31,6 +31,7 @@ FILE_TAI_CHINH = "tai_chinh.json"
 FILE_TAI_NGUYEN = "tai_nguyen.json"
 FILE_THUC_PHAM_VA_DO_UONG = "thuc_pham_va_do_uong.json"
 FILE_VAN_TAI = "van_tai.json"
+FILE_XAY_DUNG_VA_VAT_LIEU = "xay_dung_va_vat_lieu.json"
 
 NHOM_CO_PHIEU = {
     FILE_DA_MUA: {
@@ -83,6 +84,9 @@ NHOM_CO_PHIEU = {
     },
     FILE_VAN_TAI: {
         "name": "Vận tải"
+    },
+    FILE_XAY_DUNG_VA_VAT_LIEU: {
+        "name": "Xây dựng & vật liệu"
     }
 }
 
