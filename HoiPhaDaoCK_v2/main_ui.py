@@ -25,6 +25,7 @@ class MainUI:
         self.run(FILE_VN100)
         self.write_to_all_file()
         self.event_on()
+        self.chang_in_week()
 
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
@@ -51,6 +52,27 @@ class MainUI:
         self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
         self.uic.searchInput.setToolTip("Không cần nhập có dấu")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
+
+    def chang_in_week(self):
+        _translate = QtCore.QCoreApplication.translate
+        for row_index, stock_code in enumerate(self.data_from_file):
+            try:
+                max_min_dict = self.data_max_min[stock_code]
+            except KeyError:
+                continue
+            head_price = max_min_dict["head_price"]
+            tail_price = max_min_dict["tail_price"]
+            percent = ((tail_price - head_price)/head_price) * 100
+            item_bought = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["changT8"]["index"], item_bought)
+            item_bought.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
+            if percent < 0:
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT8"]["index"]).setBackground(
+                    QtGui.QColor(BACKGROUND_LO))
+            else:
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT8"]["index"]).setBackground(
+                    QtGui.QColor(BACKGROUND_LAI))
+
 
     def event_on(self):
         self.uic.searchInput.textChanged.connect(self.search_on_table)

@@ -180,5 +180,9 @@ COLUMN_NAME = {
     "sound_enable": {
         "index": 16,
         "name": "Sound"
+    },
+    "changT8": {
+        "index": 17,
+        "name": "Thay đổi\ntrong tuần"
     }
 }
