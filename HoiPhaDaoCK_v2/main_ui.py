@@ -23,6 +23,7 @@ class MainUI:
         self.data_from_file = None
         self.setPositon()
         self.run(FILE_VN100)
+        self.write_to_all_file()
         self.event_on()
 
     def setPositon(self):
@@ -72,6 +73,24 @@ class MainUI:
         self.uic.menuVanTai.triggered.connect(lambda: self.run(FILE_VAN_TAI))
         self.uic.menuXayDungVaVatLieu.triggered.connect(lambda: self.run(FILE_XAY_DUNG_VA_VAT_LIEU))
         self.uic.menuTatCa.triggered.connect(lambda: self.run(FILE_TAT_CA))
+
+    def write_to_all_file(self):
+        with open("data/tat_ca.json", 'r') as data_file:
+            data_from_file = json.load(data_file)
+        with open("data/tat_ca.json", 'w') as stock_file:
+            for item in self.data_vietstock:
+                stock = {
+                    item["_sc_"]: {
+                        "should_buy": 0,
+                        "enable_sound": 0,
+                        "bought": 0,
+                        "percent_cut_loss": "4.0",
+                        "percent_sell": "4.0",
+                        "follow": 0
+                    }
+                }
+                data_from_file.update(stock)
+            json.dump(data_from_file, stock_file, indent=4)
 
     def search_on_table(self):
         searching = self.remove_dau_tieng_viet(self.uic.searchInput.text().lower())
@@ -273,10 +292,13 @@ class MainUI:
                             self.uic.tableWidget.item(row_index, COLUMN_NAME["status"]["index"]).setBackground(
                                 QtGui.QColor(BACKGROUND_LO))
                 # Phần trăm giá max so với hiện tại
-                gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
-                gia_max_this_week = gia_max_this_week.replace(',', '')
-                percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week)) / float(
-                    gia_max_this_week)) * 100
+                try:
+                    gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
+                    gia_max_this_week = gia_max_this_week.replace(',', '')
+                    percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week)) / float(
+                        gia_max_this_week)) * 100
+                except:
+                    pass
                 percent_max_current_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_max_current"]["index"],
                                              percent_max_current_item)
