@@ -69,6 +69,7 @@ class MainUI:
         self.uic.menuTaiChinh.triggered.connect(lambda: self.run(FILE_TAI_CHINH))
         self.uic.menuTaiNguyen.triggered.connect(lambda: self.run(FILE_TAI_NGUYEN))
         self.uic.menuThucPhamVaDoUong.triggered.connect(lambda: self.run(FILE_THUC_PHAM_VA_DO_UONG))
+        self.uic.menuVanTai.triggered.connect(lambda: self.run(FILE_VAN_TAI))
 
     def search_on_table(self):
         searching = self.remove_dau_tieng_viet(self.uic.searchInput.text().lower())
