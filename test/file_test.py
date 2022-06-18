@@ -20,18 +20,18 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 
 def gia_qua_khu():
     fireant_prams = {
-        "startDate": "2022-06-17",
-        "endDate": "2022-06-17"
+        "startDate": "2022-06-06",
+        "endDate": "2022-06-06"
     }
     stock_code = "gas"
     try:
         response = requests.get(FIREANT_URL + f"symbols/{stock_code}/historical-quotes", params=fireant_prams,
                                 headers=HEADERS)
         data =  response.json()
+        # with ()
         print(data)
     except:
         print("Method error: gia_qua_khu")
         time.sleep(5)
-        self.gia_qua_khu()
 
 gia_qua_khu()
