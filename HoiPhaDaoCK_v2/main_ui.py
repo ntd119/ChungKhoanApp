@@ -31,6 +31,7 @@ class MainUI:
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
         self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhom_co_phieu_label"]["geometry"])
         self.uic.thongKeButton.setGeometry(POSITION["button_thong_ke"]["geometry"])
+        self.uic.thongKeButton.setText("Thống kê")
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
