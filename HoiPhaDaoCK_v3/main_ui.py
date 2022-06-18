@@ -26,6 +26,20 @@ class MainUI:
         self.write_to_all_file()
         self.event_on()
 
+    def gia_qua_khu(self, stock_code):
+        fireant_prams = {
+            "startDate": "2022-06-17",
+            "endDate": "2022-06-17"
+        }
+        try:
+            response = requests.get(FIREANT_URL + f"symbols/{stock_code}/historical-quotes", params=fireant_prams, headers=HEADERS)
+            return response.json()
+        except:
+            print("Method error: gia_qua_khu")
+            time.sleep(5)
+            self.gia_qua_khu()
+
+
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
         self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhom_co_phieu_label"]["geometry"])
@@ -53,8 +67,10 @@ class MainUI:
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def chang_in_week(self):
+
         _translate = QtCore.QCoreApplication.translate
         for row_index, stock_code in enumerate(self.data_from_file):
+            # data_qua_khu = self.gia_qua_khu(stock_code)
             try:
                 max_min_dict = self.data_max_min[stock_code]
             except KeyError:
