@@ -43,9 +43,14 @@ def gia_qua_khu():
                         "head_price": 0,
                         "tail_price": 0,
                         "type": "",
+                        "line_price_2": [],
+                        "line_price_3": [],
+                        "line_price_4": [],
+                        "line_price_5": [],
+                        "line_price_6": []
                     }
                 }
-                data_from_file.update(stock_name)
+                data_from_file.update(dic_item)
             json.dump(data_from_file, stock_file, indent=4)
 
         # for item in data_all:
