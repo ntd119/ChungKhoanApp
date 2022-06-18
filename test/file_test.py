@@ -25,11 +25,36 @@ def gia_qua_khu():
     }
     stock_code = "gas"
     try:
-        response = requests.get(FIREANT_URL + f"symbols/{stock_code}/historical-quotes", params=fireant_prams,
-                                headers=HEADERS)
-        data =  response.json()
-        # with ()
-        print(data)
+        data_from_file = None
+        data_all = None
+        with open("data/stock_T1.json", "r") as file:
+            data_from_file = json.load(file)
+        with open("data/tat_ca.json", "r") as file:
+            data_all = json.load(file)
+
+        with open("data/stock_T1.json", "w") as stock_file:
+            for stock_name in data_all:
+                dic_item = {
+                    stock_name: {
+                        "max_price": 0,
+                        "max_price_time": 0,
+                        "min_price": 0,
+                        "min_price_time": 0,
+                        "head_price": 0,
+                        "tail_price": 0,
+                        "type": "",
+                    }
+                }
+                data_from_file.update(stock_name)
+            json.dump(data_from_file, stock_file, indent=4)
+
+        # for item in data_all:
+        #     response = requests.get(FIREANT_URL + f"symbols/{item}/historical-quotes", params=fireant_prams,
+        #                             headers=HEADERS)
+        #     data = response.json()
+        #     print(data)
+
+
     except:
         print("Method error: gia_qua_khu")
         time.sleep(5)
