@@ -17,6 +17,7 @@ class StatisticUI:
         self.data_max_min_0 = self.call_api_max_min(0)
         self.data_max_min_1 = self.call_api_max_min(1)
         self.data_max_min_2 = self.call_api_max_min(2)
+        self.data_max_min_3 = self.call_api_max_min(3)
         self.show_table()
 
     def call_api_max_min(self, index_file):
@@ -58,7 +59,7 @@ class StatisticUI:
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
-        for i in range(3):
+        for i in range(4):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setHorizontalHeaderItem(i, item)
             item.setText(_translate("MainWindow", f"Giá hiện tại\nso với thứ 2\n{i}"))
@@ -69,7 +70,7 @@ class StatisticUI:
             self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
             item.setText(_translate("MainWindow", ten_nganh["name"]))
 
-        for colum_index in range(3):
+        for colum_index in range(4):
             for row_index, nganh in enumerate(nhom_nganh):
                 file_name = nganh["file"]
                 percent = self.tinh_phan_tram_thay_doi(file_name, colum_index)
@@ -101,6 +102,8 @@ class StatisticUI:
                         max_min_dict = self.data_max_min_1[stock_code]
                     elif index_file == 2:
                         max_min_dict = self.data_max_min_2[stock_code]
+                    elif index_file == 3:
+                        max_min_dict = self.data_max_min_3[stock_code]
                 except KeyError:
                     continue
                 sum_head_price += max_min_dict["head_price"]
