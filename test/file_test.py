@@ -17,8 +17,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
            }
 
 
-def gia_qua_khu():
-    tuan = 4
+def gia_qua_khu(tuan):
     date_1 = datetime.datetime(2022, 6, 13)
     end_date = date_1 - datetime.timedelta(days=7 * tuan)
     date_format = end_date.strftime("%Y-%m-%d")
@@ -71,4 +70,9 @@ def gia_qua_khu():
             data_from_file.update(dic_item)
         json.dump(data_from_file, stock_file, indent=4)
 
-gia_qua_khu()
+
+for tuan in range(300):
+    if tuan < 5:
+        continue
+    gia_qua_khu(tuan)
+
