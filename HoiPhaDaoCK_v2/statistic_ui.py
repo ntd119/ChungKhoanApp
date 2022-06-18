@@ -43,7 +43,7 @@ class StatisticUI:
         for i in range(1):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setHorizontalHeaderItem(i, item)
-            item.setText(_translate("MainWindow", "Phần trăm\nthay đổi\ntrong tuần"))
+            item.setText(_translate("MainWindow", "Phần trăm\nthay đổi\ntuần trước"))
 
         # set tên dòng
         for row_index, ten_nganh in enumerate(nhom_nganh):
