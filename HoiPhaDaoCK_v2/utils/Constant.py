@@ -107,6 +107,9 @@ POSITION = {
     "phan_tram_thay_doi_trong_tuan_value": {
         "geometry": QtCore.QRect(400, 100, 511, 31)
     },
+    "button_thong_ke": {
+        "geometry": QtCore.QRect(500, 100, 111, 31)
+    },
     "table": {
         "geometry": QtCore.QRect(10, 150, 1440, 571)
     }

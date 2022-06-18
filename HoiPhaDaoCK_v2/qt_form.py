@@ -22,14 +22,20 @@ class Ui_MainWindow(object):
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
         self.nhomCoPhieuLabel.setObjectName("nhomCoPhieuLabel")
 
+        # Textbox tìm kiếm
+        self.searchInput = QtWidgets.QLineEdit(self.centralwidget)
+        self.searchInput.setObjectName("searchInput")
+
+        # Phần trăm thay đổi trong tuần
         self.phanTramThayDoiTrongTuanLabel = QtWidgets.QLabel(self.centralwidget)
         self.phanTramThayDoiTrongTuanLabel.setObjectName("phanTramThayDoiTrongTuanLabel")
 
         self.phanTramThayDoiTrongTuanValueLabel = QtWidgets.QLabel(self.centralwidget)
         self.phanTramThayDoiTrongTuanValueLabel.setObjectName("phanTramThayDoiTrongTuanValueLabel")
 
-        self.searchInput = QtWidgets.QLineEdit(self.centralwidget)
-        self.searchInput.setObjectName("searchInput")
+        # Button thống kê
+        self.thongKeButton = QtWidgets.QPushButton(self.centralwidget)
+        self.thongKeButton.setObjectName("thongKeButton")
 
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setObjectName("tableWidget")

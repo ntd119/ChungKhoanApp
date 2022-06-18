@@ -29,6 +29,7 @@ class MainUI:
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
         self.uic.nhomCoPhieuLabel.setGeometry(POSITION["nhom_co_phieu_label"]["geometry"])
+        self.uic.thongKeButton.setGeometry(POSITION["button_thong_ke"]["geometry"])
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
