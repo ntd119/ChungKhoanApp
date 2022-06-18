@@ -28,11 +28,8 @@ def gia_qua_khu():
         "endDate": date_format
     }
     try:
-        # with open(f"data/stock_T{tuan}.json", "x") as file:
-        #     data_from_file = json.load(file)
-        #     data_from_file.update("{}")
-        #     print("sds")
-        #     json.dump(data_from_file, file, indent=4)
+        with open(f"data/stock_T{tuan}.json", "r") as file:
+            data_from_file = json.load(file)
 
         with open("data/tat_ca.json", "r") as file:
             data_all = json.load(file)
