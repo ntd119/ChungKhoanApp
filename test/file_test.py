@@ -18,7 +18,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 
 
 def gia_qua_khu():
-    tuan = 3
+    tuan = 4
     date_1 = datetime.datetime(2022, 6, 13)
     end_date = date_1 - datetime.timedelta(days=7 * tuan)
     date_format = end_date.strftime("%Y-%m-%d")
