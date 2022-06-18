@@ -4,6 +4,7 @@ from PyQt5.QtGui import QPalette
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
+from statistic_form import Ui_Dialog
 import requests
 import json
 from datetime import datetime
@@ -78,6 +79,7 @@ class MainUI:
 
 
     def event_on(self):
+        self.uic.thongKeButton.clicked.connect(self.show_statistic_form)
         self.uic.searchInput.textChanged.connect(self.search_on_table)
         self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
         self.uic.menuVn30.triggered.connect(lambda: self.run(FILE_VN30))
@@ -98,6 +100,12 @@ class MainUI:
         self.uic.menuVanTai.triggered.connect(lambda: self.run(FILE_VAN_TAI))
         self.uic.menuXayDungVaVatLieu.triggered.connect(lambda: self.run(FILE_XAY_DUNG_VA_VAT_LIEU))
         self.uic.menuTatCa.triggered.connect(lambda: self.run(FILE_TAT_CA))
+
+    def show_statistic_form(self):
+        self.window = QMainWindow()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def write_to_all_file(self):
         with open("data/tat_ca.json", 'r') as data_file:
