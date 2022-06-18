@@ -31,9 +31,12 @@ def gia_qua_khu():
             data_from_file = json.load(file)
         with open("data/tat_ca.json", "r") as file:
             data_all = json.load(file)
-
+        tong = len(data_all)
+        row_index = 0
         with open("data/stock_T1.json", "w") as stock_file:
             for stock_name in data_all:
+                row_index += 1
+                print(f"{row_index}/{tong}")
                 response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
                                                                     headers=HEADERS)
                 data = response.json()
