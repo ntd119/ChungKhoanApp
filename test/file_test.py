@@ -34,13 +34,19 @@ def gia_qua_khu():
 
         with open("data/stock_T1.json", "w") as stock_file:
             for stock_name in data_all:
+                response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
+                                                                    headers=HEADERS)
+                data = response.json()
+                if len(data) > 0:
+                    gia_mo_cua = data[0]["priceOpen"]
+                    gia_final = int(gia_mo_cua) * 1000
                 dic_item = {
                     stock_name: {
                         "max_price": 0,
                         "max_price_time": 0,
                         "min_price": 0,
                         "min_price_time": 0,
-                        "head_price": 0,
+                        "head_price": gia_final,
                         "tail_price": 0,
                         "type": "",
                         "line_price_2": [],
