@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>342</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nhomCoPhieuLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nhóm cổ phiếu: </string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>485</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuNh_m_c_phi_u">
+    <property name="title">
+     <string>Nhóm cổ phiếu</string>
+    </property>
+    <addaction name="menuDaMua"/>
+    <addaction name="menuVn"/>
+    <addaction name="actionNg_n_h_ng_2"/>
+    <addaction name="actionN_ng_l_ng"/>
+    <addaction name="actionS_n_xu_t"/>
+   </widget>
+   <addaction name="menuNh_m_c_phi_u"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="menuDaMua">
+   <property name="text">
+    <string>Cổ phiếu đã mua</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="menuVn">
+   <property name="text">
+    <string>VN100</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionNg_n_h_ng_2">
+   <property name="text">
+    <string>Ngân hàng</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionN_ng_l_ng">
+   <property name="text">
+    <string>Năng lượng</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionS_n_xu_t">
+   <property name="text">
+    <string>Sản xuất</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
