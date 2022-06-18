@@ -20,20 +20,17 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 
 def gia_qua_khu():
     fireant_prams = {
-        "startDate": "2022-06-06",
-        "endDate": "2022-06-06"
+        "startDate": "2022-05-30",
+        "endDate": "2022-05-30"
     }
-    stock_code = "gas"
     try:
-        data_from_file = None
-        data_all = None
-        with open("data/stock_T1.json", "r") as file:
+        with open("data/stock_T2.json", "r") as file:
             data_from_file = json.load(file)
         with open("data/tat_ca.json", "r") as file:
             data_all = json.load(file)
         tong = len(data_all)
         row_index = 0
-        with open("data/stock_T1.json", "w") as stock_file:
+        with open("data/stock_T2.json", "w") as stock_file:
             for stock_name in data_all:
                 row_index += 1
                 print(f"{row_index}/{tong}")
@@ -61,14 +58,6 @@ def gia_qua_khu():
                 }
                 data_from_file.update(dic_item)
             json.dump(data_from_file, stock_file, indent=4)
-
-        # for item in data_all:
-        #     response = requests.get(FIREANT_URL + f"symbols/{item}/historical-quotes", params=fireant_prams,
-        #                             headers=HEADERS)
-        #     data = response.json()
-        #     print(data)
-
-
     except:
         print("Method error: gia_qua_khu")
         time.sleep(5)
