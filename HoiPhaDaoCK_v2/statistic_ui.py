@@ -14,6 +14,7 @@ class StatisticUI:
         self.uic.setupUi(self.window)
         self.window.show()
         self.data_max_min = self.call_api_max_min()
+        self.data_vietstock = self.call_api_vietstock()
         self.show_table()
 
     def call_api_max_min(self):
@@ -24,6 +25,21 @@ class StatisticUI:
             print("Max min api error")
             time.sleep(5)
             self.call_api_max_min()
+
+    def call_api_vietstock(self):
+        vietstock_prams = {
+            "sectorID": 0,
+            "catID": 0,
+            "capitalID": 0,
+            "languageID": 1
+        }
+        try:
+            response = requests.get(VIETSTOCK_END_POINT, params=vietstock_prams, headers=HEADERS)
+            return response.json()
+        except:
+            print("Call vietstock error")
+            time.sleep(5)
+            self.call_api_vietstock()
 
     def show_table(self):
         nhom_nganh = []
@@ -43,7 +59,7 @@ class StatisticUI:
         for i in range(1):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setHorizontalHeaderItem(i, item)
-            item.setText(_translate("MainWindow", "Phần trăm\nthay đổi\ntuần trước"))
+            item.setText(_translate("MainWindow", "Giá hiện tại\nso với thứ 2\n0"))
 
         # set tên dòng
         for row_index, ten_nganh in enumerate(nhom_nganh):
@@ -80,7 +96,10 @@ class StatisticUI:
                 except KeyError:
                     continue
                 sum_head_price += max_min_dict["head_price"]
-                sum_tail_price += max_min_dict["tail_price"]
+                stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
+                if len(stock_single) == 1:
+                    stock_single = stock_single[0]
+                    sum_tail_price += stock_single['_cp_']
             try:
                 percent = ((sum_tail_price - sum_head_price) / sum_head_price) * 100
             except:
