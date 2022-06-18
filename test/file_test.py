@@ -1,9 +1,8 @@
-
+import datetime
 import time
 
 import requests
 import json
-from datetime import datetime
 import unidecode
 
 FIREANT_URL = "https://restv2.fireant.vn/"
@@ -19,18 +18,27 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 
 
 def gia_qua_khu():
+    tuan = 3
+    date_1 = datetime.datetime(2022, 6, 13)
+    end_date = date_1 - datetime.timedelta(days=7 * tuan)
+    date_format = end_date.strftime("%Y-%m-%d")
+
     fireant_prams = {
-        "startDate": "2022-05-30",
-        "endDate": "2022-05-30"
+        "startDate": date_format,
+        "endDate": date_format
     }
     try:
-        with open("data/stock_T2.json", "r") as file:
-            data_from_file = json.load(file)
+        # with open(f"data/stock_T{tuan}.json", "x") as file:
+        #     data_from_file = json.load(file)
+        #     data_from_file.update("{}")
+        #     print("sds")
+        #     json.dump(data_from_file, file, indent=4)
+
         with open("data/tat_ca.json", "r") as file:
             data_all = json.load(file)
         tong = len(data_all)
         row_index = 0
-        with open("data/stock_T2.json", "w") as stock_file:
+        with open(f"data/stock_T{tuan}.json", "w") as stock_file:
             for stock_name in data_all:
                 row_index += 1
                 print(f"{row_index}/{tong}")
