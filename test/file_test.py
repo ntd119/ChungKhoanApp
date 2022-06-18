@@ -1,6 +1,6 @@
 import datetime
 import time
-
+import os.path
 import requests
 import json
 import unidecode
@@ -27,44 +27,48 @@ def gia_qua_khu():
         "startDate": date_format,
         "endDate": date_format
     }
-    try:
-        with open(f"data/stock_T{tuan}.json", "r") as file:
-            data_from_file = json.load(file)
+    file_name = f"data/stock_T{tuan}.json"
+    file_exists = os.path.exists(file_name)
+    if not file_exists:
+        jsonString = json.dumps({})
+        jsonFile = open(file_name, "w")
+        jsonFile.write(jsonString)
+        jsonFile.close()
 
-        with open("data/tat_ca.json", "r") as file:
-            data_all = json.load(file)
-        tong = len(data_all)
-        row_index = 0
-        with open(f"data/stock_T{tuan}.json", "w") as stock_file:
-            for stock_name in data_all:
-                row_index += 1
-                print(f"{row_index}/{tong}")
-                response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
-                                                                    headers=HEADERS)
-                data = response.json()
-                if len(data) > 0:
-                    gia_mo_cua = data[0]["priceOpen"]
-                    gia_final = int(gia_mo_cua) * 1000
-                dic_item = {
-                    stock_name: {
-                        "max_price": 0,
-                        "max_price_time": 0,
-                        "min_price": 0,
-                        "min_price_time": 0,
-                        "head_price": gia_final,
-                        "tail_price": 0,
-                        "type": "",
-                        "line_price_2": [],
-                        "line_price_3": [],
-                        "line_price_4": [],
-                        "line_price_5": [],
-                        "line_price_6": []
-                    }
+    with open(file_name, "r") as file:
+        data_from_file = json.load(file)
+
+    with open("data/tat_ca.json", "r") as file:
+        data_all = json.load(file)
+    tong = len(data_all)
+    row_index = 0
+    with open(f"data/stock_T{tuan}.json", "w") as stock_file:
+        for stock_name in data_all:
+            row_index += 1
+            print(f"{row_index}/{tong}")
+            response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
+                                                                headers=HEADERS)
+            data = response.json()
+            if len(data) > 0:
+                gia_mo_cua = data[0]["priceOpen"]
+                gia_final = int(gia_mo_cua) * 1000
+            dic_item = {
+                stock_name: {
+                    "max_price": 0,
+                    "max_price_time": 0,
+                    "min_price": 0,
+                    "min_price_time": 0,
+                    "head_price": gia_final,
+                    "tail_price": 0,
+                    "type": "",
+                    "line_price_2": [],
+                    "line_price_3": [],
+                    "line_price_4": [],
+                    "line_price_5": [],
+                    "line_price_6": []
                 }
-                data_from_file.update(dic_item)
-            json.dump(data_from_file, stock_file, indent=4)
-    except:
-        print("Method error: gia_qua_khu")
-        time.sleep(5)
+            }
+            data_from_file.update(dic_item)
+        json.dump(data_from_file, stock_file, indent=4)
 
 gia_qua_khu()
