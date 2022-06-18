@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
 from statistic_form import Ui_Dialog
+from statistic_ui import StatisticUI
+
 import requests
 import json
 from datetime import datetime
@@ -103,10 +105,7 @@ class MainUI:
         self.uic.menuTatCa.triggered.connect(lambda: self.run(FILE_TAT_CA))
 
     def show_statistic_form(self):
-        self.window = QMainWindow()
-        self.ui = Ui_Dialog()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        self.statisticUI = StatisticUI()
 
     def write_to_all_file(self):
         with open("data/tat_ca.json", 'r') as data_file:
