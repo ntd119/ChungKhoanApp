@@ -1,16 +1,1 @@
-{
-    "A32": {
-        "max_price": 0,
-        "max_price_time": 0,
-        "min_price": 0,
-        "min_price_time": 0,
-        "head_price": 31000,
-        "tail_price": 0,
-        "type": "",
-        "line_price_2": [],
-        "line_price_3": [],
-        "line_price_4": [],
-        "line_price_5": [],
-        "line_price_6": []
-    }
-}
+{}
