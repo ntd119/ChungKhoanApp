@@ -6,6 +6,7 @@ import requests
 import json
 from utils.Constant import *
 
+
 class StatisticUI:
     def __init__(self, data_qua_khu):
         self.window = QMainWindow()
@@ -34,7 +35,7 @@ class StatisticUI:
     def show_table(self):
         nhom_nganh = []
         for nganh in NHOM_CO_PHIEU:
-            if nganh == FILE_DA_MUA or nganh == FILE_VN30 or nganh == FILE_VN100 or nganh == FILE_TAT_CA:
+            if nganh == FILE_DA_MUA or nganh == FILE_VN30 or nganh == FILE_VN100 or nganh == FILE_TAT_CA or nganh == FILE_CO_PHIEU_TRONG_KHOAN_10K:
                 continue
             dict_item = {
                 "name": NHOM_CO_PHIEU[nganh]["name"],
