@@ -43,25 +43,25 @@ class StatisticUI:
             }
             nhom_nganh.append(dict_item)
         self.uic.tableWidget.setRowCount(len(nhom_nganh))
-        self.uic.tableWidget.setColumnCount(COLUMN_NUMBER_THONG_KE + 1)
+        self.uic.tableWidget.setColumnCount(len(THONG_KE_COLUM))
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
-        for i in range(COLUMN_NUMBER_THONG_KE + 1):
+        for colum in THONG_KE_COLUM:
             item = QtWidgets.QTableWidgetItem()
-            self.uic.tableWidget.setHorizontalHeaderItem(i, item)
-            item.setText(_translate("MainWindow", f"Giá hiện tại\nso với thứ 2\n{i}"))
+            self.uic.tableWidget.setHorizontalHeaderItem(THONG_KE_COLUM[colum]["index"], item)
+            item.setText(_translate("MainWindow", THONG_KE_COLUM[colum]["name"]))
 
         # set tên dòng
         for row_index, ten_nganh in enumerate(nhom_nganh):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
             item.setText(_translate("MainWindow", ten_nganh["name"]))
-
-        for colum_index in range(COLUMN_NUMBER_THONG_KE + 1):
+        for thong_ke in THONG_KE_COLUM:
             for row_index, nganh in enumerate(nhom_nganh):
+                colum_index = THONG_KE_COLUM[thong_ke]["index"]
                 file_name = nganh["file"]
-                percent = self.tinh_phan_tram_thay_doi(file_name, colum_index)
+                percent = self.tinh_phan_tram_thay_doi(file_name, thong_ke)
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, colum_index, item)
                 if type(percent) != str:

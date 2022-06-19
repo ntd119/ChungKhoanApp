@@ -60,15 +60,16 @@ class MainUI:
 
     def chang_in_week(self):
         _translate = QtCore.QCoreApplication.translate
+        colum_name_count = len(COLUMN_NAME)
         for row_index, stock_code in enumerate(self.data_from_file):
-            for column_index in range(COLUMN_NUMBER_THONG_KE + 1):
+            for column_item in THONG_KE_COLUM:
                 try:
-                    max_min_dict = self.data_qua_khu[column_index][stock_code]
+                    max_min_dict = self.data_qua_khu[column_item][stock_code]
                 except KeyError:
                     continue
                 head_price = max_min_dict["head_price"]
                 item_bought = QtWidgets.QTableWidgetItem()
-                index = COLUMN_NAME[f"changT{column_index}"]["index"]
+                index = THONG_KE_COLUM[column_item]["index"] + colum_name_count
                 if head_price != 0:
                     tail_price = 0
                     stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
@@ -198,7 +199,9 @@ class MainUI:
             self.data_from_file = dict(
                 sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
             row_number = len(self.data_from_file)
-            self.uic.tableWidget.setColumnCount(len(COLUMN_NAME))
+            column_nanme_count = len(COLUMN_NAME)
+            column_thong_ke_count = len(THONG_KE_COLUM)
+            self.uic.tableWidget.setColumnCount( column_nanme_count + column_thong_ke_count)
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
 
@@ -207,6 +210,11 @@ class MainUI:
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setHorizontalHeaderItem(column_index, item)
                 item.setText(_translate("MainWindow", COLUMN_NAME[dict_name]["name"]))
+            # column thống kê
+            for column_index, column in enumerate(THONG_KE_COLUM):
+                item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setHorizontalHeaderItem(column_index + column_nanme_count, item)
+                item.setText(_translate("MainWindow", THONG_KE_COLUM[column]["name"]))
 
             # row
             for row_index, stock_code in enumerate(self.data_from_file):
@@ -431,8 +439,8 @@ class MainUI:
 
     def lay_du_lieu_qua_khu(self):
         qua_khu_data = {}
-        for tuan in range(COLUMN_NUMBER_THONG_KE + 1):
-            reponse = self.call_api_max_min_thong_ke(tuan)
+        for tuan in THONG_KE_COLUM:
+            reponse = self.call_api_max_min_thong_ke(THONG_KE_COLUM[tuan]["file_index"])
             qua_khu_data[tuan] = reponse
         return qua_khu_data
 

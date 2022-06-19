@@ -6,7 +6,6 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 MAX_MIN_END_POINT = "https://topchonlua.com/batch/data/stock_T0.json"
-COLUMN_NUMBER_THONG_KE = 12
 BACKGROUND_LO = "#F33232"
 BACKGROUND_LAI = "#00E11A"
 BACKGROUND_TRAN = "#860D98"
@@ -185,77 +184,98 @@ COLUMN_NAME = {
     "sound_enable": {
         "index": 16,
         "name": "Sound"
-    },
+    }
+}
+
+THONG_KE_COLUM = {
     "changT0": {
-        "index": 17,
+        "index": 0,
+        "file_index": 0,
         "name": "Giá hiện tại\nso với thứ 2\n0"
     },
     "changT1": {
-        "index": 18,
+        "index": 1,
+        "file_index": 1,
         "name": "Giá hiện tại\nso với thứ 2\n1"
     },
     "changT2": {
-        "index": 19,
+        "index": 2,
+        "file_index": 2,
         "name": "Giá hiện tại\nso với thứ 2\n2"
     },
     "changT3": {
-        "index": 20,
+        "index": 3,
+        "file_index": 3,
         "name": "Giá hiện tại\nso với thứ 2\n3"
     },
     "changT4": {
-        "index": 21,
+        "index": 4,
+        "file_index": 4,
         "name": "Giá hiện tại\nso với thứ 2\n4"
     },
     "changT5": {
-        "index": 22,
+        "index": 5,
+        "file_index": 5,
         "name": "Giá hiện tại\nso với thứ 2\n5"
     },
     "changT6": {
-        "index": 23,
+        "index": 6,
+        "file_index": 6,
         "name": "Giá hiện tại\nso với thứ 2\n6"
     },
     "changT7": {
-        "index": 24,
+        "index": 7,
+        "file_index": 7,
         "name": "Giá hiện tại\nso với thứ 2\n7"
     },
     "changT8": {
-        "index": 25,
+        "index": 8,
+        "file_index": 8,
         "name": "Giá hiện tại\nso với thứ 2\n8"
     },
     "changT9": {
-        "index": 26,
+        "index": 9,
+        "file_index": 9,
         "name": "Giá hiện tại\nso với thứ 2\n9"
     },
     "changT10": {
-        "index": 27,
+        "index": 10,
+        "file_index": 10,
         "name": "Giá hiện tại\nso với thứ 2\n10"
     },
     "changT11": {
-        "index": 28,
+        "index": 11,
+        "file_index": 11,
         "name": "Giá hiện tại\nso với thứ 2\n11"
     },
     "changT12": {
-        "index": 29,
+        "index": 12,
+        "file_index": 12,
         "name": "Giá hiện tại\nso với thứ 2\n12"
     },
-    "chang6Thang": {
-        "index": 30,
+    "changT26": {
+        "index": 13,
+        "file_index": 26,
         "name": "Giá hiện tại\nso với 6\ntháng"
     },
-    "chang1Nam": {
-        "index": 31,
+    "changT52": {
+        "index": 14,
+        "file_index": 52,
         "name": "Giá hiện tại\nso với 1\nnăm"
     },
-    "chang1NamRuoi": {
-        "index": 32,
+    "changT78": {
+        "index": 15,
+        "file_index": 78,
         "name": "Giá hiện tại\nso với 1\nnăm rưỡi"
     },
-    "chang2Nam": {
-        "index": 33,
+    "changT104": {
+        "index": 16,
+        "file_index": 104,
         "name": "Giá hiện tại\nso với 2\nnăm"
     },
-    "chang2NamRuoi": {
-        "index": 34,
+    "changT130": {
+        "index": 17,
+        "file_index": 130,
         "name": "Giá hiện tại\nso với 2\nnăm rưỡi"
-    },
+    }
 }
