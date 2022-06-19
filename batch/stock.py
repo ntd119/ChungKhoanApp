@@ -102,8 +102,14 @@ class Stock:
                     head_price = 0
                     tail_price = 0
 
+                try:
+                    head_price_date = data_from_file[stock_code]["head_price_date"]
+                except KeyError:
+                    head_price_date = ""
+
                 if day_of_week == 2 and hour == 9 and minute == 15:
                     head_price = current_price
+                    head_price_date = now_time.strftime("%d-%m-%Y")
                 if day_of_week == 6 and hour == 14 and minute == 45:
                     tail_price = current_price
                 stock = {
@@ -113,6 +119,7 @@ class Stock:
                         "min_price": int(min_price),
                         "min_price_time": min_price_time,
                         "head_price": head_price,
+                        "head_price_date": head_price_date,
                         "tail_price": tail_price,
                         "type": data["_in_"],
                         "line_price_2": line_price_2,
