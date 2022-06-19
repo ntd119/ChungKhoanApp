@@ -130,7 +130,10 @@ class Stock:
         if os.path.exists(name):
             os.remove(name)
         for i in range(299, -1, -1):
-            os.rename(f'data/stock_T{i}.json', f'data/stock_T{i + 1}.json')
+            name1 = f'data/stock_T{i}.json'
+            name2= f'data/stock_T{i + 1}.json'
+            if os.path.exists(name) and os.path.exists(name2):
+                os.rename(name1, name2)
 
     def update_line_price(self, line_price, current_price, current_time):
         if len(line_price) < 2:
