@@ -6,7 +6,7 @@ import requests
 import json
 from utils.Constant import *
 
-COLUMN_NUMBER = 8
+COLUMN_NUMBER = 20
 
 class StatisticUI:
     def __init__(self):
@@ -21,7 +21,7 @@ class StatisticUI:
 
     def lay_du_lieu_qua_khu(self):
         qua_khu_data = {}
-        for tuan in range(9):
+        for tuan in range(COLUMN_NUMBER + 1):
             reponse = self.call_api_max_min(tuan)
             qua_khu_data[tuan] = reponse
         return qua_khu_data
