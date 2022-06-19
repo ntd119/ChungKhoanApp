@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1000, 600)
+        Dialog.resize(1480, 790)
         self.tableWidget = QtWidgets.QTableWidget(Dialog)
-        self.tableWidget.setGeometry(QtCore.QRect(30, 30, 960, 500))
+        self.tableWidget.setGeometry(QtCore.QRect(30, 30, 1440, 571))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
