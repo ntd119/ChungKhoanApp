@@ -45,7 +45,7 @@ def gia_qua_khu(tuan):
     with open(f"data/stock_T{tuan}.json", "w") as stock_file:
         for stock_name in data_all:
             row_index += 1
-            print(f"{row_index}/{tong}")
+            # print(f"{row_index}/{tong}")
             response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
                                                                 headers=HEADERS)
             data = response.json()
