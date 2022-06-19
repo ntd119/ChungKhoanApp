@@ -237,5 +237,25 @@ COLUMN_NAME = {
     "changT12": {
         "index": 29,
         "name": "Giá hiện tại\nso với thứ 2\n12"
-    }
+    },
+    "chang6Thang": {
+        "index": 30,
+        "name": "Giá hiện tại\nso với 6\ntháng"
+    },
+    "chang1Nam": {
+        "index": 31,
+        "name": "Giá hiện tại\nso với 1\nnăm"
+    },
+    "chang1NamRuoi": {
+        "index": 32,
+        "name": "Giá hiện tại\nso với 1\nnăm rưỡi"
+    },
+    "chang2Nam": {
+        "index": 33,
+        "name": "Giá hiện tại\nso với 2\nnăm"
+    },
+    "chang2NamRuoi": {
+        "index": 34,
+        "name": "Giá hiện tại\nso với 2\nnăm rưỡi"
+    },
 }
