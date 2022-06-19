@@ -6,6 +6,7 @@ import requests
 import json
 from utils.Constant import *
 
+COLUMN_NUMBER = 8
 
 class StatisticUI:
     def __init__(self):
@@ -14,12 +15,16 @@ class StatisticUI:
         self.uic.setupUi(self.window)
         self.window.show()
         self.data_vietstock = self.call_api_vietstock()
-        self.data_max_min_0 = self.call_api_max_min(0)
-        self.data_max_min_1 = self.call_api_max_min(1)
-        self.data_max_min_2 = self.call_api_max_min(2)
-        self.data_max_min_3 = self.call_api_max_min(3)
-        self.data_max_min_4 = self.call_api_max_min(4)
+        self.data_qua_khu = self.lay_du_lieu_qua_khu()
         self.show_table()
+
+
+    def lay_du_lieu_qua_khu(self):
+        qua_khu_data = {}
+        for tuan in range(9):
+            reponse = self.call_api_max_min(tuan)
+            qua_khu_data[tuan] = reponse
+        return qua_khu_data
 
     def call_api_max_min(self, index_file):
         try:
@@ -60,7 +65,7 @@ class StatisticUI:
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
-        for i in range(5):
+        for i in range(COLUMN_NUMBER + 1):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setHorizontalHeaderItem(i, item)
             item.setText(_translate("MainWindow", f"Giá hiện tại\nso với thứ 2\n{i}"))
@@ -71,7 +76,7 @@ class StatisticUI:
             self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
             item.setText(_translate("MainWindow", ten_nganh["name"]))
 
-        for colum_index in range(5):
+        for colum_index in range(COLUMN_NUMBER + 1):
             for row_index, nganh in enumerate(nhom_nganh):
                 file_name = nganh["file"]
                 percent = self.tinh_phan_tram_thay_doi(file_name, colum_index)
@@ -93,20 +98,12 @@ class StatisticUI:
         sum_head_price = 0
         sum_tail_price = 0
 
+        qua_khu_data = self.data_qua_khu[index_file]
         with open(f"data/{file_name}", "r") as file_data:
             data_from_file = json.load(file_data)
             for row_index, stock_code in enumerate(data_from_file):
                 try:
-                    if index_file == 0:
-                        max_min_dict = self.data_max_min_0[stock_code]
-                    elif index_file == 1:
-                        max_min_dict = self.data_max_min_1[stock_code]
-                    elif index_file == 2:
-                        max_min_dict = self.data_max_min_2[stock_code]
-                    elif index_file == 3:
-                        max_min_dict = self.data_max_min_3[stock_code]
-                    elif index_file == 4:
-                        max_min_dict = self.data_max_min_4[stock_code]
+                    max_min_dict = qua_khu_data[stock_code]
                 except KeyError:
                     continue
                 sum_head_price += max_min_dict["head_price"]

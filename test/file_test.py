@@ -18,6 +18,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
 
 
 def gia_qua_khu(tuan):
+    print("File hien tai = " + str(tuan))
     date_1 = datetime.datetime(2022, 6, 13)
     end_date = date_1 - datetime.timedelta(days=7 * tuan)
     date_format = end_date.strftime("%Y-%m-%d")
@@ -48,6 +49,7 @@ def gia_qua_khu(tuan):
             response = requests.get(FIREANT_URL + f"symbols/{stock_name}/historical-quotes", params=fireant_prams,
                                                                 headers=HEADERS)
             data = response.json()
+            gia_final = 0
             if len(data) > 0:
                 gia_mo_cua = data[0]["priceOpen"]
                 gia_final = int(gia_mo_cua) * 1000
@@ -70,9 +72,15 @@ def gia_qua_khu(tuan):
             data_from_file.update(dic_item)
         json.dump(data_from_file, stock_file, indent=4)
 
+def call_api(tuan):
+    try:
+        gia_qua_khu(tuan)
+    except:
+        call_api(tuan)
 
 for tuan in range(300):
-    if tuan < 5:
+    if tuan < 146:
         continue
-    gia_qua_khu(tuan)
+    call_api(tuan)
+
 
