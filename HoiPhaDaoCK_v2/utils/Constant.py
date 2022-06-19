@@ -188,6 +188,46 @@ COLUMN_NAME = {
     },
     "changT0": {
         "index": 17,
-        "name": "Giá hiện tại\nso với thứ 2"
+        "name": "Giá hiện tại\nso với thứ 2\n0"
+    },
+    "changT1": {
+        "index": 18,
+        "name": "Giá hiện tại\nso với thứ 2\n1"
+    },
+    "changT2": {
+        "index": 19,
+        "name": "Giá hiện tại\nso với thứ 2\n2"
+    },
+    "changT3": {
+        "index": 20,
+        "name": "Giá hiện tại\nso với thứ 2\n3"
+    },
+    "changT4": {
+        "index": 21,
+        "name": "Giá hiện tại\nso với thứ 2\n4"
+    },
+    "changT5": {
+        "index": 22,
+        "name": "Giá hiện tại\nso với thứ 2\n5"
+    },
+    "changT6": {
+        "index": 23,
+        "name": "Giá hiện tại\nso với thứ 2\n6"
+    },
+    "changT7": {
+        "index": 24,
+        "name": "Giá hiện tại\nso với thứ 2\n7"
+    },
+    "changT8": {
+        "index": 24,
+        "name": "Giá hiện tại\nso với thứ 2\n8"
+    },
+    "changT9": {
+        "index": 26,
+        "name": "Giá hiện tại\nso với thứ 2\n9"
+    },
+    "changT10": {
+        "index": 27,
+        "name": "Giá hiện tại\nso với thứ 2\n10"
     }
 }
