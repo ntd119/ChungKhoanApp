@@ -64,13 +64,17 @@ class StatisticUI:
                 percent = self.tinh_phan_tram_thay_doi(file_name, colum_index)
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, colum_index, item)
-                item.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
-                if percent < 0:
-                    self.uic.tableWidget.item(row_index, colum_index).setBackground(
-                        QtGui.QColor(BACKGROUND_LO))
+                if type(percent) != str:
+                    item.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
+                    if percent < 0:
+                        self.uic.tableWidget.item(row_index, colum_index).setBackground(
+                            QtGui.QColor(BACKGROUND_LO))
+                    else:
+                        self.uic.tableWidget.item(row_index, colum_index).setBackground(
+                            QtGui.QColor(BACKGROUND_LAI))
                 else:
-                    self.uic.tableWidget.item(row_index, colum_index).setBackground(
-                        QtGui.QColor(BACKGROUND_LAI))
+                    item.setText(_translate("MainWindow", "No Data"))
+
 
     def format_2_decimal(self, value):
         return "{:.2f}".format(value)
@@ -96,4 +100,6 @@ class StatisticUI:
             percent = 0
             if sum_head_price != 0:
                 percent = ((sum_tail_price - sum_head_price) / sum_head_price) * 100
+            else:
+                percent = "No Data"
             return percent
