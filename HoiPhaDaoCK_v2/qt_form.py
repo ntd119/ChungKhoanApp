@@ -17,6 +17,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1480, 790)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("images/icon-stock-64.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.nhomCoPhieuLabel = QtWidgets.QLabel(self.centralwidget)
