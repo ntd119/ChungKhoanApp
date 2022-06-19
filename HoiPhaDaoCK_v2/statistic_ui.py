@@ -6,8 +6,6 @@ import requests
 import json
 from utils.Constant import *
 
-COLUMN_NUMBER = 20
-
 class StatisticUI:
     def __init__(self):
         self.window = QMainWindow()
@@ -21,7 +19,7 @@ class StatisticUI:
 
     def lay_du_lieu_qua_khu(self):
         qua_khu_data = {}
-        for tuan in range(COLUMN_NUMBER + 1):
+        for tuan in range(COLUMN_NUMBER_THONG_KE + 1):
             reponse = self.call_api_max_min(tuan)
             qua_khu_data[tuan] = reponse
         return qua_khu_data
@@ -61,11 +59,11 @@ class StatisticUI:
             }
             nhom_nganh.append(dict_item)
         self.uic.tableWidget.setRowCount(len(nhom_nganh))
-        self.uic.tableWidget.setColumnCount(COLUMN_NUMBER + 1)
+        self.uic.tableWidget.setColumnCount(COLUMN_NUMBER_THONG_KE + 1)
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
-        for i in range(COLUMN_NUMBER + 1):
+        for i in range(COLUMN_NUMBER_THONG_KE + 1):
             item = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setHorizontalHeaderItem(i, item)
             item.setText(_translate("MainWindow", f"Giá hiện tại\nso với thứ 2\n{i}"))
@@ -76,7 +74,7 @@ class StatisticUI:
             self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
             item.setText(_translate("MainWindow", ten_nganh["name"]))
 
-        for colum_index in range(COLUMN_NUMBER + 1):
+        for colum_index in range(COLUMN_NUMBER_THONG_KE + 1):
             for row_index, nganh in enumerate(nhom_nganh):
                 file_name = nganh["file"]
                 percent = self.tinh_phan_tram_thay_doi(file_name, colum_index)

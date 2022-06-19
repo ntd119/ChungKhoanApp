@@ -6,6 +6,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 MAX_MIN_END_POINT = "https://topchonlua.com/batch/data/stock_T0.json"
+COLUMN_NUMBER_THONG_KE = 10
 BACKGROUND_LO = "#F33232"
 BACKGROUND_LAI = "#00E11A"
 BACKGROUND_TRAN = "#860D98"
