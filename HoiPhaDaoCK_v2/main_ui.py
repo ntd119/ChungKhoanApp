@@ -67,26 +67,29 @@ class MainUI:
                 except KeyError:
                     continue
                 head_price = max_min_dict["head_price"]
-                tail_price = 0
-                stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
-                if len(stock_single) == 1:
-                    stock_single = stock_single[0]
-                    tail_price += stock_single['_cp_']
-                try:
-                    percent = ((tail_price - head_price) / head_price) * 100
-                except:
-                    percent = 0
                 item_bought = QtWidgets.QTableWidgetItem()
                 index = COLUMN_NAME[f"changT{column_index}"]["index"]
-                self.uic.tableWidget.setItem(row_index, index, item_bought)
-                item_bought.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
-                if percent < 0:
-                    self.uic.tableWidget.item(row_index, index).setBackground(
-                        QtGui.QColor(BACKGROUND_LO))
+                if head_price != 0:
+                    tail_price = 0
+                    stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
+                    if len(stock_single) == 1:
+                        stock_single = stock_single[0]
+                        tail_price += stock_single['_cp_']
+                    try:
+                        percent = ((tail_price - head_price) / head_price) * 100
+                    except:
+                        percent = 0
+                    item_bought.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
+                    self.uic.tableWidget.setItem(row_index, index, item_bought)
+                    if percent < 0:
+                        self.uic.tableWidget.item(row_index, index).setBackground(
+                            QtGui.QColor(BACKGROUND_LO))
+                    else:
+                        self.uic.tableWidget.item(row_index, index).setBackground(
+                        QtGui.QColor(BACKGROUND_LAI))
                 else:
-                    self.uic.tableWidget.item(row_index, index).setBackground(
-                    QtGui.QColor(BACKGROUND_LAI))
-
+                    item_bought.setText(_translate("MainWindow", "No Data"))
+                    self.uic.tableWidget.setItem(row_index, index, item_bought)
 
     def event_on(self):
         self.uic.thongKeButton.clicked.connect(self.show_statistic_form)
