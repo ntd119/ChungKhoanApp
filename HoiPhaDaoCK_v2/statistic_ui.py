@@ -16,23 +16,6 @@ class StatisticUI:
         self.data_qua_khu = data_qua_khu
         self.show_table()
 
-
-    def lay_du_lieu_qua_khu(self):
-        qua_khu_data = {}
-        for tuan in range(COLUMN_NUMBER_THONG_KE + 1):
-            reponse = self.call_api_max_min(tuan)
-            qua_khu_data[tuan] = reponse
-        return qua_khu_data
-
-    def call_api_max_min(self, index_file):
-        try:
-            response = requests.get(f"https://topchonlua.com/batch/data/stock_T{index_file}.json", headers=HEADERS)
-            return response.json()
-        except:
-            print("Max min api error")
-            time.sleep(5)
-            self.call_api_max_min(index_file)
-
     def call_api_vietstock(self):
         vietstock_prams = {
             "sectorID": 0,
