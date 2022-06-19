@@ -219,7 +219,7 @@ COLUMN_NAME = {
         "name": "Giá hiện tại\nso với thứ 2\n7"
     },
     "changT8": {
-        "index": 24,
+        "index": 25,
         "name": "Giá hiện tại\nso với thứ 2\n8"
     },
     "changT9": {
