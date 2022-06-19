@@ -61,7 +61,7 @@ class StatisticUI:
             }
             nhom_nganh.append(dict_item)
         self.uic.tableWidget.setRowCount(len(nhom_nganh))
-        self.uic.tableWidget.setColumnCount(5)
+        self.uic.tableWidget.setColumnCount(COLUMN_NUMBER + 1)
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
@@ -111,8 +111,7 @@ class StatisticUI:
                 if len(stock_single) == 1:
                     stock_single = stock_single[0]
                     sum_tail_price += stock_single['_cp_']
-            try:
+            percent = 0
+            if sum_head_price != 0:
                 percent = ((sum_tail_price - sum_head_price) / sum_head_price) * 100
-            except:
-                percent = 0
             return percent
