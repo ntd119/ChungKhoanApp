@@ -60,6 +60,7 @@ def gia_qua_khu(tuan):
                     "min_price": 0,
                     "min_price_time": 0,
                     "head_price": gia_final,
+                    "head_price_date": end_date.strftime("%d-%m-%Y"),
                     "tail_price": 0,
                     "type": "",
                     "line_price_2": [],
@@ -79,8 +80,6 @@ def call_api(tuan):
         call_api(tuan)
 
 for tuan in range(300):
-    if tuan < 146:
-        continue
     call_api(tuan)
 
 

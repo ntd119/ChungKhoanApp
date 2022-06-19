@@ -126,10 +126,10 @@ class Stock:
             json.dump(data_from_file, stock_file, indent=4)
 
     def delete_file(self):
-        name = "data/stock_T8.json"
+        name = "data/stock_T300.json"
         if os.path.exists(name):
             os.remove(name)
-        for i in range(7, -1, -1):
+        for i in range(299, -1, -1):
             os.rename(f'data/stock_T{i}.json', f'data/stock_T{i + 1}.json')
 
     def update_line_price(self, line_price, current_price, current_time):
