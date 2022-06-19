@@ -28,6 +28,7 @@ class MainUI:
         self.run(FILE_VN100)
         self.write_to_all_file()
         self.event_on()
+        self.data_qua_khu = self.lay_du_lieu_qua_khu()
 
     def setPositon(self):
         self.uic.tableWidget.setGeometry(POSITION["table"]["geometry"])
@@ -105,7 +106,7 @@ class MainUI:
         self.uic.menuTatCa.triggered.connect(lambda: self.run(FILE_TAT_CA))
 
     def show_statistic_form(self):
-        self.statisticUI = StatisticUI()
+        self.statisticUI = StatisticUI(self.data_qua_khu)
 
     def write_to_all_file(self):
         with open("data/tat_ca.json", 'r') as data_file:
@@ -418,3 +419,19 @@ class MainUI:
             else:
                 self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_min"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LO))
+
+    def lay_du_lieu_qua_khu(self):
+        qua_khu_data = {}
+        for tuan in range(COLUMN_NUMBER_THONG_KE + 1):
+            reponse = self.call_api_max_min_thong_ke(tuan)
+            qua_khu_data[tuan] = reponse
+        return qua_khu_data
+
+    def call_api_max_min_thong_ke(self, index_file):
+        try:
+            response = requests.get(f"https://topchonlua.com/batch/data/stock_T{index_file}.json", headers=HEADERS)
+            return response.json()
+        except:
+            print("Max min api error")
+            time.sleep(5)
+            self.call_api_max_min_thong_ke(index_file)

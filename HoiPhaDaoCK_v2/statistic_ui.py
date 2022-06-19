@@ -7,13 +7,13 @@ import json
 from utils.Constant import *
 
 class StatisticUI:
-    def __init__(self):
+    def __init__(self, data_qua_khu):
         self.window = QMainWindow()
         self.uic = Ui_Dialog()
         self.uic.setupUi(self.window)
         self.window.show()
         self.data_vietstock = self.call_api_vietstock()
-        self.data_qua_khu = self.lay_du_lieu_qua_khu()
+        self.data_qua_khu = data_qua_khu
         self.show_table()
 
 
