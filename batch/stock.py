@@ -135,7 +135,7 @@ class Stock:
             json.dump(data_from_file, stock_file, indent=4)
 
     def delete_file(self):
-        for i in range(299, -1, -1):
+        for i in range(300, -1, -1):
             name1 = f'data/stock_T{i}.json'
             name2 = f'data/stock_T{i + 1}.json'
             if os.path.exists(name1) and os.path.exists(name2):
