@@ -186,8 +186,8 @@ COLUMN_NAME = {
         "index": 16,
         "name": "Sound"
     },
-    "changT8": {
+    "changT0": {
         "index": 17,
-        "name": "Thay đổi\ntrong tuần"
+        "name": "Giá hiện tại\nso với thứ 2"
     }
 }

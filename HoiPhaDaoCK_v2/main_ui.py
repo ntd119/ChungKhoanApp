@@ -72,13 +72,13 @@ class MainUI:
             except:
                 percent = 0
             item_bought = QtWidgets.QTableWidgetItem()
-            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["changT8"]["index"], item_bought)
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["changT0"]["index"], item_bought)
             item_bought.setText(_translate("MainWindow", self.format_2_decimal(percent) + "%"))
             if percent < 0:
-                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT8"]["index"]).setBackground(
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT0"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LO))
             else:
-                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT8"]["index"]).setBackground(
+                self.uic.tableWidget.item(row_index, COLUMN_NAME["changT0"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LAI))
 
 
