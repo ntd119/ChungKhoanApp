@@ -6,7 +6,7 @@ HEADERS = {"X-Requested-With": "XMLHttpRequest",
                          'Chrome/54.0.2840.99 Safari/537.36',
            }
 MAX_MIN_END_POINT = "https://topchonlua.com/batch/data/stock_T0.json"
-COLUMN_NUMBER_THONG_KE = 10
+COLUMN_NUMBER_THONG_KE = 12
 BACKGROUND_LO = "#F33232"
 BACKGROUND_LAI = "#00E11A"
 BACKGROUND_TRAN = "#860D98"
@@ -229,5 +229,13 @@ COLUMN_NAME = {
     "changT10": {
         "index": 27,
         "name": "Giá hiện tại\nso với thứ 2\n10"
+    },
+    "changT11": {
+        "index": 28,
+        "name": "Giá hiện tại\nso với thứ 2\n11"
+    },
+    "changT12": {
+        "index": 29,
+        "name": "Giá hiện tại\nso với thứ 2\n12"
     }
 }
