@@ -24,9 +24,11 @@ class MainUI:
         self.data_vietstock = None
         self.data_max_min = None
         self.data_from_file = None
+        self.data_filter = None
         self.call_api_vietstock()
         self.setPositon()
         self.data_qua_khu = self.lay_du_lieu_qua_khu()
+        self.draw_table(FILE_VN100)
         self.run(FILE_VN100)
         self.write_to_all_file()
         self.event_on()
@@ -98,26 +100,58 @@ class MainUI:
     def event_on(self):
         self.uic.thongKeButton.clicked.connect(self.show_statistic_form)
         self.uic.searchInput.textChanged.connect(self.search_on_table)
-        self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
-        self.uic.menuVn30.triggered.connect(lambda: self.run(FILE_VN30))
-        self.uic.menuNganHang.triggered.connect(lambda: self.run(FILE_NGAN_HANG))
-        self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
-        self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
-        self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
-        self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))
-        self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.run(FILE_CONG_NGHE_THONG_TIN))
-        self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.run(FILE_LUA_CHON_BOI_CAC_QUY))
-        self.uic.menuQuyETF.triggered.connect(lambda: self.run(FILE_QUY_ETF))
-        self.uic.menuCoPhieuTrongKhoan10k.triggered.connect(lambda: self.run(FILE_CO_PHIEU_TRONG_KHOAN_10K))
-        self.uic.menuBanLe.triggered.connect(lambda: self.run(FILE_BAN_LE))
-        self.uic.menuBatDongSan.triggered.connect(lambda: self.run(FILE_BAT_DONG_SAN))
-        self.uic.menuDuocPhamVaYte.triggered.connect(lambda: self.run(FILE_DUOC_PHAM_Y_TE))
-        self.uic.menuTaiChinh.triggered.connect(lambda: self.run(FILE_TAI_CHINH))
-        self.uic.menuTaiNguyen.triggered.connect(lambda: self.run(FILE_TAI_NGUYEN))
-        self.uic.menuThucPhamVaDoUong.triggered.connect(lambda: self.run(FILE_THUC_PHAM_VA_DO_UONG))
-        self.uic.menuVanTai.triggered.connect(lambda: self.run(FILE_VAN_TAI))
-        self.uic.menuXayDungVaVatLieu.triggered.connect(lambda: self.run(FILE_XAY_DUNG_VA_VAT_LIEU))
-        self.uic.menuTatCa.triggered.connect(lambda: self.run(FILE_TAT_CA))
+        self.uic.menuCoPhieuTang100PercentTrong1Nam.triggered.connect(lambda: self.filter_co_phieu("100"))
+        self.uic.menuDaMua.triggered.connect(lambda: self.from_file(FILE_DA_MUA))
+        self.uic.menuVn30.triggered.connect(lambda: self.from_file(FILE_VN30))
+        self.uic.menuNganHang.triggered.connect(lambda: self.from_file(FILE_NGAN_HANG))
+        self.uic.menuVn100.triggered.connect(lambda: self.from_file(FILE_VN100))
+        self.uic.menuVn100.triggered.connect(lambda: self.from_file(FILE_VN100))
+        self.uic.menuNangLuong.triggered.connect(lambda: self.from_file(FILE_NANG_LUONG))
+        self.uic.menuSanXuat.triggered.connect(lambda: self.from_file(FILE_SAN_XUAT))
+        self.uic.menuCongNgheThongTin.triggered.connect(lambda: self.from_file(FILE_CONG_NGHE_THONG_TIN))
+        self.uic.menuLuaChonBoiCacQuy.triggered.connect(lambda: self.from_file(FILE_LUA_CHON_BOI_CAC_QUY))
+        self.uic.menuQuyETF.triggered.connect(lambda: self.from_file(FILE_QUY_ETF))
+        self.uic.menuCoPhieuTrongKhoan10k.triggered.connect(lambda: self.from_file(FILE_CO_PHIEU_TRONG_KHOAN_10K))
+        self.uic.menuBanLe.triggered.connect(lambda: self.from_file(FILE_BAN_LE))
+        self.uic.menuBatDongSan.triggered.connect(lambda: self.from_file(FILE_BAT_DONG_SAN))
+        self.uic.menuDuocPhamVaYte.triggered.connect(lambda: self.from_file(FILE_DUOC_PHAM_Y_TE))
+        self.uic.menuTaiChinh.triggered.connect(lambda: self.from_file(FILE_TAI_CHINH))
+        self.uic.menuTaiNguyen.triggered.connect(lambda: self.from_file(FILE_TAI_NGUYEN))
+        self.uic.menuThucPhamVaDoUong.triggered.connect(lambda: self.from_file(FILE_THUC_PHAM_VA_DO_UONG))
+        self.uic.menuVanTai.triggered.connect(lambda: self.from_file(FILE_VAN_TAI))
+        self.uic.menuXayDungVaVatLieu.triggered.connect(lambda: self.from_file(FILE_XAY_DUNG_VA_VAT_LIEU))
+        self.uic.menuTatCa.triggered.connect(lambda: self.from_file(FILE_TAT_CA))
+
+    def from_file(self, file_name):
+        self.draw_table(file_name)
+        self.run(file_name)
+
+    def filter_co_phieu(self, percent):
+        data_filter = {}
+        # self.data_from_file
+        self.call_api_vietstock()
+        for data_item in self.data_vietstock:
+            stock_name = data_item["_sc_"]
+            # giá hiện tại _cp_
+            gia_hien_tai = data_item['_cp_']
+            data_1_nam = self.data_qua_khu["changT52"]
+            value_1_nam = data_1_nam[stock_name]["head_price"]
+            if value_1_nam != 0:
+                percent = ((gia_hien_tai - value_1_nam)/value_1_nam) * 100
+                if percent >= 100:
+                    data_filter[stock_name] = {
+                        "should_buy": 0,
+                        "enable_sound": 0,
+                        "bought": 0,
+                        "percent_cut_loss": "4.0",
+                        "percent_sell": "4.0",
+                        "follow": 0
+                    }
+                    break
+        self.data_from_file = data_filter
+        row_number = len(self.data_from_file)
+        self.uic.tableWidget.setRowCount(row_number)
+        self.run("mot_nam_100")
 
     def show_statistic_form(self):
         self.statisticUI = StatisticUI(self.data_qua_khu)
@@ -154,7 +188,6 @@ class MainUI:
     def run(self, file_name):
         self.uic.searchInput.clear()
         self.update_title(file_name)
-        self.draw_table(file_name)
         self.update_max_min()
         self.update_table()
         self.chang_in_week()

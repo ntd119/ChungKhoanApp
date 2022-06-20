@@ -92,12 +92,15 @@ NHOM_CO_PHIEU = {
     },
     FILE_TAT_CA: {
         "name": "Tất cả"
+    },
+    "mot_nam_100": {
+        "name": "Tăng >= 100% trong 1 năm"
     }
 }
 
 POSITION = {
     "nhom_co_phieu_label": {
-        "geometry": QtCore.QRect(10, 10, 511, 31)
+        "geometry": QtCore.QRect(10, 10, 911, 31)
     },
     "search_input": {
         "geometry": QtCore.QRect(10, 50, 511, 31)
