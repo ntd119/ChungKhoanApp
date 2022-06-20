@@ -24,6 +24,7 @@ class MainUI:
         self.data_vietstock = None
         self.data_max_min = None
         self.data_from_file = None
+        self.call_api_vietstock()
         self.setPositon()
         self.data_qua_khu = self.lay_du_lieu_qua_khu()
         self.run(FILE_VN100)
@@ -47,7 +48,8 @@ class MainUI:
         self.uic.phanTramThayDoiTrongTuanLabel.setFont(font)
 
         # Giá trị phần trăm thay đổi trong tuần
-        self.uic.phanTramThayDoiTrongTuanValueLabel.setGeometry(POSITION["phan_tram_thay_doi_trong_tuan_value"]["geometry"])
+        self.uic.phanTramThayDoiTrongTuanValueLabel.setGeometry(
+            POSITION["phan_tram_thay_doi_trong_tuan_value"]["geometry"])
         self.uic.phanTramThayDoiTrongTuanValueLabel.setText(self.format_2_decimal(0) + "%")
         self.uic.phanTramThayDoiTrongTuanValueLabel.setFont(font)
         self.uic.phanTramThayDoiTrongTuanValueLabel.setStyleSheet(f'color: {BACKGROUND_LAI}')
@@ -87,7 +89,7 @@ class MainUI:
                             QtGui.QColor(BACKGROUND_LO))
                     else:
                         self.uic.tableWidget.item(row_index, index).setBackground(
-                        QtGui.QColor(BACKGROUND_LAI))
+                            QtGui.QColor(BACKGROUND_LAI))
                 else:
                     item_bought.setText(_translate("MainWindow", "No Data"))
                     self.uic.tableWidget.setItem(row_index, index, item_bought)
@@ -201,7 +203,7 @@ class MainUI:
             row_number = len(self.data_from_file)
             column_nanme_count = len(COLUMN_NAME)
             column_thong_ke_count = len(THONG_KE_COLUM)
-            self.uic.tableWidget.setColumnCount( column_nanme_count + column_thong_ke_count)
+            self.uic.tableWidget.setColumnCount(column_nanme_count + column_thong_ke_count)
             self.uic.tableWidget.setRowCount(row_number)
             _translate = QtCore.QCoreApplication.translate
 
@@ -345,7 +347,8 @@ class MainUI:
                                 QtGui.QColor(BACKGROUND_LO))
                 # Phần trăm giá max so với hiện tại
                 try:
-                    gia_max_this_week = self.uic.tableWidget.item(row_index, COLUMN_NAME["max_value_week"]["index"]).text()
+                    gia_max_this_week = self.uic.tableWidget.item(row_index,
+                                                                  COLUMN_NAME["max_value_week"]["index"]).text()
                     gia_max_this_week = gia_max_this_week.replace(',', '')
                     percent_max_current_value = ((float(gia_hien_tai_value) - float(gia_max_this_week)) / float(
                         gia_max_this_week)) * 100
@@ -396,6 +399,8 @@ class MainUI:
         self.head_sum = 0
         self.call_api_max_min()
         _translate = QtCore.QCoreApplication.translate
+        column_count = len(COLUMN_NAME)
+        self.data_qua_khu["changT0"] = self.data_max_min
         for row_index, stock_code in enumerate(self.data_from_file):
             try:
                 max_min_dict = self.data_max_min[stock_code]
@@ -436,6 +441,28 @@ class MainUI:
             else:
                 self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_min"]["index"]).setBackground(
                     QtGui.QColor(BACKGROUND_LO))
+            # Phần trăm gía hiện tại so với thứ 2
+            gia_thu_2 = max_min_dict["head_price"]
+            gia_hien_tai = 0
+            stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
+            if len(stock_single) == 1:
+                stock_single = stock_single[0]
+                gia_hien_tai = stock_single['_cp_']
+            phan_tran_gia_hien_tai_so_voi_thu_2 = 0
+            index_t0 = THONG_KE_COLUM["changT0"]["index"] + column_count
+            if gia_hien_tai != 0:
+                phan_tran_gia_hien_tai_so_voi_thu_2 = ((gia_hien_tai - gia_thu_2) / gia_thu_2) * 100
+            gia_hien_tai_so_voi_thu_2_item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, index_t0, gia_hien_tai_so_voi_thu_2_item)
+            gia_hien_tai_so_voi_thu_2_item.setText(
+                _translate("MainWindow", self.format_2_decimal(phan_tran_gia_hien_tai_so_voi_thu_2) + "%"))
+
+            if phan_tran_gia_hien_tai_so_voi_thu_2 < 0:
+                self.uic.tableWidget.item(row_index, index_t0).setBackground(
+                    QtGui.QColor(BACKGROUND_LO))
+            else:
+                self.uic.tableWidget.item(row_index, index_t0).setBackground(
+                    QtGui.QColor(BACKGROUND_LAI))
 
     def lay_du_lieu_qua_khu(self):
         qua_khu_data = {}
