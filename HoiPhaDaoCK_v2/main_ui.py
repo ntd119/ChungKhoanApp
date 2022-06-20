@@ -200,8 +200,6 @@ class MainUI:
         self.uic.tableWidget.clear()
         with open(f"data/{file_name}") as file_data:
             self.data_from_file = json.load(file_data)
-            self.data_from_file = dict(
-                sorted(self.data_from_file.items(), key=lambda item: item[1]["follow"], reverse=True))
             row_number = len(self.data_from_file)
             column_nanme_count = len(COLUMN_NAME)
             column_thong_ke_count = len(THONG_KE_COLUM)
