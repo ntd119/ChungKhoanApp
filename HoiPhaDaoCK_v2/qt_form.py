@@ -72,6 +72,10 @@ class Ui_MainWindow(object):
         self.menuQuyETF = QtWidgets.QAction(MainWindow)
         self.menuQuyETF.setObjectName("menuQuyETF")
 
+        # Cổ phiếu tăng hơn 100% trong 1 năm
+        self.menuCoPhieuTang100PercentTrong1Nam = QtWidgets.QAction(MainWindow)
+        self.menuCoPhieuTang100PercentTrong1Nam.setObjectName("menuCoPhieuTang100PercentTrong1Nam")
+
         # Cổ phiếu trong khoản 10k
         self.menuCoPhieuTrongKhoan10k = QtWidgets.QAction(MainWindow)
         self.menuCoPhieuTrongKhoan10k.setObjectName("menuCoPhieuTrongKhoan10k")
@@ -112,6 +116,7 @@ class Ui_MainWindow(object):
         self.menuTatCa = QtWidgets.QAction(MainWindow)
         self.menuTatCa.setObjectName("menuTatCa")
 
+        self.menuNhonCoPhieu.addAction(self.menuCoPhieuTang100PercentTrong1Nam)
         self.menuNhonCoPhieu.addAction(self.menuDaMua)
         self.menuNhonCoPhieu.addAction(self.menuVn30)
         self.menuNhonCoPhieu.addAction(self.menuVn100)
@@ -140,6 +145,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Hội Phá Đảo CK"))
         self.menuNhonCoPhieu.setTitle(_translate("MainWindow", "Chọn cổ phiếu"))
+        self.menuCoPhieuTang100PercentTrong1Nam.setText(_translate("MainWindow", "Cp tăng >= 100% trong 1 năm "))
         self.menuDaMua.setText(_translate("MainWindow", "Cổ phiếu đã mua"))
         self.menuDaMua.setShortcut(_translate("MainWindow", "Ctrl+D"))
         self.menuVn30.setText(_translate("MainWindow", NHOM_CO_PHIEU[FILE_VN30]["name"]))
