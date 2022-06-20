@@ -61,6 +61,7 @@ class MainUI:
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
 
     def chang_in_week(self):
+        print("Update change in week")
         _translate = QtCore.QCoreApplication.translate
         colum_name_count = len(COLUMN_NAME)
         for row_index, stock_code in enumerate(self.data_from_file):
@@ -100,6 +101,7 @@ class MainUI:
         self.uic.menuDaMua.triggered.connect(lambda: self.run(FILE_DA_MUA))
         self.uic.menuVn30.triggered.connect(lambda: self.run(FILE_VN30))
         self.uic.menuNganHang.triggered.connect(lambda: self.run(FILE_NGAN_HANG))
+        self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
         self.uic.menuVn100.triggered.connect(lambda: self.run(FILE_VN100))
         self.uic.menuNangLuong.triggered.connect(lambda: self.run(FILE_NANG_LUONG))
         self.uic.menuSanXuat.triggered.connect(lambda: self.run(FILE_SAN_XUAT))

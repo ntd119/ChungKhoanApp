@@ -19,6 +19,12 @@ if __name__ == "__main__":
     timer_update_max_min.timeout.connect(main_win.update_max_min)
     timer_update_max_min.setInterval(600000)  # 600000ms = 10 phút
     timer_update_max_min.start()
+
+    # Change giá trị trong tuần
+    timer_chang_in_week = QTimer()
+    timer_chang_in_week.timeout.connect(main_win.chang_in_week)
+    timer_chang_in_week.setInterval(600000)  # 600000ms = 10 phút
+    timer_chang_in_week.start()
     sys.exit(app.exec())
 # ddmynguyen
 # tuyet
