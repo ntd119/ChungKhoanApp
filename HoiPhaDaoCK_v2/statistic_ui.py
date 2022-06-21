@@ -10,6 +10,9 @@ from utils.Constant import *
 class StatisticUI:
     def __init__(self, data_qua_khu):
         self.window = QMainWindow()
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("images/pie-chart.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.window.setWindowIcon(icon)
         self.uic = Ui_Dialog()
         self.uic.setupUi(self.window)
         self.window.show()
