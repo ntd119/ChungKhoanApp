@@ -1,10 +1,8 @@
 import time
 
-from PyQt5.QtGui import QPalette
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
-from statistic_form import Ui_Dialog
 from statistic_ui import StatisticUI
 
 import requests
@@ -28,8 +26,8 @@ class MainUI:
         self.call_api_vietstock()
         self.setPositon()
         self.data_qua_khu = self.lay_du_lieu_qua_khu()
-        self.draw_table(FILE_VN100)
-        self.run(FILE_VN100)
+        self.draw_table(FILE_DA_MUA)
+        self.run(FILE_DA_MUA)
         self.write_to_all_file()
         self.event_on()
 
@@ -150,6 +148,31 @@ class MainUI:
         self.data_from_file = data_filter
         row_number = len(self.data_from_file)
         self.uic.tableWidget.setRowCount(row_number)
+
+        # row
+        _translate = QtCore.QCoreApplication.translate
+        for row_index, stock_code in enumerate(self.data_from_file):
+            stock_dict = self.data_from_file[stock_code]
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
+            item.setText(_translate("MainWindow", stock_code))
+
+            # data body
+            # Giá đã mua bought
+            item_bought = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
+            item_bought.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "bought")))
+
+            # phần trăm cắt lỗ percent_cut_loss
+            item_cut_loss = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_cut_loss"]["index"], item_cut_loss)
+            item_cut_loss.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_cut_loss")))
+
+            # phần trăm bán percent_sell
+            item_sell = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
+            item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
+
         self.run("mot_nam_100")
 
     def show_statistic_form(self):
