@@ -46,12 +46,6 @@ class StatisticUI:
         self.uic.tableWidget.setColumnCount(len(THONG_KE_COLUM))
         _translate = QtCore.QCoreApplication.translate
 
-        # set tên cột
-        # for colum in THONG_KE_COLUM:
-        #     item = QtWidgets.QTableWidgetItem()
-        #     self.uic.tableWidget.setHorizontalHeaderItem(THONG_KE_COLUM[colum]["index"], item)
-        #     item.setText(_translate("MainWindow", THONG_KE_COLUM[colum]["name"]))
-
         # set tên dòng
         for row_index, ten_nganh in enumerate(nhom_nganh):
             item = QtWidgets.QTableWidgetItem()
