@@ -147,7 +147,6 @@ class MainUI:
                         "percent_sell": "4.0",
                         "follow": 0
                     }
-                    break
         self.data_from_file = data_filter
         row_number = len(self.data_from_file)
         self.uic.tableWidget.setRowCount(row_number)
@@ -285,9 +284,9 @@ class MainUI:
             stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]
             if len(stock_single) == 1:
                 stock_single = stock_single[0]
-
                 # Tên cổ phiếu
                 stock_name_value = stock_single['stockName']
+
                 stock_name_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["name"]["index"], stock_name_item)
                 stock_name_item.setText(_translate("MainWindow", str(stock_name_value)))
@@ -338,13 +337,15 @@ class MainUI:
                         QtGui.QColor(BACKGROUND_GIAM))
 
                 # Tính lãi lỗ
-                gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
-                if len(gia_da_mua) > 0:
+                try:
+                    gia_da_mua = self.uic.tableWidget.item(row_index, COLUMN_NAME["bought"]["index"]).text()
+                    gia_da_mua = int(gia_da_mua)
+                except:
+                    gia_da_mua = 0
+                if gia_da_mua > 0:
                     try:
-                        gia_da_mua = int(gia_da_mua)
                         percent_lai_lo = ((gia_hien_tai_value - gia_da_mua) / gia_da_mua) * 100
                     except:
-                        gia_da_mua = 0
                         percent_lai_lo = 0
                     percen_lai_lo_item = QtWidgets.QTableWidgetItem()
                     self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], percen_lai_lo_item)
