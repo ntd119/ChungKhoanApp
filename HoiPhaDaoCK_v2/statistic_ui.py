@@ -47,10 +47,10 @@ class StatisticUI:
         _translate = QtCore.QCoreApplication.translate
 
         # set tên cột
-        for colum in THONG_KE_COLUM:
-            item = QtWidgets.QTableWidgetItem()
-            self.uic.tableWidget.setHorizontalHeaderItem(THONG_KE_COLUM[colum]["index"], item)
-            item.setText(_translate("MainWindow", THONG_KE_COLUM[colum]["name"]))
+        # for colum in THONG_KE_COLUM:
+        #     item = QtWidgets.QTableWidgetItem()
+        #     self.uic.tableWidget.setHorizontalHeaderItem(THONG_KE_COLUM[colum]["index"], item)
+        #     item.setText(_translate("MainWindow", THONG_KE_COLUM[colum]["name"]))
 
         # set tên dòng
         for row_index, ten_nganh in enumerate(nhom_nganh):
@@ -59,7 +59,17 @@ class StatisticUI:
             item.setText(_translate("MainWindow", ten_nganh["name"]))
         for thong_ke in THONG_KE_COLUM:
             qua_khu_data = self.data_qua_khu[thong_ke]
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setHorizontalHeaderItem(THONG_KE_COLUM[thong_ke]["index"], item)
+            column_name = THONG_KE_COLUM[thong_ke]["name"]
             for row_index, nganh in enumerate(nhom_nganh):
+                if row_index == 0:
+                    column_date = ""
+                    try:
+                        column_date = list(qua_khu_data.items())[0][1]["head_price_date"]
+                    except KeyError:
+                        pass
+                    item.setText(_translate("MainWindow", column_name + "\n" + column_date))
                 colum_index = THONG_KE_COLUM[thong_ke]["index"]
                 file_name = nganh["file"]
                 percent = self.tinh_phan_tram_thay_doi(file_name, qua_khu_data)
