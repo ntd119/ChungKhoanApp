@@ -161,17 +161,33 @@ class MainUI:
             # Giá đã mua bought
             item_bought = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
-            item_bought.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "bought")))
+            item_bought.setText(_translate("MainWindow", ""))
 
             # phần trăm cắt lỗ percent_cut_loss
             item_cut_loss = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_cut_loss"]["index"], item_cut_loss)
-            item_cut_loss.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_cut_loss")))
+            item_cut_loss.setText(_translate("MainWindow", ""))
 
             # phần trăm bán percent_sell
             item_sell = QtWidgets.QTableWidgetItem()
             self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
-            item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
+            item_sell.setText(_translate("MainWindow", ""))
+
+            # data body
+            # Giá đã mua bought
+            item_bought = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
+            item_bought.setText(_translate("MainWindow", ""))
+
+            # status
+            item_status = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["status"]["index"], item_status)
+            item_status.setText(_translate("MainWindow", ""))
+
+            # lãi/lỗ
+            item_lai_lo = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["lai_lo"]["index"], item_lai_lo)
+            item_lai_lo.setText(_translate("MainWindow", ""))
 
         self.run("mot_nam_100")
 
