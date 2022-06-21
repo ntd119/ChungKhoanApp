@@ -1,0 +1,490 @@
+{
+    "AGG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "BCE": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "BCM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "CCL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "CDC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "CIG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "CKG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "CRE": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "D2D": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DIG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DRH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DTA": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DXG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "DXS": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "EVG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "FDC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "FIR": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "FLC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HAG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HAR": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HDC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HDG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HPX": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HQC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "HU1": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "IJC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "ITA": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "ITC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "KBC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "KDH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "KHG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "KOS": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "LDG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "LGL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "LHG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NBB": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NHA": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NLG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NTL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "NVL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "PDR": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "PTL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "PXI": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "QCG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "SCR": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "SJS": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "SZC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "SZL": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TCH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TDC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TDH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TEG": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TIP": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TIX": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "TN1": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VHM": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VIC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VPH": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VPI": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VRC": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    },
+    "VRE": {
+        "should_buy": 0,
+        "enable_sound": 0,
+        "bought": 0,
+        "percent_cut_loss": "4.0",
+        "percent_sell": "4.0",
+        "follow": 0
+    }
+}
