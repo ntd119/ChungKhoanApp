@@ -58,10 +58,11 @@ class StatisticUI:
             self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
             item.setText(_translate("MainWindow", ten_nganh["name"]))
         for thong_ke in THONG_KE_COLUM:
+            qua_khu_data = self.data_qua_khu[thong_ke]
             for row_index, nganh in enumerate(nhom_nganh):
                 colum_index = THONG_KE_COLUM[thong_ke]["index"]
                 file_name = nganh["file"]
-                percent = self.tinh_phan_tram_thay_doi(file_name, thong_ke)
+                percent = self.tinh_phan_tram_thay_doi(file_name, qua_khu_data)
                 item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, colum_index, item)
                 if type(percent) != str:
@@ -79,12 +80,10 @@ class StatisticUI:
     def format_2_decimal(self, value):
         return "{:.2f}".format(value)
 
-    def tinh_phan_tram_thay_doi(self, file_name, index_file):
+    def tinh_phan_tram_thay_doi(self, file_name, qua_khu_data):
         _translate = QtCore.QCoreApplication.translate
         sum_head_price = 0
         sum_tail_price = 0
-
-        qua_khu_data = self.data_qua_khu[index_file]
         with open(f"data/{file_name}", "r") as file_data:
             data_from_file = json.load(file_data)
             for row_index, stock_code in enumerate(data_from_file):
