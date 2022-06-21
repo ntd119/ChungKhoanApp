@@ -35,7 +35,7 @@ class StatisticUI:
     def show_table(self):
         nhom_nganh = []
         for nganh in NHOM_CO_PHIEU:
-            if nganh == FILE_DA_MUA or nganh == FILE_VN30 or nganh == FILE_VN100 or nganh == FILE_TAT_CA or nganh == FILE_CO_PHIEU_TRONG_KHOAN_10K:
+            if nganh == FILE_DA_MUA or nganh == FILE_VN30 or nganh == FILE_VN100 or nganh == FILE_TAT_CA or nganh == FILE_CO_PHIEU_TRONG_KHOAN_10K or nganh == "mot_nam_100":
                 continue
             dict_item = {
                 "name": NHOM_CO_PHIEU[nganh]["name"],
