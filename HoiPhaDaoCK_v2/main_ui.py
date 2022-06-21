@@ -78,7 +78,7 @@ class MainUI:
                     column_name = THONG_KE_COLUM[column_item]["name"]
                     column_date = ""
                     try:
-                        column_date = max_min_dict["head_price_date"]
+                        column_date = list(self.data_qua_khu[column_item].items())[0][1]["head_price_date"]
                     except KeyError:
                         pass
                     item.setText(_translate("MainWindow", column_name + "\n" + column_date))
