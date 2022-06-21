@@ -70,9 +70,21 @@ class MainUI:
                     max_min_dict = self.data_qua_khu[column_item][stock_code]
                 except KeyError:
                     continue
+
+                index = THONG_KE_COLUM[column_item]["index"] + colum_name_count
+                if row_index == 0:
+                    item = QtWidgets.QTableWidgetItem()
+                    self.uic.tableWidget.setHorizontalHeaderItem(index, item)
+                    column_name = THONG_KE_COLUM[column_item]["name"]
+                    column_date = ""
+                    try:
+                        column_date = max_min_dict["head_price_date"]
+                    except KeyError:
+                        pass
+                    item.setText(_translate("MainWindow", column_name + "\n" + column_date))
+
                 head_price = max_min_dict["head_price"]
                 item_bought = QtWidgets.QTableWidgetItem()
-                index = THONG_KE_COLUM[column_item]["index"] + colum_name_count
                 if head_price != 0:
                     tail_price = 0
                     stock_single = [row for row in self.data_vietstock if row["_sc_"] == stock_code.upper()]

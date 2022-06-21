@@ -194,91 +194,91 @@ THONG_KE_COLUM = {
     "changT0": {
         "index": 0,
         "file_index": 0,
-        "name": "Giá hiện tại\nso với thứ 2\n0"
+        "name": "Giá hiện tại\nso với thứ 2-0"
     },
     "changT1": {
         "index": 1,
         "file_index": 1,
-        "name": "Giá hiện tại\nso với thứ 2\n1"
+        "name": "Giá hiện tại\nso với thứ 2-1"
     },
     "changT2": {
         "index": 2,
         "file_index": 2,
-        "name": "Giá hiện tại\nso với thứ 2\n2"
+        "name": "Giá hiện tại\nso với thứ 2-2"
     },
     "changT3": {
         "index": 3,
         "file_index": 3,
-        "name": "Giá hiện tại\nso với thứ 2\n3"
+        "name": "Giá hiện tại\nso với thứ 2-3"
     },
     "changT4": {
         "index": 4,
         "file_index": 4,
-        "name": "Giá hiện tại\nso với thứ 2\n4"
+        "name": "Giá hiện tại\nso với thứ 2-4"
     },
     "changT5": {
         "index": 5,
         "file_index": 5,
-        "name": "Giá hiện tại\nso với thứ 2\n5"
+        "name": "Giá hiện tại\nso với thứ 2-5"
     },
     "changT6": {
         "index": 6,
         "file_index": 6,
-        "name": "Giá hiện tại\nso với thứ 2\n6"
+        "name": "Giá hiện tại\nso với thứ 2-6"
     },
     "changT7": {
         "index": 7,
         "file_index": 7,
-        "name": "Giá hiện tại\nso với thứ 2\n7"
+        "name": "Giá hiện tại\nso với thứ 2-7"
     },
     "changT8": {
         "index": 8,
         "file_index": 8,
-        "name": "Giá hiện tại\nso với thứ 2\n8"
+        "name": "Giá hiện tại\nso với thứ 2-8"
     },
     "changT9": {
         "index": 9,
         "file_index": 9,
-        "name": "Giá hiện tại\nso với thứ 2\n9"
+        "name": "Giá hiện tại\nso với thứ 2-9"
     },
     "changT10": {
         "index": 10,
         "file_index": 10,
-        "name": "Giá hiện tại\nso với thứ 2\n10"
+        "name": "Giá hiện tại\nso với thứ 2-10"
     },
     "changT11": {
         "index": 11,
         "file_index": 11,
-        "name": "Giá hiện tại\nso với thứ 2\n11"
+        "name": "Giá hiện tại\nso với thứ 2-11"
     },
     "changT12": {
         "index": 12,
         "file_index": 12,
-        "name": "Giá hiện tại\nso với thứ 2\n12"
+        "name": "Giá hiện tại\nso với thứ 2-12"
     },
     "changT26": {
         "index": 13,
         "file_index": 26,
-        "name": "Giá hiện tại\nso với 6\ntháng"
+        "name": "Giá hiện tại\nso với 6-tháng"
     },
     "changT52": {
         "index": 14,
         "file_index": 52,
-        "name": "Giá hiện tại\nso với 1\nnăm"
+        "name": "Giá hiện tại\nso với 1-năm"
     },
     "changT78": {
         "index": 15,
         "file_index": 78,
-        "name": "Giá hiện tại\nso với 1\nnăm rưỡi"
+        "name": "Giá hiện tại\nso với 1-năm rưỡi"
     },
     "changT104": {
         "index": 16,
         "file_index": 104,
-        "name": "Giá hiện tại\nso với 2\nnăm"
+        "name": "Giá hiện tại\nso với 2-năm"
     },
     "changT130": {
         "index": 17,
         "file_index": 130,
-        "name": "Giá hiện tại\nso với 2\nnăm rưỡi"
+        "name": "Giá hiện tại\nso với 2-năm rưỡi"
     }
 }
