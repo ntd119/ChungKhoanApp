@@ -8,7 +8,7 @@
     nếu pyinstaller not found thì chạy lệnh pip install -U pyinstaller
     Sau đó chạy lại lệnh pyinstaller --onefile main.py
 
-Cổ phiếu tăng trong 1 năm > 100% tính từ ngày 20 tháng 6 năm 2022
+Cổ phiếu tăng trong 1 năm > 100% tính từ ngày 20 tháng 6 năm 2022 (giai đoạn khó khăn)
 ACL
 ALV
 ASA
