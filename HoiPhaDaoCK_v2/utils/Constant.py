@@ -266,19 +266,49 @@ THONG_KE_COLUM = {
         "file_index": 52,
         "name": "Giá hiện tại\nso với 1-năm"
     },
-    "changT78": {
+    "changT51": {
         "index": 15,
-        "file_index": 78,
-        "name": "Giá hiện tại\nso với 1-năm rưỡi"
+        "file_index": 51,
+        "name": "So với\n1-năm +1 tuần"
     },
     "changT104": {
         "index": 16,
         "file_index": 104,
         "name": "Giá hiện tại\nso với 2-năm"
     },
-    "changT130": {
+    "changT103": {
         "index": 17,
-        "file_index": 130,
-        "name": "Giá hiện tại\nso với 2-năm rưỡi"
+        "file_index": 103,
+        "name": "So với\n2-năm +1 tuần"
+    },
+    "changT156": {
+        "index": 18,
+        "file_index": 156,
+        "name": "Giá hiện tại\nso với 3-năm"
+    },
+    "changT155": {
+        "index": 19,
+        "file_index": 155,
+        "name": "So với\n3-năm +1 tuần"
+    },
+    "changT208": {
+        "index": 20,
+        "file_index": 208,
+        "name": "Giá hiện tại\nso với 4-năm"
+    },
+    "changT207": {
+        "index": 21,
+        "file_index": 207,
+        "name": "So với\n4-năm +1 tuần"
+    },
+    "changT260": {
+        "index": 22,
+        "file_index": 260,
+        "name": "Giá hiện tại\nso với 5-năm"
+    },
+    "changT259": {
+        "index": 23,
+        "file_index": 259,
+        "name": "So với\n5-năm +1 tuần"
     }
 }
