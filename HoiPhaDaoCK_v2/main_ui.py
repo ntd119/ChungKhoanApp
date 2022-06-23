@@ -1,5 +1,8 @@
 import time
 
+import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
@@ -279,50 +282,75 @@ class MainUI:
     def format_2_decimal(self, value):
         return "{:.2f}".format(value)
 
+    def read_google_sheet(self):
+        scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+        creds = ServiceAccountCredentials.from_json_keyfile_name(r'utils/hoiphadaock.json', scope)
+        gc = gspread.authorize(creds)
+        spreadsheet_id = "1k_q0M8LmAaOgbWqv0GzoBuxd-vuViIvWpqYIiV-iNVM"
+        wks = gc.open_by_key(spreadsheet_id)
+        worksheet = wks.worksheet('cp_da_mua')
+        df = pd.DataFrame(worksheet.get_all_records())
+        json_list = json.loads(df.to_json(orient="records"))
+        cp_da_mua = {}
+        for item in json_list:
+            cp_da_mua[item["MaCK"]] = {
+                "should_buy": 0,
+                "enable_sound": 0,
+                "bought": item["GiaMua"],
+                "percent_cut_loss": "4.0",
+                "percent_sell": "4.0",
+                "follow": 1
+            }
+        return cp_da_mua
+
     def draw_table(self, file_name):
         self.uic.tableWidget.clear()
-        with open(f"data/{file_name}") as file_data:
-            self.data_from_file = json.load(file_data)
-            row_number = len(self.data_from_file)
-            column_nanme_count = len(COLUMN_NAME)
-            column_thong_ke_count = len(THONG_KE_COLUM)
-            self.uic.tableWidget.setColumnCount(column_nanme_count + column_thong_ke_count)
-            self.uic.tableWidget.setRowCount(row_number)
-            _translate = QtCore.QCoreApplication.translate
+        if file_name != FILE_DA_MUA:
+            with open(f"data/{file_name}") as file_data:
+                self.data_from_file = json.load(file_data)
+        else:
+            self.data_from_file = self.read_google_sheet()
 
-            # column
-            for column_index, dict_name in enumerate(COLUMN_NAME):
-                item = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setHorizontalHeaderItem(column_index, item)
-                item.setText(_translate("MainWindow", COLUMN_NAME[dict_name]["name"]))
-            # column thống kê
-            for column_index, column in enumerate(THONG_KE_COLUM):
-                item = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setHorizontalHeaderItem(column_index + column_nanme_count, item)
-                item.setText(_translate("MainWindow", THONG_KE_COLUM[column]["name"]))
+        row_number = len(self.data_from_file)
+        column_nanme_count = len(COLUMN_NAME)
+        column_thong_ke_count = len(THONG_KE_COLUM)
+        self.uic.tableWidget.setColumnCount(column_nanme_count + column_thong_ke_count)
+        self.uic.tableWidget.setRowCount(row_number)
+        _translate = QtCore.QCoreApplication.translate
 
-            # row
-            for row_index, stock_code in enumerate(self.data_from_file):
-                stock_dict = self.data_from_file[stock_code]
-                item = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
-                item.setText(_translate("MainWindow", stock_code))
+        # column
+        for column_index, dict_name in enumerate(COLUMN_NAME):
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setHorizontalHeaderItem(column_index, item)
+            item.setText(_translate("MainWindow", COLUMN_NAME[dict_name]["name"]))
+        # column thống kê
+        for column_index, column in enumerate(THONG_KE_COLUM):
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setHorizontalHeaderItem(column_index + column_nanme_count, item)
+            item.setText(_translate("MainWindow", THONG_KE_COLUM[column]["name"]))
 
-                # data body
-                # Giá đã mua bought
-                item_bought = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
-                item_bought.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "bought")))
+        # row
+        for row_index, stock_code in enumerate(self.data_from_file):
+            stock_dict = self.data_from_file[stock_code]
+            item = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setVerticalHeaderItem(row_index, item)
+            item.setText(_translate("MainWindow", stock_code))
 
-                # phần trăm cắt lỗ percent_cut_loss
-                item_cut_loss = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_cut_loss"]["index"], item_cut_loss)
-                item_cut_loss.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_cut_loss")))
+            # data body
+            # Giá đã mua bought
+            item_bought = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["bought"]["index"], item_bought)
+            item_bought.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "bought")))
 
-                # phần trăm bán percent_sell
-                item_sell = QtWidgets.QTableWidgetItem()
-                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
-                item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
+            # phần trăm cắt lỗ percent_cut_loss
+            item_cut_loss = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_cut_loss"]["index"], item_cut_loss)
+            item_cut_loss.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_cut_loss")))
+
+            # phần trăm bán percent_sell
+            item_sell = QtWidgets.QTableWidgetItem()
+            self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
+            item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
 
     def update_table(self):
         self.current_sum = 0
