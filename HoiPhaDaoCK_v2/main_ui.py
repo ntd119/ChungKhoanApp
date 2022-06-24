@@ -1,8 +1,5 @@
 import time
 
-import pandas as pd
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from qt_form import Ui_MainWindow
