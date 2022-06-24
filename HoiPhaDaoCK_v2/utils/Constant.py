@@ -184,9 +184,9 @@ COLUMN_NAME = {
         "index": 15,
         "name": "Giá mở cửa"
     },
-    "sound_enable": {
+    "has_infina": {
         "index": 16,
-        "name": "Sound"
+        "name": "Có trong\nInfina"
     }
 }
 

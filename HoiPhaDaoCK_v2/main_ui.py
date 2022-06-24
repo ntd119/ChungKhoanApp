@@ -26,6 +26,7 @@ class MainUI:
         self.call_api_vietstock()
         self.setPositon()
         self.data_qua_khu = self.lay_du_lieu_qua_khu()
+        self.cp_infina = self.get_cp_infina()
         self.draw_table(FILE_DA_MUA)
         self.run(FILE_DA_MUA)
         self.write_to_all_file()
@@ -59,6 +60,17 @@ class MainUI:
         self.uic.searchInput.setPlaceholderText("Tìm kiếm theo mã hoặc tên CK")
         self.uic.searchInput.setToolTip("Không cần nhập có dấu")
         self.uic.searchInput.setGeometry(POSITION["search_input"]["geometry"])
+
+    def get_cp_infina(self):
+        cp_list = []
+        for nhom_cp in NHOM_CO_PHIEU:
+            if nhom_cp == FILE_DA_MUA or nhom_cp == FILE_TAT_CA or nhom_cp == "mot_nam_100":
+                continue
+            with open(f"data/{nhom_cp}") as file_data:
+                data = json.load(file_data)
+                for cp_name in data:
+                    cp_list.append(cp_name)
+        return set(cp_list)
 
     def chang_in_week(self):
         print("Update change in week")
@@ -360,6 +372,18 @@ class MainUI:
                 gia_mo_cua_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["open_value"]["index"], gia_mo_cua_item)
                 gia_mo_cua_item.setText(_translate("MainWindow", self.format_value(gia_mo_cua_value)))
+
+                # Có trong app infina
+                infina_item = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["has_infina"]["index"], infina_item)
+                if stock_code.upper() in self.cp_infina:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["has_infina"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_LAI))
+                else:
+                    self.uic.tableWidget.item(row_index, COLUMN_NAME["has_infina"]["index"]).setBackground(
+                        QtGui.QColor(BACKGROUND_NONE))
+
+                # infina_item.setText(_translate("MainWindow", "c"))
 
                 # giá hiện tại _cp_
                 gia_hien_tai_value = stock_single['_cp_']
