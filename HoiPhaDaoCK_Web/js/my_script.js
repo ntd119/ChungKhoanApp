@@ -1,6 +1,8 @@
 
 
 $(document).ready(function () {
+    const HEADER_TABLE = ["", "Name", "Status", "Giá mua", "Lãi/Lỗ", "Giá hiện tại", "Giá min \ntrong tuần", "Giá max \ntrong tuần", "% Giá Max-Min", "% Giá hiện tại\nso với giá max", "Min Time", "Max Time", "Giá trần", "Giá sàn", "Giá mở cửa", "Có trong\nInfina"]
+
     // $.getJSON('https://topchonlua.com/batch/data/stock_T0.json', function (response) {
     //     console.log(response);
     // });
@@ -33,7 +35,7 @@ $(document).ready(function () {
 
         // Populate the header
         headers = ["Mã ck", "Giá mua"];
-        for(const headerText of headers) {
+        for(const headerText of HEADER_TABLE) {
             const headerElement = document.createElement("th");
             headerElement.textContent = headerText;
             tableHead.querySelector("tr").appendChild(headerElement);
