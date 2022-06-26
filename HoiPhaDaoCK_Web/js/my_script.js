@@ -26,31 +26,35 @@ $(document).ready(function () {
         const tableBody = table.querySelector("tbody");
         const response = await fetch(url);
         const rows = await response.json();
-    
+
         // clear the table
         tableHead.innerHTML = "<tr></tr>";
         tableBody.innerHTML = "";
 
         // Populate the header
-        headers = ["A", "B"];
+        headers = ["Mã ck", "Giá mua"];
         for(const headerText of headers) {
             const headerElement = document.createElement("th");
             headerElement.textContent = headerText;
             tableHead.querySelector("tr").appendChild(headerElement);
         }
 
-        // Populate the row
-        for(const row of rows) {
-            const rowElement = document.createElement("tr");
-            
-            for(const cellText of row) {
-                const cellElement = document.createElement("td");
-                cellElement.textContent = cellText;
-                rowElement.appendChild(cellElement);
-            }
 
-            tableBody.appendChild(rowElement);
-        }
+       for(const key in rows) {
+           const rowElement = document.createElement("tr");
+
+            // Mã chứng khoán
+            const maCKElement = document.createElement("td");
+            maCKElement.textContent = key;
+            rowElement.appendChild(maCKElement);
+
+           // Giá đã mua
+           const giaMuaElement = document.createElement("td");
+           giaMuaElement.textContent = rows[key]["bought"];
+           rowElement.appendChild(giaMuaElement);
+
+           tableBody.appendChild(rowElement);
+       }
     }
     
     loadIntoTable("./HoiPhaDaoCK_Web/data/da_mua.json", document.querySelector("table"));
