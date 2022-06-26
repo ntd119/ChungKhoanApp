@@ -9,7 +9,19 @@
 </head>
 
 <body>
-<h1>Welcome to my team :) ddfdffdds</h1>
+<h1>Welcome to my team :)</h1>
+<h1 id="p1"></h1>
+<script>
+  function getdate() {
+    var today =   new Date();
+    document.getElementById("p1").innerHTML = today
+  }
+ 
+  setInterval(getdate, 1000)
+
+  
+  
+</script>
 </body>
 
 </html>
