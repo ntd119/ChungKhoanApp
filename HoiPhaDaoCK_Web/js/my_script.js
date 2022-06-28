@@ -37,29 +37,35 @@ $(document).ready(function () {
   //         console.log("error");
   //     }
   // })
-  async function vietstock_api() {
-    $.ajax({
-     // url: "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1",
-      url: "https://api.fireant.vn/instruments",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        "X-Requested-With": "XMLHttpRequest"
-        // "User-Agent":
-        //   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
-      },
-      type: "GET",
-      dataType: "json",
-      data: {},
-      success: function (result) {
-        console.log(result);
-      },
-      error: function () {
-        console.log("error");
-      },
-    });
-  }
+  // async function vietstock_api() {
+  //   $.ajax({
+  //    url: "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1",
+  //     // url: "https://wgateway-iboard.ssi.com.vn/graphql",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijc4Njc5MyIsImlhdCI6MTY1NjMzMzkxMCwiZXhwIjoxNjU2MzYyNzEwfQ.yVi4uPoMSMzKF9K0QFl7wpxeOG8ytJ0nAWv5RDVi7eQ"
+  //       // "User-Agent":
+  //       //   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+  //     },
+  //     type: "GET",
+  //     dataType: "json",
+  //     data: null,
+  //     crossDomain: true,
+  //     xhrFields: {
+  //       withCredentials: true,
+  //     },
+  //     success: function (result) {
+  //       console.log(result);
+  //     },
+  //     error: function () {
+  //       console.log("error");
+  //     },
+  //   });
+  // }
 
-  vietstock_api();
+  // vietstock_api();
+
+
 
   async function loadIntoTable(url, table) {
     const tableHead = table.querySelector("thead");
