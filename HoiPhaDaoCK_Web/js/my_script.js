@@ -21,29 +21,31 @@ $(document).ready(function () {
   // $.getJSON('https://topchonlua.com/batch/data/stock_T0.json', function (response) {
   //     console.log(response);
   // });
-  // $.ajax({
-  //     url: 'https://topchonlua.com/batch/data/stock_T0.json',
-  //     headers: {
-  //         'Content-Type': 'application/x-www-form-urlencoded'
-  //     },
-  //     type: "GET",
-  //     dataType: "json",
-  //     data: {
-  //     },
-  //     success: function (result) {
-  //         console.log(result);
-  //     },
-  //     error: function () {
-  //         console.log("error");
-  //     }
-  // })
+  $.ajax({
+      // url: 'https://topchonlua.com/batch/data/stock_T0.json',
+      url: 'https://s.cafef.vn/ajax/marketmap.ashx?stock=1&type=1&cate=',
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      type: "GET",
+      dataType: "json",
+      data: {
+      },
+      success: function (result) {
+          console.log(result);
+      },
+      error: function () {
+          console.log("error");
+      }
+  })
   // async function vietstock_api() {
   //   $.ajax({
-  //    url: "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1",
+  //   //  url: "https://api.vietstock.vn/finance/sectorInfo_v2?sectorID=0&catID=0&capitalID=0&languageID=1",
+  //    url: "https://s.cafef.vn/ajax/marketmap.ashx?stock=1&type=1&cate=",
   //     // url: "https://wgateway-iboard.ssi.com.vn/graphql",
   //     headers: {
   //       "Content-Type": "application/json",
-  //       "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijc4Njc5MyIsImlhdCI6MTY1NjMzMzkxMCwiZXhwIjoxNjU2MzYyNzEwfQ.yVi4uPoMSMzKF9K0QFl7wpxeOG8ytJ0nAWv5RDVi7eQ"
+  //       // "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijc4Njc5MyIsImlhdCI6MTY1NjMzMzkxMCwiZXhwIjoxNjU2MzYyNzEwfQ.yVi4uPoMSMzKF9K0QFl7wpxeOG8ytJ0nAWv5RDVi7eQ"
   //       // "User-Agent":
   //       //   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
   //     },
