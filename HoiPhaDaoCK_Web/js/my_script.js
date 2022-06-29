@@ -18,7 +18,10 @@ $(document).ready(function () {
     "Có trong\nInfina",
   ];
   
-  async function loadIntoTable(url, table) {
+  async function loadIntoTable() {
+    url =  "./HoiPhaDaoCK_Web/data/da_mua.json",
+    table = document.querySelector("table")
+
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
     const response = await fetch(url);
@@ -40,7 +43,6 @@ $(document).ready(function () {
       function (response) {
         for (const key in rows) {
           filter_data = response.filter((x) => x.NoneSymbol === key)[0];
-          console.log(filter_data);
 
           const rowElement = document.createElement("tr");
 
@@ -89,8 +91,7 @@ $(document).ready(function () {
     );
   }
 
-  loadIntoTable(
-    "./HoiPhaDaoCK_Web/data/da_mua.json",
-    document.querySelector("table")
-  );
+  loadIntoTable();
+
+  setInterval(loadIntoTable, 5000);
 });
