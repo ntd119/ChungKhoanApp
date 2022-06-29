@@ -67,8 +67,10 @@ $(document).ready(function () {
 
            // Status
            giaHienTai = filter_data["Price"] * 1000
+
+           percent_change = parseFloat( ((giaHienTai - giaDaMua) / giaDaMua) * 100).toFixed(2)
            const laiLoElement = document.createElement("td");
-           laiLoElement.textContent = "";
+           laiLoElement.textContent = percent_change + "%";
            rowElement.appendChild(laiLoElement);
 
             // Giá hiện tại 
