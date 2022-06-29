@@ -51,7 +51,7 @@ $(document).ready(function () {
 
           // Tên
           const nameElement = document.createElement("td");
-          nameElement.textContent = filter_data["Name"];
+          // nameElement.textContent = filter_data["Name"];
           rowElement.appendChild(nameElement);
 
           // Status
@@ -70,6 +70,11 @@ $(document).ready(function () {
 
            percent_change = parseFloat( ((giaHienTai - giaDaMua) / giaDaMua) * 100).toFixed(2)
            const laiLoElement = document.createElement("td");
+           if (percent_change >=0) {
+            laiLoElement.style.cssText = ' background-color:#00E11A;';
+           } else {
+            laiLoElement.style.cssText = ' background-color:#F33232;';
+           }
            laiLoElement.textContent = percent_change + "%";
            rowElement.appendChild(laiLoElement);
 
