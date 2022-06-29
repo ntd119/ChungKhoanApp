@@ -44,7 +44,7 @@ $(document).ready(function () {
         for (const key in rows) {
           filter_data = response.filter((x) => x.NoneSymbol === key)[0];
 
-          console.log(filter_data);
+          // console.log(filter_data);
 
           const rowElement = document.createElement("tr");
 
