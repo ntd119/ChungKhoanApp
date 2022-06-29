@@ -106,5 +106,5 @@ $(document).ready(function () {
 
   loadIntoTable();
 
-  setInterval(loadIntoTable, 5000);
+  setInterval(loadIntoTable, 10000);
 });
