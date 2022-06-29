@@ -17,10 +17,10 @@ $(document).ready(function () {
     "Giá mở cửa",
     "Có trong\nInfina",
   ];
-  
+
   async function loadIntoTable() {
-    url =  "./HoiPhaDaoCK_Web/data/da_mua.json",
-    table = document.querySelector("table")
+    (url = "./HoiPhaDaoCK_Web/data/da_mua.json"),
+      (table = document.querySelector("table"));
 
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
@@ -44,6 +44,8 @@ $(document).ready(function () {
         for (const key in rows) {
           filter_data = response.filter((x) => x.NoneSymbol === key)[0];
 
+          console.log(filter_data);
+
           const rowElement = document.createElement("tr");
 
           // Mã chứng khoán
@@ -62,28 +64,39 @@ $(document).ready(function () {
           rowElement.appendChild(statusElement);
 
           // Giá đã mua
-          giaDaMua =  rows[key]["bought"]
+          giaDaMua = rows[key]["bought"];
           const giaMuaElement = document.createElement("td");
           giaMuaElement.textContent = giaDaMua;
           rowElement.appendChild(giaMuaElement);
 
-           // Status
-           giaHienTai = filter_data["Price"] * 1000
+          // Status
+          giaHienTai = filter_data["Price"] * 1000;
 
-           percent_change = parseFloat( ((giaHienTai - giaDaMua) / giaDaMua) * 100).toFixed(2)
-           const laiLoElement = document.createElement("td");
-           if (percent_change >=0) {
-            laiLoElement.style.cssText = ' background-color:#00E11A;';
-           } else {
-            laiLoElement.style.cssText = ' background-color:#F33232;';
-           }
-           laiLoElement.textContent = percent_change + "%";
-           rowElement.appendChild(laiLoElement);
+          percent_change = parseFloat(
+            ((giaHienTai - giaDaMua) / giaDaMua) * 100
+          ).toFixed(2);
+          const laiLoElement = document.createElement("td");
+          if (percent_change >= 0) {
+            laiLoElement.style.cssText = " background-color:#00E11A;";
+          } else {
+            laiLoElement.style.cssText = " background-color:#F33232;";
+          }
+          laiLoElement.textContent = percent_change + "%";
+          rowElement.appendChild(laiLoElement);
 
-            // Giá hiện tại 
-            const giaHienTaiElement = document.createElement("td");
-            giaHienTaiElement.textContent = giaHienTai;
-            rowElement.appendChild(giaHienTaiElement);
+          // Giá hiện tại
+          percent_current = filter_data["Percent"];
+          const giaHienTaiElement = document.createElement("td");
+          if (percent_current == 0) {
+            giaHienTaiElement.style.cssText = " background-color:#FEA50C;";
+          } else if (percent_current > 0) {
+            giaHienTaiElement.style.cssText = " background-color:#00E11A;";
+          } else if (percent_current < 0) {
+            giaHienTaiElement.style.cssText = " background-color:#F33232;";
+          }
+          giaHienTaiElement.textContent =
+            giaHienTai + "(" + percent_current + "%)";
+          rowElement.appendChild(giaHienTaiElement);
 
           tableBody.appendChild(rowElement);
         }
