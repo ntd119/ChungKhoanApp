@@ -47,7 +47,39 @@
     "percent_sell": "4.0",
     "follow": 1
   },
-  "CTG": {
+  "VSH": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 46100,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "VIB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 20900,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "VIP": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 6330,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "MWG": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 66700,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+   "CTG": {
     "should_buy": 0,
     "enable_sound": 0,
     "bought": 25250,
@@ -55,12 +87,20 @@
     "percent_sell": "4.0",
     "follow": 1
   },
-  "VSH": {
-        "should_buy": 0,
-        "enable_sound": 0,
-        "bought": 46100,
-        "percent_cut_loss": "4.0",
-        "percent_sell": "4.0",
-        "follow": 1
-    }
+  "AST": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 57900,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  },
+  "DPM": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 48900,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "follow": 1
+  }
 }
