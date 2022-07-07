@@ -480,6 +480,28 @@ class MainUI:
                 else:
                     self.uic.tableWidget.item(row_index, COLUMN_NAME["percent_max_current"]["index"]).setBackground(
                         QtGui.QColor(BACKGROUND_LO))
+
+                # Phần trăm giá lý tưởng so với giá hiện tại
+                try:
+                    gia_ly_tuong = self.uic.tableWidget.item(row_index, COLUMN_NAME["gia_ly_tuong"]["index"]).text()
+                    gia_ly_tuong = int(gia_ly_tuong)
+                except:
+                    gia_ly_tuong = 0
+                if gia_ly_tuong > 0:
+                    try:
+                        percent_ly_tuong_hien_tai = ((gia_hien_tai_value - gia_ly_tuong) / gia_ly_tuong) * 100
+                    except:
+                        percent_ly_tuong_hien_tai = 0
+                    percent_ly_tuong_hien_tai_item = QtWidgets.QTableWidgetItem()
+                    self.uic.tableWidget.setItem(row_index, COLUMN_NAME["gia_ht_so_gia_ly_tuong"]["index"], percent_ly_tuong_hien_tai_item)
+                    percent_ly_tuong_hien_tai_item.setText(
+                        _translate("MainWindow", self.format_2_decimal(percent_ly_tuong_hien_tai) + "%"))
+                    if percent_ly_tuong_hien_tai < 0:
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["gia_ht_so_gia_ly_tuong"]["index"]).setBackground(
+                            QtGui.QColor(BACKGROUND_LO))
+                    else:
+                        self.uic.tableWidget.item(row_index, COLUMN_NAME["gia_ht_so_gia_ly_tuong"]["index"]).setBackground(
+                            QtGui.QColor(BACKGROUND_LAI))
             else:
                 stock_name_item = QtWidgets.QTableWidgetItem()
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["name"]["index"], stock_name_item)
