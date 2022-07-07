@@ -337,6 +337,11 @@ class MainUI:
                 self.uic.tableWidget.setItem(row_index, COLUMN_NAME["percent_sell"]["index"], item_sell)
                 item_sell.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "percent_sell")))
 
+                # Giá lý tưởng
+                item_gia_ly_tuong = QtWidgets.QTableWidgetItem()
+                self.uic.tableWidget.setItem(row_index, COLUMN_NAME["gia_ly_tuong"]["index"], item_gia_ly_tuong)
+                item_gia_ly_tuong.setText(_translate("MainWindow", self.get_item_dict(stock_dict, "price_ideal")))
+
     def update_table(self):
         self.current_sum = 0
         now = datetime.now().time()
