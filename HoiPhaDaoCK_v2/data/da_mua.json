@@ -5,7 +5,7 @@
     "bought": 31400,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 31400
   },
   "HBC": {
     "should_buy": 0,
@@ -13,7 +13,7 @@
     "bought": 21100,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 21100
   },
   "OCB": {
     "should_buy": 0,
@@ -21,7 +21,7 @@
     "bought": 20350,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 20350
   },
   "VHC": {
     "should_buy": 0,
@@ -29,7 +29,7 @@
     "bought": 102500,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 102500
   },
   "BCM": {
     "should_buy": 0,
@@ -37,7 +37,7 @@
     "bought": 72300,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 72300
   },
   "LPB": {
     "should_buy": 0,
@@ -45,7 +45,7 @@
     "bought": 13150,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 13150
   },
   "VSH": {
     "should_buy": 0,
@@ -53,7 +53,7 @@
     "bought": 46100,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 46100
   },
   "VIB": {
     "should_buy": 0,
@@ -61,7 +61,7 @@
     "bought": 20900,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 20900
   },
   "MWG": {
     "should_buy": 0,
@@ -69,7 +69,7 @@
     "bought": 66700,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 66700
   },
   "PNJ": {
     "should_buy": 0,
@@ -77,7 +77,7 @@
     "bought": 118100,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 118100
   },
   "GAS": {
     "should_buy": 0,
@@ -85,7 +85,7 @@
     "bought": 105000,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 105000
   },
    "CTG": {
     "should_buy": 0,
@@ -93,7 +93,7 @@
     "bought": 25250,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 25250
   },
   "DPM": {
     "should_buy": 0,
@@ -101,7 +101,7 @@
     "bought": 48900,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 48900
   },
   "FPT": {
     "should_buy": 0,
@@ -109,6 +109,6 @@
     "bought": 85600,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "follow": 1
+    "price_ideal": 85600
   }
 }
