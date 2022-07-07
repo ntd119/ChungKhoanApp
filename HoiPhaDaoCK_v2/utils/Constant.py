@@ -140,52 +140,60 @@ COLUMN_NAME = {
         "index": 4,
         "name": "Giá hiện tại"
     },
-    "min_value_week": {
+    "gia_ly_tuong": {
         "index": 5,
+        "name": "Giá lý tưởng"
+    },
+    "gia_ht_so_gia_ly_tuong": {
+        "index": 6,
+        "name": "Giá HT so với \ngiá lý tưởng"
+    },
+    "min_value_week": {
+        "index": 7,
         "name": "Giá min \ntrong tuần"
     },
     "max_value_week": {
-        "index": 6,
+        "index": 8,
         "name": "Giá max \ntrong tuần"
     },
     "percent_max_min": {
-        "index": 7,
+        "index": 9,
         "name": "% Giá Max-Min"
     },
     "percent_max_current": {
-        "index": 8,
+        "index": 10,
         "name": "% Giá hiện tại\nso với giá max"
     },
     "min_time_week": {
-        "index": 9,
+        "index": 11,
         "name": "Min Time"
     },
     "max_time_week": {
-        "index": 10,
+        "index": 12,
         "name": "Max Time"
     },
     "percent_cut_loss": {
-        "index": 11,
+        "index": 13,
         "name": "% Cắt lỗ"
     },
     "percent_sell": {
-        "index": 12,
+        "index": 14,
         "name": "% Bán"
     },
     "tran_value": {
-        "index": 13,
+        "index": 15,
         "name": "Giá trần"
     },
     "san_value": {
-        "index": 14,
+        "index": 16,
         "name": "Giá sàn"
     },
     "open_value": {
-        "index": 15,
+        "index": 17,
         "name": "Giá mở cửa"
     },
     "has_infina": {
-        "index": 16,
+        "index": 18,
         "name": "Có trong\nInfina"
     }
 }
