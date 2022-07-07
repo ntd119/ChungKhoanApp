@@ -69,7 +69,7 @@
     "bought": 66700,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "price_ideal": 66700
+    "price_ideal": 64000
   },
   "PNJ": {
     "should_buy": 0,
@@ -110,5 +110,13 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 85600
+  },
+  "MBB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 23850,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 23850
   }
 }
