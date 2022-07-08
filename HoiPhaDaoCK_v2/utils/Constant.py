@@ -148,52 +148,56 @@ COLUMN_NAME = {
         "index": 6,
         "name": "Giá HT so với \ngiá lý tưởng"
     },
-    "min_value_week": {
+    "percent_mong_cho": {
         "index": 7,
+        "name": "% mong chờ"
+    },
+    "min_value_week": {
+        "index": 8,
         "name": "Giá min \ntrong tuần"
     },
     "max_value_week": {
-        "index": 8,
+        "index": 9,
         "name": "Giá max \ntrong tuần"
     },
     "percent_max_min": {
-        "index": 9,
+        "index": 10,
         "name": "% Giá Max-Min"
     },
     "percent_max_current": {
-        "index": 10,
+        "index": 11,
         "name": "% Giá hiện tại\nso với giá max"
     },
     "min_time_week": {
-        "index": 11,
+        "index": 12,
         "name": "Min Time"
     },
     "max_time_week": {
-        "index": 12,
+        "index": 13,
         "name": "Max Time"
     },
     "percent_cut_loss": {
-        "index": 13,
+        "index": 14,
         "name": "% Cắt lỗ"
     },
     "percent_sell": {
-        "index": 14,
+        "index": 15,
         "name": "% Bán"
     },
     "tran_value": {
-        "index": 15,
+        "index": 16,
         "name": "Giá trần"
     },
     "san_value": {
-        "index": 16,
+        "index": 17,
         "name": "Giá sàn"
     },
     "open_value": {
-        "index": 17,
+        "index": 18,
         "name": "Giá mở cửa"
     },
     "has_infina": {
-        "index": 18,
+        "index": 19,
         "name": "Có trong\nInfina"
     }
 }
