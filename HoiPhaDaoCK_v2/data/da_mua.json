@@ -105,7 +105,7 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 25250,
-     "percent_mong_cho": "5-6%"
+     "percent_mong_cho": "7-8%"
   },
   "DPM": {
     "should_buy": 0,
@@ -132,7 +132,7 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 23850,
-    "percent_mong_cho": "4-5%"
+    "percent_mong_cho": "7-8%"
   },
   "MSB": {
     "should_buy": 0,
@@ -150,7 +150,7 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 22900,
-    "percent_mong_cho": "4-5%"
+    "percent_mong_cho": "5-6%"
   },
   "VPB": {
     "should_buy": 0,
