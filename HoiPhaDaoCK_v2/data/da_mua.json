@@ -107,15 +107,6 @@
     "price_ideal": 25250,
      "percent_mong_cho": "7-8%"
   },
-  "DPM": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 48900,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 48900,
-    "percent_mong_cho": ""
-  },
   "FPT": {
     "should_buy": 0,
     "enable_sound": 0,
