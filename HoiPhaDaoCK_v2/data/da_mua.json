@@ -146,7 +146,7 @@
   "VPB": {
     "should_buy": 0,
     "enable_sound": 0,
-    "bought": 27500,
+    "bought": 27750,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 27500,
