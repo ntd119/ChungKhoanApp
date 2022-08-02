@@ -8,24 +8,6 @@
     "price_ideal": 31400,
     "percent_mong_cho": "5-6%"
   },
-  "HBC": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 21100,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 21100,
-    "percent_mong_cho": ""
-  },
-  "OCB": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 20350,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 16100,
-    "percent_mong_cho": ""
-  },
   "VHC": {
     "should_buy": 0,
     "enable_sound": 0,
@@ -33,15 +15,6 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 102500,
-    "percent_mong_cho": ""
-  },
-  "BCM": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 72300,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 72300,
     "percent_mong_cho": ""
   },
   "LPB": {
@@ -160,5 +133,23 @@
     "percent_sell": "4.0",
     "price_ideal": 67300,
     "percent_mong_cho": "4-5%"
+  },
+  "TCB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 36000,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 36000,
+    "percent_mong_cho": "6-7%"
+  },
+   "VJC": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 120400,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 120400,
+    "percent_mong_cho": "5-6%"
   }
 }
