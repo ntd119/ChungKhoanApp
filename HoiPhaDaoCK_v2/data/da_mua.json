@@ -137,10 +137,10 @@
   "TCB": {
     "should_buy": 0,
     "enable_sound": 0,
-    "bought": 36000,
+    "bought": 33600,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "price_ideal": 36000,
+    "price_ideal": 33600,
     "percent_mong_cho": "6-7%"
   },
    "VJC": {
