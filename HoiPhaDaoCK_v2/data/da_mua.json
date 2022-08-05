@@ -178,5 +178,14 @@
     "percent_sell": "4.0",
     "price_ideal": 120400,
     "percent_mong_cho": "5-6%"
+  },
+  "MSN": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 105400,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 105400,
+    "percent_mong_cho": "5-6%"
   }
 }
