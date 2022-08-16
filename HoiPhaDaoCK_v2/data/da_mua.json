@@ -191,10 +191,10 @@
   "DGC": {
     "should_buy": 0,
     "enable_sound": 0,
-    "bought": 93000,
+    "bought": 94400,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "price_ideal": 93000,
+    "price_ideal": 94400,
     "percent_mong_cho": "5-6%"
   }
 }
