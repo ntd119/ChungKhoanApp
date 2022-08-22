@@ -116,15 +116,6 @@
     "price_ideal": 83600,
     "percent_mong_cho": ""
   },
-  "MBB": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 23850,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 23850,
-    "percent_mong_cho": "7-8%"
-  },
   "MSB": {
     "should_buy": 0,
     "enable_sound": 0,
@@ -204,6 +195,15 @@
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
     "price_ideal": 47750,
+    "percent_mong_cho": "5-6%"
+  },
+  "MBB": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 23300,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 23300,
     "percent_mong_cho": "5-6%"
   }
 }
