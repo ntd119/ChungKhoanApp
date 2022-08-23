@@ -146,10 +146,10 @@
   "VIC": {
     "should_buy": 0,
     "enable_sound": 0,
-    "bought": 67300,
+    "bought": 65200,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "price_ideal": 67300,
+    "price_ideal": 65200,
     "percent_mong_cho": "4-5%"
   },
   "TCB": {
