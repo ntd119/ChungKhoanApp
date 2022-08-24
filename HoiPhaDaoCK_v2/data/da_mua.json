@@ -1,12 +1,21 @@
 {
-  "HBC": {
+  "GAS": {
     "should_buy": 0,
     "enable_sound": 0,
-    "bought": 21100,
+    "bought": 95000,
     "percent_cut_loss": "4.0",
     "percent_sell": "4.0",
-    "price_ideal": 21100,
-    "percent_mong_cho": "5-6%"
+    "price_ideal": 95000,
+    "percent_mong_cho": "20%"
+  },
+  "DGW": {
+    "should_buy": 0,
+    "enable_sound": 0,
+    "bought": 57300,
+    "percent_cut_loss": "4.0",
+    "percent_sell": "4.0",
+    "price_ideal": 57300,
+    "percent_mong_cho": "30%"
   },
   "OCB": {
     "should_buy": 0,
@@ -79,15 +88,6 @@
     "percent_sell": "4.0",
     "price_ideal": 118100,
     "percent_mong_cho": ""
-  },
-  "GAS": {
-    "should_buy": 0,
-    "enable_sound": 0,
-    "bought": 105000,
-    "percent_cut_loss": "4.0",
-    "percent_sell": "4.0",
-    "price_ideal": 95000,
-    "percent_mong_cho": "10%"
   },
    "CTG": {
     "should_buy": 0,
